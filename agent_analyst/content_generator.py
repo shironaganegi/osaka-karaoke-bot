@@ -98,10 +98,15 @@ def generate_article(tool_data):
     4. **Key Features**: strict bullet points based on the README.
     5. **How to Install**: Python pip command or similar.
     6. **Pro's & Con's (Honest Review)**: Use the "User Feedback" section to mention real concerns or alternatives mentioned on Reddit. Be honest about downsides.
-    8. **Monetization Suggestions (Affiliate Tips)**: 
-       - Suggest 2-3 specific types of affiliate products to link (e.g., "Python for Beginner's book", "Advanced AI course on Udemy").
-       - Suggest exactly WHERE in the text to insert these links for maximum conversion.
-       - IMPORTANT: Don't provide fake links, just describe the *type* of product to look for on A8.net or Amazon.
+    8. **Recommendation Section**: 
+       - At the end of the article, create a section titled "## さらに学びたい方へ".
+       - Suggest 1 specific PHYSICAL product from Rakuten (e.g., a technical book or gadget) that complements the tool.
+       - Provide a placeholder for the Rakuten link:
+         "[👉 楽天市場で詳細を見る](INSERT_RAKUTEN_LINK_HERE)"
+       - DO NOT suggest online courses, web services, or subscriptions. ONLY suggest physical books or gadgets available on Rakuten.
+       
+    9. **Monetization Advice**:
+       - Briefly explain why you recommended that specific product at the end of the file (outside the markdown article).
 
     Output Format: Markdown.
     """

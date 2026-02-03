@@ -71,6 +71,56 @@ def fetch_github_trending(language=None):
     logging.info(f"Found {len(repos)} repositories.")
     return repos
 
+def fetch_product_hunt():
+    """
+    Fetches today's top products from Product Hunt.
+    Great for discovering new SaaS tools and startups.
+    Uses the RSS feed with feedparser for reliability.
+    """
+    import feedparser
+    
+    url = "https://www.producthunt.com/feed"
+    
+    logging.info(f"Fetching Product Hunt RSS: {url}")
+    
+    try:
+        feed = feedparser.parse(url, agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64)")
+    except Exception as e:
+        logging.error(f"Failed to fetch Product Hunt: {e}")
+        return []
+    
+    products = []
+    
+    for entry in feed.entries[:10]:  # Top 10
+        try:
+            name = entry.get('title', 'Unknown')
+            link = entry.get('link', '')
+            
+            # Clean HTML from description
+            raw_desc = entry.get('summary', 'New product on Product Hunt')
+            desc_soup = BeautifulSoup(raw_desc, 'html.parser')
+            clean_desc = desc_soup.get_text()[:200]
+            
+            products.append({
+                "source": "product_hunt",
+                "name": name,
+                "owner": "ProductHunt",
+                "url": link,
+                "description": clean_desc,
+                "stars": 0,
+                "daily_stars": 100,  # Assume high interest for PH products
+                "language": "saas",
+                "fetched_at": datetime.now().isoformat()
+            })
+        except Exception as e:
+            logging.warning(f"Error parsing Product Hunt item: {e}")
+            continue
+    
+    logging.info(f"Found {len(products)} Product Hunt products.")
+    return products
+
+
+
 def save_trends(data, filename="trends.json"):
     """Saves the raw trend data to a file."""
     output_dir = os.path.join(os.path.dirname(__file__), "..", "data")
@@ -95,7 +145,10 @@ if __name__ == "__main__":
     trends_all = fetch_github_trending()
     trends_py = fetch_github_trending("python")
     
-    all_data = trends_all + trends_py
+    # 2. Fetch Product Hunt (NEW!)
+    trends_ph = fetch_product_hunt()
+    
+    all_data = trends_all + trends_py + trends_ph
     
     # Simple Deduplication
     seen = set()
@@ -107,3 +160,4 @@ if __name__ == "__main__":
             
     # Save
     save_trends(unique_data)
+    logging.info(f"Total unique items saved: {len(unique_data)}")

@@ -98,7 +98,10 @@ def generate_article(tool_data):
     4. **Key Features**: strict bullet points based on the README.
     5. **How to Install**: Python pip command or similar.
     6. **Pro's & Con's (Honest Review)**: Use the "User Feedback" section to mention real concerns or alternatives mentioned on Reddit. Be honest about downsides.
-    7. **Conclusion**: Who should use this?
+    8. **Monetization Suggestions (Affiliate Tips)**: 
+       - Suggest 2-3 specific types of affiliate products to link (e.g., "Python for Beginner's book", "Advanced AI course on Udemy").
+       - Suggest exactly WHERE in the text to insert these links for maximum conversion.
+       - IMPORTANT: Don't provide fake links, just describe the *type* of product to look for on A8.net or Amazon.
 
     Output Format: Markdown.
     """

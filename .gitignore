@@ -1,0 +1,17 @@
+# Environment variables
+.env
+.env.local
+
+# Python
+__pycache__/
+*.pyc
+venv/
+.pytest_cache/
+
+# System
+.DS_Store
+
+# Data (We might want to commit data/drafts for now to see them, but typically data is ignored. 
+# For this "Human Node" workflow, committing drafts is good.)
+# data/
+# drafts/

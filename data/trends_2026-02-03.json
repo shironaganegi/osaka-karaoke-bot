@@ -5,10 +5,10 @@
     "owner": "thedotmack",
     "url": "https://github.com/thedotmack/claude-mem",
     "description": "A Claude Code plugin that automatically captures everything Claude does during your coding sessions, compresses it with AI (using Claude's agent-sdk), and injects relevant context back into future sessions.",
-    "stars": 19090,
+    "stars": 19197,
     "daily_stars": 1739,
     "language": "all",
-    "fetched_at": "2026-02-03T22:42:09.104952"
+    "fetched_at": "2026-02-03T14:26:07.593124"
   },
   {
     "source": "github_trending",
@@ -16,10 +16,10 @@
     "owner": "masoncl",
     "url": "https://github.com/masoncl/review-prompts",
     "description": "AI review prompts",
-    "stars": 224,
+    "stars": 230,
     "daily_stars": 42,
     "language": "all",
-    "fetched_at": "2026-02-03T22:42:09.105130"
+    "fetched_at": "2026-02-03T14:26:07.593559"
   },
   {
     "source": "github_trending",
@@ -27,10 +27,10 @@
     "owner": "openai",
     "url": "https://github.com/openai/skills",
     "description": "Skills Catalog for Codex",
-    "stars": 2726,
+    "stars": 2753,
     "daily_stars": 307,
     "language": "all",
-    "fetched_at": "2026-02-03T22:42:09.105285"
+    "fetched_at": "2026-02-03T14:26:07.593974"
   },
   {
     "source": "github_trending",
@@ -38,10 +38,10 @@
     "owner": "automazeio",
     "url": "https://github.com/automazeio/ccpm",
     "description": "Project management system for Claude Code using GitHub Issues and Git worktrees for parallel agent execution.",
-    "stars": 6532,
+    "stars": 6544,
     "daily_stars": 145,
     "language": "all",
-    "fetched_at": "2026-02-03T22:42:09.105437"
+    "fetched_at": "2026-02-03T14:26:07.594377"
   },
   {
     "source": "github_trending",
@@ -49,10 +49,10 @@
     "owner": "obra",
     "url": "https://github.com/obra/superpowers",
     "description": "An agentic skills framework & software development methodology that works.",
-    "stars": 43157,
+    "stars": 43198,
     "daily_stars": 873,
     "language": "all",
-    "fetched_at": "2026-02-03T22:42:09.105629"
+    "fetched_at": "2026-02-03T14:26:07.594901"
   },
   {
     "source": "github_trending",
@@ -60,10 +60,10 @@
     "owner": "virattt",
     "url": "https://github.com/virattt/dexter",
     "description": "An autonomous agent for deep financial research",
-    "stars": 9941,
+    "stars": 9945,
     "daily_stars": 219,
     "language": "all",
-    "fetched_at": "2026-02-03T22:42:09.105781"
+    "fetched_at": "2026-02-03T14:26:07.595307"
   },
   {
     "source": "github_trending",
@@ -71,10 +71,10 @@
     "owner": "karpathy",
     "url": "https://github.com/karpathy/nanochat",
     "description": "The best ChatGPT that $100 can buy.",
-    "stars": 41888,
+    "stars": 41899,
     "daily_stars": 443,
     "language": "all",
-    "fetched_at": "2026-02-03T22:42:09.105933"
+    "fetched_at": "2026-02-03T14:26:07.595711"
   },
   {
     "source": "github_trending",
@@ -82,10 +82,10 @@
     "owner": "kovidgoyal",
     "url": "https://github.com/kovidgoyal/calibre",
     "description": "The official source code repository for the calibre ebook manager",
-    "stars": 23875,
+    "stars": 23879,
     "daily_stars": 140,
     "language": "all",
-    "fetched_at": "2026-02-03T22:42:09.106133"
+    "fetched_at": "2026-02-03T14:26:07.596231"
   },
   {
     "source": "github_trending",
@@ -93,10 +93,10 @@
     "owner": "OpenBMB",
     "url": "https://github.com/OpenBMB/ChatDev",
     "description": "ChatDev 2.0: Dev All through LLM-powered Multi-Agent Collaboration",
-    "stars": 29676,
+    "stars": 29683,
     "daily_stars": 475,
     "language": "all",
-    "fetched_at": "2026-02-03T22:42:09.106284"
+    "fetched_at": "2026-02-03T14:26:07.596637"
   },
   {
     "source": "github_trending",
@@ -104,10 +104,10 @@
     "owner": "pedramamini",
     "url": "https://github.com/pedramamini/Maestro",
     "description": "Agent Orchestration Command Center",
-    "stars": 1414,
+    "stars": 1417,
     "daily_stars": 265,
     "language": "all",
-    "fetched_at": "2026-02-03T22:42:09.106435"
+    "fetched_at": "2026-02-03T14:26:07.597049"
   },
   {
     "source": "github_trending",
@@ -115,10 +115,10 @@
     "owner": "vm0-ai",
     "url": "https://github.com/vm0-ai/vm0",
     "description": "the easiest way to run natural language-described workflows automatically",
-    "stars": 566,
+    "stars": 573,
     "daily_stars": 56,
     "language": "all",
-    "fetched_at": "2026-02-03T22:42:09.106588"
+    "fetched_at": "2026-02-03T14:26:07.597453"
   },
   {
     "source": "github_trending",
@@ -126,10 +126,10 @@
     "owner": "EbookFoundation",
     "url": "https://github.com/EbookFoundation/free-programming-books",
     "description": "📚 Freely available programming books",
-    "stars": 381983,
-    "daily_stars": 335,
+    "stars": 381987,
+    "daily_stars": 123,
     "language": "python",
-    "fetched_at": "2026-02-03T22:42:10.768450"
+    "fetched_at": "2026-02-03T14:26:09.197177"
   },
   {
     "source": "github_trending",
@@ -137,10 +137,10 @@
     "owner": "VectifyAI",
     "url": "https://github.com/VectifyAI/PageIndex",
     "description": "📑 PageIndex: Document Index for Vectorless, Reasoning-based RAG",
-    "stars": 12813,
+    "stars": 12831,
     "daily_stars": 562,
     "language": "python",
-    "fetched_at": "2026-02-03T22:42:10.768654"
+    "fetched_at": "2026-02-03T14:26:09.197575"
   },
   {
     "source": "github_trending",
@@ -148,10 +148,10 @@
     "owner": "shareAI-lab",
     "url": "https://github.com/shareAI-lab/learn-claude-code",
     "description": "Bash is all You need - Write a nano Claude Code 0 - 1",
-    "stars": 16248,
+    "stars": 16252,
     "daily_stars": 123,
     "language": "python",
-    "fetched_at": "2026-02-03T22:42:10.768808"
+    "fetched_at": "2026-02-03T14:26:09.198030"
   },
   {
     "source": "github_trending",
@@ -159,10 +159,10 @@
     "owner": "xerrors",
     "url": "https://github.com/xerrors/Yuxi-Know",
     "description": "结合LightRAG 知识库的知识图谱智能体平台。 An agent platform that integrates a LightRAG knowledge base and knowledge graphs. Build with LangChain v1 + Vue + FastAPI, support DeepAgents、MinerU PDF、Neo4j 、MCP.",
-    "stars": 4218,
+    "stars": 4219,
     "daily_stars": 28,
     "language": "python",
-    "fetched_at": "2026-02-03T22:42:10.768956"
+    "fetched_at": "2026-02-03T14:26:09.198442"
   },
   {
     "source": "github_trending",
@@ -170,10 +170,10 @@
     "owner": "jingyaogong",
     "url": "https://github.com/jingyaogong/minimind",
     "description": "🚀🚀 「大模型」2小时完全从0训练26M的小参数GPT！🌏 Train a 26M-parameter GPT from scratch in just 2h!",
-    "stars": 38612,
-    "daily_stars": 136,
+    "stars": 38620,
+    "daily_stars": 80,
     "language": "python",
-    "fetched_at": "2026-02-03T22:42:10.769104"
+    "fetched_at": "2026-02-03T14:26:09.198844"
   },
   {
     "source": "github_trending",
@@ -181,10 +181,10 @@
     "owner": "github",
     "url": "https://github.com/github/spec-kit",
     "description": "💫 Toolkit to help you get started with Spec-Driven Development",
-    "stars": 67242,
+    "stars": 67248,
     "daily_stars": 281,
     "language": "python",
-    "fetched_at": "2026-02-03T22:42:10.769309"
+    "fetched_at": "2026-02-03T14:26:09.199257"
   },
   {
     "source": "github_trending",
@@ -192,10 +192,10 @@
     "owner": "TauricResearch",
     "url": "https://github.com/TauricResearch/TradingAgents",
     "description": "TradingAgents: Multi-Agents LLM Financial Trading Framework",
-    "stars": 29121,
+    "stars": 29125,
     "daily_stars": 191,
     "language": "python",
-    "fetched_at": "2026-02-03T22:42:10.769476"
+    "fetched_at": "2026-02-03T14:26:09.199657"
   },
   {
     "source": "github_trending",
@@ -203,10 +203,10 @@
     "owner": "microsoft",
     "url": "https://github.com/microsoft/autogen",
     "description": "A programming framework for agentic AI",
-    "stars": 54220,
+    "stars": 54222,
     "daily_stars": 56,
     "language": "python",
-    "fetched_at": "2026-02-03T22:42:10.769622"
+    "fetched_at": "2026-02-03T14:26:09.200065"
   },
   {
     "source": "github_trending",
@@ -214,9 +214,9 @@
     "owner": "vanna-ai",
     "url": "https://github.com/vanna-ai/vanna",
     "description": "🤖 Chat with your SQL database 📊. Accurate Text-to-SQL Generation via LLMs using Agentic Retrieval 🔄.",
-    "stars": 22504,
+    "stars": 22505,
     "daily_stars": 20,
     "language": "python",
-    "fetched_at": "2026-02-03T22:42:10.769769"
+    "fetched_at": "2026-02-03T14:26:09.200469"
   }
 ]

@@ -78,7 +78,7 @@ def generate_article(tool_data):
     failure_context = mine_failures(name)
     
     prompt = f"""
-    You are a professional Tech Writer. Write a high-quality blog post in JAPANESE and provide a search keyword for related products.
+    You are a professional Tech Writer. Write a high-quality blog post in JAPANESE and provide search keywords for related products.
     
     Product Info:
     - Name: {name} | URL: {url} | Description: {description}
@@ -89,10 +89,11 @@ def generate_article(tool_data):
     1. Structure: Title, Intro, Features, Install, Pros/Cons, Conclusion.
     2. Placeholder: Insert exactly `{{{{RECOMMENDED_PRODUCTS}}}}` once in the middle of the article (after features).
     3. PR Notice: The very first line after the title must be `> ※本記事はプロモーションを含みます`.
+    4. Anti-Hallucination: Do NOT generate any "Read Also" (あわせて読みたい) sections, dummy links to example.com, or fake HTML widgets. Only use the placeholder.
 
     Output MUST be a valid JSON with two fields:
     - "article": The full markdown article.
-    - "search_keyword": A single string (e.g., "Python Beginner Book") to search for related items.
+    - "search_keywords": A list of 3-5 strings. Start with specific terms, then broader concepts, then related gadgets/books. (e.g. ["{name}", "AI Programming", "Efficient Coding", "Mechanical Keyboard"])
     """
 
     if not api_key:
@@ -152,11 +153,35 @@ def generate_article(tool_data):
             return f"# {name}\n> ※本記事はプロモーションを含みます\n\n{response.text}"
 
         draft = res_json.get("article", "")
-        keyword = res_json.get("search_keyword", name)
+        # Robust keyword retrieval
+        keywords = res_json.get("search_keywords", [])
+        if isinstance(keywords, str): keywords = [keywords]
+        if not keywords: keywords = [name]
 
-        # 1. Search and Inject Products
+        # 1. Search and Inject Products (Retry Strategy)
+        products_html = ""
+        for kw in keywords:
+            print(f"Searching products for: {kw}")
+            items = search_related_items(kw)
+            if items:
+                products_html = "".join(items)
+                print(f"-> Found {len(items)} items for '{kw}'")
+                break
+            else:
+                 print(f"-> No items found for '{kw}'")
+
+        # Final Fallback if still empty
+        if not products_html:
+            fallbacks = ["プログラミング 入門", "エンジニア 仕事効率化", "ガジェット", "在宅ワーク 便利", "Python 自動化"]
+            for fb_kw in fallbacks:
+                print(f"Searching fallback: {fb_kw}")
+                items = search_related_items(fb_kw)
+                if items:
+                    products_html = "".join(items)
+                    print(f"-> Found fallback items for '{fb_kw}'")
+                    break
+
         try:
-            products_html = "".join(search_related_items(keyword))
             # Support both {{ }} and { } just in case
             final_article = draft.replace("{{RECOMMENDED_PRODUCTS}}", products_html).replace("{RECOMMENDED_PRODUCTS}", products_html)
         except Exception as e:

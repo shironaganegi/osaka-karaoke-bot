@@ -3,5 +3,10 @@
     "name": "Open-LLM-VTuber導入時の「Python 3.13の罠」と依存関係エラーの回避策",
     "url": "https://qiita.com/toki_mwc/items/7f0397290ef3f36e4fe1",
     "date": "2026-02-05T11:37:09.148813"
+  },
+  {
+    "name": "【開発ログ】Vercelプロジェクト誤削除からの復旧 & ビルドエラー徹底抗戦記",
+    "url": "https://qiita.com/kazesift/items/7257df86d028ec3c98ac",
+    "date": "2026-02-05T11:41:42.560448"
   }
 ]

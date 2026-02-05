@@ -5,10 +5,10 @@
     "owner": "thedotmack",
     "url": "https://github.com/thedotmack/claude-mem",
     "description": "A Claude Code plugin that automatically captures everything Claude does during your coding sessions, compresses it with AI (using Claude's agent-sdk), and injects relevant context back into future sessions.",
-    "stars": 23292,
-    "daily_stars": 2638,
+    "stars": 23296,
+    "daily_stars": 1899,
     "language": "all",
-    "fetched_at": "2026-02-05T11:36:15.307444"
+    "fetched_at": "2026-02-05T11:41:34.497651"
   },
   {
     "source": "hacker_news",
@@ -19,18 +19,7 @@
     "stars": 1065,
     "daily_stars": 1065,
     "language": "tech",
-    "fetched_at": "2026-02-05T11:36:18.930660"
-  },
-  {
-    "source": "github",
-    "name": "superpowers",
-    "owner": "obra",
-    "url": "https://github.com/obra/superpowers",
-    "description": "An agentic skills framework & software development methodology that works.",
-    "stars": 44933,
-    "daily_stars": 993,
-    "language": "all",
-    "fetched_at": "2026-02-05T11:36:15.309254"
+    "fetched_at": "2026-02-05T11:41:38.360717"
   },
   {
     "source": "github",
@@ -38,10 +27,21 @@
     "owner": "anthropics",
     "url": "https://github.com/anthropics/skills",
     "description": "Public repository for Agent Skills",
-    "stars": 63644,
+    "stars": 63647,
     "daily_stars": 909,
     "language": "python",
-    "fetched_at": "2026-02-05T11:36:16.514390"
+    "fetched_at": "2026-02-05T11:41:35.738117"
+  },
+  {
+    "source": "github",
+    "name": "superpowers",
+    "owner": "obra",
+    "url": "https://github.com/obra/superpowers",
+    "description": "An agentic skills framework & software development methodology that works.",
+    "stars": 44937,
+    "daily_stars": 893,
+    "language": "all",
+    "fetched_at": "2026-02-05T11:41:34.499535"
   },
   {
     "source": "github",
@@ -49,21 +49,10 @@
     "owner": "bytedance",
     "url": "https://github.com/bytedance/UI-TARS-desktop",
     "description": "The Open-Source Multimodal AI Agent Stack: Connecting Cutting-Edge AI Models and Agent Infra",
-    "stars": 26418,
+    "stars": 26419,
     "daily_stars": 862,
     "language": "all",
-    "fetched_at": "2026-02-05T11:36:15.306320"
-  },
-  {
-    "source": "github",
-    "name": "skills",
-    "owner": "openai",
-    "url": "https://github.com/openai/skills",
-    "description": "Skills Catalog for Codex",
-    "stars": 3997,
-    "daily_stars": 746,
-    "language": "all",
-    "fetched_at": "2026-02-05T11:36:15.306844"
+    "fetched_at": "2026-02-05T11:41:34.496494"
   },
   {
     "source": "github",
@@ -71,10 +60,21 @@
     "owner": "j178",
     "url": "https://github.com/j178/prek",
     "description": "⚡ Better `pre-commit`, re-engineered in Rust",
-    "stars": 5320,
+    "stars": 5323,
     "daily_stars": 739,
     "language": "all",
-    "fetched_at": "2026-02-05T11:36:15.308064"
+    "fetched_at": "2026-02-05T11:41:34.498292"
+  },
+  {
+    "source": "github",
+    "name": "skills",
+    "owner": "openai",
+    "url": "https://github.com/openai/skills",
+    "description": "Skills Catalog for Codex",
+    "stars": 3999,
+    "daily_stars": 621,
+    "language": "all",
+    "fetched_at": "2026-02-05T11:41:34.497013"
   },
   {
     "source": "hacker_news",
@@ -82,10 +82,10 @@
     "owner": "namanyayg",
     "url": "https://nmn.gl/blog/ai-killing-b2b-saas",
     "description": "AI is killing B2B SaaS",
-    "stars": 362,
-    "daily_stars": 362,
+    "stars": 364,
+    "daily_stars": 364,
     "language": "tech",
-    "fetched_at": "2026-02-05T11:36:17.483575"
+    "fetched_at": "2026-02-05T11:41:36.902941"
   },
   {
     "source": "hacker_news",
@@ -93,10 +93,10 @@
     "owner": "fugu2",
     "url": "https://boxc.net/blog/2026/claude-code-connecting-to-local-models-when-your-quota-runs-out/",
     "description": "Claude Code: connect to a local model when your quota runs out",
-    "stars": 290,
-    "daily_stars": 290,
+    "stars": 291,
+    "daily_stars": 291,
     "language": "tech",
-    "fetched_at": "2026-02-05T11:36:17.373921"
+    "fetched_at": "2026-02-05T11:41:36.791411"
   },
   {
     "source": "hacker_news",
@@ -107,7 +107,7 @@
     "stars": 221,
     "daily_stars": 221,
     "language": "tech",
-    "fetched_at": "2026-02-05T11:36:19.148443"
+    "fetched_at": "2026-02-05T11:41:38.574503"
   },
   {
     "source": "hacker_news",
@@ -115,10 +115,10 @@
     "owner": "aspectrr",
     "url": "https://www.fluid.sh/",
     "description": "Claude Code for Infrastructure",
-    "stars": 219,
-    "daily_stars": 219,
+    "stars": 220,
+    "daily_stars": 220,
     "language": "tech",
-    "fetched_at": "2026-02-05T11:36:17.750909"
+    "fetched_at": "2026-02-05T11:41:37.171856"
   },
   {
     "source": "github",
@@ -126,10 +126,10 @@
     "owner": "sgl-project",
     "url": "https://github.com/sgl-project/sglang",
     "description": "SGLang is a high-performance serving framework for large language models and multimodal models.",
-    "stars": 23307,
+    "stars": 23308,
     "daily_stars": 131,
     "language": "python",
-    "fetched_at": "2026-02-05T11:36:16.517000"
+    "fetched_at": "2026-02-05T11:41:35.740804"
   },
   {
     "source": "github",
@@ -140,7 +140,7 @@
     "stars": 15292,
     "daily_stars": 123,
     "language": "python",
-    "fetched_at": "2026-02-05T11:36:16.517937"
+    "fetched_at": "2026-02-05T11:41:35.741769"
   },
   {
     "source": "hacker_news",
@@ -151,18 +151,29 @@
     "stars": 112,
     "daily_stars": 112,
     "language": "tech",
-    "fetched_at": "2026-02-05T11:36:18.719675"
+    "fetched_at": "2026-02-05T11:41:38.141554"
   },
   {
     "source": "product_hunt",
-    "name": "Sylvian AI Forms",
+    "name": "Supaboard",
     "owner": "ProductHunt",
-    "url": "https://www.producthunt.com/products/sylvian-excel-agent",
-    "description": "\n            Never fill a PDF by hand again\n          \n\nDiscussion\n            |\n            Link\n",
+    "url": "https://www.producthunt.com/products/supaboard-ai",
+    "description": "\n            Ask in plain English. Get accurate answers from your data\n          \n\nDiscussion\n            |\n            Link\n",
     "stars": 0,
     "daily_stars": 100,
     "language": "saas",
-    "fetched_at": "2026-02-05T11:36:16.678162"
+    "fetched_at": "2026-02-05T11:41:35.952248"
+  },
+  {
+    "source": "product_hunt",
+    "name": "AutoBandStudio",
+    "owner": "ProductHunt",
+    "url": "https://www.producthunt.com/products/autobandstudio",
+    "description": "\n            AI that turns your melody into a full arrangement\n          \n\nDiscussion\n            |\n            Link\n",
+    "stars": 0,
+    "daily_stars": 100,
+    "language": "saas",
+    "fetched_at": "2026-02-05T11:41:35.952468"
   },
   {
     "source": "product_hunt",
@@ -173,40 +184,18 @@
     "stars": 0,
     "daily_stars": 100,
     "language": "saas",
-    "fetched_at": "2026-02-05T11:36:16.678370"
+    "fetched_at": "2026-02-05T11:41:35.952664"
   },
   {
     "source": "product_hunt",
-    "name": "GitScrum Studio for IDE",
+    "name": "Kling 3.0",
     "owner": "ProductHunt",
-    "url": "https://www.producthunt.com/products/gitscrum-studio-for-ide",
-    "description": "\n            Full project management inside VS Code, Cursor & Windsurf\n          \n\nDiscussion\n            |\n            Link\n",
+    "url": "https://www.producthunt.com/products/kling-ai-4",
+    "description": "\n            Native 4K output with extended video time with just a prompt\n          \n\nDiscussion\n            |\n            Link\n",
     "stars": 0,
     "daily_stars": 100,
     "language": "saas",
-    "fetched_at": "2026-02-05T11:36:16.678589"
-  },
-  {
-    "source": "product_hunt",
-    "name": "Miro MCP",
-    "owner": "ProductHunt",
-    "url": "https://www.producthunt.com/products/miro",
-    "description": "\n            Turn code into visual docs, board context into code\n          \n\nDiscussion\n            |\n            Link\n",
-    "stars": 0,
-    "daily_stars": 100,
-    "language": "saas",
-    "fetched_at": "2026-02-05T11:36:16.678784"
-  },
-  {
-    "source": "product_hunt",
-    "name": "Votap",
-    "owner": "ProductHunt",
-    "url": "https://www.producthunt.com/products/votap",
-    "description": "\n            A platform for the world to vote on political leaders\n          \n\nDiscussion\n            |\n            Link\n",
-    "stars": 0,
-    "daily_stars": 100,
-    "language": "saas",
-    "fetched_at": "2026-02-05T11:36:16.678973"
+    "fetched_at": "2026-02-05T11:41:35.952857"
   },
   {
     "source": "product_hunt",
@@ -217,40 +206,7 @@
     "stars": 0,
     "daily_stars": 100,
     "language": "saas",
-    "fetched_at": "2026-02-05T11:36:16.679160"
-  },
-  {
-    "source": "product_hunt",
-    "name": "Higgsfield Vibe-Motion",
-    "owner": "ProductHunt",
-    "url": "https://www.producthunt.com/products/higgsfield",
-    "description": "\n            Create motion images in a single prompt in an editing canvas\n          \n\nDiscussion\n            |\n            Link\n",
-    "stars": 0,
-    "daily_stars": 100,
-    "language": "saas",
-    "fetched_at": "2026-02-05T11:36:16.679345"
-  },
-  {
-    "source": "product_hunt",
-    "name": "Voxtral Transcribe 2 by Mistral",
-    "owner": "ProductHunt",
-    "url": "https://www.producthunt.com/products/mistral-7b",
-    "description": "\n            Real-time speech-to-text with speaker diarization\n          \n\nDiscussion\n            |\n            Link\n",
-    "stars": 0,
-    "daily_stars": 100,
-    "language": "saas",
-    "fetched_at": "2026-02-05T11:36:16.679552"
-  },
-  {
-    "source": "product_hunt",
-    "name": "Webflow AI site builder",
-    "owner": "ProductHunt",
-    "url": "https://www.producthunt.com/products/webflow",
-    "description": "\n            Turn a prompt into a production-ready site with Webflow\n          \n\nDiscussion\n            |\n            Link\n",
-    "stars": 0,
-    "daily_stars": 100,
-    "language": "saas",
-    "fetched_at": "2026-02-05T11:36:16.679747"
+    "fetched_at": "2026-02-05T11:41:35.953050"
   },
   {
     "source": "product_hunt",
@@ -261,7 +217,51 @@
     "stars": 0,
     "daily_stars": 100,
     "language": "saas",
-    "fetched_at": "2026-02-05T11:36:16.679934"
+    "fetched_at": "2026-02-05T11:41:35.953259"
+  },
+  {
+    "source": "product_hunt",
+    "name": "Voxtral Transcribe 2 by Mistral",
+    "owner": "ProductHunt",
+    "url": "https://www.producthunt.com/products/mistral-7b",
+    "description": "\n            Real-time speech-to-text with speaker diarization\n          \n\nDiscussion\n            |\n            Link\n",
+    "stars": 0,
+    "daily_stars": 100,
+    "language": "saas",
+    "fetched_at": "2026-02-05T11:41:35.953450"
+  },
+  {
+    "source": "product_hunt",
+    "name": "AI Bulk Analysis",
+    "owner": "ProductHunt",
+    "url": "https://www.producthunt.com/products/ai-bulk-analysis",
+    "description": "\n            Turn contracts into instant, actionable intelligence\n          \n\nDiscussion\n            |\n            Link\n",
+    "stars": 0,
+    "daily_stars": 100,
+    "language": "saas",
+    "fetched_at": "2026-02-05T11:41:35.953646"
+  },
+  {
+    "source": "product_hunt",
+    "name": "Higgsfield Vibe-Motion",
+    "owner": "ProductHunt",
+    "url": "https://www.producthunt.com/products/higgsfield",
+    "description": "\n            Create motion images in a single prompt in an editing canvas\n          \n\nDiscussion\n            |\n            Link\n",
+    "stars": 0,
+    "daily_stars": 100,
+    "language": "saas",
+    "fetched_at": "2026-02-05T11:41:35.953838"
+  },
+  {
+    "source": "product_hunt",
+    "name": "GitScrum Studio for IDE",
+    "owner": "ProductHunt",
+    "url": "https://www.producthunt.com/products/gitscrum-studio-for-ide",
+    "description": "\n            Full project management inside VS Code, Cursor & Windsurf\n          \n\nDiscussion\n            |\n            Link\n",
+    "stars": 0,
+    "daily_stars": 100,
+    "language": "saas",
+    "fetched_at": "2026-02-05T11:41:35.954028"
   },
   {
     "source": "github",
@@ -272,7 +272,7 @@
     "stars": 1014,
     "daily_stars": 98,
     "language": "python",
-    "fetched_at": "2026-02-05T11:36:16.513928"
+    "fetched_at": "2026-02-05T11:41:35.737636"
   },
   {
     "source": "github",
@@ -280,10 +280,10 @@
     "owner": "ZeroTworu",
     "url": "https://github.com/ZeroTworu/anet",
     "description": "Simple Rust VPN Client / Server",
-    "stars": 266,
+    "stars": 267,
     "daily_stars": 79,
     "language": "all",
-    "fetched_at": "2026-02-05T11:36:15.311571"
+    "fetched_at": "2026-02-05T11:41:34.501954"
   },
   {
     "source": "github",
@@ -291,10 +291,10 @@
     "owner": "topoteretes",
     "url": "https://github.com/topoteretes/cognee",
     "description": "Memory for AI Agents in 6 lines of code",
-    "stars": 11707,
+    "stars": 11709,
     "daily_stars": 69,
     "language": "all",
-    "fetched_at": "2026-02-05T11:36:15.308669"
+    "fetched_at": "2026-02-05T11:41:34.498907"
   },
   {
     "source": "github",
@@ -302,10 +302,10 @@
     "owner": "GH05TCREW",
     "url": "https://github.com/GH05TCREW/pentestagent",
     "description": "PentestAgent is an AI agent framework for black-box security testing, supporting bug bounty, red-team, and penetration testing workflows.",
-    "stars": 1388,
+    "stars": 1389,
     "daily_stars": 56,
     "language": "python",
-    "fetched_at": "2026-02-05T11:36:16.514862"
+    "fetched_at": "2026-02-05T11:41:35.738605"
   },
   {
     "source": "github",
@@ -316,7 +316,7 @@
     "stars": 19226,
     "daily_stars": 45,
     "language": "all",
-    "fetched_at": "2026-02-05T11:36:15.311122"
+    "fetched_at": "2026-02-05T11:41:34.501489"
   },
   {
     "source": "github",
@@ -324,10 +324,10 @@
     "owner": "frappe",
     "url": "https://github.com/frappe/erpnext",
     "description": "Free and Open Source Enterprise Resource Planning (ERP)",
-    "stars": 31534,
+    "stars": 31535,
     "daily_stars": 41,
     "language": "python",
-    "fetched_at": "2026-02-05T11:36:16.515935"
+    "fetched_at": "2026-02-05T11:41:35.739703"
   },
   {
     "source": "qiita",
@@ -338,7 +338,7 @@
     "stars": 40,
     "daily_stars": 40,
     "language": "japanese",
-    "fetched_at": "2026-02-05T11:36:20.056428"
+    "fetched_at": "2026-02-05T11:41:39.425777"
   },
   {
     "source": "qiita",
@@ -349,7 +349,7 @@
     "stars": 40,
     "daily_stars": 40,
     "language": "japanese",
-    "fetched_at": "2026-02-05T11:36:20.056442"
+    "fetched_at": "2026-02-05T11:41:39.425792"
   },
   {
     "source": "qiita",
@@ -360,7 +360,7 @@
     "stars": 40,
     "daily_stars": 40,
     "language": "japanese",
-    "fetched_at": "2026-02-05T11:36:20.056449"
+    "fetched_at": "2026-02-05T11:41:39.425798"
   },
   {
     "source": "qiita",
@@ -371,7 +371,7 @@
     "stars": 40,
     "daily_stars": 40,
     "language": "japanese",
-    "fetched_at": "2026-02-05T11:36:20.056455"
+    "fetched_at": "2026-02-05T11:41:39.425805"
   },
   {
     "source": "qiita",
@@ -382,7 +382,7 @@
     "stars": 40,
     "daily_stars": 40,
     "language": "japanese",
-    "fetched_at": "2026-02-05T11:36:20.289987"
+    "fetched_at": "2026-02-05T11:41:39.671747"
   },
   {
     "source": "qiita",
@@ -393,7 +393,7 @@
     "stars": 40,
     "daily_stars": 40,
     "language": "japanese",
-    "fetched_at": "2026-02-05T11:36:20.290002"
+    "fetched_at": "2026-02-05T11:41:39.671761"
   },
   {
     "source": "qiita",
@@ -404,7 +404,7 @@
     "stars": 40,
     "daily_stars": 40,
     "language": "japanese",
-    "fetched_at": "2026-02-05T11:36:20.290008"
+    "fetched_at": "2026-02-05T11:41:39.671768"
   },
   {
     "source": "qiita",
@@ -415,7 +415,7 @@
     "stars": 40,
     "daily_stars": 40,
     "language": "japanese",
-    "fetched_at": "2026-02-05T11:36:20.290014"
+    "fetched_at": "2026-02-05T11:41:39.671774"
   },
   {
     "source": "qiita",
@@ -426,7 +426,7 @@
     "stars": 40,
     "daily_stars": 40,
     "language": "japanese",
-    "fetched_at": "2026-02-05T11:36:20.514652"
+    "fetched_at": "2026-02-05T11:41:40.134808"
   },
   {
     "source": "qiita",
@@ -437,7 +437,7 @@
     "stars": 40,
     "daily_stars": 40,
     "language": "japanese",
-    "fetched_at": "2026-02-05T11:36:20.514667"
+    "fetched_at": "2026-02-05T11:41:40.134823"
   },
   {
     "source": "qiita",
@@ -448,7 +448,7 @@
     "stars": 40,
     "daily_stars": 40,
     "language": "japanese",
-    "fetched_at": "2026-02-05T11:36:20.514674"
+    "fetched_at": "2026-02-05T11:41:40.134830"
   },
   {
     "source": "qiita",
@@ -459,7 +459,7 @@
     "stars": 40,
     "daily_stars": 40,
     "language": "japanese",
-    "fetched_at": "2026-02-05T11:36:20.514680"
+    "fetched_at": "2026-02-05T11:41:40.134836"
   },
   {
     "source": "github",
@@ -470,7 +470,7 @@
     "stars": 6867,
     "daily_stars": 37,
     "language": "python",
-    "fetched_at": "2026-02-05T11:36:16.516534"
+    "fetched_at": "2026-02-05T11:41:35.740326"
   },
   {
     "source": "github",
@@ -478,10 +478,10 @@
     "owner": "nvm-sh",
     "url": "https://github.com/nvm-sh/nvm",
     "description": "Node Version Manager - POSIX-compliant bash script to manage multiple active node.js versions",
-    "stars": 91307,
+    "stars": 91308,
     "daily_stars": 35,
     "language": "all",
-    "fetched_at": "2026-02-05T11:36:15.310663"
+    "fetched_at": "2026-02-05T11:41:34.500992"
   },
   {
     "source": "github",
@@ -492,7 +492,7 @@
     "stars": 2012,
     "daily_stars": 32,
     "language": "python",
-    "fetched_at": "2026-02-05T11:36:16.518398"
+    "fetched_at": "2026-02-05T11:41:35.742256"
   },
   {
     "source": "github",
@@ -503,7 +503,7 @@
     "stars": 32273,
     "daily_stars": 31,
     "language": "all",
-    "fetched_at": "2026-02-05T11:36:15.310195"
+    "fetched_at": "2026-02-05T11:41:34.500514"
   },
   {
     "source": "github",
@@ -511,10 +511,10 @@
     "owner": "aquasecurity",
     "url": "https://github.com/aquasecurity/trivy",
     "description": "Find vulnerabilities, misconfigurations, secrets, SBOM in containers, Kubernetes, code repositories, clouds and more",
-    "stars": 31278,
+    "stars": 31279,
     "daily_stars": 23,
     "language": "all",
-    "fetched_at": "2026-02-05T11:36:15.309734"
+    "fetched_at": "2026-02-05T11:41:34.500019"
   },
   {
     "source": "github",
@@ -525,7 +525,7 @@
     "stars": 10062,
     "daily_stars": 19,
     "language": "python",
-    "fetched_at": "2026-02-05T11:36:16.517461"
+    "fetched_at": "2026-02-05T11:41:35.741291"
   },
   {
     "source": "github",
@@ -536,6 +536,6 @@
     "stars": 8079,
     "daily_stars": 18,
     "language": "python",
-    "fetched_at": "2026-02-05T11:36:16.515450"
+    "fetched_at": "2026-02-05T11:41:35.739219"
   }
 ]

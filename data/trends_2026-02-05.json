@@ -5,10 +5,10 @@
     "owner": "thedotmack",
     "url": "https://github.com/thedotmack/claude-mem",
     "description": "A Claude Code plugin that automatically captures everything Claude does during your coding sessions, compresses it with AI (using Claude's agent-sdk), and injects relevant context back into future sessions.",
-    "stars": 22906,
+    "stars": 22911,
     "daily_stars": 2638,
     "language": "all",
-    "fetched_at": "2026-02-05T06:36:51.429143"
+    "fetched_at": "2026-02-05T06:41:13.281849"
   },
   {
     "source": "github_trending",
@@ -19,7 +19,7 @@
     "stars": 3863,
     "daily_stars": 746,
     "language": "all",
-    "fetched_at": "2026-02-05T06:36:51.429667"
+    "fetched_at": "2026-02-05T06:41:13.282350"
   },
   {
     "source": "github_trending",
@@ -27,10 +27,10 @@
     "owner": "disler",
     "url": "https://github.com/disler/claude-code-hooks-mastery",
     "description": "Master Claude Code Hooks",
-    "stars": 2448,
+    "stars": 2450,
     "daily_stars": 47,
     "language": "all",
-    "fetched_at": "2026-02-05T06:36:51.430128"
+    "fetched_at": "2026-02-05T06:41:13.282773"
   },
   {
     "source": "github_trending",
@@ -41,7 +41,7 @@
     "stars": 30046,
     "daily_stars": 227,
     "language": "all",
-    "fetched_at": "2026-02-05T06:36:51.430621"
+    "fetched_at": "2026-02-05T06:41:13.283220"
   },
   {
     "source": "github_trending",
@@ -52,7 +52,7 @@
     "stars": 26213,
     "daily_stars": 28,
     "language": "all",
-    "fetched_at": "2026-02-05T06:36:51.431085"
+    "fetched_at": "2026-02-05T06:41:13.283662"
   },
   {
     "source": "github_trending",
@@ -63,7 +63,7 @@
     "stars": 4365,
     "daily_stars": 3,
     "language": "all",
-    "fetched_at": "2026-02-05T06:36:51.431574"
+    "fetched_at": "2026-02-05T06:41:13.284123"
   },
   {
     "source": "github_trending",
@@ -71,10 +71,10 @@
     "owner": "Canner",
     "url": "https://github.com/Canner/WrenAI",
     "description": "⚡️ GenBI (Generative BI) queries any database in natural language, generates accurate SQL (Text-to-SQL), charts (Text-to-Chart), and AI-powered business intelligence in seconds.",
-    "stars": 14023,
+    "stars": 14025,
     "daily_stars": 89,
     "language": "all",
-    "fetched_at": "2026-02-05T06:36:51.432055"
+    "fetched_at": "2026-02-05T06:41:13.284568"
   },
   {
     "source": "github_trending",
@@ -82,10 +82,10 @@
     "owner": "pedramamini",
     "url": "https://github.com/pedramamini/Maestro",
     "description": "Agent Orchestration Command Center",
-    "stars": 1708,
+    "stars": 1710,
     "daily_stars": 187,
     "language": "all",
-    "fetched_at": "2026-02-05T06:36:51.432558"
+    "fetched_at": "2026-02-05T06:41:13.285012"
   },
   {
     "source": "github_trending",
@@ -96,7 +96,7 @@
     "stars": 91274,
     "daily_stars": 35,
     "language": "all",
-    "fetched_at": "2026-02-05T06:36:51.433031"
+    "fetched_at": "2026-02-05T06:41:13.285447"
   },
   {
     "source": "github_trending",
@@ -104,10 +104,10 @@
     "owner": "microsoft",
     "url": "https://github.com/microsoft/qlib",
     "description": "Qlib is an AI-oriented Quant investment platform that aims to use AI tech to empower Quant Research, from exploring ideas to implementing productions. Qlib supports diverse ML modeling paradigms, including supervised learning, market dynamics modeling, and RL, and is now equipped withhttps://github.com/microsoft/RD-Agentto automate R&D process.",
-    "stars": 36605,
+    "stars": 36606,
     "daily_stars": 83,
     "language": "all",
-    "fetched_at": "2026-02-05T06:36:51.433543"
+    "fetched_at": "2026-02-05T06:41:13.285891"
   },
   {
     "source": "github_trending",
@@ -118,7 +118,7 @@
     "stars": 58321,
     "daily_stars": 68,
     "language": "all",
-    "fetched_at": "2026-02-05T06:36:51.434011"
+    "fetched_at": "2026-02-05T06:41:13.286330"
   },
   {
     "source": "github_trending",
@@ -126,10 +126,10 @@
     "owner": "likec4",
     "url": "https://github.com/likec4/likec4",
     "description": "Visualize, collaborate, and evolve the software architecture with always actual and live diagrams from your code",
-    "stars": 1535,
+    "stars": 1536,
     "daily_stars": 29,
     "language": "all",
-    "fetched_at": "2026-02-05T06:36:51.434623"
+    "fetched_at": "2026-02-05T06:41:13.286881"
   },
   {
     "source": "github_trending",
@@ -140,7 +140,7 @@
     "stars": 42279,
     "daily_stars": 313,
     "language": "python",
-    "fetched_at": "2026-02-05T06:36:52.628390"
+    "fetched_at": "2026-02-05T06:41:14.412630"
   },
   {
     "source": "github_trending",
@@ -151,7 +151,7 @@
     "stars": 28558,
     "daily_stars": 14,
     "language": "python",
-    "fetched_at": "2026-02-05T06:36:52.629010"
+    "fetched_at": "2026-02-05T06:41:14.413216"
   },
   {
     "source": "github_trending",
@@ -162,7 +162,7 @@
     "stars": 41029,
     "daily_stars": 32,
     "language": "python",
-    "fetched_at": "2026-02-05T06:36:52.629510"
+    "fetched_at": "2026-02-05T06:41:14.413650"
   },
   {
     "source": "github_trending",
@@ -173,7 +173,7 @@
     "stars": 571,
     "daily_stars": 289,
     "language": "python",
-    "fetched_at": "2026-02-05T06:36:52.629995"
+    "fetched_at": "2026-02-05T06:41:14.414086"
   },
   {
     "source": "github_trending",
@@ -184,7 +184,7 @@
     "stars": 10183,
     "daily_stars": 26,
     "language": "python",
-    "fetched_at": "2026-02-05T06:36:52.630487"
+    "fetched_at": "2026-02-05T06:41:14.414515"
   },
   {
     "source": "github_trending",
@@ -195,7 +195,7 @@
     "stars": 14896,
     "daily_stars": 13,
     "language": "python",
-    "fetched_at": "2026-02-05T06:36:52.630966"
+    "fetched_at": "2026-02-05T06:41:14.414946"
   },
   {
     "source": "github_trending",
@@ -203,10 +203,10 @@
     "owner": "QwenLM",
     "url": "https://github.com/QwenLM/Qwen3-Coder",
     "description": "Qwen3-Coder is the code version of Qwen3, the large language model series developed by Qwen team.",
-    "stars": 15271,
+    "stars": 15272,
     "daily_stars": 123,
     "language": "python",
-    "fetched_at": "2026-02-05T06:36:52.631457"
+    "fetched_at": "2026-02-05T06:41:14.415377"
   },
   {
     "source": "github_trending",
@@ -217,7 +217,7 @@
     "stars": 13437,
     "daily_stars": 109,
     "language": "python",
-    "fetched_at": "2026-02-05T06:36:52.631937"
+    "fetched_at": "2026-02-05T06:41:14.415802"
   },
   {
     "source": "github_trending",
@@ -228,7 +228,7 @@
     "stars": 14003,
     "daily_stars": 315,
     "language": "python",
-    "fetched_at": "2026-02-05T06:36:52.632429"
+    "fetched_at": "2026-02-05T06:41:14.416244"
   },
   {
     "source": "github_trending",
@@ -239,7 +239,7 @@
     "stars": 29304,
     "daily_stars": 135,
     "language": "python",
-    "fetched_at": "2026-02-05T06:36:52.632907"
+    "fetched_at": "2026-02-05T06:41:14.416680"
   },
   {
     "source": "product_hunt",
@@ -250,73 +250,7 @@
     "stars": 0,
     "daily_stars": 100,
     "language": "saas",
-    "fetched_at": "2026-02-05T06:36:52.837141"
-  },
-  {
-    "source": "product_hunt",
-    "name": "Genstore.ai",
-    "owner": "ProductHunt",
-    "url": "https://www.producthunt.com/products/genstore-ai-2",
-    "description": "\n            Test, iterate, and launch an agentic storefront in minutes\n          \n\nDiscussion\n            |\n            Link\n",
-    "stars": 0,
-    "daily_stars": 100,
-    "language": "saas",
-    "fetched_at": "2026-02-05T06:36:52.837379"
-  },
-  {
-    "source": "product_hunt",
-    "name": "Nexuscale AI",
-    "owner": "ProductHunt",
-    "url": "https://www.producthunt.com/products/nexuscale-ai",
-    "description": "\n            AI sales assistant that finds leads + books meetings for you\n          \n\nDiscussion\n            |\n            Link\n",
-    "stars": 0,
-    "daily_stars": 100,
-    "language": "saas",
-    "fetched_at": "2026-02-05T06:36:52.837577"
-  },
-  {
-    "source": "product_hunt",
-    "name": "Miniloop",
-    "owner": "ProductHunt",
-    "url": "https://www.producthunt.com/products/miniloop",
-    "description": "\n            Turn natural language into AI agents and automations\n          \n\nDiscussion\n            |\n            Link\n",
-    "stars": 0,
-    "daily_stars": 100,
-    "language": "saas",
-    "fetched_at": "2026-02-05T06:36:52.837769"
-  },
-  {
-    "source": "product_hunt",
-    "name": "Beni AI",
-    "owner": "ProductHunt",
-    "url": "https://www.producthunt.com/products/beni-ai-video-call-ai-companion",
-    "description": "\n            Face to face AI companion calls with voice, motion, memory\n          \n\nDiscussion\n            |\n            Link\n",
-    "stars": 0,
-    "daily_stars": 100,
-    "language": "saas",
-    "fetched_at": "2026-02-05T06:36:52.837960"
-  },
-  {
-    "source": "product_hunt",
-    "name": "OpenSheet",
-    "owner": "ProductHunt",
-    "url": "https://www.producthunt.com/products/opensheet",
-    "description": "\n             Turn raw CSV and JSON into an interactive data canvas\n          \n\nDiscussion\n            |\n            Link\n",
-    "stars": 0,
-    "daily_stars": 100,
-    "language": "saas",
-    "fetched_at": "2026-02-05T06:36:52.838149"
-  },
-  {
-    "source": "product_hunt",
-    "name": "Agentset",
-    "owner": "ProductHunt",
-    "url": "https://www.producthunt.com/products/agentset",
-    "description": "\n            APIs for building AI chat and search\n          \n\nDiscussion\n            |\n            Link\n",
-    "stars": 0,
-    "daily_stars": 100,
-    "language": "saas",
-    "fetched_at": "2026-02-05T06:36:52.838360"
+    "fetched_at": "2026-02-05T06:41:14.646033"
   },
   {
     "source": "product_hunt",
@@ -327,28 +261,94 @@
     "stars": 0,
     "daily_stars": 100,
     "language": "saas",
-    "fetched_at": "2026-02-05T06:36:52.838564"
+    "fetched_at": "2026-02-05T06:41:14.646221"
   },
   {
     "source": "product_hunt",
-    "name": "spacecake",
+    "name": "CreateOS",
     "owner": "ProductHunt",
-    "url": "https://www.producthunt.com/products/spacecake",
-    "description": "\n            Run Claude Code agents in terminal with a visual editor\n          \n\nDiscussion\n            |\n            Link\n",
+    "url": "https://www.producthunt.com/products/createos",
+    "description": "\n            Build and deploy apps from any AI coding tool, in one place\n          \n\nDiscussion\n            |\n            Link\n",
     "stars": 0,
     "daily_stars": 100,
     "language": "saas",
-    "fetched_at": "2026-02-05T06:36:52.838755"
+    "fetched_at": "2026-02-05T06:41:14.646381"
   },
   {
     "source": "product_hunt",
-    "name": "Chord Identifier",
+    "name": "Bunny Database",
     "owner": "ProductHunt",
-    "url": "https://www.producthunt.com/products/chord-identifier-2",
-    "description": "\n            Highlights in‑key notes and flags wrong notes as you play\n          \n\nDiscussion\n            |\n            Link\n",
+    "url": "https://www.producthunt.com/products/bunny-net",
+    "description": "\n            Like SQLite, but for the web\n          \n\nDiscussion\n            |\n            Link\n",
     "stars": 0,
     "daily_stars": 100,
     "language": "saas",
-    "fetched_at": "2026-02-05T06:36:52.838955"
+    "fetched_at": "2026-02-05T06:41:14.646532"
+  },
+  {
+    "source": "product_hunt",
+    "name": "Xcode 26.3",
+    "owner": "ProductHunt",
+    "url": "https://www.producthunt.com/products/xcode",
+    "description": "\n            Leverage coding agents to tackle complex tasks autonomously\n          \n\nDiscussion\n            |\n            Link\n",
+    "stars": 0,
+    "daily_stars": 100,
+    "language": "saas",
+    "fetched_at": "2026-02-05T06:41:14.646678"
+  },
+  {
+    "source": "product_hunt",
+    "name": "Genstore.ai",
+    "owner": "ProductHunt",
+    "url": "https://www.producthunt.com/products/genstore-ai-2",
+    "description": "\n            Test, iterate, and launch an agentic storefront in minutes\n          \n\nDiscussion\n            |\n            Link\n",
+    "stars": 0,
+    "daily_stars": 100,
+    "language": "saas",
+    "fetched_at": "2026-02-05T06:41:14.646822"
+  },
+  {
+    "source": "product_hunt",
+    "name": "Nexuscale AI",
+    "owner": "ProductHunt",
+    "url": "https://www.producthunt.com/products/nexuscale-ai",
+    "description": "\n            AI sales assistant that finds leads + books meetings for you\n          \n\nDiscussion\n            |\n            Link\n",
+    "stars": 0,
+    "daily_stars": 100,
+    "language": "saas",
+    "fetched_at": "2026-02-05T06:41:14.646970"
+  },
+  {
+    "source": "product_hunt",
+    "name": "Miniloop",
+    "owner": "ProductHunt",
+    "url": "https://www.producthunt.com/products/miniloop",
+    "description": "\n            Turn natural language into AI agents and automations\n          \n\nDiscussion\n            |\n            Link\n",
+    "stars": 0,
+    "daily_stars": 100,
+    "language": "saas",
+    "fetched_at": "2026-02-05T06:41:14.647125"
+  },
+  {
+    "source": "product_hunt",
+    "name": "Beni AI",
+    "owner": "ProductHunt",
+    "url": "https://www.producthunt.com/products/beni-ai-video-call-ai-companion",
+    "description": "\n            Face to face AI companion calls with voice, motion, memory\n          \n\nDiscussion\n            |\n            Link\n",
+    "stars": 0,
+    "daily_stars": 100,
+    "language": "saas",
+    "fetched_at": "2026-02-05T06:41:14.647266"
+  },
+  {
+    "source": "product_hunt",
+    "name": "OpenSheet",
+    "owner": "ProductHunt",
+    "url": "https://www.producthunt.com/products/opensheet",
+    "description": "\n             Turn raw CSV and JSON into an interactive data canvas\n          \n\nDiscussion\n            |\n            Link\n",
+    "stars": 0,
+    "daily_stars": 100,
+    "language": "saas",
+    "fetched_at": "2026-02-05T06:41:14.647403"
   }
 ]

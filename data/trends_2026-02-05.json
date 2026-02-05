@@ -5,10 +5,10 @@
     "owner": "thedotmack",
     "url": "https://github.com/thedotmack/claude-mem",
     "description": "A Claude Code plugin that automatically captures everything Claude does during your coding sessions, compresses it with AI (using Claude's agent-sdk), and injects relevant context back into future sessions.",
-    "stars": 23134,
+    "stars": 23150,
     "daily_stars": 2638,
     "language": "all",
-    "fetched_at": "2026-02-05T09:28:36.517737"
+    "fetched_at": "2026-02-05T09:38:28.384302"
   },
   {
     "source": "hacker_news",
@@ -19,7 +19,7 @@
     "stars": 1060,
     "daily_stars": 1060,
     "language": "tech",
-    "fetched_at": "2026-02-05T09:28:40.410725"
+    "fetched_at": "2026-02-05T09:38:32.912979"
   },
   {
     "source": "github",
@@ -27,10 +27,10 @@
     "owner": "openai",
     "url": "https://github.com/openai/skills",
     "description": "Skills Catalog for Codex",
-    "stars": 3956,
+    "stars": 3962,
     "daily_stars": 746,
     "language": "all",
-    "fetched_at": "2026-02-05T09:28:36.518253"
+    "fetched_at": "2026-02-05T09:38:28.384818"
   },
   {
     "source": "hacker_news",
@@ -38,10 +38,10 @@
     "owner": "meetpateltech",
     "url": "https://www.anthropic.com/news/claude-is-a-space-to-think",
     "description": "Claude is a space to think",
-    "stars": 450,
-    "daily_stars": 450,
+    "stars": 451,
+    "daily_stars": 451,
     "language": "tech",
-    "fetched_at": "2026-02-05T09:28:41.159684"
+    "fetched_at": "2026-02-05T09:38:34.322329"
   },
   {
     "source": "hacker_news",
@@ -49,10 +49,10 @@
     "owner": "namanyayg",
     "url": "https://nmn.gl/blog/ai-killing-b2b-saas",
     "description": "AI is killing B2B SaaS",
-    "stars": 337,
-    "daily_stars": 337,
+    "stars": 339,
+    "daily_stars": 339,
     "language": "tech",
-    "fetched_at": "2026-02-05T09:28:38.970163"
+    "fetched_at": "2026-02-05T09:38:30.891944"
   },
   {
     "source": "github",
@@ -63,7 +63,7 @@
     "stars": 14024,
     "daily_stars": 315,
     "language": "python",
-    "fetched_at": "2026-02-05T09:28:38.110350"
+    "fetched_at": "2026-02-05T09:38:29.529604"
   },
   {
     "source": "github",
@@ -74,7 +74,7 @@
     "stars": 42290,
     "daily_stars": 313,
     "language": "python",
-    "fetched_at": "2026-02-05T09:28:38.106323"
+    "fetched_at": "2026-02-05T09:38:29.525649"
   },
   {
     "source": "github",
@@ -85,7 +85,7 @@
     "stars": 576,
     "daily_stars": 289,
     "language": "python",
-    "fetched_at": "2026-02-05T09:28:38.107921"
+    "fetched_at": "2026-02-05T09:38:29.527232"
   },
   {
     "source": "hacker_news",
@@ -93,10 +93,10 @@
     "owner": "fugu2",
     "url": "https://boxc.net/blog/2026/claude-code-connecting-to-local-models-when-your-quota-runs-out/",
     "description": "Claude Code: connect to a local model when your quota runs out",
-    "stars": 272,
-    "daily_stars": 272,
+    "stars": 274,
+    "daily_stars": 274,
     "language": "tech",
-    "fetched_at": "2026-02-05T09:28:38.810213"
+    "fetched_at": "2026-02-05T09:38:30.613587"
   },
   {
     "source": "github",
@@ -104,10 +104,10 @@
     "owner": "OpenBMB",
     "url": "https://github.com/OpenBMB/ChatDev",
     "description": "ChatDev 2.0: Dev All through LLM-powered Multi-Agent Collaboration",
-    "stars": 30095,
+    "stars": 30099,
     "daily_stars": 227,
     "language": "all",
-    "fetched_at": "2026-02-05T09:28:36.519330"
+    "fetched_at": "2026-02-05T09:38:28.385778"
   },
   {
     "source": "hacker_news",
@@ -118,7 +118,7 @@
     "stars": 212,
     "daily_stars": 212,
     "language": "tech",
-    "fetched_at": "2026-02-05T09:28:39.132139"
+    "fetched_at": "2026-02-05T09:38:31.188253"
   },
   {
     "source": "hacker_news",
@@ -126,10 +126,10 @@
     "owner": "WaitWaitWha",
     "url": "https://www.biometricupdate.com/202602/ice-seeks-industry-input-on-ad-tech-location-data-for-investigative-use",
     "description": "ICE seeks industry input on ad tech location data for investigative use",
-    "stars": 195,
-    "daily_stars": 195,
+    "stars": 199,
+    "daily_stars": 199,
     "language": "tech",
-    "fetched_at": "2026-02-05T09:28:39.715904"
+    "fetched_at": "2026-02-05T09:38:31.962356"
   },
   {
     "source": "github",
@@ -140,7 +140,7 @@
     "stars": 1734,
     "daily_stars": 187,
     "language": "all",
-    "fetched_at": "2026-02-05T09:28:36.521288"
+    "fetched_at": "2026-02-05T09:38:28.387726"
   },
   {
     "source": "github",
@@ -151,7 +151,7 @@
     "stars": 29312,
     "daily_stars": 135,
     "language": "python",
-    "fetched_at": "2026-02-05T09:28:38.110823"
+    "fetched_at": "2026-02-05T09:38:29.530089"
   },
   {
     "source": "github",
@@ -162,7 +162,18 @@
     "stars": 15288,
     "daily_stars": 123,
     "language": "python",
-    "fetched_at": "2026-02-05T09:28:38.109393"
+    "fetched_at": "2026-02-05T09:38:29.528658"
+  },
+  {
+    "source": "hacker_news",
+    "name": "RS-SDK: Drive RuneScape with Claude Code",
+    "owner": "evakhoury",
+    "url": "https://github.com/MaxBittker/rs-sdk",
+    "description": "RS-SDK: Drive RuneScape with Claude Code",
+    "stars": 111,
+    "daily_stars": 111,
+    "language": "tech",
+    "fetched_at": "2026-02-05T09:38:32.724440"
   },
   {
     "source": "github",
@@ -173,29 +184,7 @@
     "stars": 13447,
     "daily_stars": 109,
     "language": "python",
-    "fetched_at": "2026-02-05T09:28:38.109865"
-  },
-  {
-    "source": "hacker_news",
-    "name": "RS-SDK: Drive RuneScape with Claude Code",
-    "owner": "evakhoury",
-    "url": "https://github.com/MaxBittker/rs-sdk",
-    "description": "RS-SDK: Drive RuneScape with Claude Code",
-    "stars": 109,
-    "daily_stars": 109,
-    "language": "tech",
-    "fetched_at": "2026-02-05T09:28:40.189812"
-  },
-  {
-    "source": "product_hunt",
-    "name": "Voxtral Transcribe 2 by Mistral",
-    "owner": "ProductHunt",
-    "url": "https://www.producthunt.com/products/mistral-7b",
-    "description": "\n            Real-time speech-to-text with speaker diarization\n          \n\nDiscussion\n            |\n            Link\n",
-    "stars": 0,
-    "daily_stars": 100,
-    "language": "saas",
-    "fetched_at": "2026-02-05T09:28:38.275195"
+    "fetched_at": "2026-02-05T09:38:29.529136"
   },
   {
     "source": "product_hunt",
@@ -206,7 +195,7 @@
     "stars": 0,
     "daily_stars": 100,
     "language": "saas",
-    "fetched_at": "2026-02-05T09:28:38.275431"
+    "fetched_at": "2026-02-05T09:38:29.707933"
   },
   {
     "source": "product_hunt",
@@ -217,18 +206,7 @@
     "stars": 0,
     "daily_stars": 100,
     "language": "saas",
-    "fetched_at": "2026-02-05T09:28:38.275627"
-  },
-  {
-    "source": "product_hunt",
-    "name": "Webflow AI site builder",
-    "owner": "ProductHunt",
-    "url": "https://www.producthunt.com/products/webflow",
-    "description": "\n            Turn a prompt into a production-ready site with Webflow\n          \n\nDiscussion\n            |\n            Link\n",
-    "stars": 0,
-    "daily_stars": 100,
-    "language": "saas",
-    "fetched_at": "2026-02-05T09:28:38.275817"
+    "fetched_at": "2026-02-05T09:38:29.708163"
   },
   {
     "source": "product_hunt",
@@ -239,40 +217,7 @@
     "stars": 0,
     "daily_stars": 100,
     "language": "saas",
-    "fetched_at": "2026-02-05T09:28:38.276014"
-  },
-  {
-    "source": "product_hunt",
-    "name": "The new v0",
-    "owner": "ProductHunt",
-    "url": "https://www.producthunt.com/products/v0",
-    "description": "\n            Full stack vibe coding platform. Created by Vercel.\n          \n\nDiscussion\n            |\n            Link\n",
-    "stars": 0,
-    "daily_stars": 100,
-    "language": "saas",
-    "fetched_at": "2026-02-05T09:28:38.276201"
-  },
-  {
-    "source": "product_hunt",
-    "name": "Higgsfield Vibe-Motion",
-    "owner": "ProductHunt",
-    "url": "https://www.producthunt.com/products/higgsfield",
-    "description": "\n            Create motion images in a single prompt in an editing canvas\n          \n\nDiscussion\n            |\n            Link\n",
-    "stars": 0,
-    "daily_stars": 100,
-    "language": "saas",
-    "fetched_at": "2026-02-05T09:28:38.276412"
-  },
-  {
-    "source": "product_hunt",
-    "name": "Supaboard",
-    "owner": "ProductHunt",
-    "url": "https://www.producthunt.com/products/supaboard-ai",
-    "description": "\n            Ask in plain English. Get accurate answers from your data\n          \n\nDiscussion\n            |\n            Link\n",
-    "stars": 0,
-    "daily_stars": 100,
-    "language": "saas",
-    "fetched_at": "2026-02-05T09:28:38.276612"
+    "fetched_at": "2026-02-05T09:38:29.708371"
   },
   {
     "source": "product_hunt",
@@ -283,18 +228,73 @@
     "stars": 0,
     "daily_stars": 100,
     "language": "saas",
-    "fetched_at": "2026-02-05T09:28:38.276802"
+    "fetched_at": "2026-02-05T09:38:29.708564"
   },
   {
     "source": "product_hunt",
-    "name": "Candle (YC F24)",
+    "name": "The new v0",
     "owner": "ProductHunt",
-    "url": "https://www.producthunt.com/products/candle-4",
-    "description": "\n            One shared moment a day\n          \n\nDiscussion\n            |\n            Link\n",
+    "url": "https://www.producthunt.com/products/v0",
+    "description": "\n            Full stack vibe coding platform. Created by Vercel.\n          \n\nDiscussion\n            |\n            Link\n",
     "stars": 0,
     "daily_stars": 100,
     "language": "saas",
-    "fetched_at": "2026-02-05T09:28:38.276988"
+    "fetched_at": "2026-02-05T09:38:29.708759"
+  },
+  {
+    "source": "product_hunt",
+    "name": "Voxtral Transcribe 2 by Mistral",
+    "owner": "ProductHunt",
+    "url": "https://www.producthunt.com/products/mistral-7b",
+    "description": "\n            Real-time speech-to-text with speaker diarization\n          \n\nDiscussion\n            |\n            Link\n",
+    "stars": 0,
+    "daily_stars": 100,
+    "language": "saas",
+    "fetched_at": "2026-02-05T09:38:29.708950"
+  },
+  {
+    "source": "product_hunt",
+    "name": "Supaboard",
+    "owner": "ProductHunt",
+    "url": "https://www.producthunt.com/products/supaboard-ai",
+    "description": "\n            Ask in plain English. Get accurate answers from your data\n          \n\nDiscussion\n            |\n            Link\n",
+    "stars": 0,
+    "daily_stars": 100,
+    "language": "saas",
+    "fetched_at": "2026-02-05T09:38:29.709160"
+  },
+  {
+    "source": "product_hunt",
+    "name": "Higgsfield Vibe-Motion",
+    "owner": "ProductHunt",
+    "url": "https://www.producthunt.com/products/higgsfield",
+    "description": "\n            Create motion images in a single prompt in an editing canvas\n          \n\nDiscussion\n            |\n            Link\n",
+    "stars": 0,
+    "daily_stars": 100,
+    "language": "saas",
+    "fetched_at": "2026-02-05T09:38:29.709350"
+  },
+  {
+    "source": "product_hunt",
+    "name": "Webflow AI site builder",
+    "owner": "ProductHunt",
+    "url": "https://www.producthunt.com/products/webflow",
+    "description": "\n            Turn a prompt into a production-ready site with Webflow\n          \n\nDiscussion\n            |\n            Link\n",
+    "stars": 0,
+    "daily_stars": 100,
+    "language": "saas",
+    "fetched_at": "2026-02-05T09:38:29.709537"
+  },
+  {
+    "source": "product_hunt",
+    "name": "Genstore.ai",
+    "owner": "ProductHunt",
+    "url": "https://www.producthunt.com/products/genstore-ai-2",
+    "description": "\n            Test, iterate, and launch an agentic storefront in minutes\n          \n\nDiscussion\n            |\n            Link\n",
+    "stars": 0,
+    "daily_stars": 100,
+    "language": "saas",
+    "fetched_at": "2026-02-05T09:38:29.709723"
   },
   {
     "source": "github",
@@ -302,10 +302,10 @@
     "owner": "Canner",
     "url": "https://github.com/Canner/WrenAI",
     "description": "⚡️ GenBI (Generative BI) queries any database in natural language, generates accurate SQL (Text-to-SQL), charts (Text-to-Chart), and AI-powered business intelligence in seconds.",
-    "stars": 14073,
+    "stars": 14076,
     "daily_stars": 89,
     "language": "all",
-    "fetched_at": "2026-02-05T09:28:36.520818"
+    "fetched_at": "2026-02-05T09:38:28.387251"
   },
   {
     "source": "github",
@@ -313,10 +313,10 @@
     "owner": "microsoft",
     "url": "https://github.com/microsoft/qlib",
     "description": "Qlib is an AI-oriented Quant investment platform that aims to use AI tech to empower Quant Research, from exploring ideas to implementing productions. Qlib supports diverse ML modeling paradigms, including supervised learning, market dynamics modeling, and RL, and is now equipped withhttps://github.com/microsoft/RD-Agentto automate R&D process.",
-    "stars": 36660,
+    "stars": 36676,
     "daily_stars": 83,
     "language": "all",
-    "fetched_at": "2026-02-05T09:28:36.522326"
+    "fetched_at": "2026-02-05T09:38:28.388700"
   },
   {
     "source": "github",
@@ -327,7 +327,7 @@
     "stars": 58348,
     "daily_stars": 68,
     "language": "all",
-    "fetched_at": "2026-02-05T09:28:36.522799"
+    "fetched_at": "2026-02-05T09:38:28.389181"
   },
   {
     "source": "github",
@@ -335,10 +335,10 @@
     "owner": "disler",
     "url": "https://github.com/disler/claude-code-hooks-mastery",
     "description": "Master Claude Code Hooks",
-    "stars": 2492,
+    "stars": 2493,
     "daily_stars": 47,
     "language": "all",
-    "fetched_at": "2026-02-05T09:28:36.518773"
+    "fetched_at": "2026-02-05T09:38:28.385303"
   },
   {
     "source": "qiita",
@@ -349,7 +349,7 @@
     "stars": 40,
     "daily_stars": 40,
     "language": "japanese",
-    "fetched_at": "2026-02-05T09:28:41.917069"
+    "fetched_at": "2026-02-05T09:38:35.162985"
   },
   {
     "source": "qiita",
@@ -360,7 +360,7 @@
     "stars": 40,
     "daily_stars": 40,
     "language": "japanese",
-    "fetched_at": "2026-02-05T09:28:41.917083"
+    "fetched_at": "2026-02-05T09:38:35.162999"
   },
   {
     "source": "qiita",
@@ -371,7 +371,7 @@
     "stars": 40,
     "daily_stars": 40,
     "language": "japanese",
-    "fetched_at": "2026-02-05T09:28:41.917090"
+    "fetched_at": "2026-02-05T09:38:35.163005"
   },
   {
     "source": "qiita",
@@ -382,7 +382,18 @@
     "stars": 40,
     "daily_stars": 40,
     "language": "japanese",
-    "fetched_at": "2026-02-05T09:28:41.917096"
+    "fetched_at": "2026-02-05T09:38:35.163011"
+  },
+  {
+    "source": "qiita",
+    "name": "Github Copilotの提案を見やすくするには",
+    "owner": "akisatoon",
+    "url": "https://qiita.com/akisatoon/items/b0589904427e42c85b5d",
+    "description": "Github Copilotの提案を見やすくするには",
+    "stars": 40,
+    "daily_stars": 40,
+    "language": "japanese",
+    "fetched_at": "2026-02-05T09:38:35.424392"
   },
   {
     "source": "qiita",
@@ -393,7 +404,7 @@
     "stars": 40,
     "daily_stars": 40,
     "language": "japanese",
-    "fetched_at": "2026-02-05T09:28:42.147432"
+    "fetched_at": "2026-02-05T09:38:35.424405"
   },
   {
     "source": "qiita",
@@ -404,7 +415,7 @@
     "stars": 40,
     "daily_stars": 40,
     "language": "japanese",
-    "fetched_at": "2026-02-05T09:28:42.147447"
+    "fetched_at": "2026-02-05T09:38:35.424411"
   },
   {
     "source": "qiita",
@@ -415,18 +426,7 @@
     "stars": 40,
     "daily_stars": 40,
     "language": "japanese",
-    "fetched_at": "2026-02-05T09:28:42.147454"
-  },
-  {
-    "source": "qiita",
-    "name": "【雀魂】勝率を劇的に変える。最強のAIコーチ「MahjongMaster」、無料公開中！",
-    "owner": "MahjongM",
-    "url": "https://qiita.com/MahjongM/items/af53c24e152d41873481",
-    "description": "【雀魂】勝率を劇的に変える。最強のAIコーチ「MahjongMaster」、無料公開中！",
-    "stars": 40,
-    "daily_stars": 40,
-    "language": "japanese",
-    "fetched_at": "2026-02-05T09:28:42.147460"
+    "fetched_at": "2026-02-05T09:38:35.424418"
   },
   {
     "source": "qiita",
@@ -437,7 +437,7 @@
     "stars": 40,
     "daily_stars": 40,
     "language": "japanese",
-    "fetched_at": "2026-02-05T09:28:42.407143"
+    "fetched_at": "2026-02-05T09:38:35.673198"
   },
   {
     "source": "qiita",
@@ -448,7 +448,7 @@
     "stars": 40,
     "daily_stars": 40,
     "language": "japanese",
-    "fetched_at": "2026-02-05T09:28:42.407149"
+    "fetched_at": "2026-02-05T09:38:35.673204"
   },
   {
     "source": "qiita",
@@ -459,7 +459,7 @@
     "stars": 40,
     "daily_stars": 40,
     "language": "japanese",
-    "fetched_at": "2026-02-05T09:28:42.407155"
+    "fetched_at": "2026-02-05T09:38:35.673210"
   },
   {
     "source": "github",
@@ -467,10 +467,10 @@
     "owner": "nvm-sh",
     "url": "https://github.com/nvm-sh/nvm",
     "description": "Node Version Manager - POSIX-compliant bash script to manage multiple active node.js versions",
-    "stars": 91291,
+    "stars": 91293,
     "daily_stars": 35,
     "language": "all",
-    "fetched_at": "2026-02-05T09:28:36.521817"
+    "fetched_at": "2026-02-05T09:38:28.388211"
   },
   {
     "source": "github",
@@ -481,7 +481,7 @@
     "stars": 41043,
     "daily_stars": 32,
     "language": "python",
-    "fetched_at": "2026-02-05T09:28:38.107439"
+    "fetched_at": "2026-02-05T09:38:29.526748"
   },
   {
     "source": "github",
@@ -489,10 +489,10 @@
     "owner": "likec4",
     "url": "https://github.com/likec4/likec4",
     "description": "Visualize, collaborate, and evolve the software architecture with always actual and live diagrams from your code",
-    "stars": 1597,
+    "stars": 1598,
     "daily_stars": 29,
     "language": "all",
-    "fetched_at": "2026-02-05T09:28:36.523413"
+    "fetched_at": "2026-02-05T09:38:28.389777"
   },
   {
     "source": "github",
@@ -500,10 +500,10 @@
     "owner": "ankitects",
     "url": "https://github.com/ankitects/anki",
     "description": "Anki is a smart spaced repetition flashcard program",
-    "stars": 26241,
+    "stars": 26244,
     "daily_stars": 28,
     "language": "all",
-    "fetched_at": "2026-02-05T09:28:36.519816"
+    "fetched_at": "2026-02-05T09:38:28.386272"
   },
   {
     "source": "github",
@@ -514,7 +514,7 @@
     "stars": 10188,
     "daily_stars": 26,
     "language": "python",
-    "fetched_at": "2026-02-05T09:28:38.108415"
+    "fetched_at": "2026-02-05T09:38:29.527700"
   },
   {
     "source": "github",
@@ -522,10 +522,10 @@
     "owner": "AtsushiSakai",
     "url": "https://github.com/AtsushiSakai/PythonRobotics",
     "description": "Python sample codes and textbook for robotics algorithms.",
-    "stars": 28560,
+    "stars": 28561,
     "daily_stars": 14,
     "language": "python",
-    "fetched_at": "2026-02-05T09:28:38.106943"
+    "fetched_at": "2026-02-05T09:38:29.526260"
   },
   {
     "source": "github",
@@ -536,7 +536,7 @@
     "stars": 14897,
     "daily_stars": 13,
     "language": "python",
-    "fetched_at": "2026-02-05T09:28:38.108902"
+    "fetched_at": "2026-02-05T09:38:29.528188"
   },
   {
     "source": "github",
@@ -547,6 +547,6 @@
     "stars": 4370,
     "daily_stars": 3,
     "language": "all",
-    "fetched_at": "2026-02-05T09:28:36.520287"
+    "fetched_at": "2026-02-05T09:38:28.386747"
   }
 ]

@@ -8,6 +8,10 @@ from dotenv import load_dotenv
 import warnings
 import sys
 from agent_analyst.failure_miner import mine_failures
+from agent_analyst.ad_inventory import AD_CAMPAIGNS
+from agent_analyst.product_recommender import search_related_items
+from agent_analyst.editor import refine_article
+import random
 
 # Suppress deprecation warnings
 warnings.filterwarnings("ignore", category=FutureWarning)
@@ -74,61 +78,49 @@ def generate_article(tool_data):
     failure_context = mine_failures(name)
     
     prompt = f"""
-    You are a professional Tech Writer specializing in AI tools. 
-    Write a high-quality, engaging blog post draft in JAPANESE about the following new AI tool.
+    You are a professional Tech Writer. Write a high-quality blog post in JAPANESE and provide a search keyword for related products.
     
-    Target Audience: Japanese AI Engineers and Python Beginners.
-    Tone: Professional, Excited, Informative (E-E-A-T focused).
-
     Product Info:
-    - Name: {name}
-    - URL: {url}
-    - Description: {description}
-    - Current Stars: {stars} (Trending now!)
-    - Technical Documentation (Context):
-    {readme_text}
-    
-    - User Feedback & Known Issues (Social Signal):
-    {failure_context}
+    - Name: {name} | URL: {url} | Description: {description}
+    - Document: {readme_text[:5000]}
+    - Feedback: {failure_context}
 
-    Structure Requirements:
-    1. **Catchy Title**: Include "AI" and a benefit (e.g., "Productivity x10").
-    2. **Introduction**: Why is this tool getting popular? (Mention the star count).
-    3. **What is it?**: Explain simply for beginners.
-    4. **Key Features**: strict bullet points based on the README.
-    5. **How to Install**: Python pip command or similar.
-    6. **Pro's & Con's (Honest Review)**: Use the "User Feedback" section to mention real concerns or alternatives mentioned on Reddit. Be honest about downsides.
-    8. **Recommendation Section**: 
-       - At the end of the article, create a section titled "## さらに学びたい方へ".
-       - Suggest 1 specific PHYSICAL product from Rakuten (e.g., a technical book or gadget) that complements the tool.
-       - Provide a placeholder for the Rakuten link:
-         "[👉 楽天市場で詳細を見る](INSERT_RAKUTEN_LINK_HERE)"
-       - DO NOT suggest online courses, web services, or subscriptions. ONLY suggest physical books or gadgets available on Rakuten.
-       
-    9. **Monetization Advice**:
-       - Briefly explain why you recommended that specific product at the end of the file (outside the markdown article).
+    Requirements:
+    1. Structure: Title, Intro, Features, Install, Pros/Cons, Conclusion.
+    2. Placeholder: Insert exactly `{{RECOMMENDED_PRODUCTS}}` once in the middle of the article (after features).
+    3. PR Notice: The very first line after the title must be `> ※本記事はプロモーションを含みます`.
 
-    Output Format: Markdown.
+    Output MUST be a valid JSON with two fields:
+    - "article": The full markdown article.
+    - "search_keyword": A single string (e.g., "Python Beginner Book") to search for related items.
     """
 
     if not api_key:
-        return f"""
-# [Mock] {name}: The Future of AI Coding?
-*(API Key missing, this is a placeholder draft)*
-
-## Intro
-{name} is trending with {stars} stars today.
-
-## Description
-{description}
-
-## Context
-{readme_text[:200]}...
-        """
+        return f"# {name}\n> ※本記事はプロモーションを含みます\nMock content.\n{{RECOMMENDED_PRODUCTS}}"
 
     model = genai.GenerativeModel('gemini-2.5-flash')
-    response = model.generate_content(prompt)
-    return response.text
+    try:
+        response = model.generate_content(prompt, generation_config={"response_mime_type": "application/json"})
+        res_json = json.loads(response.text)
+        draft = res_json.get("article", "")
+        keyword = res_json.get("search_keyword", name)
+
+        # 1. Search and Inject Products
+        products_html = "".join(search_related_items(keyword))
+        final_article = draft.replace("{{RECOMMENDED_PRODUCTS}}", products_html)
+
+        # 2. Refine by Editor
+        final_article = refine_article(final_article)
+
+        # 3. Append Ad Campaign
+        ad = random.choice(AD_CAMPAIGNS)
+        final_article += f"\n\n---\n### PR\n{ad['html']}"
+
+        return final_article
+
+    except Exception as e:
+        print(f"Generation error: {e}")
+        return f"# {name}\nFailed to generate content."
 
 if __name__ == "__main__":
     # 1. Load the latest trends data

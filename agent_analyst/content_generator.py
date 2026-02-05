@@ -97,7 +97,7 @@ def generate_article(tool_data, x_hot_words=[]):
     # 2. Call Gemini
     response = call_gemini_with_fallback(prompt)
     if not response:
-        return f"# {name}\n\n記事生成に失敗しました（モデルエラー）。"
+        return f"# {name}\n\n記事生成に失敗しました（全てのモデルでエラーまたはタイムアウト）。ログを確認してください。"
 
     # 3. Parse JSON & Extract Content
     try:

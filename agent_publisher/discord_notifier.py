@@ -68,7 +68,7 @@ def send_discord_notification(webhook_url, draft_path=None):
     payload = {
         "username": "白ネギ・テック編集部",
         "avatar_url": "https://cdn-icons-png.flaticon.com/512/4712/4712109.png",
-        "content": "@everyone **新しい記事とバズり原稿を用意したぞ！** 🚀",
+        "content": "**新しい記事とバズり原稿を用意したぞ！** 🚀",
         "embeds": [embed]
     }
     

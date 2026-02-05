@@ -82,7 +82,7 @@ def generate_article(tool_data, x_hot_words=[]):
     
     # 1. Prepare Prompt
     prompt = ARTICLE_GENERATION_PROMPT.format(
-        nname=name,
+        name=name,
         url=url,
         description=description,
         readme_text=readme_text[:5000],

@@ -101,26 +101,52 @@ def generate_article(tool_data):
     model = genai.GenerativeModel('gemini-2.5-flash')
     try:
         response = model.generate_content(prompt, generation_config={"response_mime_type": "application/json"})
-        res_json = json.loads(response.text)
+        content_text = response.text.strip()
+        
+        # Handle cases where model might still output markdown code blocks
+        if content_text.startswith("```"):
+            content_text = content_text.split("```")[1]
+            if content_text.startswith("json"):
+                content_text = content_text[4:]
+        
+        try:
+            res_json = json.loads(content_text)
+        except json.JSONDecodeError:
+            # Emergency fallback: Try to treat entire response as article
+            print("CRITICAL: Failed to parse JSON. Falling back to raw response.")
+            return f"# {name}\n> ※本記事はプロモーションを含みます\n\n{response.text}"
+
         draft = res_json.get("article", "")
         keyword = res_json.get("search_keyword", name)
 
         # 1. Search and Inject Products
-        products_html = "".join(search_related_items(keyword))
-        final_article = draft.replace("{{RECOMMENDED_PRODUCTS}}", products_html)
+        try:
+            products_html = "".join(search_related_items(keyword))
+            final_article = draft.replace("{{RECOMMENDED_PRODUCTS}}", products_html)
+        except Exception as e:
+            print(f"Product injection failed: {e}")
+            final_article = draft
 
         # 2. Refine by Editor
-        final_article = refine_article(final_article)
+        try:
+            final_article = refine_article(final_article)
+        except Exception as e:
+            print(f"Editor refinement failed: {e}")
 
         # 3. Append Ad Campaign
-        ad = random.choice(AD_CAMPAIGNS)
-        final_article += f"\n\n---\n### PR\n{ad['html']}"
+        try:
+            ad = random.choice(AD_CAMPAIGNS)
+            final_article += f"\n\n---\n### PR\n{ad['html']}"
+        except Exception:
+            pass
 
         return final_article
 
     except Exception as e:
-        print(f"Generation error: {e}")
-        return f"# {name}\nFailed to generate content."
+        print(f"Generation error in generate_draft: {e}")
+        import traceback
+        traceback.print_exc()
+        return f"# {name}\n\n記事の生成中にエラーが発生しました。申し訳ありません。\nエラー詳細: {str(e)}"
 
 if __name__ == "__main__":
     # 1. Load the latest trends data

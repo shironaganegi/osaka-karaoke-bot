@@ -98,9 +98,31 @@ def generate_article(tool_data):
     if not api_key:
         return f"# {name}\n> ※本記事はプロモーションを含みます\nMock content.\n{{{{RECOMMENDED_PRODUCTS}}}}"
 
-    model = genai.GenerativeModel('gemini-1.5-flash')
+    candidate_models = [
+        'gemini-1.5-flash-latest',
+        'gemini-1.5-flash',
+        'gemini-1.5-pro',
+        'gemini-pro'
+    ]
+
+    response = None
+    last_error = None
+
+    for model_name in candidate_models:
+        try:
+            print(f"Trying model: {model_name}...")
+            model = genai.GenerativeModel(model_name)
+            response = model.generate_content(prompt, generation_config={"response_mime_type": "application/json"})
+            break # Success!
+        except Exception as e:
+            print(f"Model {model_name} failed: {e}")
+            last_error = e
+            continue
+    
+    if not response:
+         return f"# {name}\n\n記事の生成に失敗しました（全モデル試行不可）。\nエラー詳細: {str(last_error)}"
+
     try:
-        response = model.generate_content(prompt, generation_config={"response_mime_type": "application/json"})
         content_text = response.text.strip()
         
         # Handle cases where model might still output markdown code blocks
@@ -144,10 +166,10 @@ def generate_article(tool_data):
         return final_article
 
     except Exception as e:
-        print(f"Generation error in generate_draft: {e}")
+        print(f"Processing error in generate_draft: {e}")
         import traceback
         traceback.print_exc()
-        return f"# {name}\n\n記事の生成中にエラーが発生しました。申し訳ありません。\nエラー詳細: {str(e)}"
+        return f"# {name}\n\n記事の処理中にエラーが発生しました。\nエラー詳細: {str(e)}"
 
 def generate_zenn_frontmatter(title, tool_name, source):
     """

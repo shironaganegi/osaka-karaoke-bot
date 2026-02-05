@@ -5,10 +5,10 @@
     "owner": "thedotmack",
     "url": "https://github.com/thedotmack/claude-mem",
     "description": "A Claude Code plugin that automatically captures everything Claude does during your coding sessions, compresses it with AI (using Claude's agent-sdk), and injects relevant context back into future sessions.",
-    "stars": 23105,
+    "stars": 23134,
     "daily_stars": 2638,
     "language": "all",
-    "fetched_at": "2026-02-05T09:11:22.013932"
+    "fetched_at": "2026-02-05T09:28:36.517737"
   },
   {
     "source": "hacker_news",
@@ -19,7 +19,7 @@
     "stars": 1060,
     "daily_stars": 1060,
     "language": "tech",
-    "fetched_at": "2026-02-05T09:11:28.480483"
+    "fetched_at": "2026-02-05T09:28:40.410725"
   },
   {
     "source": "github",
@@ -27,10 +27,10 @@
     "owner": "openai",
     "url": "https://github.com/openai/skills",
     "description": "Skills Catalog for Codex",
-    "stars": 3946,
+    "stars": 3956,
     "daily_stars": 746,
     "language": "all",
-    "fetched_at": "2026-02-05T09:11:22.014432"
+    "fetched_at": "2026-02-05T09:28:36.518253"
   },
   {
     "source": "hacker_news",
@@ -38,10 +38,10 @@
     "owner": "meetpateltech",
     "url": "https://www.anthropic.com/news/claude-is-a-space-to-think",
     "description": "Claude is a space to think",
-    "stars": 448,
-    "daily_stars": 448,
+    "stars": 450,
+    "daily_stars": 450,
     "language": "tech",
-    "fetched_at": "2026-02-05T09:11:30.130457"
+    "fetched_at": "2026-02-05T09:28:41.159684"
   },
   {
     "source": "hacker_news",
@@ -49,10 +49,10 @@
     "owner": "namanyayg",
     "url": "https://nmn.gl/blog/ai-killing-b2b-saas",
     "description": "AI is killing B2B SaaS",
-    "stars": 334,
-    "daily_stars": 334,
+    "stars": 337,
+    "daily_stars": 337,
     "language": "tech",
-    "fetched_at": "2026-02-05T09:11:25.095379"
+    "fetched_at": "2026-02-05T09:28:38.970163"
   },
   {
     "source": "github",
@@ -60,10 +60,10 @@
     "owner": "microsoft",
     "url": "https://github.com/microsoft/agent-lightning",
     "description": "The absolute trainer to light up AI agents.",
-    "stars": 14018,
+    "stars": 14024,
     "daily_stars": 315,
     "language": "python",
-    "fetched_at": "2026-02-05T09:11:23.762516"
+    "fetched_at": "2026-02-05T09:28:38.110350"
   },
   {
     "source": "github",
@@ -71,10 +71,10 @@
     "owner": "karpathy",
     "url": "https://github.com/karpathy/nanochat",
     "description": "The best ChatGPT that $100 can buy.",
-    "stars": 42289,
+    "stars": 42290,
     "daily_stars": 313,
     "language": "python",
-    "fetched_at": "2026-02-05T09:11:23.758487"
+    "fetched_at": "2026-02-05T09:28:38.106323"
   },
   {
     "source": "github",
@@ -82,10 +82,10 @@
     "owner": "masoncl",
     "url": "https://github.com/masoncl/review-prompts",
     "description": "AI review prompts",
-    "stars": 575,
+    "stars": 576,
     "daily_stars": 289,
     "language": "python",
-    "fetched_at": "2026-02-05T09:11:23.760056"
+    "fetched_at": "2026-02-05T09:28:38.107921"
   },
   {
     "source": "hacker_news",
@@ -93,10 +93,10 @@
     "owner": "fugu2",
     "url": "https://boxc.net/blog/2026/claude-code-connecting-to-local-models-when-your-quota-runs-out/",
     "description": "Claude Code: connect to a local model when your quota runs out",
-    "stars": 271,
-    "daily_stars": 271,
+    "stars": 272,
+    "daily_stars": 272,
     "language": "tech",
-    "fetched_at": "2026-02-05T09:11:24.768309"
+    "fetched_at": "2026-02-05T09:28:38.810213"
   },
   {
     "source": "github",
@@ -104,10 +104,10 @@
     "owner": "OpenBMB",
     "url": "https://github.com/OpenBMB/ChatDev",
     "description": "ChatDev 2.0: Dev All through LLM-powered Multi-Agent Collaboration",
-    "stars": 30088,
+    "stars": 30095,
     "daily_stars": 227,
     "language": "all",
-    "fetched_at": "2026-02-05T09:11:22.015381"
+    "fetched_at": "2026-02-05T09:28:36.519330"
   },
   {
     "source": "hacker_news",
@@ -115,21 +115,10 @@
     "owner": "aspectrr",
     "url": "https://www.fluid.sh/",
     "description": "Claude Code for Infrastructure",
-    "stars": 211,
-    "daily_stars": 211,
+    "stars": 212,
+    "daily_stars": 212,
     "language": "tech",
-    "fetched_at": "2026-02-05T09:11:25.309524"
-  },
-  {
-    "source": "github",
-    "name": "Maestro",
-    "owner": "pedramamini",
-    "url": "https://github.com/pedramamini/Maestro",
-    "description": "Agent Orchestration Command Center",
-    "stars": 1732,
-    "daily_stars": 187,
-    "language": "all",
-    "fetched_at": "2026-02-05T09:11:22.017296"
+    "fetched_at": "2026-02-05T09:28:39.132139"
   },
   {
     "source": "hacker_news",
@@ -137,10 +126,21 @@
     "owner": "WaitWaitWha",
     "url": "https://www.biometricupdate.com/202602/ice-seeks-industry-input-on-ad-tech-location-data-for-investigative-use",
     "description": "ICE seeks industry input on ad tech location data for investigative use",
-    "stars": 187,
-    "daily_stars": 187,
+    "stars": 195,
+    "daily_stars": 195,
     "language": "tech",
-    "fetched_at": "2026-02-05T09:11:27.514665"
+    "fetched_at": "2026-02-05T09:28:39.715904"
+  },
+  {
+    "source": "github",
+    "name": "Maestro",
+    "owner": "pedramamini",
+    "url": "https://github.com/pedramamini/Maestro",
+    "description": "Agent Orchestration Command Center",
+    "stars": 1734,
+    "daily_stars": 187,
+    "language": "all",
+    "fetched_at": "2026-02-05T09:28:36.521288"
   },
   {
     "source": "github",
@@ -148,10 +148,10 @@
     "owner": "TauricResearch",
     "url": "https://github.com/TauricResearch/TradingAgents",
     "description": "TradingAgents: Multi-Agents LLM Financial Trading Framework",
-    "stars": 29311,
+    "stars": 29312,
     "daily_stars": 135,
     "language": "python",
-    "fetched_at": "2026-02-05T09:11:23.763019"
+    "fetched_at": "2026-02-05T09:28:38.110823"
   },
   {
     "source": "github",
@@ -159,10 +159,10 @@
     "owner": "QwenLM",
     "url": "https://github.com/QwenLM/Qwen3-Coder",
     "description": "Qwen3-Coder is the code version of Qwen3, the large language model series developed by Qwen team.",
-    "stars": 15287,
+    "stars": 15288,
     "daily_stars": 123,
     "language": "python",
-    "fetched_at": "2026-02-05T09:11:23.761478"
+    "fetched_at": "2026-02-05T09:28:38.109393"
   },
   {
     "source": "github",
@@ -170,10 +170,10 @@
     "owner": "confident-ai",
     "url": "https://github.com/confident-ai/deepeval",
     "description": "The LLM Evaluation Framework",
-    "stars": 13445,
+    "stars": 13447,
     "daily_stars": 109,
     "language": "python",
-    "fetched_at": "2026-02-05T09:11:23.762016"
+    "fetched_at": "2026-02-05T09:28:38.109865"
   },
   {
     "source": "hacker_news",
@@ -184,73 +184,7 @@
     "stars": 109,
     "daily_stars": 109,
     "language": "tech",
-    "fetched_at": "2026-02-05T09:11:28.157827"
-  },
-  {
-    "source": "product_hunt",
-    "name": "Supaboard",
-    "owner": "ProductHunt",
-    "url": "https://www.producthunt.com/products/supaboard-ai",
-    "description": "\n            Ask in plain English. Get accurate answers from your data\n          \n\nDiscussion\n            |\n            Link\n",
-    "stars": 0,
-    "daily_stars": 100,
-    "language": "saas",
-    "fetched_at": "2026-02-05T09:11:23.884853"
-  },
-  {
-    "source": "product_hunt",
-    "name": "AutoBandStudio",
-    "owner": "ProductHunt",
-    "url": "https://www.producthunt.com/products/autobandstudio",
-    "description": "\n            AI that turns your melody into a full arrangement\n          \n\nDiscussion\n            |\n            Link\n",
-    "stars": 0,
-    "daily_stars": 100,
-    "language": "saas",
-    "fetched_at": "2026-02-05T09:11:23.885072"
-  },
-  {
-    "source": "product_hunt",
-    "name": "Molt Beach",
-    "owner": "ProductHunt",
-    "url": "https://www.producthunt.com/products/molt-beach",
-    "description": "\n            A million-pixel beach for AI agents — claim & animate pixels\n          \n\nDiscussion\n            |\n            Link\n",
-    "stars": 0,
-    "daily_stars": 100,
-    "language": "saas",
-    "fetched_at": "2026-02-05T09:11:23.885289"
-  },
-  {
-    "source": "product_hunt",
-    "name": "GitHub Agent HQ",
-    "owner": "ProductHunt",
-    "url": "https://www.producthunt.com/products/github",
-    "description": "\n            Run Claude, Codex & Copilot directly in GitHub & VS Code\n          \n\nDiscussion\n            |\n            Link\n",
-    "stars": 0,
-    "daily_stars": 100,
-    "language": "saas",
-    "fetched_at": "2026-02-05T09:11:23.885493"
-  },
-  {
-    "source": "product_hunt",
-    "name": "Webflow AI site builder",
-    "owner": "ProductHunt",
-    "url": "https://www.producthunt.com/products/webflow",
-    "description": "\n            Turn a prompt into a production-ready site with Webflow\n          \n\nDiscussion\n            |\n            Link\n",
-    "stars": 0,
-    "daily_stars": 100,
-    "language": "saas",
-    "fetched_at": "2026-02-05T09:11:23.885694"
-  },
-  {
-    "source": "product_hunt",
-    "name": "Higgsfield Vibe-Motion",
-    "owner": "ProductHunt",
-    "url": "https://www.producthunt.com/products/higgsfield",
-    "description": "\n            Create motion images in a single prompt in an editing canvas\n          \n\nDiscussion\n            |\n            Link\n",
-    "stars": 0,
-    "daily_stars": 100,
-    "language": "saas",
-    "fetched_at": "2026-02-05T09:11:23.885911"
+    "fetched_at": "2026-02-05T09:28:40.189812"
   },
   {
     "source": "product_hunt",
@@ -261,29 +195,7 @@
     "stars": 0,
     "daily_stars": 100,
     "language": "saas",
-    "fetched_at": "2026-02-05T09:11:23.886111"
-  },
-  {
-    "source": "product_hunt",
-    "name": "Sylvian AI Forms",
-    "owner": "ProductHunt",
-    "url": "https://www.producthunt.com/products/sylvian-excel-agent",
-    "description": "\n            Never fill a PDF by hand again\n          \n\nDiscussion\n            |\n            Link\n",
-    "stars": 0,
-    "daily_stars": 100,
-    "language": "saas",
-    "fetched_at": "2026-02-05T09:11:23.886305"
-  },
-  {
-    "source": "product_hunt",
-    "name": "The new v0",
-    "owner": "ProductHunt",
-    "url": "https://www.producthunt.com/products/v0",
-    "description": "\n            Full stack vibe coding platform. Created by Vercel.\n          \n\nDiscussion\n            |\n            Link\n",
-    "stars": 0,
-    "daily_stars": 100,
-    "language": "saas",
-    "fetched_at": "2026-02-05T09:11:23.886505"
+    "fetched_at": "2026-02-05T09:28:38.275195"
   },
   {
     "source": "product_hunt",
@@ -294,7 +206,95 @@
     "stars": 0,
     "daily_stars": 100,
     "language": "saas",
-    "fetched_at": "2026-02-05T09:11:23.886705"
+    "fetched_at": "2026-02-05T09:28:38.275431"
+  },
+  {
+    "source": "product_hunt",
+    "name": "Sylvian AI Forms",
+    "owner": "ProductHunt",
+    "url": "https://www.producthunt.com/products/sylvian-excel-agent",
+    "description": "\n            Never fill a PDF by hand again\n          \n\nDiscussion\n            |\n            Link\n",
+    "stars": 0,
+    "daily_stars": 100,
+    "language": "saas",
+    "fetched_at": "2026-02-05T09:28:38.275627"
+  },
+  {
+    "source": "product_hunt",
+    "name": "Webflow AI site builder",
+    "owner": "ProductHunt",
+    "url": "https://www.producthunt.com/products/webflow",
+    "description": "\n            Turn a prompt into a production-ready site with Webflow\n          \n\nDiscussion\n            |\n            Link\n",
+    "stars": 0,
+    "daily_stars": 100,
+    "language": "saas",
+    "fetched_at": "2026-02-05T09:28:38.275817"
+  },
+  {
+    "source": "product_hunt",
+    "name": "GitHub Agent HQ",
+    "owner": "ProductHunt",
+    "url": "https://www.producthunt.com/products/github",
+    "description": "\n            Run Claude, Codex & Copilot directly in GitHub & VS Code\n          \n\nDiscussion\n            |\n            Link\n",
+    "stars": 0,
+    "daily_stars": 100,
+    "language": "saas",
+    "fetched_at": "2026-02-05T09:28:38.276014"
+  },
+  {
+    "source": "product_hunt",
+    "name": "The new v0",
+    "owner": "ProductHunt",
+    "url": "https://www.producthunt.com/products/v0",
+    "description": "\n            Full stack vibe coding platform. Created by Vercel.\n          \n\nDiscussion\n            |\n            Link\n",
+    "stars": 0,
+    "daily_stars": 100,
+    "language": "saas",
+    "fetched_at": "2026-02-05T09:28:38.276201"
+  },
+  {
+    "source": "product_hunt",
+    "name": "Higgsfield Vibe-Motion",
+    "owner": "ProductHunt",
+    "url": "https://www.producthunt.com/products/higgsfield",
+    "description": "\n            Create motion images in a single prompt in an editing canvas\n          \n\nDiscussion\n            |\n            Link\n",
+    "stars": 0,
+    "daily_stars": 100,
+    "language": "saas",
+    "fetched_at": "2026-02-05T09:28:38.276412"
+  },
+  {
+    "source": "product_hunt",
+    "name": "Supaboard",
+    "owner": "ProductHunt",
+    "url": "https://www.producthunt.com/products/supaboard-ai",
+    "description": "\n            Ask in plain English. Get accurate answers from your data\n          \n\nDiscussion\n            |\n            Link\n",
+    "stars": 0,
+    "daily_stars": 100,
+    "language": "saas",
+    "fetched_at": "2026-02-05T09:28:38.276612"
+  },
+  {
+    "source": "product_hunt",
+    "name": "AutoBandStudio",
+    "owner": "ProductHunt",
+    "url": "https://www.producthunt.com/products/autobandstudio",
+    "description": "\n            AI that turns your melody into a full arrangement\n          \n\nDiscussion\n            |\n            Link\n",
+    "stars": 0,
+    "daily_stars": 100,
+    "language": "saas",
+    "fetched_at": "2026-02-05T09:28:38.276802"
+  },
+  {
+    "source": "product_hunt",
+    "name": "Candle (YC F24)",
+    "owner": "ProductHunt",
+    "url": "https://www.producthunt.com/products/candle-4",
+    "description": "\n            One shared moment a day\n          \n\nDiscussion\n            |\n            Link\n",
+    "stars": 0,
+    "daily_stars": 100,
+    "language": "saas",
+    "fetched_at": "2026-02-05T09:28:38.276988"
   },
   {
     "source": "github",
@@ -302,10 +302,10 @@
     "owner": "Canner",
     "url": "https://github.com/Canner/WrenAI",
     "description": "⚡️ GenBI (Generative BI) queries any database in natural language, generates accurate SQL (Text-to-SQL), charts (Text-to-Chart), and AI-powered business intelligence in seconds.",
-    "stars": 14071,
+    "stars": 14073,
     "daily_stars": 89,
     "language": "all",
-    "fetched_at": "2026-02-05T09:11:22.016820"
+    "fetched_at": "2026-02-05T09:28:36.520818"
   },
   {
     "source": "github",
@@ -313,10 +313,10 @@
     "owner": "microsoft",
     "url": "https://github.com/microsoft/qlib",
     "description": "Qlib is an AI-oriented Quant investment platform that aims to use AI tech to empower Quant Research, from exploring ideas to implementing productions. Qlib supports diverse ML modeling paradigms, including supervised learning, market dynamics modeling, and RL, and is now equipped withhttps://github.com/microsoft/RD-Agentto automate R&D process.",
-    "stars": 36632,
+    "stars": 36660,
     "daily_stars": 83,
     "language": "all",
-    "fetched_at": "2026-02-05T09:11:22.018265"
+    "fetched_at": "2026-02-05T09:28:36.522326"
   },
   {
     "source": "github",
@@ -324,10 +324,10 @@
     "owner": "LadybirdBrowser",
     "url": "https://github.com/LadybirdBrowser/ladybird",
     "description": "Truly independent web browser",
-    "stars": 58346,
+    "stars": 58348,
     "daily_stars": 68,
     "language": "all",
-    "fetched_at": "2026-02-05T09:11:22.018726"
+    "fetched_at": "2026-02-05T09:28:36.522799"
   },
   {
     "source": "github",
@@ -335,10 +335,21 @@
     "owner": "disler",
     "url": "https://github.com/disler/claude-code-hooks-mastery",
     "description": "Master Claude Code Hooks",
-    "stars": 2489,
+    "stars": 2492,
     "daily_stars": 47,
     "language": "all",
-    "fetched_at": "2026-02-05T09:11:22.014899"
+    "fetched_at": "2026-02-05T09:28:36.518773"
+  },
+  {
+    "source": "qiita",
+    "name": "Statcastデータで見る千賀滉大の「お化けフォーク」（2023-2025）",
+    "owner": "ussu_ussu_ussu",
+    "url": "https://qiita.com/ussu_ussu_ussu/items/f0a149321700e71e72bf",
+    "description": "Statcastデータで見る千賀滉大の「お化けフォーク」（2023-2025）",
+    "stars": 40,
+    "daily_stars": 40,
+    "language": "japanese",
+    "fetched_at": "2026-02-05T09:28:41.917069"
   },
   {
     "source": "qiita",
@@ -349,7 +360,7 @@
     "stars": 40,
     "daily_stars": 40,
     "language": "japanese",
-    "fetched_at": "2026-02-05T09:11:31.331258"
+    "fetched_at": "2026-02-05T09:28:41.917083"
   },
   {
     "source": "qiita",
@@ -360,7 +371,7 @@
     "stars": 40,
     "daily_stars": 40,
     "language": "japanese",
-    "fetched_at": "2026-02-05T09:11:31.331271"
+    "fetched_at": "2026-02-05T09:28:41.917090"
   },
   {
     "source": "qiita",
@@ -371,18 +382,7 @@
     "stars": 40,
     "daily_stars": 40,
     "language": "japanese",
-    "fetched_at": "2026-02-05T09:11:31.331278"
-  },
-  {
-    "source": "qiita",
-    "name": "LangChain/LangGraphでAIエージェントを作ってみた - ReActパターンでWikipedia検索エージェントを実装",
-    "owner": "samefk",
-    "url": "https://qiita.com/samefk/items/796ad3fe9573c741d9e6",
-    "description": "LangChain/LangGraphでAIエージェントを作ってみた - ReActパターンでWikipedia検索エージェントを実装",
-    "stars": 40,
-    "daily_stars": 40,
-    "language": "japanese",
-    "fetched_at": "2026-02-05T09:11:31.331284"
+    "fetched_at": "2026-02-05T09:28:41.917096"
   },
   {
     "source": "qiita",
@@ -393,7 +393,7 @@
     "stars": 40,
     "daily_stars": 40,
     "language": "japanese",
-    "fetched_at": "2026-02-05T09:11:31.573730"
+    "fetched_at": "2026-02-05T09:28:42.147432"
   },
   {
     "source": "qiita",
@@ -404,7 +404,7 @@
     "stars": 40,
     "daily_stars": 40,
     "language": "japanese",
-    "fetched_at": "2026-02-05T09:11:31.573743"
+    "fetched_at": "2026-02-05T09:28:42.147447"
   },
   {
     "source": "qiita",
@@ -415,7 +415,7 @@
     "stars": 40,
     "daily_stars": 40,
     "language": "japanese",
-    "fetched_at": "2026-02-05T09:11:31.573764"
+    "fetched_at": "2026-02-05T09:28:42.147454"
   },
   {
     "source": "qiita",
@@ -426,7 +426,7 @@
     "stars": 40,
     "daily_stars": 40,
     "language": "japanese",
-    "fetched_at": "2026-02-05T09:11:31.573771"
+    "fetched_at": "2026-02-05T09:28:42.147460"
   },
   {
     "source": "qiita",
@@ -437,7 +437,7 @@
     "stars": 40,
     "daily_stars": 40,
     "language": "japanese",
-    "fetched_at": "2026-02-05T09:11:31.774010"
+    "fetched_at": "2026-02-05T09:28:42.407143"
   },
   {
     "source": "qiita",
@@ -448,7 +448,7 @@
     "stars": 40,
     "daily_stars": 40,
     "language": "japanese",
-    "fetched_at": "2026-02-05T09:11:31.774017"
+    "fetched_at": "2026-02-05T09:28:42.407149"
   },
   {
     "source": "qiita",
@@ -459,7 +459,7 @@
     "stars": 40,
     "daily_stars": 40,
     "language": "japanese",
-    "fetched_at": "2026-02-05T09:11:31.774023"
+    "fetched_at": "2026-02-05T09:28:42.407155"
   },
   {
     "source": "github",
@@ -470,7 +470,7 @@
     "stars": 91291,
     "daily_stars": 35,
     "language": "all",
-    "fetched_at": "2026-02-05T09:11:22.017777"
+    "fetched_at": "2026-02-05T09:28:36.521817"
   },
   {
     "source": "github",
@@ -478,10 +478,10 @@
     "owner": "zhayujie",
     "url": "https://github.com/zhayujie/chatgpt-on-wechat",
     "description": "CowAgent是基于大模型的超级AI助理，能主动思考和任务规划、访问操作系统和外部资源、创造和执行Skills、拥有长期记忆并不断成长。同时支持飞书、钉钉、企业微信应用、微信公众号、网页等接入，可选择OpenAI/Claude/Gemini/DeepSeek/ Qwen/GLM/Kimi/LinkAI，能处理文本、语音、图片和文件，可快速搭建个人AI助手和企业数字员工。",
-    "stars": 41042,
+    "stars": 41043,
     "daily_stars": 32,
     "language": "python",
-    "fetched_at": "2026-02-05T09:11:23.759563"
+    "fetched_at": "2026-02-05T09:28:38.107439"
   },
   {
     "source": "github",
@@ -489,10 +489,10 @@
     "owner": "likec4",
     "url": "https://github.com/likec4/likec4",
     "description": "Visualize, collaborate, and evolve the software architecture with always actual and live diagrams from your code",
-    "stars": 1596,
+    "stars": 1597,
     "daily_stars": 29,
     "language": "all",
-    "fetched_at": "2026-02-05T09:11:22.019330"
+    "fetched_at": "2026-02-05T09:28:36.523413"
   },
   {
     "source": "github",
@@ -500,10 +500,10 @@
     "owner": "ankitects",
     "url": "https://github.com/ankitects/anki",
     "description": "Anki is a smart spaced repetition flashcard program",
-    "stars": 26237,
+    "stars": 26241,
     "daily_stars": 28,
     "language": "all",
-    "fetched_at": "2026-02-05T09:11:22.015864"
+    "fetched_at": "2026-02-05T09:28:36.519816"
   },
   {
     "source": "github",
@@ -511,10 +511,10 @@
     "owner": "pipecat-ai",
     "url": "https://github.com/pipecat-ai/pipecat",
     "description": "Open Source framework for voice and multimodal conversational AI",
-    "stars": 10187,
+    "stars": 10188,
     "daily_stars": 26,
     "language": "python",
-    "fetched_at": "2026-02-05T09:11:23.760529"
+    "fetched_at": "2026-02-05T09:28:38.108415"
   },
   {
     "source": "github",
@@ -525,7 +525,7 @@
     "stars": 28560,
     "daily_stars": 14,
     "language": "python",
-    "fetched_at": "2026-02-05T09:11:23.759095"
+    "fetched_at": "2026-02-05T09:28:38.106943"
   },
   {
     "source": "github",
@@ -536,7 +536,7 @@
     "stars": 14897,
     "daily_stars": 13,
     "language": "python",
-    "fetched_at": "2026-02-05T09:11:23.761007"
+    "fetched_at": "2026-02-05T09:28:38.108902"
   },
   {
     "source": "github",
@@ -544,9 +544,9 @@
     "owner": "open-telemetry",
     "url": "https://github.com/open-telemetry/opentelemetry-collector-contrib",
     "description": "Contrib repository for the OpenTelemetry Collector",
-    "stars": 4367,
+    "stars": 4370,
     "daily_stars": 3,
     "language": "all",
-    "fetched_at": "2026-02-05T09:11:22.016340"
+    "fetched_at": "2026-02-05T09:28:36.520287"
   }
 ]

@@ -34,6 +34,7 @@ jobs:
         GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         RAKUTEN_APP_ID: ${{ secrets.RAKUTEN_APP_ID }}
         RAKUTEN_AFFILIATE_ID: ${{ secrets.RAKUTEN_AFFILIATE_ID }}
+        ZENN_AUTO_PUBLISH: ${{ vars.ZENN_AUTO_PUBLISH || 'false' }}
       run: python -m agent_analyst.content_generator
       
     - name: Send Discord Notification
@@ -43,6 +44,13 @@ jobs:
 
     - name: Run Maintenance Agent (Clean Old Files)
       run: python -m agent_watcher.maintenance
+
+    - name: Run Content Distributor (Qiita & BlueSky)
+      env:
+        QIITA_ACCESS_TOKEN: ${{ secrets.QIITA_ACCESS_TOKEN }}
+        BLUESKY_HANDLE: ${{ secrets.BLUESKY_HANDLE }}
+        BLUESKY_PASSWORD: ${{ secrets.BLUESKY_PASSWORD }}
+      run: python -m agent_publisher.distributor
 
     - name: Commit and Push Articles
       run: |

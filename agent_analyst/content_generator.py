@@ -3,7 +3,7 @@ import json
 import requests
 import google.generativeai as genai
 from bs4 import BeautifulSoup
-from datetime import datetime
+from datetime import datetime, timedelta
 from dotenv import load_dotenv
 import warnings
 import sys
@@ -55,7 +55,7 @@ def get_readme_content(github_url):
             raw_url_master = f"https://raw.githubusercontent.com/{user}/{repo}/master/README.md"
             response = requests.get(raw_url_master)
             if response.status_code == 200:
-                 return response.text[:10000]
+                return response.text[:10000]
 
     except Exception as e:
         print(f"Failed to fetch README: {e}")
@@ -157,16 +157,38 @@ def generate_zenn_frontmatter(title, tool_name, source):
     if source == "github": topics.append("GitHub")
     if "python" in tool_name.lower(): topics.append("Python")
     
+    is_published = os.getenv("ZENN_AUTO_PUBLISH", "false").lower() == "true"
+    
     frontmatter = f"""---
 title: "{title}"
 emoji: "{random.choice(emojis)}"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: {json.dumps(topics)}
-published: false # trueで即時公開 / falseで下書き
+published: {str(is_published).lower()}
 ---
 
 """
     return frontmatter
+
+def load_history():
+    history_path = os.path.join(os.path.dirname(__file__), "..", "data", "history.json")
+    if os.path.exists(history_path):
+        with open(history_path, 'r', encoding='utf-8') as f:
+            return json.load(f)
+    return []
+
+def save_to_history(tool_name, url):
+    history_path = os.path.join(os.path.dirname(__file__), "..", "data", "history.json")
+    history = load_history()
+    history.append({
+        "name": tool_name,
+        "url": url,
+        "date": datetime.now().isoformat()
+    })
+    # Keep only last 100 entries
+    history = history[-100:]
+    with open(history_path, 'w', encoding='utf-8') as f:
+        json.dump(history, f, indent=2, ensure_ascii=False)
 
 if __name__ == "__main__":
     # 1. Load the latest trends data
@@ -186,7 +208,29 @@ if __name__ == "__main__":
     
     # 2. Pick the Winner (Top Daily Stars)
     # Filter for items with daily_stars > 0
-    candidates = [item for item in data if item.get('daily_stars', 0) > 0]
+    # COOLDOWN logic: Allow tools to re-appear after 14 days
+    history = load_history()
+    
+    # Calculate cooldown date (14 days ago)
+    cooldown_period = timedelta(days=14)
+    cutoff_date = datetime.now() - cooldown_period
+    
+    # List of URLs posted recently (within cooldown period)
+    recent_posted_urls = []
+    for h in history:
+        try:
+            post_date = datetime.fromisoformat(h['date'])
+            if post_date > cutoff_date:
+                recent_posted_urls.append(h['url'])
+        except (ValueError, KeyError):
+            continue
+            
+    candidates = [item for item in data if item.get('daily_stars', 0) > 0 and item['url'] not in recent_posted_urls]
+    
+    if not candidates:
+        print("All trending topics were posted recently. Picking a random one from top trends anyway.")
+        # Fallback: ignore history constraint if everything is filtered out
+        candidates = [item for item in data if item.get('daily_stars', 0) > 0]
     # Group by source to ensure diversity
     candidates_by_source = {}
     for item in candidates:
@@ -231,6 +275,8 @@ if __name__ == "__main__":
     
     with open(file_path, 'w', encoding='utf-8') as f:
         f.write(final_content)
+        
+    save_to_history(top_tool['name'], top_tool['url'])
         
     print(f"Zenn article saved to: {file_path}")
     print("-" * 30)

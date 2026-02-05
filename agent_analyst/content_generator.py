@@ -170,7 +170,13 @@ if __name__ == "__main__":
     if not candidates:
         candidates = data # fallback
         
-    top_tool = sorted(candidates, key=lambda x: x.get('daily_stars', 0), reverse=True)[0]
+    # Sort by daily_stars desc
+    sorted_candidates = sorted(candidates, key=lambda x: x.get('daily_stars', 0), reverse=True)
+    
+    # Pick a random tool from the top 10 to add variety
+    top_n = min(len(sorted_candidates), 10)
+    top_tool = random.choice(sorted_candidates[:top_n])
+    print(f"Selected Tool: {top_tool['name']} (from top {top_n})")
     
     # 3. Generate Draft
     draft_content = generate_article(top_tool)

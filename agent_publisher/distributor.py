@@ -3,6 +3,7 @@ import glob
 import re
 from atproto import Client
 from datetime import datetime
+import json
 from shared.utils import setup_logging, safe_requests_post, load_config
 
 # Load env variables
@@ -144,6 +145,44 @@ def send_note_draft_to_discord(note_text):
     else:
         logger.error("Failed to send note draft to Discord.")
 
+def save_hugo_article(title, body, zenn_url, original_file_path):
+    """
+    Saves the article to the Hugo website content directory.
+    """
+    website_dir = os.path.join(os.path.dirname(__file__), "..", "website", "content", "posts")
+    os.makedirs(website_dir, exist_ok=True)
+    
+    # Generate Hugo Frontmatter
+    date_str = datetime.now().isoformat()
+    slug = os.path.splitext(os.path.basename(original_file_path))[0]
+    
+    # Extract tags (naive)
+    tags = ["AI", "Tools"]
+    if "python" in body.lower(): tags.append("Python")
+    
+    frontmatter = f"""+++
+title = "{title}"
+date = "{date_str}"
+tags = {json.dumps(tags)}
+draft = false
+description = "AIツール「{title}」の活用法を紹介"
+canonicalUrl = "{zenn_url}"
++++
+
+"""
+    # Clean body for Hugo
+    # Remove the affiliate markers but KEEP the content
+    hugo_body = body.replace("<!-- AFFILIATE_START -->", "").replace("<!-- AFFILIATE_END -->", "")
+    
+    # Add Canonical Link to Zenn (Cross-linking for SEO)
+    footer = f"\n\n---\n\n> この記事は [Zenn]({zenn_url}) にも投稿されています。\n"
+    
+    with open(os.path.join(website_dir, f"{slug}.md"), 'w', encoding='utf-8') as f:
+        f.write(frontmatter + hugo_body + footer)
+    
+    logger.info(f"Saved Hugo article to: {slug}.md")
+
+
 def main():
     print("--- Starting Content Distribution ---")
 
@@ -187,6 +226,12 @@ def main():
         send_note_draft_to_discord(note_draft)
     except Exception as e:
         print(f"Failed to process Note distribution: {e}")
+
+    # 4. Save to Hugo Website (Phase 2)
+    try:
+        save_hugo_article(title, body, zenn_url, article_path)
+    except Exception as e:
+        logger.error(f"Failed to generate Hugo article: {e}")
     
     print("--- Distribution Completed ---")
 

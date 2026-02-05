@@ -1,0 +1,36 @@
+baseURL = 'https://shironaganegi.github.io/ai-affiliate-bot-1/'
+languageCode = 'ja'
+title = 'AI Affiliate Lab'
+theme = 'PaperMod'
+
+[params]
+  defaultTheme = "auto"
+  description = "最新AIツールの活用法・レビューをAI編集長が毎日お届けする実験ラボ。"
+  author = "AI Editor"
+  ShowReadingTime = true
+  ShowShareButtons = true
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = true
+  ShowCodeCopyButtons = true
+  ShowToc = true
+  
+  [params.assets]
+    favicon = "<link / abs url>"
+    
+  [params.cover]
+    hidden = false
+    hiddenInList = false
+    hiddenInSingle = false
+    
+  # Google Analytics (Phase 2 Step 7)
+  # googleAnalyticsID = "G-XXXXXXXXXX" 
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+[services]
+  [services.googleAnalytics]
+    id = "" # Add ID here later
+
+[markup.goldmark.renderer]
+  unsafe = true # Allow raw HTML (for affiliate links etc)

@@ -57,6 +57,27 @@ jobs:
       run: |
         git config --global user.name 'AI Agent Bot'
         git config --global user.email 'bot@example.com'
-        git add articles/ data/
+        git add articles/ data/ website/content/
         git commit -m "AI Agent: Created new article and data" || echo "No changes to commit"
         git push
+
+    # --- Phase 2: Website Deployment ---
+    - name: Setup Hugo
+      uses: peaceiris/actions-hugo@v2
+      with:
+        hugo-version: 'latest'
+        extended: true
+
+    - name: Install Theme (PaperMod)
+      run: |
+        git clone https://github.com/adityatelange/hugo-PaperMod.git website/themes/PaperMod --depth=1
+
+    - name: Build Website
+      working-directory: ./website
+      run: hugo --minify
+
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./website/public

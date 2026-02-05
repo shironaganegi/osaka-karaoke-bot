@@ -144,6 +144,11 @@ def send_note_draft_to_discord(note_text):
 
 def main():
     print("--- Starting Content Distribution ---")
+
+    # Debug: Check Env Vars (Masked)
+    print(f"DEBUG: QIITA_ACCESS_TOKEN is set: {'Yes' if os.getenv('QIITA_ACCESS_TOKEN') else 'No'}")
+    bsky_pass = os.getenv('BLUESKY_PASSWORD')
+    print(f"DEBUG: BLUESKY_PASSWORD is set: {'Yes (Length: ' + str(len(bsky_pass)) + ')' if bsky_pass else 'No'}")
     
     article_path = get_latest_article()
     if not article_path:

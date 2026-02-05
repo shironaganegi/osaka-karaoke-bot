@@ -53,13 +53,18 @@ def send_discord_notification(webhook_url, draft_path=None):
         # Clean the content for Discord embed so it doesn't show the hidden section
         content = content.replace(x_post_match.group(0), "")
     
+    # Generate Note Draft
+    zenn_url = "https://techtrend-watch.com/posts/" + filename.replace(".md", "") # Updated to new domain
+    note_draft = generate_note_draft(title, zenn_url)
+
     # Create Discord Embed message
     embed = {
         "title": f"📝 新着記事: {tool_name}",
         "description": title[:200],
         "color": 5814783,
         "fields": [
-            {"name": "バズりポスト案 (コピペ用)", "value": f"```\n{tweet_text}\n```", "inline": False},
+            {"name": "X (旧Twitter) バズりポスト案", "value": f"```\n{tweet_text}\n```", "inline": False},
+            {"name": "Note 誘導記事ドラフト", "value": f"```\n{note_draft}\n```", "inline": False},
             {"name": "Generated At", "value": datetime.now().strftime("%Y-%m-%d %H:%M"), "inline": True}
         ],
         "footer": {"text": "AI Affiliate Bot - 魂の1記事"}
@@ -78,6 +83,33 @@ def send_discord_notification(webhook_url, draft_path=None):
     else:
         logger.error(f"Discord notification failed.")
 
+def generate_note_draft(title, url):
+    """
+    Generates a draft text for note.mu.
+    """
+    note_title = f"【AI活用】{title} で作業効率が劇的に上がる件"
+    note_body = f"""
+{note_title}
+
+最近話題のAIツール「{title}」を使ってみました。
+これ、エンジニアじゃなくても実はめちゃくちゃ便利なんです。
+
+✅ **ここがすごい！**
+- 面倒な作業が自動化できる
+- 無料（または低コスト）で始められる
+- 今すぐ使える
+
+詳しい使い方や、導入手順は私の技術ブログ（TechTrend Watch）で完全解説しています！
+アフィリエイトリンクもバッチリ貼って収益化も狙えます（笑）
+
+興味のある方はぜひチェックしてみてください👇
+
+{url}
+
+#AI #業務効率化 #副業 #便利ツール
+    """
+    return note_body.strip()
+
 if __name__ == "__main__":
     # Get webhook URL from environment variable
     webhook_url = os.getenv("DISCORD_WEBHOOK_URL")
@@ -87,3 +119,4 @@ if __name__ == "__main__":
         exit(1)
     
     send_discord_notification(webhook_url)
+

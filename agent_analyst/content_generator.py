@@ -99,9 +99,15 @@ def generate_article(tool_data):
         return f"# {name}\n> ※本記事はプロモーションを含みます\nMock content.\n{{{{RECOMMENDED_PRODUCTS}}}}"
 
     candidate_models = [
-        'gemini-1.5-flash-latest',
+        'gemini-2.0-flash-exp',
         'gemini-1.5-flash',
+        'gemini-1.5-flash-latest',
+        'gemini-1.5-flash-001',
+        'gemini-1.5-flash-002',
         'gemini-1.5-pro',
+        'gemini-1.5-pro-001',
+        'gemini-1.5-pro-latest',
+        'gemini-1.0-pro',
         'gemini-pro'
     ]
 
@@ -113,6 +119,7 @@ def generate_article(tool_data):
             print(f"Trying model: {model_name}...")
             model = genai.GenerativeModel(model_name)
             response = model.generate_content(prompt, generation_config={"response_mime_type": "application/json"})
+            print(f"Success with model: {model_name}")
             break # Success!
         except Exception as e:
             print(f"Model {model_name} failed: {e}")
@@ -120,7 +127,16 @@ def generate_article(tool_data):
             continue
     
     if not response:
-         return f"# {name}\n\n記事の生成に失敗しました（全モデル試行不可）。\nエラー詳細: {str(last_error)}"
+         print("--- CRITICAL ERROR: All models failed. Listing available models for this API Key ---")
+         try:
+             for m in genai.list_models():
+                 if 'generateContent' in m.supported_generation_methods:
+                     print(f"Available Model: {m.name}")
+         except Exception as list_e:
+             print(f"Could not list models: {list_e}")
+         print("---------------------------------------------------------------------------------")
+         
+         return f"# {name}\n\n記事の生成に失敗しました（全モデル試行不可）。\nエラー詳細: {str(last_error)}\n※ログを確認して利用可能なモデル名を追記してください。"
 
     try:
         content_text = response.text.strip()

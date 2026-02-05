@@ -1,1 +1,12 @@
-[]
+[
+  {
+    "name": "claude-mem",
+    "url": "https://github.com/thedotmack/claude-mem",
+    "date": "2026-02-05T11:17:13.655977"
+  },
+  {
+    "name": "Voxtral Transcribe 2 by Mistral",
+    "url": "https://www.producthunt.com/products/mistral-7b",
+    "date": "2026-02-05T11:24:58.272615"
+  }
+]

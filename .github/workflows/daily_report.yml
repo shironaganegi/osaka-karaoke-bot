@@ -52,6 +52,9 @@ jobs:
         DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
       run: python -m agent_publisher.discord_notifier
 
+    - name: Run Maintenance Agent (Clean Old Files)
+      run: python -m agent_watcher.maintenance
+
     - name: Commit and Push Drafts
       run: |
         git config --global user.name 'AI Agent Bot'

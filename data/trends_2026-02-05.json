@@ -5,10 +5,10 @@
     "owner": "thedotmack",
     "url": "https://github.com/thedotmack/claude-mem",
     "description": "A Claude Code plugin that automatically captures everything Claude does during your coding sessions, compresses it with AI (using Claude's agent-sdk), and injects relevant context back into future sessions.",
-    "stars": 23244,
+    "stars": 23249,
     "daily_stars": 2638,
     "language": "all",
-    "fetched_at": "2026-02-05T10:47:22.276933"
+    "fetched_at": "2026-02-05T10:52:22.447942"
   },
   {
     "source": "hacker_news",
@@ -19,7 +19,7 @@
     "stars": 1064,
     "daily_stars": 1064,
     "language": "tech",
-    "fetched_at": "2026-02-05T10:47:27.010962"
+    "fetched_at": "2026-02-05T10:52:27.456072"
   },
   {
     "source": "github",
@@ -27,10 +27,10 @@
     "owner": "openai",
     "url": "https://github.com/openai/skills",
     "description": "Skills Catalog for Codex",
-    "stars": 3984,
+    "stars": 3985,
     "daily_stars": 746,
     "language": "all",
-    "fetched_at": "2026-02-05T10:47:22.277458"
+    "fetched_at": "2026-02-05T10:52:22.448451"
   },
   {
     "source": "hacker_news",
@@ -41,7 +41,7 @@
     "stars": 354,
     "daily_stars": 354,
     "language": "tech",
-    "fetched_at": "2026-02-05T10:47:24.948613"
+    "fetched_at": "2026-02-05T10:52:25.187628"
   },
   {
     "source": "github",
@@ -52,7 +52,7 @@
     "stars": 14031,
     "daily_stars": 315,
     "language": "python",
-    "fetched_at": "2026-02-05T10:47:23.440526"
+    "fetched_at": "2026-02-05T10:52:23.520783"
   },
   {
     "source": "github",
@@ -63,7 +63,7 @@
     "stars": 42294,
     "daily_stars": 313,
     "language": "python",
-    "fetched_at": "2026-02-05T10:47:23.436460"
+    "fetched_at": "2026-02-05T10:52:23.516807"
   },
   {
     "source": "github",
@@ -74,7 +74,7 @@
     "stars": 577,
     "daily_stars": 289,
     "language": "python",
-    "fetched_at": "2026-02-05T10:47:23.438087"
+    "fetched_at": "2026-02-05T10:52:23.518382"
   },
   {
     "source": "hacker_news",
@@ -85,7 +85,7 @@
     "stars": 282,
     "daily_stars": 282,
     "language": "tech",
-    "fetched_at": "2026-02-05T10:47:24.688359"
+    "fetched_at": "2026-02-05T10:52:24.994173"
   },
   {
     "source": "github",
@@ -93,10 +93,10 @@
     "owner": "OpenBMB",
     "url": "https://github.com/OpenBMB/ChatDev",
     "description": "ChatDev 2.0: Dev All through LLM-powered Multi-Agent Collaboration",
-    "stars": 30129,
+    "stars": 30131,
     "daily_stars": 227,
     "language": "all",
-    "fetched_at": "2026-02-05T10:47:22.278422"
+    "fetched_at": "2026-02-05T10:52:22.449403"
   },
   {
     "source": "hacker_news",
@@ -107,7 +107,7 @@
     "stars": 218,
     "daily_stars": 218,
     "language": "tech",
-    "fetched_at": "2026-02-05T10:47:26.494563"
+    "fetched_at": "2026-02-05T10:52:26.888749"
   },
   {
     "source": "hacker_news",
@@ -118,7 +118,7 @@
     "stars": 215,
     "daily_stars": 215,
     "language": "tech",
-    "fetched_at": "2026-02-05T10:47:25.116791"
+    "fetched_at": "2026-02-05T10:52:25.378810"
   },
   {
     "source": "github",
@@ -126,10 +126,10 @@
     "owner": "pedramamini",
     "url": "https://github.com/pedramamini/Maestro",
     "description": "Agent Orchestration Command Center",
-    "stars": 1743,
+    "stars": 1745,
     "daily_stars": 187,
     "language": "all",
-    "fetched_at": "2026-02-05T10:47:22.280353"
+    "fetched_at": "2026-02-05T10:52:22.451324"
   },
   {
     "source": "github",
@@ -137,10 +137,10 @@
     "owner": "TauricResearch",
     "url": "https://github.com/TauricResearch/TradingAgents",
     "description": "TradingAgents: Multi-Agents LLM Financial Trading Framework",
-    "stars": 29316,
+    "stars": 29317,
     "daily_stars": 135,
     "language": "python",
-    "fetched_at": "2026-02-05T10:47:23.441090"
+    "fetched_at": "2026-02-05T10:52:23.521248"
   },
   {
     "source": "github",
@@ -151,7 +151,7 @@
     "stars": 15290,
     "daily_stars": 123,
     "language": "python",
-    "fetched_at": "2026-02-05T10:47:23.439541"
+    "fetched_at": "2026-02-05T10:52:23.519834"
   },
   {
     "source": "hacker_news",
@@ -162,7 +162,7 @@
     "stars": 111,
     "daily_stars": 111,
     "language": "tech",
-    "fetched_at": "2026-02-05T10:47:26.667786"
+    "fetched_at": "2026-02-05T10:52:27.173995"
   },
   {
     "source": "github",
@@ -170,32 +170,10 @@
     "owner": "confident-ai",
     "url": "https://github.com/confident-ai/deepeval",
     "description": "The LLM Evaluation Framework",
-    "stars": 13450,
+    "stars": 13451,
     "daily_stars": 109,
     "language": "python",
-    "fetched_at": "2026-02-05T10:47:23.440046"
-  },
-  {
-    "source": "product_hunt",
-    "name": "Votap",
-    "owner": "ProductHunt",
-    "url": "https://www.producthunt.com/products/votap",
-    "description": "\n            A platform for the world to vote on political leaders\n          \n\nDiscussion\n            |\n            Link\n",
-    "stars": 0,
-    "daily_stars": 100,
-    "language": "saas",
-    "fetched_at": "2026-02-05T10:47:23.608976"
-  },
-  {
-    "source": "product_hunt",
-    "name": "Kling 3.0",
-    "owner": "ProductHunt",
-    "url": "https://www.producthunt.com/products/kling-ai-4",
-    "description": "\n            Native 4K output with extended video time with just a prompt\n          \n\nDiscussion\n            |\n            Link\n",
-    "stars": 0,
-    "daily_stars": 100,
-    "language": "saas",
-    "fetched_at": "2026-02-05T10:47:23.609194"
+    "fetched_at": "2026-02-05T10:52:23.520296"
   },
   {
     "source": "product_hunt",
@@ -206,29 +184,18 @@
     "stars": 0,
     "daily_stars": 100,
     "language": "saas",
-    "fetched_at": "2026-02-05T10:47:23.609399"
+    "fetched_at": "2026-02-05T10:52:23.646900"
   },
   {
     "source": "product_hunt",
-    "name": "AutoBandStudio",
+    "name": "Agent Sandbox",
     "owner": "ProductHunt",
-    "url": "https://www.producthunt.com/products/autobandstudio",
-    "description": "\n            AI that turns your melody into a full arrangement\n          \n\nDiscussion\n            |\n            Link\n",
+    "url": "https://www.producthunt.com/products/agent-sandbox",
+    "description": "\n            Your agent's personal remote computer and drive\n          \n\nDiscussion\n            |\n            Link\n",
     "stars": 0,
     "daily_stars": 100,
     "language": "saas",
-    "fetched_at": "2026-02-05T10:47:23.609607"
-  },
-  {
-    "source": "product_hunt",
-    "name": "The new v0",
-    "owner": "ProductHunt",
-    "url": "https://www.producthunt.com/products/v0",
-    "description": "\n            Full stack vibe coding platform. Created by Vercel.\n          \n\nDiscussion\n            |\n            Link\n",
-    "stars": 0,
-    "daily_stars": 100,
-    "language": "saas",
-    "fetched_at": "2026-02-05T10:47:23.609808"
+    "fetched_at": "2026-02-05T10:52:23.647116"
   },
   {
     "source": "product_hunt",
@@ -239,29 +206,7 @@
     "stars": 0,
     "daily_stars": 100,
     "language": "saas",
-    "fetched_at": "2026-02-05T10:47:23.610001"
-  },
-  {
-    "source": "product_hunt",
-    "name": "Higgsfield Vibe-Motion",
-    "owner": "ProductHunt",
-    "url": "https://www.producthunt.com/products/higgsfield",
-    "description": "\n            Create motion images in a single prompt in an editing canvas\n          \n\nDiscussion\n            |\n            Link\n",
-    "stars": 0,
-    "daily_stars": 100,
-    "language": "saas",
-    "fetched_at": "2026-02-05T10:47:23.610189"
-  },
-  {
-    "source": "product_hunt",
-    "name": "TalkToPost",
-    "owner": "ProductHunt",
-    "url": "https://www.producthunt.com/products/talktopost",
-    "description": "\n            Voice notes to LinkedIn and X viral content in seconds!\n          \n\nDiscussion\n            |\n            Link\n",
-    "stars": 0,
-    "daily_stars": 100,
-    "language": "saas",
-    "fetched_at": "2026-02-05T10:47:23.610377"
+    "fetched_at": "2026-02-05T10:52:23.647312"
   },
   {
     "source": "product_hunt",
@@ -272,18 +217,73 @@
     "stars": 0,
     "daily_stars": 100,
     "language": "saas",
-    "fetched_at": "2026-02-05T10:47:23.610565"
+    "fetched_at": "2026-02-05T10:52:23.647503"
   },
   {
     "source": "product_hunt",
-    "name": "Sylvian AI Forms",
+    "name": "GitScrum Studio for IDE",
     "owner": "ProductHunt",
-    "url": "https://www.producthunt.com/products/sylvian-excel-agent",
-    "description": "\n            Never fill a PDF by hand again\n          \n\nDiscussion\n            |\n            Link\n",
+    "url": "https://www.producthunt.com/products/gitscrum-studio-for-ide",
+    "description": "\n            Full project management inside VS Code, Cursor & Windsurf\n          \n\nDiscussion\n            |\n            Link\n",
     "stars": 0,
     "daily_stars": 100,
     "language": "saas",
-    "fetched_at": "2026-02-05T10:47:23.610772"
+    "fetched_at": "2026-02-05T10:52:23.647722"
+  },
+  {
+    "source": "product_hunt",
+    "name": "TalkToPost",
+    "owner": "ProductHunt",
+    "url": "https://www.producthunt.com/products/talktopost",
+    "description": "\n            Voice notes to LinkedIn and X viral content in seconds!\n          \n\nDiscussion\n            |\n            Link\n",
+    "stars": 0,
+    "daily_stars": 100,
+    "language": "saas",
+    "fetched_at": "2026-02-05T10:52:23.647916"
+  },
+  {
+    "source": "product_hunt",
+    "name": "AutoBandStudio",
+    "owner": "ProductHunt",
+    "url": "https://www.producthunt.com/products/autobandstudio",
+    "description": "\n            AI that turns your melody into a full arrangement\n          \n\nDiscussion\n            |\n            Link\n",
+    "stars": 0,
+    "daily_stars": 100,
+    "language": "saas",
+    "fetched_at": "2026-02-05T10:52:23.648106"
+  },
+  {
+    "source": "product_hunt",
+    "name": "GitHub Agent HQ",
+    "owner": "ProductHunt",
+    "url": "https://www.producthunt.com/products/github",
+    "description": "\n            Run Claude, Codex & Copilot directly in GitHub & VS Code\n          \n\nDiscussion\n            |\n            Link\n",
+    "stars": 0,
+    "daily_stars": 100,
+    "language": "saas",
+    "fetched_at": "2026-02-05T10:52:23.648300"
+  },
+  {
+    "source": "product_hunt",
+    "name": "Kling 3.0",
+    "owner": "ProductHunt",
+    "url": "https://www.producthunt.com/products/kling-ai-4",
+    "description": "\n            Native 4K output with extended video time with just a prompt\n          \n\nDiscussion\n            |\n            Link\n",
+    "stars": 0,
+    "daily_stars": 100,
+    "language": "saas",
+    "fetched_at": "2026-02-05T10:52:23.648486"
+  },
+  {
+    "source": "product_hunt",
+    "name": "SessionCast",
+    "owner": "ProductHunt",
+    "url": "https://www.producthunt.com/products/sessioncast",
+    "description": "\n            CLI control to monitor and work with Claude Code remotely\n          \n\nDiscussion\n            |\n            Link\n",
+    "stars": 0,
+    "daily_stars": 100,
+    "language": "saas",
+    "fetched_at": "2026-02-05T10:52:23.648704"
   },
   {
     "source": "github",
@@ -291,10 +291,10 @@
     "owner": "Canner",
     "url": "https://github.com/Canner/WrenAI",
     "description": "⚡️ GenBI (Generative BI) queries any database in natural language, generates accurate SQL (Text-to-SQL), charts (Text-to-Chart), and AI-powered business intelligence in seconds.",
-    "stars": 14090,
+    "stars": 14091,
     "daily_stars": 89,
     "language": "all",
-    "fetched_at": "2026-02-05T10:47:22.279877"
+    "fetched_at": "2026-02-05T10:52:22.450855"
   },
   {
     "source": "github",
@@ -302,10 +302,10 @@
     "owner": "microsoft",
     "url": "https://github.com/microsoft/qlib",
     "description": "Qlib is an AI-oriented Quant investment platform that aims to use AI tech to empower Quant Research, from exploring ideas to implementing productions. Qlib supports diverse ML modeling paradigms, including supervised learning, market dynamics modeling, and RL, and is now equipped withhttps://github.com/microsoft/RD-Agentto automate R&D process.",
-    "stars": 36723,
+    "stars": 36726,
     "daily_stars": 83,
     "language": "all",
-    "fetched_at": "2026-02-05T10:47:22.281335"
+    "fetched_at": "2026-02-05T10:52:22.452290"
   },
   {
     "source": "github",
@@ -316,7 +316,7 @@
     "stars": 58358,
     "daily_stars": 68,
     "language": "all",
-    "fetched_at": "2026-02-05T10:47:22.281817"
+    "fetched_at": "2026-02-05T10:52:22.452771"
   },
   {
     "source": "github",
@@ -327,7 +327,7 @@
     "stars": 2506,
     "daily_stars": 47,
     "language": "all",
-    "fetched_at": "2026-02-05T10:47:22.277944"
+    "fetched_at": "2026-02-05T10:52:22.448926"
   },
   {
     "source": "qiita",
@@ -338,7 +338,7 @@
     "stars": 40,
     "daily_stars": 40,
     "language": "japanese",
-    "fetched_at": "2026-02-05T10:47:28.793797"
+    "fetched_at": "2026-02-05T10:52:29.273566"
   },
   {
     "source": "qiita",
@@ -349,7 +349,7 @@
     "stars": 40,
     "daily_stars": 40,
     "language": "japanese",
-    "fetched_at": "2026-02-05T10:47:28.793811"
+    "fetched_at": "2026-02-05T10:52:29.273594"
   },
   {
     "source": "qiita",
@@ -360,7 +360,7 @@
     "stars": 40,
     "daily_stars": 40,
     "language": "japanese",
-    "fetched_at": "2026-02-05T10:47:28.793817"
+    "fetched_at": "2026-02-05T10:52:29.273601"
   },
   {
     "source": "qiita",
@@ -371,7 +371,7 @@
     "stars": 40,
     "daily_stars": 40,
     "language": "japanese",
-    "fetched_at": "2026-02-05T10:47:28.793823"
+    "fetched_at": "2026-02-05T10:52:29.273607"
   },
   {
     "source": "qiita",
@@ -382,7 +382,7 @@
     "stars": 40,
     "daily_stars": 40,
     "language": "japanese",
-    "fetched_at": "2026-02-05T10:47:29.338643"
+    "fetched_at": "2026-02-05T10:52:29.551532"
   },
   {
     "source": "qiita",
@@ -393,7 +393,7 @@
     "stars": 40,
     "daily_stars": 40,
     "language": "japanese",
-    "fetched_at": "2026-02-05T10:47:29.338657"
+    "fetched_at": "2026-02-05T10:52:29.551546"
   },
   {
     "source": "qiita",
@@ -404,7 +404,7 @@
     "stars": 40,
     "daily_stars": 40,
     "language": "japanese",
-    "fetched_at": "2026-02-05T10:47:29.338664"
+    "fetched_at": "2026-02-05T10:52:29.551552"
   },
   {
     "source": "qiita",
@@ -415,7 +415,7 @@
     "stars": 40,
     "daily_stars": 40,
     "language": "japanese",
-    "fetched_at": "2026-02-05T10:47:29.338670"
+    "fetched_at": "2026-02-05T10:52:29.551558"
   },
   {
     "source": "qiita",
@@ -426,7 +426,7 @@
     "stars": 40,
     "daily_stars": 40,
     "language": "japanese",
-    "fetched_at": "2026-02-05T10:47:29.582151"
+    "fetched_at": "2026-02-05T10:52:30.097332"
   },
   {
     "source": "qiita",
@@ -437,7 +437,7 @@
     "stars": 40,
     "daily_stars": 40,
     "language": "japanese",
-    "fetched_at": "2026-02-05T10:47:29.582167"
+    "fetched_at": "2026-02-05T10:52:30.097346"
   },
   {
     "source": "qiita",
@@ -448,7 +448,7 @@
     "stars": 40,
     "daily_stars": 40,
     "language": "japanese",
-    "fetched_at": "2026-02-05T10:47:29.582174"
+    "fetched_at": "2026-02-05T10:52:30.097352"
   },
   {
     "source": "qiita",
@@ -459,7 +459,7 @@
     "stars": 40,
     "daily_stars": 40,
     "language": "japanese",
-    "fetched_at": "2026-02-05T10:47:29.582180"
+    "fetched_at": "2026-02-05T10:52:30.097358"
   },
   {
     "source": "github",
@@ -467,10 +467,10 @@
     "owner": "nvm-sh",
     "url": "https://github.com/nvm-sh/nvm",
     "description": "Node Version Manager - POSIX-compliant bash script to manage multiple active node.js versions",
-    "stars": 91303,
+    "stars": 91304,
     "daily_stars": 35,
     "language": "all",
-    "fetched_at": "2026-02-05T10:47:22.280841"
+    "fetched_at": "2026-02-05T10:52:22.451806"
   },
   {
     "source": "github",
@@ -481,7 +481,7 @@
     "stars": 41048,
     "daily_stars": 32,
     "language": "python",
-    "fetched_at": "2026-02-05T10:47:23.437601"
+    "fetched_at": "2026-02-05T10:52:23.517896"
   },
   {
     "source": "github",
@@ -489,10 +489,10 @@
     "owner": "likec4",
     "url": "https://github.com/likec4/likec4",
     "description": "Visualize, collaborate, and evolve the software architecture with always actual and live diagrams from your code",
-    "stars": 1617,
+    "stars": 1619,
     "daily_stars": 29,
     "language": "all",
-    "fetched_at": "2026-02-05T10:47:22.282413"
+    "fetched_at": "2026-02-05T10:52:22.453359"
   },
   {
     "source": "github",
@@ -503,7 +503,7 @@
     "stars": 26250,
     "daily_stars": 28,
     "language": "all",
-    "fetched_at": "2026-02-05T10:47:22.278908"
+    "fetched_at": "2026-02-05T10:52:22.449889"
   },
   {
     "source": "github",
@@ -514,7 +514,7 @@
     "stars": 10188,
     "daily_stars": 26,
     "language": "python",
-    "fetched_at": "2026-02-05T10:47:23.438562"
+    "fetched_at": "2026-02-05T10:52:23.518871"
   },
   {
     "source": "github",
@@ -525,7 +525,7 @@
     "stars": 28562,
     "daily_stars": 14,
     "language": "python",
-    "fetched_at": "2026-02-05T10:47:23.437096"
+    "fetched_at": "2026-02-05T10:52:23.517403"
   },
   {
     "source": "github",
@@ -536,7 +536,7 @@
     "stars": 14897,
     "daily_stars": 13,
     "language": "python",
-    "fetched_at": "2026-02-05T10:47:23.439061"
+    "fetched_at": "2026-02-05T10:52:23.519343"
   },
   {
     "source": "github",
@@ -547,6 +547,6 @@
     "stars": 4378,
     "daily_stars": 3,
     "language": "all",
-    "fetched_at": "2026-02-05T10:47:22.279381"
+    "fetched_at": "2026-02-05T10:52:22.450358"
   }
 ]

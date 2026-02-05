@@ -87,7 +87,7 @@ def generate_article(tool_data):
 
     Requirements:
     1. Structure: Title, Intro, Features, Install, Pros/Cons, Conclusion.
-    2. Placeholder: Insert exactly `{{RECOMMENDED_PRODUCTS}}` once in the middle of the article (after features).
+    2. Placeholder: Insert exactly `{{{{RECOMMENDED_PRODUCTS}}}}` once in the middle of the article (after features).
     3. PR Notice: The very first line after the title must be `> ※本記事はプロモーションを含みます`.
 
     Output MUST be a valid JSON with two fields:
@@ -96,9 +96,9 @@ def generate_article(tool_data):
     """
 
     if not api_key:
-        return f"# {name}\n> ※本記事はプロモーションを含みます\nMock content.\n{{RECOMMENDED_PRODUCTS}}"
+        return f"# {name}\n> ※本記事はプロモーションを含みます\nMock content.\n{{{{RECOMMENDED_PRODUCTS}}}}"
 
-    model = genai.GenerativeModel('gemini-2.5-flash')
+    model = genai.GenerativeModel('gemini-1.5-flash')
     try:
         response = model.generate_content(prompt, generation_config={"response_mime_type": "application/json"})
         content_text = response.text.strip()
@@ -122,7 +122,8 @@ def generate_article(tool_data):
         # 1. Search and Inject Products
         try:
             products_html = "".join(search_related_items(keyword))
-            final_article = draft.replace("{{RECOMMENDED_PRODUCTS}}", products_html)
+            # Support both {{ }} and { } just in case
+            final_article = draft.replace("{{RECOMMENDED_PRODUCTS}}", products_html).replace("{RECOMMENDED_PRODUCTS}", products_html)
         except Exception as e:
             print(f"Product injection failed: {e}")
             final_article = draft
@@ -190,32 +191,34 @@ def save_to_history(tool_name, url):
     with open(history_path, 'w', encoding='utf-8') as f:
         json.dump(history, f, indent=2, ensure_ascii=False)
 
-if __name__ == "__main__":
-    # 1. Load the latest trends data
+import string
+
+# ... (Imports are fine, keep them)
+
+def load_trends_data():
+    """Loads the latest trends JSON file from the data directory."""
     data_dir = os.path.join(os.path.dirname(__file__), "..", "data")
-    # Find the most recent json file
-    files = sorted([f for f in os.listdir(data_dir) if f.startswith("trends_")], reverse=True)
+    if not os.path.exists(data_dir):
+        return []
     
+    files = sorted([f for f in os.listdir(data_dir) if f.startswith("trends_")], reverse=True)
     if not files:
-        print("No trend data found. Run watcher first.")
-        exit()
+        return []
         
     latest_file = os.path.join(data_dir, files[0])
     print(f"Loading data from {latest_file}")
     
     with open(latest_file, 'r', encoding='utf-8') as f:
-        data = json.load(f)
-    
-    # 2. Pick the Winner (Top Daily Stars)
-    # Filter for items with daily_stars > 0
-    # COOLDOWN logic: Allow tools to re-appear after 14 days
+        return json.load(f)
+
+def select_best_candidate(data):
+    """Selects the best tool to write about, considering history and diversity."""
+    # 1. Filter usable items (Stars > 0)
+    # 2. Apply Cooldown (Exclude if posted in last 14 days)
     history = load_history()
-    
-    # Calculate cooldown date (14 days ago)
     cooldown_period = timedelta(days=14)
     cutoff_date = datetime.now() - cooldown_period
     
-    # List of URLs posted recently (within cooldown period)
     recent_posted_urls = []
     for h in history:
         try:
@@ -227,11 +230,15 @@ if __name__ == "__main__":
             
     candidates = [item for item in data if item.get('daily_stars', 0) > 0 and item['url'] not in recent_posted_urls]
     
+    # Fallback if everything is filtered
     if not candidates:
         print("All trending topics were posted recently. Picking a random one from top trends anyway.")
-        # Fallback: ignore history constraint if everything is filtered out
         candidates = [item for item in data if item.get('daily_stars', 0) > 0]
-    # Group by source to ensure diversity
+    
+    if not candidates:
+        return None
+
+    # 3. Ensure Source Diversity (Pick top 2 from each source)
     candidates_by_source = {}
     for item in candidates:
         src = item.get('source', 'unknown')
@@ -239,23 +246,54 @@ if __name__ == "__main__":
             candidates_by_source[src] = []
         candidates_by_source[src].append(item)
     
-    # Pick top 2 from each source
     final_pool = []
     for src, items in candidates_by_source.items():
-        # Sort each source by daily_stars
         sorted_items = sorted(items, key=lambda x: x.get('daily_stars', 0), reverse=True)
         final_pool.extend(sorted_items[:2])
         
     print(f"Candidate Poll Size: {len(final_pool)} (Sources: {list(candidates_by_source.keys())})")
     
-    # Pick random from this diverse pool
-    top_tool = random.choice(final_pool)
+    # 4. Pick Random Winner
+    return random.choice(final_pool)
+
+def save_article_file(content, tool_data):
+    """Saves the article to the articles directory with a Zenn-compatible filename."""
+    # Generate random 14-char slug
+    slug = ''.join(random.choices(string.ascii_lowercase + string.digits, k=14))
+    articles_dir = os.path.join(os.path.dirname(__file__), "..", "articles")
+    os.makedirs(articles_dir, exist_ok=True)
+    
+    file_path = os.path.join(articles_dir, f"{slug}.md")
+    
+    with open(file_path, 'w', encoding='utf-8') as f:
+        f.write(content)
+        
+    # Log to history
+    save_to_history(tool_data['name'], tool_data['url'])
+    
+    print(f"Zenn article saved to: {file_path}")
+    print("-" * 30)
+    return file_path
+
+if __name__ == "__main__":
+    # 1. Load Data
+    trends_data = load_trends_data()
+    if not trends_data:
+        print("No trend data found. Run watcher first.")
+        exit()
+
+    # 2. Select Tool
+    top_tool = select_best_candidate(trends_data)
+    if not top_tool:
+        print("No suitable candidates found.")
+        exit()
+
     print(f"Selected Tool: {top_tool['name']} (Source: {top_tool.get('source')})")
     
-    # 3. Generate Draft
+    # 3. Generate Content
     body_content = generate_article(top_tool)
     
-    # 4. Extract title for frontmatter
+    # 4. Extract Title & Frontmatter
     article_title = "New AI Tool: " + top_tool['name']
     for line in body_content.split("\n"):
         if line.startswith("# "):
@@ -265,19 +303,5 @@ if __name__ == "__main__":
     frontmatter = generate_zenn_frontmatter(article_title, top_tool['name'], top_tool.get('source'))
     final_content = frontmatter + body_content
     
-    # 5. Save to /articles with Zenn-compatible slug (14 random chars)
-    import string
-    slug = ''.join(random.choices(string.ascii_lowercase + string.digits, k=14))
-    articles_dir = os.path.join(os.path.dirname(__file__), "..", "articles")
-    os.makedirs(articles_dir, exist_ok=True)
-    
-    file_path = os.path.join(articles_dir, f"{slug}.md")
-    
-    with open(file_path, 'w', encoding='utf-8') as f:
-        f.write(final_content)
-        
-    save_to_history(top_tool['name'], top_tool['url'])
-        
-    print(f"Zenn article saved to: {file_path}")
-    print("-" * 30)
-    # print(draft_content[:500] + "...\n(truncated)") # Disable printing to avoid console encoding errors
+    # 5. Save
+    save_article_file(final_content, top_tool)

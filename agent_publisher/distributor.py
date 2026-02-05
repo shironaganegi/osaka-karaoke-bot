@@ -47,9 +47,11 @@ def clean_for_qiita(body, zenn_url):
 def post_to_qiita(title, body, tags=None):
     """Posts the article to Qiita."""
     token = os.getenv("QIITA_ACCESS_TOKEN")
-    if not token:
-        print("Qiita token not found. Skipping.")
+    if not token or token.startswith("your_"):
+        print("Qiita token not found or placeholder. Skipping.")
         return None
+    
+    token = token.strip() # Remove any accidental whitespace or newlines
 
     url = "https://qiita.com/api/v2/items"
     headers = {
@@ -158,16 +160,25 @@ def main():
     print(f"Zenn URL: {zenn_url}")
 
     # 1. Post to Qiita
-    qiita_body = clean_for_qiita(body, zenn_url)
-    post_to_qiita(title, qiita_body)
+    try:
+        qiita_body = clean_for_qiita(body, zenn_url)
+        post_to_qiita(title, qiita_body)
+    except Exception as e:
+        print(f"Failed to process Qiita distribution: {e}")
     
     # 2. Post to BlueSky
-    bsky_text = f"📝 新しい記事を書きました！\n\n{title}\n\n#AI #Tech #Zenn\n{zenn_url}"
-    post_to_bluesky(bsky_text)
+    try:
+        bsky_text = f"📝 新しい記事を書きました！\n\n{title}\n\n#AI #Tech #Zenn\n{zenn_url}"
+        post_to_bluesky(bsky_text)
+    except Exception as e:
+        print(f"Failed to process BlueSky distribution: {e}")
 
     # 3. Generate Note Draft (Manual)
-    note_draft = generate_note_draft(title, zenn_url)
-    send_note_draft_to_discord(note_draft)
+    try:
+        note_draft = generate_note_draft(title, zenn_url)
+        send_note_draft_to_discord(note_draft)
+    except Exception as e:
+        print(f"Failed to process Note distribution: {e}")
     
     print("--- Distribution Completed ---")
 

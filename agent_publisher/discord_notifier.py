@@ -46,10 +46,14 @@ def send_discord_notification(webhook_url, draft_path=None):
         ],
         "footer": {"text": "AI Affiliate Bot - Check GitHub for full content"}
     }
+
+    # Tweet Draft for manual posting
+    tweet_text = f"🤖 今日の注目AIツール: {tool_name}\n\n{title}\n\n詳細はこちら！👇\nhttps://zenn.dev/shironaganegi\n\n#AI #Tech #白ネギテック"
     
     payload = {
         "username": "AI Affiliate Bot",
         "avatar_url": "https://cdn-icons-png.flaticon.com/512/4712/4712109.png",
+        "content": f"**📝 X投稿用ドラフト** (コピペして使ってね！)\n```{tweet_text}```",
         "embeds": [embed]
     }
     

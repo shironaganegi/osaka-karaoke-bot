@@ -97,6 +97,48 @@ def post_to_bluesky(text):
     except Exception as e:
         print(f"BlueSky Error (Check handle/password?): {e}")
 
+def generate_note_draft(title, zenn_url):
+    """
+    Generates a draft text for note.mu (targeting general audience).
+    Since note has no API, we just format it for manual copy-paste.
+    """
+    note_title = f"【AI活用】{title} で作業効率が劇的に上がる件"
+    note_body = f"""
+{note_title}
+
+最近話題のAIツール「{title}」を使ってみました。
+これ、エンジニアじゃなくても実はめちゃくちゃ便利なんです。
+
+✅ **ここがすごい！**
+- 面倒な作業が自動化できる
+- 無料（または低コスト）で始められる
+- 今すぐ使える
+
+詳しい使い方や、導入手順は私の技術ブログ（Zenn）で完全解説しています！
+興味のある方はぜひチェックしてみてください👇
+
+{zenn_url}
+
+#AI #業務効率化 #副業 #便利ツール
+    """
+    return note_body.strip()
+
+def send_note_draft_to_discord(note_text):
+    """Sends the note draft to Discord for manual posting."""
+    webhook_url = os.getenv("DISCORD_WEBHOOK_URL")
+    if not webhook_url:
+        return
+
+    payload = {
+        "username": "AI Affiliate Bot (Note担当)",
+        "content": f"**📝 note投稿用ドラフト** (コピペしてnoteに貼ってね！)\n```\n{note_text}\n```"
+    }
+    try:
+        requests.post(webhook_url, json=payload)
+        print("Sent note draft to Discord.")
+    except Exception as e:
+        print(f"Failed to send note draft: {e}")
+
 def main():
     print("--- Starting Content Distribution ---")
     
@@ -122,6 +164,10 @@ def main():
     # 2. Post to BlueSky
     bsky_text = f"📝 新しい記事を書きました！\n\n{title}\n\n#AI #Tech #Zenn\n{zenn_url}"
     post_to_bluesky(bsky_text)
+
+    # 3. Generate Note Draft (Manual)
+    note_draft = generate_note_draft(title, zenn_url)
+    send_note_draft_to_discord(note_draft)
     
     print("--- Distribution Completed ---")
 

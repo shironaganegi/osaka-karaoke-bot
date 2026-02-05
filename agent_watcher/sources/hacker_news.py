@@ -1,16 +1,18 @@
-import requests
-import logging
 from datetime import datetime
+from shared.utils import setup_logging, safe_requests_get
+
+logger = setup_logging(__name__)
 
 def fetch_hacker_news_trends():
     """
     Fetches top stories from Hacker News and filters for AI/Python tech.
     """
-    logging.info("Fetching Hacker News Top Stories")
+    logger.info("Fetching Hacker News Top Stories")
     try:
         # Get top story IDs
         top_ids_url = "https://hacker-news.firebaseio.com/v0/topstories.json"
-        top_ids = requests.get(top_ids_url, timeout=10).json()
+        resp_ids = safe_requests_get(top_ids_url)
+        top_ids = resp_ids.json() if resp_ids else []
         
         trends = []
         keywords = ["AI", "LLM", "GPT", "Model", "Data", "Python", "Claude", "Gemini"]
@@ -18,7 +20,10 @@ def fetch_hacker_news_trends():
         # Check first 50 stories for performance
         for story_id in top_ids[:50]:
             story_url = f"https://hacker-news.firebaseio.com/v0/item/{story_id}.json"
-            story = requests.get(story_url, timeout=5).json()
+            resp_story = safe_requests_get(story_url, timeout=5)
+            if not resp_story:
+                continue
+            story = resp_story.json()
             
             if not story:
                 continue

@@ -1,18 +1,21 @@
-import requests
 from bs4 import BeautifulSoup
-import logging
 from datetime import datetime
+from shared.utils import setup_logging, safe_requests_get
+
+logger = setup_logging(__name__)
 
 def fetch_zenn_trends():
     """
     Scrapes trending articles from Zenn.dev tech section.
     """
-    url = "https://zenn.dev/tech/trends"
-    logging.info(f"Fetching Zenn trends: {url}")
+    url = "https://zenn.dev/articles"
+    logger.info(f"Fetching Zenn trends: {url}")
     
     try:
-        response = requests.get(url, timeout=10)
-        response.raise_for_status()
+        response = safe_requests_get(url)
+        if not response:
+            return []
+
         soup = BeautifulSoup(response.text, 'html.parser')
         
         articles = []
@@ -41,5 +44,5 @@ def fetch_zenn_trends():
             })
         return articles
     except Exception as e:
-        logging.error(f"Failed to fetch Zenn trends: {e}")
+        logger.error(f"Failed to fetch Zenn trends: {e}")
         return []

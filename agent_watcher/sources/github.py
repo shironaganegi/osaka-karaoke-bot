@@ -1,7 +1,8 @@
-import requests
 from bs4 import BeautifulSoup
 from datetime import datetime
-import logging
+from shared.utils import setup_logging, safe_requests_get
+
+logger = setup_logging(__name__)
 
 def fetch_github_trending(language=None):
     """
@@ -11,12 +12,10 @@ def fetch_github_trending(language=None):
     if language:
         url += f"/{language}"
     
-    logging.info(f"Fetching GitHub Trending: {url}")
-    try:
-        response = requests.get(url, timeout=10)
-        response.raise_for_status()
-    except Exception as e:
-        logging.error(f"Failed to fetch GitHub pages: {e}")
+    logger.info(f"Fetching GitHub Trending: {url}")
+    
+    response = safe_requests_get(url)
+    if not response:
         return []
 
     soup = BeautifulSoup(response.text, 'html.parser')

@@ -1,14 +1,13 @@
 import os
 import glob
 import re
-import requests
-import json
 from atproto import Client
 from datetime import datetime
-from dotenv import load_dotenv
+from shared.utils import setup_logging, safe_requests_post, load_config
 
-# Load env variables for local testing
-load_dotenv()
+# Load env variables
+load_config()
+logger = setup_logging(__name__)
 
 def get_latest_article():
     """Finds the latest article in the Zenn articles directory."""
@@ -48,10 +47,10 @@ def post_to_qiita(title, body, tags=None):
     """Posts the article to Qiita."""
     token = os.getenv("QIITA_ACCESS_TOKEN")
     if not token or token.startswith("your_"):
-        print("Qiita token not found or placeholder. Skipping.")
+        logger.warning("Qiita token not found or placeholder. Skipping.")
         return None
     
-    token = token.strip() # Remove any accidental whitespace or newlines
+    token = token.strip()
 
     url = "https://qiita.com/api/v2/items"
     headers = {
@@ -70,16 +69,12 @@ def post_to_qiita(title, body, tags=None):
         "private": False # Set to True if you want to verify first
     }
     
-    try:
-        response = requests.post(url, headers=headers, json=payload)
-        if response.status_code == 201:
-            print(f"Successfully posted to Qiita: {response.json()['url']}")
-            return response.json()['url']
-        else:
-            print(f"Qiita post failed: {response.text}")
-            return None
-    except Exception as e:
-        print(f"Qiita Error: {e}")
+    response = safe_requests_post(url, json_data=payload, headers=headers)
+    if response and response.status_code == 201:
+        logger.info(f"Successfully posted to Qiita: {response.json()['url']}")
+        return response.json()['url']
+    else:
+        logger.error(f"Qiita post failed or returned unexpected status.")
         return None
 
 def post_to_bluesky(text):
@@ -88,16 +83,16 @@ def post_to_bluesky(text):
     password = os.getenv("BLUESKY_PASSWORD")
     
     if not handle or not password:
-        print("BlueSky credentials missing. Skipping.")
+        logger.warning("BlueSky credentials missing. Skipping.")
         return
 
     try:
         client = Client()
         client.login(handle, password)
         client.send_post(text)
-        print("Successfully posted to BlueSky!")
+        logger.info("Successfully posted to BlueSky!")
     except Exception as e:
-        print(f"BlueSky Error (Check handle/password?): {e}")
+        logger.error(f"BlueSky Error (Check handle/password?): {e}")
 
 def generate_note_draft(title, zenn_url):
     """
@@ -129,18 +124,19 @@ def send_note_draft_to_discord(note_text):
     """Sends the note draft to Discord for manual posting."""
     webhook_url = os.getenv("DISCORD_WEBHOOK_URL")
     if not webhook_url:
-        print("WARNING: DISCORD_WEBHOOK_URL not found. Skipping note draft notification.")
+        logger.warning("WARNING: DISCORD_WEBHOOK_URL not found. Skipping note draft notification.")
         return
 
     payload = {
         "username": "AI Affiliate Bot (Note担当)",
         "content": f"**📝 note投稿用ドラフト** (コピペしてnoteに貼ってね！)\n```\n{note_text}\n```"
     }
-    try:
-        requests.post(webhook_url, json=payload)
-        print("Sent note draft to Discord.")
-    except Exception as e:
-        print(f"Failed to send note draft: {e}")
+    
+    response = safe_requests_post(webhook_url, json_data=payload)
+    if response:
+        logger.info("Sent note draft to Discord.")
+    else:
+        logger.error("Failed to send note draft to Discord.")
 
 def main():
     print("--- Starting Content Distribution ---")

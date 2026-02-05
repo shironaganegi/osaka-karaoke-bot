@@ -1,16 +1,13 @@
-import os
-import json
-import requests
-import google.generativeai as genai
 from bs4 import BeautifulSoup
 from datetime import datetime, timedelta
-from dotenv import load_dotenv
 import warnings
 import sys
 from agent_analyst.failure_miner import mine_failures
 from agent_analyst.ad_inventory import AD_CAMPAIGNS
 from agent_analyst.product_recommender import search_related_items
 from agent_analyst.editor import refine_article
+from agent_analyst.prompts import ARTICLE_GENERATION_PROMPT
+from shared.utils import setup_logging, safe_requests_get, load_config
 import random
 
 # Suppress deprecation warnings
@@ -21,14 +18,17 @@ if sys.stdout.encoding:
     sys.stdout.reconfigure(encoding='utf-8')
 
 # Load environment variables
-load_dotenv()
+load_config()
+
+# Configure Logging
+logger = setup_logging(__name__)
 
 # Configure Gemini
 api_key = os.getenv("GEMINI_API_KEY")
 if not api_key or api_key.startswith("your_gemini"):
     # Fallback/Mock for demonstration if no key is present or is placeholder
     api_key = None
-    print("WARNING: GEMINI_API_KEY is missing or invalid. Using mock generation mode.")
+    logger.warning("WARNING: GEMINI_API_KEY is missing or invalid. Using mock generation mode.")
 else:
     genai.configure(api_key=api_key)
 
@@ -46,21 +46,23 @@ def get_readme_content(github_url):
             repo = parts[4]
             raw_url = f"https://raw.githubusercontent.com/{user}/{repo}/main/README.md"
             
-            response = requests.get(raw_url)
-            if response.status_code == 200:
-                print(f"Retrieved README from {raw_url}")
+            response = safe_requests_get(raw_url)
+            if response and response.status_code == 200:
+                logger.info(f"Retrieved README from {raw_url}")
                 return response.text[:10000] # Limit context size
             
             # Try 'master' branch if main fails
             raw_url_master = f"https://raw.githubusercontent.com/{user}/{repo}/master/README.md"
-            response = requests.get(raw_url_master)
-            if response.status_code == 200:
+            response = safe_requests_get(raw_url_master)
+            if response and response.status_code == 200:
                 return response.text[:10000]
 
     except Exception as e:
-        print(f"Failed to fetch README: {e}")
+        logger.error(f"Failed to fetch README: {e}")
     
     return "No detailed documentation found."
+
+from agent_analyst.prompts import ARTICLE_GENERATION_PROMPT
 
 def generate_article(tool_data, x_hot_words=[]):
     """
@@ -69,165 +71,113 @@ def generate_article(tool_data, x_hot_words=[]):
     name = tool_data.get('name')
     description = tool_data.get('description')
     url = tool_data.get('url')
-    stars = tool_data.get('stars')
     
     print(f"Analyzing {name}...")
     readme_text = get_readme_content(url)
-    
-    # NEW: Fetch 'Failure Stories' from Reddit
     failure_context = mine_failures(name)
-    
-    # NEW: X Trends context
     x_context = ", ".join(x_hot_words[:10])
     
-    prompt = f"""
-    You are a professional Tech Writer and Social Media Strategist.
-    
-    Task 1: Write a high-quality blog post in JAPANESE.
-    Task 2: Craft a VIRAL X (Twitter) POST to promote this article.
-
-    Trends on X (Japan) right now: [{x_context}]
-    
-    Product Info:
-    - Name: {name} | URL: {url} | Description: {description}
-    - Document: {readme_text[:5000]}
-    - Feedback: {failure_context}
-
-    Requirements for "article":
-    1. Structure: Title, Intro, Features, Install, Pros/Cons, Conclusion.
-    2. Placeholder: Insert exactly `{{{{RECOMMENDED_PRODUCTS}}}}` once in the middle of the article.
-    3. PR Notice: The very first line after the title must be `> ※本記事はプロモーションを含みます`.
-
-    Requirements for "x_viral_post":
-    - Designed to maximize engagement and clicks on X.
-    - OPTIONAL: If a trending word from [{x_context}] is highly relevant to the topic, utilize it naturally. Do NOT force it if irrelevant.
-    - Use formatting like bullet points, cliffhangers, or strong "Hooks".
-    - Include 2-3 relevant hashtags.
-    - Must be in JAPANESE.
-
-    Output MUST be a valid JSON with three fields:
-    - "article": The full markdown article content.
-    - "search_keywords": A list of 3-5 strings for product search.
-    - "x_viral_post": The text for the viral tweet.
-    """
+    # 1. Prepare Prompt
+    prompt = ARTICLE_GENERATION_PROMPT.format(
+        nname=name,
+        url=url,
+        description=description,
+        readme_text=readme_text[:5000],
+        failure_context=failure_context,
+        x_context=x_context
+    )
 
     if not api_key:
         return f"# {name}\n> ※本記事はプロモーションを含みます\nMock content.\n{{{{RECOMMENDED_PRODUCTS}}}}"
 
+    # 2. Call Gemini
+    response = call_gemini_with_fallback(prompt)
+    if not response:
+        return f"# {name}\n\n記事生成に失敗しました（モデルエラー）。"
+
+    # 3. Parse JSON & Extract Content
+    try:
+        content_text = clean_json_text(response.text)
+        res_json = json.loads(content_text)
+        
+        draft = res_json.get("article", "")
+        keywords = res_json.get("search_keywords", [name])
+        x_post = res_json.get("x_viral_post", "")
+        
+    except (json.JSONDecodeError, AttributeError):
+        print("CRITICAL: JSON Parsing Failed. Converting raw text.")
+        return f"# {name}\n> ※本記事はプロモーションを含みます\n\n{response.text}"
+
+    # 4. Inject Affiliate Products
+    final_article = inject_products(draft, keywords)
+
+    # 5. Refine with Editor Personality
+    try:
+        refined_article = refine_article(final_article)
+    except Exception as e:
+        print(f"Editor refinement failed: {e}")
+        refined_article = final_article
+
+    # 6. Append Ad & X Post
+    refined_article = append_footer_content(refined_article, x_post)
+    
+    return refined_article
+
+def call_gemini_with_fallback(prompt):
     candidate_models = [
-        'gemini-2.5-flash',
-        'gemini-2.0-flash',
-        'gemini-flash-latest',
-        'gemini-2.0-flash-exp',
-        'gemini-1.5-flash',
-        'gemini-1.5-pro',
-        'gemini-pro'
+        'gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-flash-latest',
+        'gemini-2.0-flash-exp', 'gemini-1.5-flash', 'gemini-1.5-pro'
     ]
-
-    response = None
-    last_error = None
-
     for model_name in candidate_models:
         try:
             print(f"Trying model: {model_name}...")
             model = genai.GenerativeModel(model_name)
-            response = model.generate_content(prompt, generation_config={"response_mime_type": "application/json"})
-            print(f"Success with model: {model_name}")
-            break # Success!
+            return model.generate_content(prompt, generation_config={"response_mime_type": "application/json"})
         except Exception as e:
             print(f"Model {model_name} failed: {e}")
-            last_error = e
             continue
+    return None
+
+def clean_json_text(text):
+    text = text.strip()
+    if text.startswith("```"):
+        text = text.split("```")[1]
+        if text.startswith("json"):
+            text = text[4:]
+    return text.strip()
+
+def inject_products(draft, keywords):
+    if isinstance(keywords, str): keywords = [keywords]
+    products_html = ""
     
-    if not response:
-         print("--- CRITICAL ERROR: All models failed. Listing available models for this API Key ---")
-         try:
-             for m in genai.list_models():
-                 if 'generateContent' in m.supported_generation_methods:
-                     print(f"Available Model: {m.name}")
-         except Exception as list_e:
-             print(f"Could not list models: {list_e}")
-         print("---------------------------------------------------------------------------------")
-         
-         return f"# {name}\n\n記事の生成に失敗しました（全モデル試行不可）。\nエラー詳細: {str(last_error)}\n※ログを確認して利用可能なモデル名を追記してください。"
-
-    try:
-        content_text = response.text.strip()
-        
-        # Handle cases where model might still output markdown code blocks
-        if content_text.startswith("```"):
-            content_text = content_text.split("```")[1]
-            if content_text.startswith("json"):
-                content_text = content_text[4:]
-        
-        try:
-            res_json = json.loads(content_text)
-        except json.JSONDecodeError:
-            # Emergency fallback: Try to treat entire response as article
-            print("CRITICAL: Failed to parse JSON. Falling back to raw response.")
-            return f"# {name}\n> ※本記事はプロモーションを含みます\n\n{response.text}"
-
-        draft = res_json.get("article", "")
-        keywords = res_json.get("search_keywords", [])
-        x_post = res_json.get("x_viral_post", "")
-
-        if isinstance(keywords, str): keywords = [keywords]
-        if not keywords: keywords = [name]
-
-        # 1. Search and Inject Products (Retry Strategy)
-        products_html = ""
-        for kw in keywords:
-            print(f"Searching products for: {kw}")
-            items = search_related_items(kw)
+    # Try keywords
+    for kw in keywords:
+        items = search_related_items(kw)
+        if items:
+            products_html = "".join(items)
+            break
+            
+    # Fallback
+    if not products_html:
+        for fb in ["プログラミング 入門", "ガジェット", "Python"]:
+            items = search_related_items(fb)
             if items:
                 products_html = "".join(items)
-                print(f"-> Found {len(items)} items for '{kw}'")
                 break
-            else:
-                 print(f"-> No items found for '{kw}'")
+                
+    return draft.replace("{{RECOMMENDED_PRODUCTS}}", products_html).replace("{RECOMMENDED_PRODUCTS}", products_html)
 
-        # Final Fallback if still empty
-        if not products_html:
-            fallbacks = ["プログラミング 入門", "エンジニア 仕事効率化", "ガジェット", "在宅ワーク 便利", "Python 自動化"]
-            for fb_kw in fallbacks:
-                print(f"Searching fallback: {fb_kw}")
-                items = search_related_items(fb_kw)
-                if items:
-                    products_html = "".join(items)
-                    print(f"-> Found fallback items for '{fb_kw}'")
-                    break
+def append_footer_content(article, x_post):
+    # Add Affiliate Campaign
+    try:
+        ad = random.choice(AD_CAMPAIGNS)
+        article += f"\n\n---\n### PR\n{ad['html']}"
+    except: pass
 
-        try:
-            # Support both {{ }} and { } just in case
-            final_article = draft.replace("{{RECOMMENDED_PRODUCTS}}", products_html).replace("{RECOMMENDED_PRODUCTS}", products_html)
-        except Exception as e:
-            print(f"Product injection failed: {e}")
-            final_article = draft
-
-        # 2. Refine by Editor
-        try:
-            final_article = refine_article(final_article)
-        except Exception as e:
-            print(f"Editor refinement failed: {e}")
-
-        # 3. Append Ad Campaign
-        try:
-            ad = random.choice(AD_CAMPAIGNS)
-            final_article += f"\n\n---\n### PR\n{ad['html']}"
-        except Exception:
-            pass
-
-        # 4. Add X Viral Post for Notification
-        if x_post:
-            final_article += f"\n\n---X_POST_START---\n{x_post}\n---X_POST_END---\n"
-
-        return final_article
-
-    except Exception as e:
-        print(f"Processing error in generate_draft: {e}")
-        import traceback
-        traceback.print_exc()
-        return f"# {name}\n\n記事の処理中にエラーが発生しました。\nエラー詳細: {str(e)}"
+    # Add Hidden X Post
+    if x_post:
+        article += f"\n\n---X_POST_START---\n{x_post}\n---X_POST_END---\n"
+    return article
 
 def generate_zenn_frontmatter(title, tool_name, source):
     """
@@ -286,7 +236,7 @@ def load_trends_data():
         return []
         
     latest_file = os.path.join(data_dir, files[0])
-    print(f"Loading data from {latest_file}")
+    logger.info(f"Loading data from {latest_file}")
     
     with open(latest_file, 'r', encoding='utf-8') as f:
         return json.load(f)
@@ -312,7 +262,7 @@ def select_best_candidate(data):
     
     # Fallback if everything is filtered
     if not candidates:
-        print("All trending topics were posted recently. Picking a random one from top trends anyway.")
+        logger.info("All trending topics were posted recently. Picking a random one from top trends anyway.")
         candidates = [item for item in data if item.get('daily_stars', 0) > 0]
     
     if not candidates:
@@ -331,7 +281,7 @@ def select_best_candidate(data):
         sorted_items = sorted(items, key=lambda x: x.get('daily_stars', 0), reverse=True)
         final_pool.extend(sorted_items[:2])
         
-    print(f"Candidate Poll Size: {len(final_pool)} (Sources: {list(candidates_by_source.keys())})")
+    logger.info(f"Candidate Poll Size: {len(final_pool)} (Sources: {list(candidates_by_source.keys())})")
     
     # 4. Pick Random Winner
     return random.choice(final_pool)
@@ -351,15 +301,15 @@ def save_article_file(content, tool_data):
     # Log to history
     save_to_history(tool_data['name'], tool_data['url'])
     
-    print(f"Zenn article saved to: {file_path}")
-    print("-" * 30)
+    logger.info(f"Zenn article saved to: {file_path}")
+    logger.info("-" * 30)
     return file_path
 
 if __name__ == "__main__":
     # 1. Load Data
     trends_data = load_trends_data()
     if not trends_data:
-        print("No trend data found. Run watcher first.")
+        logger.warning("No trend data found. Run watcher first.")
         exit()
 
     # Handle new dict format or old list format
@@ -373,10 +323,10 @@ if __name__ == "__main__":
     # 2. Select Tool
     top_tool = select_best_candidate(topics)
     if not top_tool:
-        print("No suitable candidates found.")
+        logger.warning("No suitable candidates found.")
         exit()
 
-    print(f"Selected Tool: {top_tool['name']} (Source: {top_tool.get('source')})")
+    logger.info(f"Selected Tool: {top_tool['name']} (Source: {top_tool.get('source')})")
     
     # 3. Generate Content
     body_content = generate_article(top_tool, x_hot_words=x_hot_words)

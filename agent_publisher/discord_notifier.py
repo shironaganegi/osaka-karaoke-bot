@@ -1,8 +1,11 @@
 import os
-import requests
 import glob
 import json
+import re
 from datetime import datetime
+from shared.utils import setup_logging, safe_requests_post
+
+logger = setup_logging(__name__)
 
 def send_discord_notification(webhook_url, draft_path=None):
     """
@@ -13,7 +16,7 @@ def send_discord_notification(webhook_url, draft_path=None):
         articles_dir = os.path.join(os.path.dirname(__file__), "..", "articles")
         files = sorted(glob.glob(os.path.join(articles_dir, "*.md")), key=os.path.getmtime, reverse=True)
         if not files:
-            print("No articles found to notify about.")
+            logger.info("No articles found to notify about.")
             return
         draft_path = files[0]
     
@@ -28,7 +31,6 @@ def send_discord_notification(webhook_url, draft_path=None):
     tool_name = "Tech Tool"
     
     # Try to find YAML title: "..."
-    import re
     title_match = re.search(r'^title:\s*"(.*)"', content, re.MULTILINE)
     if title_match:
         title = title_match.group(1)
@@ -70,14 +72,11 @@ def send_discord_notification(webhook_url, draft_path=None):
         "embeds": [embed]
     }
     
-    try:
-        response = requests.post(webhook_url, json=payload)
-        if response.status_code == 204:
-            print("Discord notification sent successfully!")
-        else:
-            print(f"Discord notification failed: {response.status_code} - {response.text}")
-    except Exception as e:
-        print(f"Failed to send Discord notification: {e}")
+    response = safe_requests_post(webhook_url, json_data=payload)
+    if response and response.status_code == 204:
+        logger.info("Discord notification sent successfully!")
+    else:
+        logger.error(f"Discord notification failed.")
 
 if __name__ == "__main__":
     # Get webhook URL from environment variable

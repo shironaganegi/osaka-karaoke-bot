@@ -1,6 +1,8 @@
 import feedparser
-import logging
 from datetime import datetime
+from shared.utils import setup_logging
+
+logger = setup_logging(__name__)
 
 def fetch_qiita_trends():
     """
@@ -12,7 +14,7 @@ def fetch_qiita_trends():
     
     for tag in tags:
         url = f"https://qiita.com/tags/{tag}/feed"
-        logging.info(f"Fetching Qiita trends for tag {tag}: {url}")
+        logger.info(f"Fetching Qiita trends for tag {tag}: {url}")
         
         try:
             feed = feedparser.parse(url)
@@ -29,6 +31,6 @@ def fetch_qiita_trends():
                     "fetched_at": datetime.now().isoformat()
                 })
         except Exception as e:
-            logging.error(f"Failed to fetch Qiita tag {tag}: {e}")
+            logger.error(f"Failed to fetch Qiita tag {tag}: {e}")
             
     return results

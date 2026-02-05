@@ -1,19 +1,21 @@
 import feedparser
 from bs4 import BeautifulSoup
 from datetime import datetime
-import logging
+from shared.utils import setup_logging, DEFAULT_USER_AGENT
+
+logger = setup_logging(__name__)
 
 def fetch_product_hunt_trends():
     """
     Fetches today's top products from Product Hunt RSS.
     """
     url = "https://www.producthunt.com/feed"
-    logging.info(f"Fetching Product Hunt RSS: {url}")
+    logger.info(f"Fetching Product Hunt RSS: {url}")
     
     try:
-        feed = feedparser.parse(url, agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64)")
+        feed = feedparser.parse(url, agent=DEFAULT_USER_AGENT)
     except Exception as e:
-        logging.error(f"Failed to fetch Product Hunt: {e}")
+        logger.error(f"Failed to fetch Product Hunt: {e}")
         return []
     
     products = []

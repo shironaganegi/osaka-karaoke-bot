@@ -5,10 +5,10 @@
     "owner": "thedotmack",
     "url": "https://github.com/thedotmack/claude-mem",
     "description": "A Claude Code plugin that automatically captures everything Claude does during your coding sessions, compresses it with AI (using Claude's agent-sdk), and injects relevant context back into future sessions.",
-    "stars": 22886,
+    "stars": 22906,
     "daily_stars": 2638,
     "language": "all",
-    "fetched_at": "2026-02-05T06:20:20.894803"
+    "fetched_at": "2026-02-05T06:36:51.429143"
   },
   {
     "source": "github_trending",
@@ -16,10 +16,10 @@
     "owner": "openai",
     "url": "https://github.com/openai/skills",
     "description": "Skills Catalog for Codex",
-    "stars": 3854,
+    "stars": 3863,
     "daily_stars": 746,
     "language": "all",
-    "fetched_at": "2026-02-05T06:20:20.895324"
+    "fetched_at": "2026-02-05T06:36:51.429667"
   },
   {
     "source": "github_trending",
@@ -27,10 +27,10 @@
     "owner": "disler",
     "url": "https://github.com/disler/claude-code-hooks-mastery",
     "description": "Master Claude Code Hooks",
-    "stars": 2446,
+    "stars": 2448,
     "daily_stars": 47,
     "language": "all",
-    "fetched_at": "2026-02-05T06:20:20.895783"
+    "fetched_at": "2026-02-05T06:36:51.430128"
   },
   {
     "source": "github_trending",
@@ -38,10 +38,10 @@
     "owner": "OpenBMB",
     "url": "https://github.com/OpenBMB/ChatDev",
     "description": "ChatDev 2.0: Dev All through LLM-powered Multi-Agent Collaboration",
-    "stars": 30042,
+    "stars": 30046,
     "daily_stars": 227,
     "language": "all",
-    "fetched_at": "2026-02-05T06:20:20.896270"
+    "fetched_at": "2026-02-05T06:36:51.430621"
   },
   {
     "source": "github_trending",
@@ -49,10 +49,10 @@
     "owner": "ankitects",
     "url": "https://github.com/ankitects/anki",
     "description": "Anki is a smart spaced repetition flashcard program",
-    "stars": 26211,
+    "stars": 26213,
     "daily_stars": 28,
     "language": "all",
-    "fetched_at": "2026-02-05T06:20:20.896737"
+    "fetched_at": "2026-02-05T06:36:51.431085"
   },
   {
     "source": "github_trending",
@@ -63,7 +63,7 @@
     "stars": 4365,
     "daily_stars": 3,
     "language": "all",
-    "fetched_at": "2026-02-05T06:20:20.897225"
+    "fetched_at": "2026-02-05T06:36:51.431574"
   },
   {
     "source": "github_trending",
@@ -71,10 +71,10 @@
     "owner": "Canner",
     "url": "https://github.com/Canner/WrenAI",
     "description": "⚡️ GenBI (Generative BI) queries any database in natural language, generates accurate SQL (Text-to-SQL), charts (Text-to-Chart), and AI-powered business intelligence in seconds.",
-    "stars": 14021,
+    "stars": 14023,
     "daily_stars": 89,
     "language": "all",
-    "fetched_at": "2026-02-05T06:20:20.897696"
+    "fetched_at": "2026-02-05T06:36:51.432055"
   },
   {
     "source": "github_trending",
@@ -82,10 +82,10 @@
     "owner": "pedramamini",
     "url": "https://github.com/pedramamini/Maestro",
     "description": "Agent Orchestration Command Center",
-    "stars": 1706,
+    "stars": 1708,
     "daily_stars": 187,
     "language": "all",
-    "fetched_at": "2026-02-05T06:20:20.898180"
+    "fetched_at": "2026-02-05T06:36:51.432558"
   },
   {
     "source": "github_trending",
@@ -93,10 +93,10 @@
     "owner": "nvm-sh",
     "url": "https://github.com/nvm-sh/nvm",
     "description": "Node Version Manager - POSIX-compliant bash script to manage multiple active node.js versions",
-    "stars": 91273,
+    "stars": 91274,
     "daily_stars": 35,
     "language": "all",
-    "fetched_at": "2026-02-05T06:20:20.898646"
+    "fetched_at": "2026-02-05T06:36:51.433031"
   },
   {
     "source": "github_trending",
@@ -104,10 +104,10 @@
     "owner": "microsoft",
     "url": "https://github.com/microsoft/qlib",
     "description": "Qlib is an AI-oriented Quant investment platform that aims to use AI tech to empower Quant Research, from exploring ideas to implementing productions. Qlib supports diverse ML modeling paradigms, including supervised learning, market dynamics modeling, and RL, and is now equipped withhttps://github.com/microsoft/RD-Agentto automate R&D process.",
-    "stars": 36603,
+    "stars": 36605,
     "daily_stars": 83,
     "language": "all",
-    "fetched_at": "2026-02-05T06:20:20.899139"
+    "fetched_at": "2026-02-05T06:36:51.433543"
   },
   {
     "source": "github_trending",
@@ -115,10 +115,10 @@
     "owner": "LadybirdBrowser",
     "url": "https://github.com/LadybirdBrowser/ladybird",
     "description": "Truly independent web browser",
-    "stars": 58319,
+    "stars": 58321,
     "daily_stars": 68,
     "language": "all",
-    "fetched_at": "2026-02-05T06:20:20.899605"
+    "fetched_at": "2026-02-05T06:36:51.434011"
   },
   {
     "source": "github_trending",
@@ -126,10 +126,10 @@
     "owner": "likec4",
     "url": "https://github.com/likec4/likec4",
     "description": "Visualize, collaborate, and evolve the software architecture with always actual and live diagrams from your code",
-    "stars": 1533,
+    "stars": 1535,
     "daily_stars": 29,
     "language": "all",
-    "fetched_at": "2026-02-05T06:20:20.900204"
+    "fetched_at": "2026-02-05T06:36:51.434623"
   },
   {
     "source": "github_trending",
@@ -140,7 +140,7 @@
     "stars": 42279,
     "daily_stars": 313,
     "language": "python",
-    "fetched_at": "2026-02-05T06:20:22.166216"
+    "fetched_at": "2026-02-05T06:36:52.628390"
   },
   {
     "source": "github_trending",
@@ -148,10 +148,10 @@
     "owner": "AtsushiSakai",
     "url": "https://github.com/AtsushiSakai/PythonRobotics",
     "description": "Python sample codes and textbook for robotics algorithms.",
-    "stars": 28557,
+    "stars": 28558,
     "daily_stars": 14,
     "language": "python",
-    "fetched_at": "2026-02-05T06:20:22.166803"
+    "fetched_at": "2026-02-05T06:36:52.629010"
   },
   {
     "source": "github_trending",
@@ -159,10 +159,10 @@
     "owner": "zhayujie",
     "url": "https://github.com/zhayujie/chatgpt-on-wechat",
     "description": "CowAgent是基于大模型的超级AI助理，能主动思考和任务规划、访问操作系统和外部资源、创造和执行Skills、拥有长期记忆并不断成长。同时支持飞书、钉钉、企业微信应用、微信公众号、网页等接入，可选择OpenAI/Claude/Gemini/DeepSeek/ Qwen/GLM/Kimi/LinkAI，能处理文本、语音、图片和文件，可快速搭建个人AI助手和企业数字员工。",
-    "stars": 41027,
+    "stars": 41029,
     "daily_stars": 32,
     "language": "python",
-    "fetched_at": "2026-02-05T06:20:22.167286"
+    "fetched_at": "2026-02-05T06:36:52.629510"
   },
   {
     "source": "github_trending",
@@ -173,7 +173,7 @@
     "stars": 571,
     "daily_stars": 289,
     "language": "python",
-    "fetched_at": "2026-02-05T06:20:22.167771"
+    "fetched_at": "2026-02-05T06:36:52.629995"
   },
   {
     "source": "github_trending",
@@ -184,7 +184,7 @@
     "stars": 10183,
     "daily_stars": 26,
     "language": "python",
-    "fetched_at": "2026-02-05T06:20:22.168264"
+    "fetched_at": "2026-02-05T06:36:52.630487"
   },
   {
     "source": "github_trending",
@@ -195,7 +195,7 @@
     "stars": 14896,
     "daily_stars": 13,
     "language": "python",
-    "fetched_at": "2026-02-05T06:20:22.168723"
+    "fetched_at": "2026-02-05T06:36:52.630966"
   },
   {
     "source": "github_trending",
@@ -206,7 +206,7 @@
     "stars": 15271,
     "daily_stars": 123,
     "language": "python",
-    "fetched_at": "2026-02-05T06:20:22.169199"
+    "fetched_at": "2026-02-05T06:36:52.631457"
   },
   {
     "source": "github_trending",
@@ -217,7 +217,7 @@
     "stars": 13437,
     "daily_stars": 109,
     "language": "python",
-    "fetched_at": "2026-02-05T06:20:22.169657"
+    "fetched_at": "2026-02-05T06:36:52.631937"
   },
   {
     "source": "github_trending",
@@ -225,10 +225,10 @@
     "owner": "microsoft",
     "url": "https://github.com/microsoft/agent-lightning",
     "description": "The absolute trainer to light up AI agents.",
-    "stars": 14001,
+    "stars": 14003,
     "daily_stars": 315,
     "language": "python",
-    "fetched_at": "2026-02-05T06:20:22.170146"
+    "fetched_at": "2026-02-05T06:36:52.632429"
   },
   {
     "source": "github_trending",
@@ -239,29 +239,18 @@
     "stars": 29304,
     "daily_stars": 135,
     "language": "python",
-    "fetched_at": "2026-02-05T06:20:22.170611"
+    "fetched_at": "2026-02-05T06:36:52.632907"
   },
   {
     "source": "product_hunt",
-    "name": "SERA",
+    "name": "Multitui",
     "owner": "ProductHunt",
-    "url": "https://www.producthunt.com/products/allen-institute-of-artificial-intelligence",
-    "description": "\n            Fast, accessible coding agents that adapt to any repo\n          \n\nDiscussion\n            |\n            Link\n",
+    "url": "https://www.producthunt.com/products/multitui",
+    "description": "\n            Sandbox claude code, codex, or any TUI on macOS\n          \n\nDiscussion\n            |\n            Link\n",
     "stars": 0,
     "daily_stars": 100,
     "language": "saas",
-    "fetched_at": "2026-02-05T06:20:22.440567"
-  },
-  {
-    "source": "product_hunt",
-    "name": "Agentset",
-    "owner": "ProductHunt",
-    "url": "https://www.producthunt.com/products/agentset",
-    "description": "\n            APIs for building AI chat and search\n          \n\nDiscussion\n            |\n            Link\n",
-    "stars": 0,
-    "daily_stars": 100,
-    "language": "saas",
-    "fetched_at": "2026-02-05T06:20:22.440783"
+    "fetched_at": "2026-02-05T06:36:52.837141"
   },
   {
     "source": "product_hunt",
@@ -272,62 +261,29 @@
     "stars": 0,
     "daily_stars": 100,
     "language": "saas",
-    "fetched_at": "2026-02-05T06:20:22.440982"
+    "fetched_at": "2026-02-05T06:36:52.837379"
   },
   {
     "source": "product_hunt",
-    "name": "CreateOS",
+    "name": "Nexuscale AI",
     "owner": "ProductHunt",
-    "url": "https://www.producthunt.com/products/createos",
-    "description": "\n            Build and deploy apps from any AI coding tool, in one place\n          \n\nDiscussion\n            |\n            Link\n",
+    "url": "https://www.producthunt.com/products/nexuscale-ai",
+    "description": "\n            AI sales assistant that finds leads + books meetings for you\n          \n\nDiscussion\n            |\n            Link\n",
     "stars": 0,
     "daily_stars": 100,
     "language": "saas",
-    "fetched_at": "2026-02-05T06:20:22.441213"
+    "fetched_at": "2026-02-05T06:36:52.837577"
   },
   {
     "source": "product_hunt",
-    "name": "CatchBack Cards",
+    "name": "Miniloop",
     "owner": "ProductHunt",
-    "url": "https://www.producthunt.com/products/catchback-cards",
-    "description": "\n            Create custom mystery packs of Pokemon and Sports cards\n          \n\nDiscussion\n            |\n            Link\n",
+    "url": "https://www.producthunt.com/products/miniloop",
+    "description": "\n            Turn natural language into AI agents and automations\n          \n\nDiscussion\n            |\n            Link\n",
     "stars": 0,
     "daily_stars": 100,
     "language": "saas",
-    "fetched_at": "2026-02-05T06:20:22.441411"
-  },
-  {
-    "source": "product_hunt",
-    "name": "Ember Mug CLI",
-    "owner": "ProductHunt",
-    "url": "https://www.producthunt.com/products/ember-mug-cli",
-    "description": "\n            Control your ember mug from the terminal\n          \n\nDiscussion\n            |\n            Link\n",
-    "stars": 0,
-    "daily_stars": 100,
-    "language": "saas",
-    "fetched_at": "2026-02-05T06:20:22.441601"
-  },
-  {
-    "source": "product_hunt",
-    "name": "Xcode 26.3",
-    "owner": "ProductHunt",
-    "url": "https://www.producthunt.com/products/xcode",
-    "description": "\n            Leverage coding agents to tackle complex tasks autonomously\n          \n\nDiscussion\n            |\n            Link\n",
-    "stars": 0,
-    "daily_stars": 100,
-    "language": "saas",
-    "fetched_at": "2026-02-05T06:20:22.441790"
-  },
-  {
-    "source": "product_hunt",
-    "name": "Unblocked Code Review",
-    "owner": "ProductHunt",
-    "url": "https://www.producthunt.com/products/unblocked",
-    "description": "\n            AI code review that knows when to chime in\n          \n\nDiscussion\n            |\n            Link\n",
-    "stars": 0,
-    "daily_stars": 100,
-    "language": "saas",
-    "fetched_at": "2026-02-05T06:20:22.441976"
+    "fetched_at": "2026-02-05T06:36:52.837769"
   },
   {
     "source": "product_hunt",
@@ -338,17 +294,61 @@
     "stars": 0,
     "daily_stars": 100,
     "language": "saas",
-    "fetched_at": "2026-02-05T06:20:22.442183"
+    "fetched_at": "2026-02-05T06:36:52.837960"
   },
   {
     "source": "product_hunt",
-    "name": "Sheetful.co",
+    "name": "OpenSheet",
     "owner": "ProductHunt",
-    "url": "https://www.producthunt.com/products/sheetful-co",
-    "description": "\n            Build robust REST APIs with Google Sheets for free\n          \n\nDiscussion\n            |\n            Link\n",
+    "url": "https://www.producthunt.com/products/opensheet",
+    "description": "\n             Turn raw CSV and JSON into an interactive data canvas\n          \n\nDiscussion\n            |\n            Link\n",
     "stars": 0,
     "daily_stars": 100,
     "language": "saas",
-    "fetched_at": "2026-02-05T06:20:22.442369"
+    "fetched_at": "2026-02-05T06:36:52.838149"
+  },
+  {
+    "source": "product_hunt",
+    "name": "Agentset",
+    "owner": "ProductHunt",
+    "url": "https://www.producthunt.com/products/agentset",
+    "description": "\n            APIs for building AI chat and search\n          \n\nDiscussion\n            |\n            Link\n",
+    "stars": 0,
+    "daily_stars": 100,
+    "language": "saas",
+    "fetched_at": "2026-02-05T06:36:52.838360"
+  },
+  {
+    "source": "product_hunt",
+    "name": "Unblocked Code Review",
+    "owner": "ProductHunt",
+    "url": "https://www.producthunt.com/products/unblocked",
+    "description": "\n            AI code review that knows when to chime in\n          \n\nDiscussion\n            |\n            Link\n",
+    "stars": 0,
+    "daily_stars": 100,
+    "language": "saas",
+    "fetched_at": "2026-02-05T06:36:52.838564"
+  },
+  {
+    "source": "product_hunt",
+    "name": "spacecake",
+    "owner": "ProductHunt",
+    "url": "https://www.producthunt.com/products/spacecake",
+    "description": "\n            Run Claude Code agents in terminal with a visual editor\n          \n\nDiscussion\n            |\n            Link\n",
+    "stars": 0,
+    "daily_stars": 100,
+    "language": "saas",
+    "fetched_at": "2026-02-05T06:36:52.838755"
+  },
+  {
+    "source": "product_hunt",
+    "name": "Chord Identifier",
+    "owner": "ProductHunt",
+    "url": "https://www.producthunt.com/products/chord-identifier-2",
+    "description": "\n            Highlights in‑key notes and flags wrong notes as you play\n          \n\nDiscussion\n            |\n            Link\n",
+    "stars": 0,
+    "daily_stars": 100,
+    "language": "saas",
+    "fetched_at": "2026-02-05T06:36:52.838955"
   }
 ]

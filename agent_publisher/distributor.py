@@ -257,33 +257,19 @@ def main():
     except Exception as e:
         print(f"Failed to process X distribution: {e}")
 
-    # 4. Generate OGP Image
+    # 4. Generate OGP Image (Disabled by user request)
     ogp_path = None
-    try:
-        from agent_publisher.ogp_generator import generate_ogp
-        # Use title as catchphrase for now, could be improved
-        print("Generating OGP Image...")
-        ogp_full_path = generate_ogp(title, "TechTrend Watch")
-        if ogp_full_path:
-             # Convert absolute path to relative path for Hugo (from content root)
-             # Hugo expects images in static/images or similar, but PaperMod 
-             # handles page bundles or absolute URL. 
-             # For simpler handling in PaperMod without page bundles, 
-             # let's assume we copy/move it to static/images/ogp/
-             
-             website_static_dir = os.path.join(os.path.dirname(__file__), "..", "website", "static", "images", "ogp")
-             os.makedirs(website_static_dir, exist_ok=True)
-             
-             filename = os.path.basename(ogp_full_path)
-             new_path = os.path.join(website_static_dir, filename)
-             
-             import shutil
-             shutil.copy2(ogp_full_path, new_path)
-             ogp_path = f"/images/ogp/{filename}" # Web path
-             print(f"OGP Image ready at: {ogp_path}")
-             
-    except Exception as e:
-        print(f"Failed to generate OGP: {e}")
+    # try:
+    #     from agent_publisher.ogp_generator import generate_ogp
+    #     # Use title as catchphrase for now, could be improved
+    #     print("Generating OGP Image...")
+    #     ogp_full_path = generate_ogp(title, "TechTrend Watch")
+    #     if ogp_full_path:
+    #          # ... (Logic disabled)
+    #          pass
+              
+    # except Exception as e:
+    #     print(f"Failed to generate OGP: {e}")
 
     # 5. Save to Hugo Website (JA)
     try:

@@ -13,7 +13,7 @@ logger = setup_logging(__name__)
 def get_latest_article():
     """Finds the latest article in the Zenn articles directory."""
     articles_dir = os.path.join(os.path.dirname(__file__), "..", "articles")
-    files = sorted(glob.glob(os.path.join(articles_dir, "*.md")), key=os.path.getmtime, reverse=True)
+    files = sorted([f for f in glob.glob(os.path.join(articles_dir, "*.md")) if not f.endswith(".en.md")], key=os.path.getmtime, reverse=True)
     if not files:
         return None
     return files[0]

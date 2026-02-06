@@ -153,7 +153,9 @@ def translate_article_to_english(content):
 
 def call_gemini_with_fallback(prompt):
     candidate_models = [
-        'gemini-1.5-flash', 'gemini-1.5-pro', 'gemini-pro'
+        "gemini-pro",
+        "models/gemini-1.5-flash-latest",
+        "gemini-1.5-pro-latest"
     ]
     for model_name in candidate_models:
         try:

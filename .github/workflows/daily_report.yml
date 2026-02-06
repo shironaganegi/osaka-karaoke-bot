@@ -2,8 +2,11 @@ name: Daily AI Affiliate Agent
 
 on:
   schedule:
-    # Run at 00:00 UTC every day (09:00 JST)
-    - cron: '0 0 * * *'
+    # Run 3 times a day:
+    # 07:00 JST (22:00 UTC prev day) - Morning Catch-up
+    # 12:00 JST (03:00 UTC)          - Lunch Time
+    # 19:00 JST (10:00 UTC)          - Evening Prime Time
+    - cron: '0 22,3,10 * * *'
   workflow_dispatch: # Allow manual trigger
 
 jobs:

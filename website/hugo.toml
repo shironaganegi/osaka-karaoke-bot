@@ -1,5 +1,6 @@
 defaultContentLanguage = 'ja'
 defaultContentLanguageInSubdir = false
+theme = "PaperMod"
 
 [languages]
   [languages.ja]

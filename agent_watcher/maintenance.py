@@ -79,4 +79,10 @@ if __name__ == "__main__":
     
     # Clean failed articles (both in internal storage and Hugo site)
     clean_error_files(articles_dir)
+    
+    # Clean English articles directory
+    en_articles_dir = os.path.join(data_dir, "articles_en")
+    clean_old_files(en_articles_dir, days=30)
+    clean_error_files(en_articles_dir)
+
     clean_error_files(os.path.join(base_dir, "website", "content", "posts"))

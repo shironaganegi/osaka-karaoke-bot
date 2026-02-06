@@ -41,9 +41,10 @@ def refine_article(draft_text):
         prompt = f"{system_prompt}\n\n以下が編集対象の原稿です（出力は記事本文のみ）：\n\n{draft_text}"
 
         candidate_models = [
-            'gemini-1.5-flash',
-            'gemini-1.5-pro',
-            'gemini-1.0-pro'
+            'gemini-2.0-flash',
+            'gemini-1.5-flash-latest',
+            'gemini-1.5-pro-latest',
+            'gemini-pro'
         ]
 
         response_data = None

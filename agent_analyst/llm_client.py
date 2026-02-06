@@ -39,7 +39,7 @@ def get_gemini_response(prompt, model_name, generation_config=None):
     if generation_config:
         payload["generationConfig"] = generation_config
 
-    max_retries = 3
+    max_retries = 5
     for attempt in range(max_retries):
         try:
             response = requests.post(url, headers=headers, json=payload, timeout=60)
@@ -49,8 +49,8 @@ def get_gemini_response(prompt, model_name, generation_config=None):
             
             # Handle rate limiting (429)
             if response.status_code == 429:
-                wait_time = (attempt + 1) * 5 # Exponential-ish backoff
-                print(f"Rate limited (429). Retrying in {wait_time}s... (Attempt {attempt+1}/{max_retries})")
+                wait_time = (attempt + 1) * 20 # Aggressive Backoff: 20s, 40s, 60s, 80s, 100s
+                print(f"Rate limited (429) for {model_name}. Retrying in {wait_time}s... (Attempt {attempt+1}/{max_retries})")
                 time.sleep(wait_time)
                 continue
                 

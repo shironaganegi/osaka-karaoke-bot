@@ -153,9 +153,9 @@ from agent_analyst.llm_client import get_gemini_response
 def call_gemini_with_fallback(prompt):
     # Use full resource names for v1beta
     candidate_models = [
-        "gemini-1.5-flash",
-        "gemini-1.5-pro",
         "gemini-2.0-flash",
+        "gemini-1.5-flash-001",
+        "gemini-1.5-pro-001",
         "gemini-1.0-pro"
     ]
     

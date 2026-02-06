@@ -34,6 +34,11 @@ jobs:
     
     - name: Run Watcher Agent (Fetch Trends)
       run: python -m agent_watcher.fetch_trends
+
+    - name: DIAGNOSTIC - Check Available Models
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: python check_models.py
       
     - name: Run Analyst Agent (Generate Draft)
       env:

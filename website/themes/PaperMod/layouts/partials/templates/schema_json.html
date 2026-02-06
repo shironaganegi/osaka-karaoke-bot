@@ -1,1 +1,136 @@
-{{/* Schema JSON Disabled for Stability */}}
+{{ if .IsHome }}
+{{- $siteDesc := site.Params.description | plainify | truncate 180 -}}
+{{- $publisherType := site.Params.schema.publisherType | default "Organization" | title -}}
+{{- $logoUrl := site.Params.assets.favicon | default "favicon.ico" | absURL -}}
+{{- $sameAs := site.Params.schema.sameAs | default slice -}}
+{{- if not $sameAs -}}
+{{- range site.Params.SocialIcons -}}
+{{- $sameAs = $sameAs | append (.url | safeURL) -}}
+{{- end -}}
+{{- end -}}
+
+{{- $schema := dict
+"@context" "https://schema.org"
+"@type" $publisherType
+"name" site.Title
+"url" site.Home.Permalink
+"description" $siteDesc
+"sameAs" $sameAs
+-}}
+
+{{- if eq $publisherType "Person" -}}
+{{- $schema = merge $schema (dict "image" $logoUrl) -}}
+{{- else -}}
+{{- $schema = merge $schema (dict "logo" $logoUrl) -}}
+{{- end -}}
+
+<script type="application/ld+json">
+{{ $schema | jsonify }}
+</script>
+
+{{- else if (or .IsPage .IsSection) }}
+{{- /* BreadcrumbList */ -}}
+{{- $url := replace .Parent.Permalink ( printf "%s" site.Home.Permalink) "" -}}
+{{- $lang_url := strings.TrimPrefix ( printf "%s/" .Lang) $url -}}
+{{- $bc_list := split $lang_url "/" -}}
+{{- $scratch := newScratch -}}
+{{- $itemListElement := slice -}}
+
+{{- range $index, $element := $bc_list -}}
+{{- $scratch.Add "path" (printf "%s/" $element ) -}}
+{{- $bc_pg := site.GetPage ($scratch.Get "path") -}}
+{{- if and ($bc_pg) (gt (len $element) 0) -}}
+{{- $item := dict
+"@type" "ListItem"
+"position" (add 1 $index)
+"name" $bc_pg.Name
+"item" $bc_pg.Permalink
+-}}
+{{- $itemListElement = $itemListElement | append $item -}}
+{{- end -}}
+{{- end -}}
+
+{{- /* self-page addition */ -}}
+{{- if ge (len $bc_list) 2 -}}
+{{- $item := dict
+"@type" "ListItem"
+"position" (len $bc_list)
+"name" .Name
+"item" .Permalink
+-}}
+{{- $itemListElement = $itemListElement | append $item -}}
+{{- end -}}
+
+{{- $breadcrumb := dict
+"@context" "https://schema.org"
+"@type" "BreadcrumbList"
+"itemListElement" $itemListElement
+-}}
+
+<script type="application/ld+json">
+{{ $breadcrumb | jsonify }}
+</script>
+
+{{- if .IsPage -}}
+{{- /* BlogPosting */ -}}
+{{- $headline := .Title | plainify -}}
+{{- $desc := .Description | default .Summary | plainify -}}
+{{- $keywords := .Params.keywords | default .Params.tags | default slice -}}
+{{- $images := slice -}}
+
+{{- if .Params.cover.image -}}
+{{- if ne .Params.cover.relative true -}}
+{{- $images = $images | append (.Params.cover.image | absURL) -}}
+{{- else -}}
+{{- $images = $images | append ((path.Join .RelPermalink .Params.cover.image ) | absURL) -}}
+{{- end -}}
+{{- else -}}
+{{- $imgs := partial "templates/_funcs/get-page-images" . -}}
+{{- if gt (len $imgs) 0 -}}
+{{- $images = $images | append (index $imgs 0).Permalink -}}
+{{- end -}}
+{{- end -}}
+
+{{- $authorName := site.Params.author -}}
+{{- if .Params.author -}}
+{{- $authorName = .Params.author -}}
+{{- end -}}
+{{- $authors := slice -}}
+{{- if reflect.IsSlice $authorName -}}
+{{- range $authorName -}}
+{{- $authors = $authors | append (dict "@type" "Person" "name" .) -}}
+{{- end -}}
+{{- else -}}
+{{- $authors = dict "@type" "Person" "name" $authorName -}}
+{{- end -}}
+
+{{- $publisherType := site.Params.schema.publisherType | default "Organization" | title -}}
+{{- $logoUrl := site.Params.assets.favicon | default "favicon.ico" | absURL -}}
+
+{{- $blogPosting := dict
+"@context" "https://schema.org"
+"@type" "BlogPosting"
+"headline" $headline
+"name" $headline
+"description" $desc
+"keywords" $keywords
+"articleBody" (.Content | plainify)
+"wordCount" .WordCount
+"inLanguage" (.Language.Lang | default "en-us")
+"datePublished" .PublishDate
+"dateModified" .Lastmod
+"author" $authors
+"mainEntityOfPage" (dict "@type" "WebPage" "@id" .Permalink)
+"publisher" (dict "@type" $publisherType "name" site.Title "logo" (dict "@type" "ImageObject" "url" $logoUrl))
+-}}
+
+{{- if gt (len $images) 0 -}}
+{{- $blogPosting = merge $blogPosting (dict "image" $images) -}}
+{{- end -}}
+
+<script type="application/ld+json">
+{{ $blogPosting | jsonify }}
+</script>
+{{- end -}}
+
+{{- end -}}

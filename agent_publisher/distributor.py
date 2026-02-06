@@ -170,14 +170,14 @@ def save_hugo_article(title, body, zenn_url, original_file_path, lang="ja", ogp_
     
     description = f"AIツール「{title}」の活用法を紹介" if lang == "ja" else f"Introduction to {title}"
     
-    cover_yaml = ""
     if ogp_url:
-        # PaperMod cover image format
+        # PaperMod cover image format (TOML)
+        # Use json.dumps to handle escaping of special characters in strings automatically
         cover_yaml = f"""
-cover:
-    image: "{ogp_url}"
-    alt: "{title}"
-    relative: false
+[cover]
+image = "{ogp_url}"
+alt = {json.dumps(title)}
+relative = false
 """
 
     frontmatter = f"""+++

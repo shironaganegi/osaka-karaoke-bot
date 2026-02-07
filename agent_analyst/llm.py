@@ -26,7 +26,7 @@ class LLMClient:
             'gemini-flash-latest'
         ]
 
-    def generate_content(self, prompt: str) -> str:
+    def generate_content(self, prompt: str, generation_config=None) -> str:
         """
         Generates content using Gemini with exponential backoff and model fallback.
         Uses the new google-genai SDK.
@@ -41,7 +41,8 @@ class LLMClient:
                     # New SDK call format
                     response = self.client.models.generate_content(
                         model=model_name,
-                        contents=prompt
+                        contents=prompt,
+                        config=generation_config
                     )
                     
                     if response and response.text:

@@ -92,7 +92,10 @@ def generate_article(tool_data, x_hot_words=[]):
         return f"# {name}\n> ※本記事はプロモーションを含みます\nMock content.\n{{{{RECOMMENDED_PRODUCTS}}}}"
 
     # 2. Call Gemini
-    response_text = llm_client.generate_content(prompt)
+    # Force JSON mode to prevent preamble text
+    generation_config = {"response_mime_type": "application/json"}
+    response_text = llm_client.generate_content(prompt, generation_config=generation_config)
+    
     if not response_text:
         return f"# {name}\n\n記事生成に失敗しました（エラーまたはタイムアウト）。ログを確認してください。"
 
@@ -106,8 +109,10 @@ def generate_article(tool_data, x_hot_words=[]):
         x_post = res_json.get("x_viral_post", "")
         note_intro = res_json.get("note_intro", "")
         
-    except (json.JSONDecodeError, AttributeError):
-        print("CRITICAL: JSON Parsing Failed. Converting raw text.")
+    except (json.JSONDecodeError, AttributeError) as e:
+        print(f"CRITICAL: JSON Parsing Failed: {e}. Raw text len: {len(response_text)}")
+        # Fallback: Treat as raw text if parsing fails completely
+        # Note: This means x_post and note_intro will be missed, but at least article is saved.
         return f"# {name}\n> ※本記事はプロモーションを含みます\n\n{response_text}"
 
     # 4. Inject Affiliate Products
@@ -120,7 +125,6 @@ def generate_article(tool_data, x_hot_words=[]):
         print(f"Editor refinement failed: {e}")
         refined_article = final_article
 
-    # 6. Append Ad & X Post
     # 6. Append Ad, X Post & Note Intro
     refined_article = append_footer_content(refined_article, x_post, note_intro)
     
@@ -148,11 +152,24 @@ def translate_article_to_english(content):
     return llm_client.generate_content(prompt)
 
 def clean_json_text(text):
+    """
+    Robustly extracts JSON object from text using regex.
+    Handles cases where text has preambles or markdown code blocks.
+    """
     text = text.strip()
-    if text.startswith("```"):
-        text = text.split("```")[1]
-        if text.startswith("json"):
-            text = text[4:]
+    
+    # 1. Try to find JSON within code blocks
+    code_block_match = re.search(r'```(?:json)?\s*(\{[\s\S]*?\})\s*```', text)
+    if code_block_match:
+        return code_block_match.group(1)
+        
+    # 2. Try to find the first '{' and the last '}'
+    # This handles "Here is the JSON: { ... }"
+    json_match = re.search(r'(\{[\s\S]*\})', text)
+    if json_match:
+        return json_match.group(1)
+        
+    # 3. Fallback to original cleanup
     return text.strip()
 
 def inject_products(draft, keywords):

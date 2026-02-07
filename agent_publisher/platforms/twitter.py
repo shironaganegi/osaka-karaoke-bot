@@ -30,14 +30,42 @@ class TwitterPublisher:
             post_text = f"🤖 今日のAIトレンド情報をお届け！\n\n詳細はZennブログで公開予定です！\n\n#AI #Tech\n{article_url or ''}"
 
         try:
-            # Simple length check (Japan uses 140 chars broadly, though API counts differently)
-            # Safe limit: 130 chars to be sure, or just warn.
-            if len(post_text) > 140:
-                logger.warning(f"Tweet text too long ({len(post_text)} chars). Truncating.")
-                post_text = post_text[:137] + "..."
+        try:
+            # Threading Logic
+            tweets = []
             
-            logger.info(f"Posting to X: {post_text[:30]}...")
-            response = self.client.create_tweet(text=post_text)
-            logger.info(f"Successfully posted to X! ID: {response.data['id']}")
+            # Simple chunking by 140 chars (TODO: smarter split by punctuation)
+            MAX_LENGTH = 140
+            while len(post_text) > MAX_LENGTH:
+                # Find a good split point
+                split_index = post_text.rfind('\n', 0, MAX_LENGTH)
+                if split_index == -1:
+                    split_index = post_text.rfind('。', 0, MAX_LENGTH)
+                if split_index == -1:
+                    split_index = MAX_LENGTH
+
+                chunk = post_text[:split_index+1] # Include the delimiter
+                if not chunk.strip(): # Avoid empty chunks if delimiter was at end
+                     chunk = post_text[:MAX_LENGTH]
+                     
+                tweets.append(chunk)
+                post_text = post_text[len(chunk):]
+            
+            if post_text:
+                tweets.append(post_text)
+
+            logger.info(f"Posting to X as thread ({len(tweets)} tweets)...")
+            
+            # Post First Tweet
+            first_tweet = self.client.create_tweet(text=tweets[0])
+            last_id = first_tweet.data['id']
+            logger.info(f"Posted Tweet 1/ {len(tweets)}: ID {last_id}")
+
+            # Post Thread Replies
+            for i, text in enumerate(tweets[1:], start=2):
+                reply = self.client.create_tweet(text=text, in_reply_to_tweet_id=last_id)
+                last_id = reply.data['id']
+                logger.info(f"Posted Tweet {i}/{len(tweets)}: ID {last_id}")
+
         except Exception as e:
             logger.error(f"Failed to post to X: {e}")

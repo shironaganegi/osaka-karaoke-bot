@@ -16,10 +16,14 @@ class LLMClient:
         self.client = genai.Client(api_key=config.GEMINI_API_KEY)
         
         # Priority list of models to try
+        # Updated based on available models in logs:
+        # 1. gemini-2.0-flash (High performance)
+        # 2. gemini-2.0-flash-lite-preview-02-05 (or 001, Lite is good fallback)
+        # 3. gemini-flash-latest (Stable fallback)
         self.models_to_try = [
             'gemini-2.0-flash',
-            'gemini-1.5-flash',
-            'gemini-1.5-pro'
+            'gemini-2.0-flash-lite-001',
+            'gemini-flash-latest'
         ]
 
     def generate_content(self, prompt: str) -> str:
@@ -53,9 +57,14 @@ class LLMClient:
                     # Detect 429 Rate Limit (Quota Exceeded)
                     if "429" in error_msg or "RESOURCE_EXHAUSTED" in error_msg or "quota" in error_msg.lower():
                         logger.warning(f"Rate Limit hit for {model_name}. Switching to next model...")
-                        time.sleep(5) # Short pause before switching
+                        time.sleep(2) # Short pause before switching
                         break # Break retry loop to try next model
                     
+                    # Detect 404 Model Not Found (Switch immediately)
+                    if "404" in error_msg and "NOT_FOUND" in error_msg:
+                        logger.warning(f"Model {model_name} not found. Switching to next model...")
+                        break
+
                     # Detect Server Errors
                     if "500" in error_msg or "503" in error_msg:
                          logger.warning(f"Server Error ({model_name}). Retrying in {wait_time}s...")

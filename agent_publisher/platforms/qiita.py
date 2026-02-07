@@ -53,9 +53,6 @@ class QiitaPublisher:
         # 3. Remove "Promotion" disclaimer
         body = re.sub(r'> ※本記事はプロモーションを含みます\n?', '', body)
         
-        # 4. Remove X Post block
-        body = re.sub(r'---X_POST_START---[\s\S]*?---X_POST_END---\n?', '', body)
-
         # 5. Add canonical link
         footer = f"\n\n---\n\n:::note\nこの記事は [Zennで公開された記事]({zenn_url}) の転載です。\n最新情報や詳細な設定方法はZennをご覧ください。\n:::\n"
         

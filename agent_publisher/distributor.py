@@ -20,15 +20,21 @@ def get_latest_article():
     return files[0]
 
 def parse_article(file_path):
-    """Extracts title and body from the Zenn Markdown file."""
+    """Extracts title, body, and metadata from the Zenn Markdown file."""
     with open(file_path, 'r', encoding='utf-8') as f:
         content = f.read()
     
     title_match = re.search(r'^title:\s*"(.*)"', content, re.MULTILINE)
     title = title_match.group(1) if title_match else "No Title"
     
+    x_post_match = re.search(r'^x_viral_post:\s*"(.*)"', content, re.MULTILINE)
+    x_viral_post = x_post_match.group(1).replace("\\n", "\n").replace('\\"', '"') if x_post_match else None
+    
+    note_intro_match = re.search(r'^note_intro:\s*"(.*)"', content, re.MULTILINE)
+    note_intro = note_intro_match.group(1).replace("\\n", "\n").replace('\\"', '"') if note_intro_match else None
+
     body = re.sub(r'^---[\s\S]*?---\n', '', content)
-    return title, body
+    return title, body, x_viral_post, note_intro
 
 def main():
     logger.info("--- Starting Content Distribution ---")
@@ -39,7 +45,7 @@ def main():
         return
 
     # Process Japanese Article
-    title, body = parse_article(latest_ja_path)
+    title, body, x_viral_text, note_intro_text = parse_article(latest_ja_path)
     slug = os.path.basename(latest_ja_path).replace(".md", "")
     zenn_url = f"https://zenn.dev/shironaganegi/articles/{slug}"
     
@@ -55,10 +61,6 @@ def main():
 
     # 3. Twitter (X)
     twitter = TwitterPublisher()
-    # Extract X Post from article body
-    x_post_match = re.search(r'---X_POST_START---([\s\S]*?)---X_POST_END---', body)
-    x_viral_text = x_post_match.group(1).strip() if x_post_match else None
-    
     twitter.publish(custom_text=x_viral_text, article_url=zenn_url)
 
     # 4. Hugo (JA)
@@ -84,10 +86,6 @@ def main():
              logger.error(f"Failed to generate Hugo article (EN): {e}")
     else:
         logger.info("No English translation found. Skipping EN distribution.")
-
-    # Extract Note Intro from article body
-    note_intro_match = re.search(r'---NOTE_INTRO_START---([\s\S]*?)---NOTE_INTRO_END---', body)
-    note_intro_text = note_intro_match.group(1).strip() if note_intro_match else None
 
     # 6. Discord Notification
     discord = DiscordPublisher()

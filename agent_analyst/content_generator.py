@@ -245,7 +245,7 @@ def append_footer_content(article, x_post, note_intro=""):
         
     return article
 
-def generate_zenn_frontmatter(title, tool_name, source):
+def generate_zenn_frontmatter(title, tool_name, source, x_post="", note_intro=""):
     """
     Generates Zenn compatible YAML frontmatter.
     """
@@ -256,12 +256,18 @@ def generate_zenn_frontmatter(title, tool_name, source):
     
     is_published = config.ZENN_AUTO_PUBLISH
     
+    # Escape quotes in metadata
+    if x_post: x_post = x_post.replace('"', '\\"').replace("\n", "\\n")
+    if note_intro: note_intro = note_intro.replace('"', '\\"').replace("\n", "\\n")
+
     frontmatter = f"""---
 title: "{title}"
 emoji: "{random.choice(emojis)}"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: {json.dumps(topics)}
 published: {str(is_published).lower()}
+x_viral_post: "{x_post}"
+note_intro: "{note_intro}"
 ---
 
 """
@@ -348,10 +354,6 @@ def select_best_candidate(data):
 def save_article_file(content, tool_data):
     """Saves the article to the articles directory with a Zenn-compatible filename."""
     
-    # CLEANUP: Remove X_POST and NOTE_INTRO blocks so they don't appear in Zenn
-    content = re.sub(r'---X_POST_START---[\s\S]*?---X_POST_END---\n?', '', content)
-    content = re.sub(r'---NOTE_INTRO_START---[\s\S]*?---NOTE_INTRO_END---\n?', '', content)
-
     # Generate random 14-char slug
     slug = ''.join(random.choices(string.ascii_lowercase + string.digits, k=14))
     
@@ -405,7 +407,36 @@ if __name__ == "__main__":
             article_title = line.replace("# ", "").replace('"', '\\"')
             break
             
-    frontmatter = generate_zenn_frontmatter(article_title, top_tool['name'], top_tool.get('source'))
+    # Extract metadata from body_content if still present (legacy fallback) or pass directly
+    # In this refactor, we pass them directly from generate_article return if possible,
+    # but generate_article currently returns a single string.
+    # To avoid changing return signature too much, we will extract them from the returned string specific blocks
+    # OR better, change generate_article to return a dict.
+    # But for minimal disruption, let's parse them out from the blocks before we remove them.
+    
+    # Wait, generate_article calls append_footer_content which appends them.
+    # We should change generate_article to return (body, metadata)
+    # OR we can just pass them to frontmatter generation locally inside generate_article?
+    # generate_article returns a string.
+    
+    # Let's change generate_article to return a tuple: (content, metadata)
+    # But that breaks the signature.
+    
+    # Alternative:
+    # 1. generate_article returns the full string with blocks (as before).
+    # 2. main() extracts blocks, puts them in frontmatter, and REMOVES them from body.
+    
+    x_post_match = re.search(r'---X_POST_START---([\s\S]*?)---X_POST_END---', body_content)
+    x_viral_post = x_post_match.group(1).strip() if x_post_match else ""
+    
+    note_intro_match = re.search(r'---NOTE_INTRO_START---([\s\S]*?)---NOTE_INTRO_END---', body_content)
+    note_intro = note_intro_match.group(1).strip() if note_intro_match else ""
+    
+    # Clean body from blocks
+    body_content = re.sub(r'---X_POST_START---[\s\S]*?---X_POST_END---\n?', '', body_content)
+    body_content = re.sub(r'---NOTE_INTRO_START---[\s\S]*?---NOTE_INTRO_END---\n?', '', body_content)
+
+    frontmatter = generate_zenn_frontmatter(article_title, top_tool['name'], top_tool.get('source'), x_viral_post, note_intro)
     final_content = frontmatter + body_content
     
     # 5. Save Japanese Article

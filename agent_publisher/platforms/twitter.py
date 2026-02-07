@@ -30,6 +30,12 @@ class TwitterPublisher:
             post_text = f"🤖 今日のAIトレンド情報をお届け！\n\n詳細はZennブログで公開予定です！\n\n#AI #Tech\n{article_url or ''}"
 
         try:
+            # Simple length check (Japan uses 140 chars broadly, though API counts differently)
+            # Safe limit: 130 chars to be sure, or just warn.
+            if len(post_text) > 140:
+                logger.warning(f"Tweet text too long ({len(post_text)} chars). Truncating.")
+                post_text = post_text[:137] + "..."
+            
             logger.info(f"Posting to X: {post_text[:30]}...")
             response = self.client.create_tweet(text=post_text)
             logger.info(f"Successfully posted to X! ID: {response.data['id']}")

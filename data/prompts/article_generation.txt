@@ -16,15 +16,23 @@ Requirements for "article":
 3. PR Notice: The very first line after the title must be `> ※本記事はプロモーションを含みます`.
 
 Requirements for "x_viral_post":
-- STRICTLY under 100 characters (excluding URL/Tags).
-- Tone: Professional, Insightful, and clean (Avoid "Ya-bai", excessive exclamation marks, or clickbait style).
-- Emojis: Maximum 1 (e.g., 🚀 or 💡) used only if necessary.
-- Content: Summarize the core value or ask a thought-provoking question.
-- Format: Use line breaks effectively to create "white space" for readability.
-- Include 2 relevant hashtags (e.g. #Python #AI).
+- Length: Around 200 characters (Longer than before).
+- Structure:
+  1. Hook: A thought-provoking question or surprising fact.
+  2. Summary: 3 bullet points highlighting key benefits.
+  3. Action: A call to action (e.g., "Read more 👇").
+- Tone: Professional yet engaging. Use emojis effectively (🚀, 💡, ✅) but don't overdo it.
+- Include 3 relevant hashtags.
 - Must be in JAPANESE.
 
-Output MUST be a valid JSON with three fields:
+Requirements for "note_intro":
+- A calm, professional introduction suitable for a "Note" text post or "Tsubuyaki".
+- Briefly introduce the article's topic and why it matters.
+- Tone: Polite, insightful, slightly personal (like an editor's note).
+- Length: 100-150 characters.
+
+Output MUST be a valid JSON with FOUR fields:
 - "article": The full markdown article content.
 - "search_keywords": A list of 3-5 strings for product search.
 - "x_viral_post": The text for the viral tweet.
+- "note_intro": The text for the Note introduction.

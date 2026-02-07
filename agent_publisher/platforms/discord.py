@@ -9,7 +9,7 @@ class DiscordPublisher:
         if not self.webhook_url:
              logger.warning("Discord Webhook URL missing.")
 
-    def notify(self, title, zenn_url, x_post_text):
+    def notify(self, title, zenn_url, x_post_text, note_post_text=""):
         if not self.webhook_url:
             return
 
@@ -17,10 +17,13 @@ class DiscordPublisher:
             "title": "📝 新しい記事を公開しました",
             "description": f"[{title}]({zenn_url})",
             "color": 3447003, # Blue
-            "fields": [
                 {
                     "name": "X (Twitter) Post",
                     "value": f"```\n{x_post_text}\n```"
+                },
+                {
+                    "name": "Note Post (Intro)",
+                    "value": f"```\n{note_post_text}\n```"
                 }
             ],
             "footer": {

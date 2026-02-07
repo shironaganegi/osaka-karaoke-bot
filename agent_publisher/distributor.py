@@ -85,10 +85,16 @@ def main():
     else:
         logger.info("No English translation found. Skipping EN distribution.")
 
+    # Extract Note Intro from article body
+    note_intro_match = re.search(r'---NOTE_INTRO_START---([\s\S]*?)---NOTE_INTRO_END---', body)
+    note_intro_text = note_intro_match.group(1).strip() if note_intro_match else None
+
     # 6. Discord Notification
     discord = DiscordPublisher()
     x_text_for_discord = x_viral_text if x_viral_text else f"記事公開: {title}"
-    discord.notify(title, zenn_url, x_text_for_discord)
+    note_text_for_discord = note_intro_text if note_intro_text else "Note用の紹介文はありません。"
+    
+    discord.notify(title, zenn_url, x_text_for_discord, note_text_for_discord)
     
     logger.info("--- Distribution Completed ---")
 

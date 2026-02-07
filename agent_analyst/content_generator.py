@@ -104,6 +104,7 @@ def generate_article(tool_data, x_hot_words=[]):
         draft = res_json.get("article", "")
         keywords = res_json.get("search_keywords", [name])
         x_post = res_json.get("x_viral_post", "")
+        note_intro = res_json.get("note_intro", "")
         
     except (json.JSONDecodeError, AttributeError):
         print("CRITICAL: JSON Parsing Failed. Converting raw text.")
@@ -120,7 +121,8 @@ def generate_article(tool_data, x_hot_words=[]):
         refined_article = final_article
 
     # 6. Append Ad & X Post
-    refined_article = append_footer_content(refined_article, x_post)
+    # 6. Append Ad, X Post & Note Intro
+    refined_article = append_footer_content(refined_article, x_post, note_intro)
     
     return refined_article
     
@@ -208,7 +210,7 @@ def inject_products(draft, keywords):
     wrapped_products = f"\n<!-- AFFILIATE_START -->\n{products_html}\n<!-- AFFILIATE_END -->\n"
     return draft.replace("{{RECOMMENDED_PRODUCTS}}", wrapped_products).replace("{RECOMMENDED_PRODUCTS}", wrapped_products)
 
-def append_footer_content(article, x_post):
+def append_footer_content(article, x_post, note_intro=""):
     # Add Affiliate Campaign
     ads = load_ads()
     try:
@@ -219,6 +221,11 @@ def append_footer_content(article, x_post):
     # Add Hidden X Post
     if x_post:
         article += f"\n\n---X_POST_START---\n{x_post}\n---X_POST_END---\n"
+    
+    # Add Hidden Note Intro
+    if note_intro:
+        article += f"\n\n---NOTE_INTRO_START---\n{note_intro}\n---NOTE_INTRO_END---\n"
+        
     return article
 
 def generate_zenn_frontmatter(title, tool_name, source):
@@ -324,8 +331,9 @@ def select_best_candidate(data):
 def save_article_file(content, tool_data):
     """Saves the article to the articles directory with a Zenn-compatible filename."""
     
-    # CLEANUP: Remove X_POST_START/END block so it doesn't appear in Zenn
+    # CLEANUP: Remove X_POST and NOTE_INTRO blocks so they don't appear in Zenn
     content = re.sub(r'---X_POST_START---[\s\S]*?---X_POST_END---\n?', '', content)
+    content = re.sub(r'---NOTE_INTRO_START---[\s\S]*?---NOTE_INTRO_END---\n?', '', content)
 
     # Generate random 14-char slug
     slug = ''.join(random.choices(string.ascii_lowercase + string.digits, k=14))

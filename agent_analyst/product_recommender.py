@@ -26,9 +26,21 @@ def _search_rakuten(keyword):
     }
 
     try:
-        response = requests.get(url, params=params)
+        response = requests.get(url, params=params, timeout=10)
+        
+        if response.status_code != 200:
+            print(f"DEBUG: Rakuten API Error {response.status_code}: {response.text}")
+            return []
+            
         data = response.json()
         items = data.get("Items", [])
+        
+        if not items:
+            print(f"DEBUG: No items found for keyword '{keyword}' (Rakuten)")
+            # Check for API error structure in 200 OK (rare but possible)
+            if "error" in data:
+                 print(f"DEBUG: API returned error in body: {data}")
+
         
         html_results = []
         for item_wrapper in items:

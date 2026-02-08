@@ -1,0 +1,90 @@
+{
+    "Python": [
+        {
+            "title": "Python実践入門",
+            "keyword": "Python実践入門"
+        },
+        {
+            "title": "Effective Python",
+            "keyword": "Effective Python"
+        },
+        {
+            "title": "退屈なことはPythonにやらせよう",
+            "keyword": "退屈なことはPythonにやらせよう"
+        }
+    ],
+    "Rust": [
+        {
+            "title": "Rustプログラミング入門",
+            "keyword": "Rustプログラミング入門"
+        },
+        {
+            "title": "プログラミングRust",
+            "keyword": "プログラミングRust"
+        }
+    ],
+    "Go": [
+        {
+            "title": "Go言語 100Tips",
+            "keyword": "Go言語 100Tips"
+        },
+        {
+            "title": "スターティングGo言語",
+            "keyword": "スターティングGo言語"
+        }
+    ],
+    "React": [
+        {
+            "title": "Reactハンズオンラーニング",
+            "keyword": "Reactハンズオンラーニング"
+        },
+        {
+            "title": "モダンJavaScriptの基本から始める React実践の教科書",
+            "keyword": "モダンJavaScriptの基本 from React"
+        }
+    ],
+    "Docker": [
+        {
+            "title": "仕組みと使い方がわかる Docker&Kubernetesのきほんのき",
+            "keyword": "Docker&Kubernetesのきほんのき"
+        },
+        {
+            "title": "Docker/Kubernetes 実践コンテナ開発入門",
+            "keyword": "Docker/Kubernetes 実践コンテナ開発入門"
+        }
+    ],
+    "AWS": [
+        {
+            "title": "AWS認定ソリューションアーキテクト",
+            "keyword": "AWS認定ソリューションアーキテクト"
+        },
+        {
+            "title": "Amazon Web Services 基礎からのネットワーク＆サーバー構築",
+            "keyword": "Amazon Web Services 基礎からのネットワーク"
+        }
+    ],
+    "Machine Learning": [
+        {
+            "title": "ゼロから作るDeep Learning",
+            "keyword": "ゼロから作るDeep Learning"
+        },
+        {
+            "title": "scikit-learnとTensorFlowによる実践機械学習",
+            "keyword": "scikit-learnとTensorFlowによる実践機械学習"
+        }
+    ],
+    "General": [
+        {
+            "title": "リーダブルコード",
+            "keyword": "リーダブルコード"
+        },
+        {
+            "title": "プリンシプル オブ プログラミング",
+            "keyword": "プリンシプル オブ プログラミング"
+        },
+        {
+            "title": "Webを支える技術",
+            "keyword": "Webを支える技術"
+        }
+    ]
+}

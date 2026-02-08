@@ -13,6 +13,7 @@ from agent_analyst.failure_miner import mine_failures
 from agent_analyst.product_recommender import search_related_items
 from agent_analyst.editor import refine_article
 from agent_analyst.llm import llm_client
+from agent_analyst.affiliate_manager import affiliate_manager
 from shared.config import config
 from shared.utils import setup_logging, safe_requests_get
 
@@ -177,58 +178,11 @@ def clean_json_text(text):
 
 def inject_products(draft, keywords):
     if isinstance(keywords, str): keywords = [keywords]
-    products_html = ""
     
-    # Try keywords
-    for kw in keywords:
-        items = search_related_items(kw)
-        if items:
-            products_html = "".join(items)
-            break
-            
-    # Fallback if specific search fails
-    if not products_html:
-        # Engineer Vocabulary Filter (White-list approach)
-        tech_keywords = [
-            "Python", "Rust", "Go言語", "AWS", "Docker", "Kubernetes", 
-            "React", "TypeScript", "機械学習", "データ分析", "Linux", 
-            "Raspberry Pi", "Arduino", "キーボード", "モニター"
-        ]
-        unique_keywords = set()
-        for kw in tech_keywords:
-            if kw in draft:
-                unique_keywords.add(kw)
-        
-        # Try finding products for found tech keywords (limit to 2 search attempts)
-        for kw in list(unique_keywords)[:2]:
-             items = search_related_items(kw)
-             if items:
-                 products_html += "".join(items)
-        
-    # Final Fallback to popular gadgets if still empty
-    if not products_html:
-        # Fallback to popular gadgets (High CTR for tech audience)
-        for fb in ["ロジクール マウス", "Anker 充電器", "USB-C ケーブル"]:
-            items = search_related_items(fb)
-            if items:
-                products_html = "".join(items)
-                break
-        
-        # If still nothing (unlikely), specifically use Logicool MX Master 3S keyword
-        if not products_html:
-             items = search_related_items("MX Master 3S")
-             if items: products_html = "".join(items)
-
-    # Emergency Fallback: If API failed completely (e.g. Rate Limit or Network Error)
-    # Inject a static internal affiliate link or a reliable banner
-    if not products_html:
-        products_html = """
-### 👇 エンジニアにおすすめのサービス 👇
-[**🌐 独自ドメイン取得なら「お名前.com」。TechTrend Watchも使っています！**](https://www.onamae.com/)
-"""
-
-    wrapped_products = f"\n<!-- AFFILIATE_START -->\n{products_html}\n<!-- AFFILIATE_END -->\n"
-    return draft.replace("{{RECOMMENDED_PRODUCTS}}", wrapped_products).replace("{RECOMMENDED_PRODUCTS}", wrapped_products)
+    # Use AffiliateManager to get recommendations (Books -> Rakuten -> Gadgets)
+    products_html = affiliate_manager.get_recommendations(draft, keywords)
+    
+    return draft.replace("{{RECOMMENDED_PRODUCTS}}", products_html).replace("{RECOMMENDED_PRODUCTS}", products_html)
 
 def append_footer_content(article, x_post, note_intro=""):
     # Add Affiliate Campaign

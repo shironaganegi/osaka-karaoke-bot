@@ -48,22 +48,23 @@ def main():
     title, body, x_viral_text, note_intro_text = parse_article(latest_ja_path)
     slug = os.path.basename(latest_ja_path).replace(".md", "")
     zenn_url = f"https://zenn.dev/shironaganegi/articles/{slug}"
+    website_url = f"https://techtrend-watch.com/posts/{slug}/"
     
     logger.info(f"Processing (JA): {title}")
 
-    # 1. Qiita
+    # 1. Qiita (Use Zenn URL as canonical for now)
     qiita = QiitaPublisher()
     qiita.publish(title, body, zenn_url)
 
-    # 2. BlueSky
+    # 2. BlueSky (Use Website URL for traffic)
     bsky = BlueSkyPublisher()
-    bsky.publish(title, zenn_url)
+    bsky.publish(title, website_url)
 
-    # 3. Twitter (X)
+    # 3. Twitter (X) (Use Website URL for traffic)
     twitter = TwitterPublisher()
-    twitter.publish(custom_text=x_viral_text, article_url=zenn_url)
+    twitter.publish(custom_text=x_viral_text, article_url=website_url)
 
-    # 4. Hugo (JA)
+    # 4. Hugo (JA) (Pass Zenn URL for canonical/footer ref)
     hugo = HugoPublisher()
     hugo.save_article(title, body, zenn_url, latest_ja_path, lang="ja")
 
@@ -87,12 +88,12 @@ def main():
     else:
         logger.info("No English translation found. Skipping EN distribution.")
 
-    # 6. Discord Notification
+    # 6. Discord Notification (Use Website URL)
     discord = DiscordPublisher()
     x_text_for_discord = x_viral_text if x_viral_text else f"記事公開: {title}"
     note_text_for_discord = note_intro_text if note_intro_text else "Note用の紹介文はありません。"
     
-    discord.notify(title, zenn_url, x_text_for_discord, note_text_for_discord)
+    discord.notify(title, website_url, x_text_for_discord, note_text_for_discord)
     
     logger.info("--- Distribution Completed ---")
 

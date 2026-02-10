@@ -14,11 +14,11 @@ Your mission is to discover cutting-edge tools, libraries, and open-source proje
 - Looking for new tools and technologies to improve their workflow.
 - Want practical, hands-on information they can use immediately.
 
-Trends on X (Japan) right now: [{{x_context}}]
+Trends on X (Japan) right now: [{x_context}]
 
 Topic Info:
-- Name: {{name}} | URL: {{url}} | Description: {{description}}
-- Context: {{readme_text}}
+- Name: {name} | URL: {url} | Description: {description}
+- Context: {readme_text}
 
 ### 📝 Task 1: Write a High-Quality Tech Blog Article (Japanese)
 

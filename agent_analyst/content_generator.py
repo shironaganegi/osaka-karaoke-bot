@@ -95,8 +95,20 @@ def generate_article(tool_data, x_hot_words=[]):
     # 2. Call Gemini
     # Force JSON mode to prevent preamble text
     generation_config = {"response_mime_type": "application/json"}
-    response_text = llm_client.generate_content(prompt, generation_config=generation_config)
     
+    response_text = ""
+    # Retry loop for JSON generation (Content Quality)
+    for attempt in range(2):
+        response_text = llm_client.generate_content(prompt, generation_config=generation_config)
+        
+        if not response_text:
+            continue
+            
+        # Quick validation
+        if "{" in response_text and "}" in response_text:
+            break
+        logger.warning(f"Generated content does not look like JSON (Attempt {attempt+1}). Retrying...")
+
     if not response_text:
         return f"# {name}\n\n記事生成に失敗しました（エラーまたはタイムアウト）。ログを確認してください。"
 
@@ -111,10 +123,32 @@ def generate_article(tool_data, x_hot_words=[]):
         note_intro = res_json.get("note_intro", "")
         
     except (json.JSONDecodeError, AttributeError) as e:
-        print(f"CRITICAL: JSON Parsing Failed: {e}. Raw text len: {len(response_text)}")
-        # Fallback: Treat as raw text if parsing fails completely
-        # Note: This means x_post and note_intro will be missed, but at least article is saved.
-        return f"# {name}\n> ※本記事はプロモーションを含みます\n\n{response_text}"
+        logger.error(f"CRITICAL: JSON Parsing Failed: {e}. Raw text len: {len(response_text)}")
+        
+        # Fallback 1: Try to extract "article" using Regex
+        # Look for "article": "..." pattern, handling escaped quotes roughly
+        article_match = re.search(r'"article"\s*:\s*"(.*?)",\s*"\w+"', response_text, re.DOTALL)
+        if article_match:
+            draft = article_match.group(1).replace('\\"', '"').replace('\\n', '\n')
+            logger.info("Recovered article content using Regex fallback.")
+            keywords = [name]
+            x_post = ""
+            note_intro = ""
+        else:
+            # Fallback 2: Treat raw text as article, but strip JSON-like wrappers if present
+            # If it starts with {, mostly likely it's a broken JSON.
+            # We try to find the largest text block.
+            logger.warning("Regex fallback failed. Using raw text as draft.")
+            draft = response_text
+            keywords = [name]
+            x_post = ""
+            note_intro = ""
+
+            # Minimal cleanup if it looks like JSON
+            if draft.strip().startswith("{") and '"article":' in draft:
+                 # Try to strip preamble
+                 draft = re.sub(r'^[\s\S]*?"article"\s*:\s*"', '', draft)
+                 draft = re.sub(r'",\s*"\w+"[\s\S]*$', '', draft)
 
     # 4. Inject Affiliate Products
     final_article = inject_products(draft, keywords)

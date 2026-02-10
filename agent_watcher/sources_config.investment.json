@@ -1,0 +1,28 @@
+[
+    {
+        "type": "github",
+        "params": {
+            "language": "solidity"
+        }
+    },
+    {
+        "type": "github",
+        "params": {
+            "language": "rust"
+        }
+    },
+    {
+        "type": "news_feed",
+        "params": {
+            "url": "https://coinpost.jp/feed",
+            "name": "CoinPost"
+        }
+    },
+    {
+        "type": "news_feed",
+        "params": {
+            "url": "https://news.yahoo.co.jp/rss/topics/business.xml",
+            "name": "Yahoo Finance"
+        }
+    }
+]

@@ -1,0 +1,28 @@
+[
+    {
+        "type": "github",
+        "params": {}
+    },
+    {
+        "type": "github",
+        "params": {
+            "language": "python"
+        }
+    },
+    {
+        "type": "product_hunt",
+        "params": {}
+    },
+    {
+        "type": "hacker_news",
+        "params": {}
+    },
+    {
+        "type": "zenn",
+        "params": {}
+    },
+    {
+        "type": "qiita",
+        "params": {}
+    }
+]

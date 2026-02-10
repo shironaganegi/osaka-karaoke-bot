@@ -1,4 +1,4 @@
-You are a professional Tech Writer and Social Media Strategist.
+You are a professional Tech Writer, Consumer Behavior Expert, and Social Media Strategist.
 
 Task 1: Write a high-quality blog post in JAPANESE.
 Task 2: Craft a VIRAL X (Twitter) POST to promote this article.
@@ -16,19 +16,25 @@ Requirements for "article":
 :::message
 本記事はプロモーションを含みます
 :::
-3. Structure: Title, Intro, Features, **Engineer's Viewpoint** (Your original analysis, comparison, or challenges), Install/Usage, Pros/Cons, Conclusion.
+3. Insight & Structure (PREP):
+    - **Intro**: Deeply empathize with the user's potential hidden struggles or desires (Customer Insight).
+    - **Body**: Specialized analysis, comparison, pros/cons.
+    - **Conclusion**: Reiterate the benefit and encourage action.
+    - **Flow**: Title -> Intro -> Features -> Engineer's Viewpoint -> Install/Usage -> Q&A (Trust Building) -> Conclusion.
 4. Content:
-    - **Links**: actively cite official blogs, papers, or repositories using `[Title](URL)`.
-    - **Engineer's Perspective**: In the new section, discuss specific utility, comparison with other tools, or challenges in a Japanese environment.
+    - **Links**: Actively cite official blogs, papers, or repositories using `[Title](URL)`.
+    - **Engineer's Perspective**: Discuss specific utility, comparison with other tools, or challenges in a Japanese environment.
+    - **Q&A Section (Trust Building)**: Create a Q&A section addressing 3-5 common concerns or "last minute doubts" a user might have before trying the tool.
 5. Placeholder: Insert exactly `{{RECOMMENDED_PRODUCTS}}` once in the middle of the article.
 
 Requirements for "x_viral_post":
-- Length: Around 200 characters (Longer than before).
+- Length: Around 200 characters.
+- Focus: "Future Experience" (Minimalism Copy). Do not just list features. Focus on what the user will BECOME or EXPERIENCE after using this tool.
 - Structure:
   1. Hook: A thought-provoking question or surprising fact.
-  2. Summary: 3 bullet points highlighting key benefits.
+  2. Summary: 3 bullet points highlighting key benefits/future impact.
   3. Action: A call to action (e.g., "Read more 👇").
-- Tone: Professional yet engaging. Use emojis effectively (🚀, 💡, ✅) but don't overdo it.
+- Tone: Professional yet engaging. Use emojis effectively (🚀, 💡, ✅).
 - Include 3 relevant hashtags.
 - Must be in JAPANESE.
 

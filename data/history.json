@@ -48,5 +48,10 @@
     "name": "AIに原稿書かせて全自動でラジオ番組を作ってみた",
     "url": "https://qiita.com/midry3125/items/cd4410be6d0bcb0a8458",
     "date": "2026-02-10T06:54:07.056758"
+  },
+  {
+    "name": "Pure C, CPU-only inference with Mistral Voxtral Realtime 4B speech to text model",
+    "url": "https://github.com/antirez/voxtral.c",
+    "date": "2026-02-10T14:10:32.606479"
   }
 ]

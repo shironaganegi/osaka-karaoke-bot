@@ -52,9 +52,9 @@ def main():
     
     logger.info(f"Processing (JA): {title}")
 
-    # 1. Qiita (Use Website URL as canonical)
-    qiita = QiitaPublisher()
-    qiita.publish(title, body, website_url)
+    # 1. Qiita (Disabled: Bot detection risk)
+    # qiita = QiitaPublisher()
+    # qiita.publish(title, body, website_url)
 
     # 2. BlueSky (Use Website URL for traffic)
     bsky = BlueSkyPublisher()

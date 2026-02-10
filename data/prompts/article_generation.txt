@@ -49,9 +49,9 @@ Structure strictly using the **PASONA Framework** to guide the reader to action.
 
 ### Output Format (JSON)
 Return a valid JSON object with these 4 keys:
-{
+{{
   "article": "(The full markdown blog post)",
   "search_keywords": ["(3-5 keywords for affiliate search)"],
   "x_viral_post": "(The text for X)",
   "note_intro": "(A short teaser for Note users)"
-}
+}}

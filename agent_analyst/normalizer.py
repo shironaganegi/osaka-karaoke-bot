@@ -139,6 +139,15 @@ ADDRESS_TO_STATION: dict[str, str] = {
 
     # --- その他大阪市 ---
     "都島区東野田町": "京橋",
+    "都島区友渕町": "都島",
+    "北区天神橋7": "天神橋筋六丁目",
+    "北区小松原町": "梅田",
+    "北区曾根崎新地": "北新地",
+    "中央区安土町": "堺筋本町",
+    "中央区南本町": "堺筋本町",
+    "中央区北浜": "淀屋橋",
+    "福島区吉野": "野田阪神",
+    "城東区蒲生": "蒲生四丁目",
     "都島区": "京橋",  # フォールバック
     "城東区": "京橋",
     "住之江区新北島": "住之江公園",
@@ -311,7 +320,7 @@ def group_by_station(stores: list[dict]) -> dict[str, list[dict]]:
 
     for store in stores:
         raw_station = store.get("station_name", "")
-        store_name = store.get("store_name", "")
+        store_name = store.get("store_name") or store.get("name", "")
         chain = store.get("chain", "jankara")
         address = store.get("address", "")
 
@@ -319,7 +328,7 @@ def group_by_station(stores: list[dict]) -> dict[str, list[dict]]:
         if raw_station:
             normalized = normalize_station_name(raw_station, store_name)
         elif address:
-            # 住所から駅名を推定（まねきねこ用）
+            # 住所から駅名を推定（まねきねこ用・ビッグエコー用）
             normalized = estimate_station_from_address(address)
             if not normalized:
                 normalized = normalize_station_name("", store_name)
@@ -328,7 +337,7 @@ def group_by_station(stores: list[dict]) -> dict[str, list[dict]]:
 
         entry = {
             "chain": chain,
-            "name": store["store_name"],
+            "name": store_name,
             "area": store.get("area", ""),
             "address": address,
             "url": store.get("detail_url", ""),
@@ -408,6 +417,9 @@ def save_stations_master(
 
 def main():
     """メイン実行関数"""
+    # Windowsコンソールでの文字化け防止
+    sys.stdout.reconfigure(encoding='utf-8')
+    
     print("=" * 50, file=sys.stderr)
     print("Agent Analyst - データ正規化（マルチチェーン対応）", file=sys.stderr)
     print("=" * 50, file=sys.stderr)
@@ -438,6 +450,18 @@ def main():
             s.setdefault("chain", "manekineko")
         all_stores.extend(manekineko_stores)
         print(f"  → まねきねこ: {len(manekineko_stores)} 店舗", file=sys.stderr)
+
+    # 3. ビッグエコーデータ読み込み
+    bigecho_data = load_latest_raw_data(
+        pattern="raw_bigecho_*.json",
+        label="ビッグエコー",
+    )
+    if bigecho_data:
+        bigecho_stores = bigecho_data.get("stores", [])
+        for s in bigecho_stores:
+            s.setdefault("chain", "bigecho")
+        all_stores.extend(bigecho_stores)
+        print(f"  → ビッグエコー: {len(bigecho_stores)} 店舗", file=sys.stderr)
 
     if not all_stores:
         print(

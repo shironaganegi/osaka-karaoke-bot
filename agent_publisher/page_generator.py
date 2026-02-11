@@ -78,9 +78,13 @@ def format_pricing_cell(store: dict) -> str:
     """
     pricing = store.get("pricing")
     price_url = store.get("price_url") or store.get("url") or "#"
+    pdf_url = store.get("pdf_url")
 
     if not pricing or pricing.get("status") != "success":
-        # 料金データなし → 公式サイトへのリンク
+        # 料金データなし
+        if pdf_url:
+            return f'[📄 料金表(PDF)]({pdf_url})'
+        # なければ公式サイトへのリンク
         return f'[公式サイトで確認]({price_url})'
 
     parts = []

@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-02-12T03:28:22.753642",
-  "total_stations": 50,
-  "total_stores": 113,
+  "generated_at": "2026-02-12T04:06:02.623565",
+  "total_stations": 57,
+  "total_stores": 148,
   "scraping_stats": {
     "success": 83,
-    "errors": 0
+    "errors": 35
   },
   "stations": {
     "あびこ": [
@@ -373,6 +373,7 @@
         "url": "https://www.karaokemanekineko.jp/locations/osaka/osaka-shi/namba-hips-store/",
         "price_url": "",
         "original_station": "",
+        "pdf_url": "https://d1k5d0nneloh3k.cloudfront.net/wp-content/uploads/2025/11/28132223/448-7.pdf",
         "pricing": {
           "status": "skip"
         }
@@ -385,6 +386,7 @@
         "url": "https://www.karaokemanekineko.jp/locations/osaka/osaka-shi/sennichimae-2nd-store/",
         "price_url": "",
         "original_station": "",
+        "pdf_url": "https://d1k5d0nneloh3k.cloudfront.net/wp-content/uploads/2025/11/28132640/767-8.pdf",
         "pricing": {
           "status": "skip"
         }
@@ -397,6 +399,7 @@
         "url": "https://www.karaokemanekineko.jp/locations/osaka/osaka-shi/sennichimae-store/",
         "price_url": "",
         "original_station": "",
+        "pdf_url": "https://d1k5d0nneloh3k.cloudfront.net/wp-content/uploads/2025/11/28132355/738-10.pdf",
         "pricing": {
           "status": "skip"
         }
@@ -409,6 +412,7 @@
         "url": "https://www.karaokemanekineko.jp/locations/osaka/osaka-shi/nankaidori-2nd-store/",
         "price_url": "",
         "original_station": "",
+        "pdf_url": "https://d1k5d0nneloh3k.cloudfront.net/wp-content/uploads/2025/11/28132751/768-6.pdf",
         "pricing": {
           "status": "skip"
         }
@@ -421,6 +425,7 @@
         "url": "https://www.karaokemanekineko.jp/locations/osaka/osaka-shi/nankaidori-store/",
         "price_url": "",
         "original_station": "",
+        "pdf_url": "https://d1k5d0nneloh3k.cloudfront.net/wp-content/uploads/2025/11/04154443/740-13.pdf",
         "pricing": {
           "status": "skip"
         }
@@ -433,6 +438,7 @@
         "url": "https://www.karaokemanekineko.jp/locations/osaka/osaka-shi/ebisubashi-store/",
         "price_url": "",
         "original_station": "",
+        "pdf_url": "https://d1k5d0nneloh3k.cloudfront.net/wp-content/uploads/2025/11/28133142/903-6.pdf",
         "pricing": {
           "status": "skip"
         }
@@ -445,8 +451,45 @@
         "url": "https://www.karaokemanekineko.jp/locations/osaka/osaka-shi/dotonbori-store/",
         "price_url": "",
         "original_station": "",
+        "pdf_url": "https://d1k5d0nneloh3k.cloudfront.net/wp-content/uploads/2025/11/28133255/741-6.pdf",
         "pricing": {
           "status": "skip"
+        }
+      },
+      {
+        "chain": "bigecho",
+        "name": "カラオケ ビッグエコーなんばアムザ店",
+        "area": "",
+        "address": "大阪府大阪市中央区千日前2丁目9-17 　アムザ1000　3F",
+        "url": "",
+        "price_url": "",
+        "original_station": "",
+        "pricing": {
+          "status": "no_url"
+        }
+      },
+      {
+        "chain": "bigecho",
+        "name": "カラオケ ビッグエコー なんば戎橋店",
+        "area": "",
+        "address": "大阪府大阪市中央区難波 3-5-1 　ナンバ一番ビルB1F",
+        "url": "",
+        "price_url": "",
+        "original_station": "",
+        "pricing": {
+          "status": "no_url"
+        }
+      },
+      {
+        "chain": "bigecho",
+        "name": "カラオケ ビッグエコーなんば千日前店",
+        "area": "",
+        "address": "大阪府大阪市中央区千日前2丁目11番9号 丸福ビル2F",
+        "url": "",
+        "price_url": "",
+        "original_station": "",
+        "pricing": {
+          "status": "no_url"
         }
       }
     ],
@@ -585,8 +628,33 @@
         "url": "https://www.karaokemanekineko.jp/locations/osaka/kaizuka/kaizuka-store/",
         "price_url": "",
         "original_station": "",
+        "pdf_url": "https://d1k5d0nneloh3k.cloudfront.net/wp-content/uploads/2025/11/05075922/377-3.pdf",
         "pricing": {
           "status": "skip"
+        }
+      },
+      {
+        "chain": "bigecho",
+        "name": "カラオケ ビッグエコー本町つるやビル店",
+        "area": "",
+        "address": "大阪府大阪市中央区本町3-3-5 　つるや本社ビル地下1階",
+        "url": "",
+        "price_url": "",
+        "original_station": "",
+        "pricing": {
+          "status": "no_url"
+        }
+      },
+      {
+        "chain": "bigecho",
+        "name": "カラオケ ビッグエコー天満駅前店",
+        "area": "",
+        "address": "大阪府大阪市北区天神橋4-11-6 　ミクシィーワン・ビル2階",
+        "url": "",
+        "price_url": "",
+        "original_station": "",
+        "pricing": {
+          "status": "no_url"
         }
       }
     ],
@@ -686,6 +754,7 @@
         "url": "https://www.karaokemanekineko.jp/locations/osaka/osaka-shi/kyobashi-store/",
         "price_url": "",
         "original_station": "",
+        "pdf_url": "https://d1k5d0nneloh3k.cloudfront.net/wp-content/uploads/2025/11/03235622/%E4%BA%AC%E6%A9%8B%E5%BA%97-4.pdf",
         "pricing": {
           "status": "skip"
         }
@@ -698,8 +767,33 @@
         "url": "https://www.karaokemanekineko.jp/locations/osaka/osaka-shi/kyobashi-ekimae-store/",
         "price_url": "",
         "original_station": "",
+        "pdf_url": "https://d1k5d0nneloh3k.cloudfront.net/wp-content/uploads/2025/11/13070619/%E4%BA%AC%E6%A9%8B%E9%A7%85%E5%89%8D%E5%BA%97-4.pdf",
         "pricing": {
           "status": "skip"
+        }
+      },
+      {
+        "chain": "bigecho",
+        "name": "カラオケ ビッグエコー京橋京阪モール前店",
+        "area": "",
+        "address": "大阪府大阪市都島区東野田町2-9-23",
+        "url": "",
+        "price_url": "",
+        "original_station": "",
+        "pricing": {
+          "status": "no_url"
+        }
+      },
+      {
+        "chain": "bigecho",
+        "name": "カラオケ ビッグエコーＪＲ京橋駅前店",
+        "area": "",
+        "address": "大阪府大阪市都島区東野田町3-10-1 　第２晃進ビル５F",
+        "url": "",
+        "price_url": "",
+        "original_station": "",
+        "pricing": {
+          "status": "no_url"
         }
       }
     ],
@@ -745,6 +839,7 @@
         "url": "https://www.karaokemanekineko.jp/locations/osaka/osaka-shi/suminoekoen-store/",
         "price_url": "",
         "original_station": "",
+        "pdf_url": "https://d1k5d0nneloh3k.cloudfront.net/wp-content/uploads/2025/11/13081243/946-4.pdf",
         "pricing": {
           "status": "skip"
         }
@@ -884,6 +979,30 @@
           "scraped_at": "2026-02-12T03:20:25.241459",
           "status": "success"
         }
+      },
+      {
+        "chain": "bigecho",
+        "name": "カラオケ ビッグエコー梅田北新地店",
+        "area": "",
+        "address": "大阪府大阪市北区曾根崎新地1丁目11-20 　北新地HAT BOY BLD．2階",
+        "url": "",
+        "price_url": "",
+        "original_station": "",
+        "pricing": {
+          "status": "no_url"
+        }
+      },
+      {
+        "chain": "bigecho",
+        "name": "カラオケ ビッグエコー梅田桜橋北新地店",
+        "area": "",
+        "address": "大阪府大阪市北区曾根崎新地1-4-17",
+        "url": "",
+        "price_url": "",
+        "original_station": "",
+        "pricing": {
+          "status": "no_url"
+        }
       }
     ],
     "十三": [
@@ -952,6 +1071,18 @@
           "scraped_at": "2026-02-12T03:20:32.792656",
           "status": "success"
         }
+      },
+      {
+        "chain": "bigecho",
+        "name": "カラオケ ビッグエコー十三東口店",
+        "area": "",
+        "address": "大阪府大阪市淀川区十三東2-8-11 　丸萬十三第１ビル 3F",
+        "url": "",
+        "price_url": "",
+        "original_station": "",
+        "pricing": {
+          "status": "no_url"
+        }
       }
     ],
     "吹田": [
@@ -992,6 +1123,7 @@
         "url": "https://www.karaokemanekineko.jp/locations/osaka/suita-shi/esaka-ekimae-store/",
         "price_url": "",
         "original_station": "",
+        "pdf_url": "https://d1k5d0nneloh3k.cloudfront.net/wp-content/uploads/2025/11/11183225/%E6%B1%9F%E5%9D%82%E9%A7%85%E5%89%8D%E5%BA%97-6.pdf",
         "pricing": {
           "status": "skip"
         }
@@ -1058,6 +1190,44 @@
           },
           "scraped_at": "2026-02-12T03:20:43.980277",
           "status": "success"
+        }
+      }
+    ],
+    "堺筋本町": [
+      {
+        "chain": "bigecho",
+        "name": "カラオケ ビッグエコー堺筋本町安土町店",
+        "area": "",
+        "address": "大阪府中央区安土町2丁目2-13 　大仁産業安土町店舗1F～3F",
+        "url": "",
+        "price_url": "",
+        "original_station": "",
+        "pricing": {
+          "status": "no_url"
+        }
+      },
+      {
+        "chain": "bigecho",
+        "name": "カラオケ ビッグエコー堺筋本町店",
+        "area": "",
+        "address": "大阪府大阪市中央区南本町2-2-5 　池萬堺筋ビル B1",
+        "url": "",
+        "price_url": "",
+        "original_station": "",
+        "pricing": {
+          "status": "no_url"
+        }
+      },
+      {
+        "chain": "bigecho",
+        "name": "カラオケ ビッグエコー大阪本町店",
+        "area": "",
+        "address": "大阪府大阪市中央区安土町3-4-5 　本丸田ビル1F",
+        "url": "",
+        "price_url": "",
+        "original_station": "",
+        "pricing": {
+          "status": "no_url"
         }
       }
     ],
@@ -1311,6 +1481,68 @@
           "scraped_at": "2026-02-12T03:21:13.793740",
           "status": "success"
         }
+      },
+      {
+        "chain": "bigecho",
+        "name": "カラオケ ビッグエコーあべのごちそうビル店",
+        "area": "",
+        "address": "大阪府大阪市阿倍野区阿倍野筋1-1-61 　新宿ごちそうビル６Ｆ",
+        "url": "",
+        "price_url": "",
+        "original_station": "",
+        "pricing": {
+          "status": "no_url"
+        }
+      },
+      {
+        "chain": "bigecho",
+        "name": "カラオケ ビッグエコー近鉄あべの店",
+        "area": "",
+        "address": "大阪府大阪市阿倍野区阿倍野筋1丁目2-1",
+        "url": "",
+        "price_url": "",
+        "original_station": "",
+        "pricing": {
+          "status": "no_url"
+        }
+      },
+      {
+        "chain": "bigecho",
+        "name": "カラオケ ビッグエコー天王寺あべの駅前店",
+        "area": "",
+        "address": "大阪府大阪市阿倍野区阿倍野筋1-3-18",
+        "url": "",
+        "price_url": "",
+        "original_station": "",
+        "pricing": {
+          "status": "no_url"
+        }
+      },
+      {
+        "chain": "bigecho",
+        "name": "カラオケ ビッグエコーあべの店",
+        "area": "",
+        "address": "大阪府大阪市阿倍野区阿倍野筋2-1-20 　クロワッサンビル2F",
+        "url": "",
+        "price_url": "",
+        "original_station": "",
+        "pricing": {
+          "status": "no_url"
+        }
+      }
+    ],
+    "天神橋筋六丁目": [
+      {
+        "chain": "bigecho",
+        "name": "カラオケ ビッグエコー天六店",
+        "area": "",
+        "address": "大阪府大阪市北区天神橋7丁目2-1 天六幸栄ビル 5F～7F",
+        "url": "",
+        "price_url": "",
+        "original_station": "",
+        "pricing": {
+          "status": "no_url"
+        }
       }
     ],
     "守口市": [
@@ -1355,6 +1587,7 @@
         "url": "https://www.karaokemanekineko.jp/locations/osaka/moriguchi-shi/keihan-moriguchi-store/",
         "price_url": "",
         "original_station": "",
+        "pdf_url": "https://d1k5d0nneloh3k.cloudfront.net/wp-content/uploads/2025/11/13070329/%E4%BA%AC%E9%98%AA%E5%AE%88%E5%8F%A3%E5%BA%97-.pdf",
         "pricing": {
           "status": "skip"
         }
@@ -1367,6 +1600,7 @@
         "url": "https://www.karaokemanekineko.jp/locations/osaka/kadoma/furukawabashi-store/",
         "price_url": "",
         "original_station": "",
+        "pdf_url": "https://d1k5d0nneloh3k.cloudfront.net/wp-content/uploads/2025/11/02161657/%E5%8F%A4%E5%B7%9D%E6%A9%8B%E5%BA%97-6.pdf",
         "pricing": {
           "status": "skip"
         }
@@ -1414,6 +1648,7 @@
         "url": "https://www.karaokemanekineko.jp/locations/osaka/neyagawa/korien-store/",
         "price_url": "",
         "original_station": "",
+        "pdf_url": "https://d1k5d0nneloh3k.cloudfront.net/wp-content/uploads/2025/11/25053604/%E9%A6%99%E9%87%8C%E5%9C%92%E5%BA%97-4.pdf",
         "pricing": {
           "status": "skip"
         }
@@ -1428,6 +1663,7 @@
         "url": "https://www.karaokemanekineko.jp/locations/osaka/osaka-shi/teradacho-ekimae-store/",
         "price_url": "",
         "original_station": "",
+        "pdf_url": "https://d1k5d0nneloh3k.cloudfront.net/wp-content/uploads/2025/11/13080624/665-3.pdf",
         "pricing": {
           "status": "skip"
         }
@@ -1508,6 +1744,7 @@
         "url": "https://www.karaokemanekineko.jp/locations/osaka/higashiosaka/yaenosato-store/",
         "price_url": "",
         "original_station": "",
+        "pdf_url": "https://d1k5d0nneloh3k.cloudfront.net/wp-content/uploads/2025/11/13080230/%E5%85%AB%E6%88%B8%E3%83%8E%E9%87%8C%E5%BA%97306.pdf",
         "pricing": {
           "status": "skip"
         }
@@ -1520,6 +1757,7 @@
         "url": "https://www.karaokemanekineko.jp/locations/osaka/higashiosaka/fuse-ekimae-store/",
         "price_url": "",
         "original_station": "",
+        "pdf_url": "https://d1k5d0nneloh3k.cloudfront.net/wp-content/uploads/2025/11/13081143/906-5.pdf",
         "pricing": {
           "status": "skip"
         }
@@ -1532,6 +1770,7 @@
         "url": "https://www.karaokemanekineko.jp/locations/osaka/higashiosaka/shinishikiri-store/",
         "price_url": "",
         "original_station": "",
+        "pdf_url": "https://d1k5d0nneloh3k.cloudfront.net/wp-content/uploads/2025/11/13080357/534-2.pdf",
         "pricing": {
           "status": "skip"
         }
@@ -1544,6 +1783,7 @@
         "url": "https://www.karaokemanekineko.jp/locations/osaka/higashiosaka/hyotanyama-ekimae-store/",
         "price_url": "",
         "original_station": "",
+        "pdf_url": "https://d1k5d0nneloh3k.cloudfront.net/wp-content/uploads/2025/11/07032246/679-5.pdf",
         "pricing": {
           "status": "skip"
         }
@@ -1692,6 +1932,7 @@
         "url": "https://www.karaokemanekineko.jp/locations/osaka/osaka-shi/shinsaibashi-2nd-store/",
         "price_url": "",
         "original_station": "",
+        "pdf_url": "https://d1k5d0nneloh3k.cloudfront.net/wp-content/uploads/2025/11/28133031/907-8.pdf",
         "pricing": {
           "status": "skip"
         }
@@ -1704,6 +1945,7 @@
         "url": "https://www.karaokemanekineko.jp/locations/osaka/osaka-shi/shinsaibashi-store/",
         "price_url": "",
         "original_station": "",
+        "pdf_url": "https://d1k5d0nneloh3k.cloudfront.net/wp-content/uploads/2025/11/08175252/801-11.pdf",
         "pricing": {
           "status": "skip"
         }
@@ -2169,6 +2411,7 @@
         "url": "https://www.karaokemanekineko.jp/locations/osaka/osaka-shi/umeda-shibata-store/",
         "price_url": "",
         "original_station": "",
+        "pdf_url": "https://d1k5d0nneloh3k.cloudfront.net/wp-content/uploads/2025/11/13070149/%E6%A2%85%E7%94%B0%E8%8A%9D%E7%94%B0%E5%BA%97-3.pdf",
         "pricing": {
           "status": "skip"
         }
@@ -2181,6 +2424,7 @@
         "url": "https://www.karaokemanekineko.jp/locations/osaka/osaka-shi/chayamachi-store/",
         "price_url": "",
         "original_station": "",
+        "pdf_url": "https://d1k5d0nneloh3k.cloudfront.net/wp-content/uploads/2025/11/13070238/%E8%8C%B6%E5%B1%8B%E7%94%BA%E5%BA%97-4.pdf",
         "pricing": {
           "status": "skip"
         }
@@ -2193,6 +2437,7 @@
         "url": "https://www.karaokemanekineko.jp/locations/osaka/osaka-shi/hankyuhigashidori-2nd-store/",
         "price_url": "",
         "original_station": "",
+        "pdf_url": "https://d1k5d0nneloh3k.cloudfront.net/wp-content/uploads/2025/11/02185022/%E9%98%AA%E6%80%A5%E6%9D%B1%E9%80%9A%E3%82%8A2%E5%8F%B7%E5%BA%97-4.pdf",
         "pricing": {
           "status": "skip"
         }
@@ -2205,8 +2450,141 @@
         "url": "https://www.karaokemanekineko.jp/locations/osaka/osaka-shi/hankyu-higashidori-store/",
         "price_url": "",
         "original_station": "",
+        "pdf_url": "https://d1k5d0nneloh3k.cloudfront.net/wp-content/uploads/2025/11/04002746/%E5%9C%A7%E7%B8%AE-2.pdf",
         "pricing": {
           "status": "skip"
+        }
+      },
+      {
+        "chain": "bigecho",
+        "name": "カラオケ ビッグエコー お初天神店",
+        "area": "",
+        "address": "大阪府大阪市北区曽根崎2-8-15 K'sスクエアビル 1F",
+        "url": "",
+        "price_url": "",
+        "original_station": "",
+        "pricing": {
+          "status": "no_url"
+        }
+      },
+      {
+        "chain": "bigecho",
+        "name": "カラオケ ビッグエコー 曽根崎お初天神通り店",
+        "area": "",
+        "address": "大阪府大阪市北区曽根崎2-13-17 　曽根崎渡辺ビル2F",
+        "url": "",
+        "price_url": "",
+        "original_station": "",
+        "pricing": {
+          "status": "no_url"
+        }
+      },
+      {
+        "chain": "bigecho",
+        "name": "カラオケ ビッグエコー梅田中央店",
+        "area": "",
+        "address": "大阪府大阪市北区小松原町1番10号",
+        "url": "",
+        "price_url": "",
+        "original_station": "",
+        "pricing": {
+          "status": "no_url"
+        }
+      },
+      {
+        "chain": "bigecho",
+        "name": "カラオケ ビッグエコー阪急東通り店",
+        "area": "",
+        "address": "大阪府大阪市北区堂山町5-6 　起世ビル",
+        "url": "",
+        "price_url": "",
+        "original_station": "",
+        "pricing": {
+          "status": "no_url"
+        }
+      },
+      {
+        "chain": "bigecho",
+        "name": "カラオケ ビッグエコー西梅田店",
+        "area": "",
+        "address": "大阪府大阪市北区梅田2-1-21 　レイズウメダビル6階",
+        "url": "",
+        "price_url": "",
+        "original_station": "",
+        "pricing": {
+          "status": "no_url"
+        }
+      },
+      {
+        "chain": "bigecho",
+        "name": "カラオケ ビッグエコー大阪梅田本店",
+        "area": "",
+        "address": "大阪府大阪市北区小松原町1番11号 　田園ビル",
+        "url": "",
+        "price_url": "",
+        "original_station": "",
+        "pricing": {
+          "status": "no_url"
+        }
+      },
+      {
+        "chain": "bigecho",
+        "name": "カラオケ ビッグエコー梅田東通り店",
+        "area": "",
+        "address": "大阪府大阪市北区小松原町4-5 　純情モンテカルロビル",
+        "url": "",
+        "price_url": "",
+        "original_station": "",
+        "pricing": {
+          "status": "no_url"
+        }
+      },
+      {
+        "chain": "bigecho",
+        "name": "カラオケ ビッグエコー梅田駅前本店",
+        "area": "",
+        "address": "大阪府大阪市北区角田町6-2 　ラッキービル",
+        "url": "",
+        "price_url": "",
+        "original_station": "",
+        "pricing": {
+          "status": "no_url"
+        }
+      },
+      {
+        "chain": "bigecho",
+        "name": "カラオケ ビッグエコー茶屋町店",
+        "area": "",
+        "address": "大阪府大阪市北区茶屋町1-5 　茶屋町MDビル",
+        "url": "",
+        "price_url": "",
+        "original_station": "",
+        "pricing": {
+          "status": "no_url"
+        }
+      },
+      {
+        "chain": "bigecho",
+        "name": "カラオケ ビッグエコー 梅田茶屋町本店",
+        "area": "",
+        "address": "大阪府大阪市北区茶屋町2-16 　イースクエア茶屋町2F",
+        "url": "",
+        "price_url": "",
+        "original_station": "",
+        "pricing": {
+          "status": "no_url"
+        }
+      },
+      {
+        "chain": "bigecho",
+        "name": "カラオケ ビッグエコー梅田DDハウス店",
+        "area": "",
+        "address": "大阪府大阪市北区芝田1-8-1 　D.D.ハウス",
+        "url": "",
+        "price_url": "",
+        "original_station": "",
+        "pricing": {
+          "status": "no_url"
         }
       }
     ],
@@ -2238,6 +2616,20 @@
           },
           "scraped_at": "2026-02-12T03:22:42.006997",
           "status": "success"
+        }
+      }
+    ],
+    "横堤": [
+      {
+        "chain": "bigecho",
+        "name": "カラオケ ビッグエコー緑1丁目店",
+        "area": "",
+        "address": "大阪府大阪市鶴見区緑1丁目19‐2 プラザ緑　2階",
+        "url": "",
+        "price_url": "",
+        "original_station": "",
+        "pricing": {
+          "status": "no_url"
         }
       }
     ],
@@ -2343,8 +2735,23 @@
         "url": "https://www.karaokemanekineko.jp/locations/osaka/ikeda/ishibashi-store/",
         "price_url": "",
         "original_station": "",
+        "pdf_url": "https://d1k5d0nneloh3k.cloudfront.net/wp-content/uploads/2025/11/13064549/%E7%9F%B3%E6%A9%8B%E5%BA%97-3.pdf",
         "pricing": {
           "status": "skip"
+        }
+      }
+    ],
+    "淀屋橋": [
+      {
+        "chain": "bigecho",
+        "name": "カラオケ ビッグエコー淀屋橋駅前店",
+        "area": "",
+        "address": "大阪府大阪市中央区北浜3丁目5-22 　オリックス淀屋橋ビルB1F",
+        "url": "",
+        "price_url": "",
+        "original_station": "",
+        "pricing": {
+          "status": "no_url"
         }
       }
     ],
@@ -2495,8 +2902,21 @@
         "url": "https://www.karaokemanekineko.jp/locations/osaka/osaka-shi/osaka-fukushima-store/",
         "price_url": "",
         "original_station": "",
+        "pdf_url": "https://d1k5d0nneloh3k.cloudfront.net/wp-content/uploads/2025/11/13064824/%E5%A4%A7%E9%98%AA%E7%A6%8F%E5%B3%B6%E5%BA%97-4.pdf",
         "pricing": {
           "status": "skip"
+        }
+      },
+      {
+        "chain": "bigecho",
+        "name": "カラオケ ビッグエコー福島駅前店",
+        "area": "",
+        "address": "大阪府大阪市福島区福島5-14-16",
+        "url": "",
+        "price_url": "",
+        "original_station": "",
+        "pricing": {
+          "status": "no_url"
         }
       }
     ],
@@ -2592,6 +3012,20 @@
           },
           "scraped_at": "2026-02-12T03:23:18.403247",
           "status": "success"
+        }
+      }
+    ],
+    "蒲生四丁目": [
+      {
+        "chain": "bigecho",
+        "name": "カラオケ ビッグエコー蒲生四丁目駅前店",
+        "area": "",
+        "address": "大阪府大阪市城東区蒲生4-22-4",
+        "url": "",
+        "price_url": "",
+        "original_station": "",
+        "pricing": {
+          "status": "no_url"
         }
       }
     ],
@@ -2773,8 +3207,37 @@
         "url": "https://www.karaokemanekineko.jp/locations/osaka/yao-shi/kintetsuyao-ekimae-store/",
         "price_url": "",
         "original_station": "",
+        "pdf_url": "https://d1k5d0nneloh3k.cloudfront.net/wp-content/uploads/2025/11/13080508/615-4.pdf",
         "pricing": {
           "status": "skip"
+        }
+      }
+    ],
+    "都島": [
+      {
+        "chain": "bigecho",
+        "name": "カラオケ ビッグエコー都島ベルファⅡ店",
+        "area": "",
+        "address": "大阪府大阪市都島区友渕町 2丁目15-28 　 ベルファⅡ 3F",
+        "url": "",
+        "price_url": "",
+        "original_station": "",
+        "pricing": {
+          "status": "no_url"
+        }
+      }
+    ],
+    "野田阪神": [
+      {
+        "chain": "bigecho",
+        "name": "カラオケ ビッグエコー野田阪神駅前店",
+        "area": "",
+        "address": "大阪府大阪市福島区吉野2-15-12 　カドヤビル 5F-7F",
+        "url": "",
+        "price_url": "",
+        "original_station": "",
+        "pricing": {
+          "status": "no_url"
         }
       }
     ],
@@ -3053,6 +3516,7 @@
         "url": "https://www.karaokemanekineko.jp/locations/osaka/osaka-shi/tsuruhashi-store/",
         "price_url": "",
         "original_station": "",
+        "pdf_url": "https://d1k5d0nneloh3k.cloudfront.net/wp-content/uploads/2025/11/13080839/769-4.pdf",
         "pricing": {
           "status": "skip"
         }

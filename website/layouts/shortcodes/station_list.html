@@ -1,0 +1,57 @@
+<style>
+.station-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+.station-card {
+  display: block;
+  padding: 1.2rem 1.4rem;
+  border-radius: 10px;
+  background: var(--entry, #f8f8f8);
+  border: 1px solid var(--border, #e0e0e0);
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.station-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  border-color: var(--primary, #ff6b6b);
+}
+.station-card h3 {
+  margin: 0 0 0.4rem 0;
+  font-size: 1.1rem;
+  color: var(--primary, #ff6b6b);
+}
+.station-card .meta {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--secondary, #888);
+  line-height: 1.4;
+}
+.station-card .badge {
+  display: inline-block;
+  margin-top: 0.5rem;
+  padding: 0.15rem 0.6rem;
+  border-radius: 999px;
+  background: var(--primary, #ff6b6b);
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+</style>
+
+<div class="station-grid">
+  {{ $pages := .Page.Pages }}
+  {{ range $pages.ByTitle }}
+    <a href="{{ .RelPermalink }}" class="station-card">
+      <h3>🎤 {{ .Params.station | default .Title }}</h3>
+      <p class="meta">{{ .Description | truncate 60 }}</p>
+      {{ with .Params.store_count }}
+        <span class="badge">{{ . }}店舗</span>
+      {{ end }}
+    </a>
+  {{ end }}
+</div>

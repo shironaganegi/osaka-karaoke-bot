@@ -1,8 +1,10 @@
 """
 Agent Analyst - データ正規化モジュール
 =====================================
-スクレイパーが取得した生データ（raw_jankara_YYYYMMDD.json）を読み込み、
+スクレイパーが取得した生データ（raw_jankara_*.json, raw_manekineko_*.json）を読み込み、
 駅名を正規化して駅ごとにグルーピングした stations_master.json を出力する。
+
+複数チェーン対応: ジャンカラ + まねきねこ のデータを統合する。
 
 使い方:
     python agent_analyst/normalizer.py
@@ -109,6 +111,93 @@ STORE_NAME_FALLBACK: dict[str, str] = {
     "あべのプレミアム": "天王寺",
 }
 
+# ===================================================================
+# まねきねこ住所 → 駅名マッピング
+# 住所に含まれるキーワードから最寄り駅を推定する
+# 詳細な住所（長い文字列）を先に定義すること
+# ===================================================================
+ADDRESS_TO_STATION: dict[str, str] = {
+    # --- 梅田エリア ---
+    "北区芝田": "梅田",
+    "北区茶屋町": "梅田",
+    "北区堂山町": "梅田",
+    "北区 堂山町": "梅田",
+    "北区梅田": "梅田",
+    "北区曽根崎": "梅田",
+    "北区角田": "梅田",
+
+    # --- 難波・心斎橋エリア ---
+    "中央区宗右衛門町": "なんば",
+    "中央区千日前": "なんば",
+    "中央区 難波": "なんば",  # 表記ゆれ
+    "中央区難波": "なんば",
+    "中央区道頓堀": "なんば",
+    "浪速区": "なんば",  # 難波中など
+    "中央区東心斎橋": "心斎橋",
+    "中央区心斎橋": "心斎橋",
+    "西区": "心斎橋", # 北堀江など
+
+    # --- その他大阪市 ---
+    "都島区東野田町": "京橋",
+    "都島区": "京橋",  # フォールバック
+    "城東区": "京橋",
+    "住之江区新北島": "住之江公園",
+    "東成区東小橋": "鶴橋",
+    "天王寺区大道": "寺田町",
+    "天王寺区": "天王寺", # フォールバック
+    "阿倍野区": "天王寺",
+    "福島区": "福島",
+    "港区": "弁天町",
+    "大正区": "大正",
+    "住吉区": "長居",
+    
+    # --- 大阪市以外 ---
+    "守口市 本町": "守口市",
+    "東大阪市 御厨南": "八戸ノ里",
+    "東大阪市 足代新町": "布施",
+    "東大阪市 西石切町": "新石切",
+    "東大阪市 本町": "瓢箪山",
+    "門真市 末広町": "古川橋",
+    "八尾市 北本町": "近鉄八尾",
+    "池田市 石橋": "石橋阪大前",
+    "吹田市 江坂町": "江坂",
+    "寝屋川市 香里新町": "香里園",
+    "貝塚市 石才": "貝塚",
+    
+    # --- 以下、従来の広域マッピング（フォールバック用） ---
+    "東住吉区": "長居",
+    "住之江区": "住之江公園",
+    "東成区": "鶴橋",
+    "生野区": "鶴橋",
+    "此花区": "西九条",
+    "淀川区西中島": "西中島南方",
+    "淀川区十三": "十三",
+    "淀川区": "十三",
+    "東淀川区": "上新庄",
+    "旭区": "千林",
+    "鶴見区": "横堤",
+
+    # 大阪市外
+    "堺市": "堺東",
+    "高槻市": "高槻市",
+    "茨木市": "茨木市",
+    "豊中市": "豊中",
+    "吹田市": "吹田",
+    "枚方市": "枚方市",
+    "寝屋川市": "寝屋川市",
+    "守口市": "守口市",
+    "八尾市": "近鉄八尾",
+    "東大阪市": "布施",
+    "門真市": "守口市",
+    "大東市": "住道",
+    "松原市": "河内松原",
+    "藤井寺市": "藤井寺",
+    "和泉市": "和泉中央",
+    "岸和田市": "岸和田",
+    "泉大津市": "泉大津",
+    "池田市": "池田",
+}
+
 
 def normalize_station_name(raw_name: str, store_name: str = "") -> str:
     """
@@ -148,26 +237,61 @@ def normalize_station_name(raw_name: str, store_name: str = "") -> str:
     return cleaned if cleaned else raw_name
 
 
-def load_latest_raw_data(data_dir: str = "data") -> dict | None:
+def estimate_station_from_address(address: str) -> str:
     """
-    data/ ディレクトリから最新の raw_jankara_*.json を読み込む。
+    住所から最寄り駅を推定する。
+
+    ADDRESS_TO_STATION の辞書を使い、住所に含まれるキーワードで
+    最寄り駅を推定する。より具体的なキーワード（区名+地名）を
+    先に評価するため、長い順にソートして照合する。
+
+    Args:
+        address: 住所文字列
+
+    Returns:
+        推定された駅名（見つからない場合は空文字）
+    """
+    if not address:
+        return ""
+
+    addr = address.replace("\u3000", " ").replace(" ", "")
+
+    # 長いキーワードを優先（より具体的なマッチを先に評価）
+    for keyword in sorted(ADDRESS_TO_STATION.keys(), key=len, reverse=True):
+        if keyword in addr:
+            return ADDRESS_TO_STATION[keyword]
+
+    return ""
+
+
+def load_latest_raw_data(
+    data_dir: str = "data",
+    pattern: str = "raw_jankara_*.json",
+    label: str = "jankara",
+) -> dict | None:
+    """
+    data/ ディレクトリから最新の生データファイルを読み込む。
 
     Args:
         data_dir: データディレクトリパス
+        pattern: ファイル名パターン
+        label: 表示用ラベル
 
     Returns:
         JSONデータの辞書、またはNone
     """
     data_path = Path(data_dir)
-    files = sorted(data_path.glob("raw_jankara_*.json"), reverse=True)
+    files = sorted(data_path.glob(pattern), reverse=True)
 
     if not files:
-        print("エラー: data/ ディレクトリに raw_jankara_*.json が見つかりません。", file=sys.stderr)
-        print("先に agent_watcher/scrapers/jankara.py を実行してください。", file=sys.stderr)
+        print(
+            f"情報: {label} のデータファイルが見つかりません ({pattern})",
+            file=sys.stderr,
+        )
         return None
 
     latest = files[0]
-    print(f"読み込み: {latest}", file=sys.stderr)
+    print(f"読み込み [{label}]: {latest}", file=sys.stderr)
 
     with open(latest, "r", encoding="utf-8") as f:
         return json.load(f)
@@ -188,12 +312,25 @@ def group_by_station(stores: list[dict]) -> dict[str, list[dict]]:
     for store in stores:
         raw_station = store.get("station_name", "")
         store_name = store.get("store_name", "")
-        normalized = normalize_station_name(raw_station, store_name)
+        chain = store.get("chain", "jankara")
+        address = store.get("address", "")
+
+        # 駅名の正規化
+        if raw_station:
+            normalized = normalize_station_name(raw_station, store_name)
+        elif address:
+            # 住所から駅名を推定（まねきねこ用）
+            normalized = estimate_station_from_address(address)
+            if not normalized:
+                normalized = normalize_station_name("", store_name)
+        else:
+            normalized = normalize_station_name("", store_name)
 
         entry = {
+            "chain": chain,
             "name": store["store_name"],
             "area": store.get("area", ""),
-            "address": store.get("address", ""),
+            "address": address,
             "url": store.get("detail_url", ""),
             "price_url": store.get("pricing_url", ""),
             "original_station": raw_station,
@@ -216,13 +353,19 @@ def print_station_summary(grouped: dict[str, list[dict]]) -> None:
     print("=" * 50, file=sys.stderr)
 
     total = 0
+    chain_counts: dict[str, int] = defaultdict(int)
     for station, stores in grouped.items():
         count = len(stores)
         total += count
         store_names = ", ".join(s["name"] for s in stores)
         print(f"  {station} ({count}店): {store_names}", file=sys.stderr)
+        for s in stores:
+            chain_counts[s.get("chain", "unknown")] += 1
 
     print(f"\n合計: {len(grouped)} 駅, {total} 店舗", file=sys.stderr)
+    print("チェーン別:", file=sys.stderr)
+    for chain, count in sorted(chain_counts.items()):
+        print(f"  - {chain}: {count} 店舗", file=sys.stderr)
 
 
 def save_stations_master(
@@ -244,10 +387,16 @@ def save_stations_master(
 
     filepath = output_path / "stations_master.json"
 
+    chain_counts: dict[str, int] = defaultdict(int)
+    for stores in grouped.values():
+        for s in stores:
+            chain_counts[s.get("chain", "unknown")] += 1
+
     output = {
         "generated_at": datetime.now().isoformat(),
         "total_stations": len(grouped),
         "total_stores": sum(len(v) for v in grouped.values()),
+        "chains": dict(chain_counts),
         "stations": grouped,
     }
 
@@ -260,28 +409,57 @@ def save_stations_master(
 def main():
     """メイン実行関数"""
     print("=" * 50, file=sys.stderr)
-    print("Agent Analyst - データ正規化", file=sys.stderr)
+    print("Agent Analyst - データ正規化（マルチチェーン対応）", file=sys.stderr)
     print("=" * 50, file=sys.stderr)
 
-    # 1. 最新データ読み込み
-    raw_data = load_latest_raw_data()
-    if raw_data is None:
+    all_stores: list[dict] = []
+
+    # 1. ジャンカラデータ読み込み
+    jankara_data = load_latest_raw_data(
+        pattern="raw_jankara_*.json",
+        label="ジャンカラ",
+    )
+    if jankara_data:
+        jankara_stores = jankara_data.get("stores", [])
+        # chain フィールドを追加
+        for s in jankara_stores:
+            s.setdefault("chain", "jankara")
+        all_stores.extend(jankara_stores)
+        print(f"  → ジャンカラ: {len(jankara_stores)} 店舗", file=sys.stderr)
+
+    # 2. まねきねこデータ読み込み
+    manekineko_data = load_latest_raw_data(
+        pattern="raw_manekineko_*.json",
+        label="まねきねこ",
+    )
+    if manekineko_data:
+        manekineko_stores = manekineko_data.get("stores", [])
+        for s in manekineko_stores:
+            s.setdefault("chain", "manekineko")
+        all_stores.extend(manekineko_stores)
+        print(f"  → まねきねこ: {len(manekineko_stores)} 店舗", file=sys.stderr)
+
+    if not all_stores:
+        print(
+            "エラー: データファイルが見つかりません。\n"
+            "先にスクレイパーを実行してください。",
+            file=sys.stderr,
+        )
         sys.exit(1)
 
-    stores = raw_data.get("stores", [])
-    print(f"入力: {len(stores)} 店舗", file=sys.stderr)
+    print(f"\n入力合計: {len(all_stores)} 店舗", file=sys.stderr)
 
-    # 2. 駅名正規化 & グルーピング
-    grouped = group_by_station(stores)
+    # 3. 駅名正規化 & グルーピング
+    grouped = group_by_station(all_stores)
 
-    # 3. サマリー表示（検証用）
+    # 4. サマリー表示（検証用）
     print_station_summary(grouped)
 
-    # 4. stations_master.json を保存
+    # 5. stations_master.json を保存
     filepath = save_stations_master(grouped)
     print(f"\n保存完了: {filepath}", file=sys.stderr)
 
-    # 5. JSON を標準出力にも出力
+    # 6. JSON を標準出力にも出力
     output = json.dumps(
         {
             "generated_at": datetime.now().isoformat(),

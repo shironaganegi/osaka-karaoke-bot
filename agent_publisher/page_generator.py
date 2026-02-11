@@ -48,6 +48,24 @@ def load_stations_data(data_dir: str = "data") -> dict | None:
     return None
 
 
+# =====================================================
+# 定数
+# =====================================================
+CHAIN_ICONS = {
+    "jankara": "🎤 ジャンカラ",
+    "manekineko": "🐱 まねきねこ",
+    "bigecho": "🎤 ビッグエコー",
+}
+
+
+def get_store_display_name(store: dict) -> str:
+    """店舗の表示名（チェーンアイコン付き）を取得"""
+    chain = store.get("chain", "jankara")
+    icon = CHAIN_ICONS.get(chain, "🎤")
+    name = store.get("name", "")
+    return f"{icon} {name}"
+
+
 def format_pricing_cell(store: dict) -> str:
     """
     店舗の料金情報をテーブルセル用に整形する。
@@ -59,10 +77,11 @@ def format_pricing_cell(store: dict) -> str:
         表示用文字列
     """
     pricing = store.get("pricing")
+    price_url = store.get("price_url") or store.get("url") or "#"
 
     if not pricing or pricing.get("status") != "success":
-        # 料金データなし → リンクのみ
-        return "24時間営業"
+        # 料金データなし → 公式サイトへのリンク
+        return f'[公式サイトで確認]({price_url})'
 
     parts = []
 
@@ -85,26 +104,30 @@ def format_pricing_cell(store: dict) -> str:
     if parts:
         return " / ".join(parts)
 
-    return "24時間営業"
+    return f'[公式サイトで確認]({price_url})'
 
 
 def build_store_table(stores: list[dict]) -> str:
     """
     店舗リストからマークダウンテーブルを組み立てる。
     """
-    rows = []
-    for s in stores:
-        name = s.get("name", "名称不明")
-        price_url = s.get("price_url") or s.get("url") or "#"
-        detail_url = s.get("url") or "#"
+    lines = []
+    for store in stores:
+        name_display = get_store_display_name(store)
+        
+        # 店舗名にリンクを貼る
+        url = store.get("url") or store.get("price_url") or "#"
+        name_col = f"[{name_display}]({url})"
+        
+        price_col = format_pricing_cell(store)
+        
+        # 公式料金表ボタン
+        official_url = store.get("price_url") or store.get("url") or "#"
+        official_col = f"[店舗ページ]({official_url})"
 
-        name_link = f"[{name}]({detail_url})"
-        price_link = f"[料金を見る]({price_url})"
-        pricing_cell = format_pricing_cell(s)
+        lines.append(f"| {name_col} | {price_col} | {official_col} |")
 
-        rows.append(f"| {name_link} | {pricing_cell} | {price_link} |")
-
-    return "\n".join(rows)
+    return "\n".join(lines)
 
 
 def find_cheapest(stores: list[dict]) -> str:

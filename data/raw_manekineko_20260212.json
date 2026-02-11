@@ -1,0 +1,278 @@
+{
+  "scraped_at": "2026-02-12T03:16:43.474214",
+  "chain": "manekineko",
+  "source_url": "https://www.karaokemanekineko.jp/locations/osaka/",
+  "total_stores": 30,
+  "stores": [
+    {
+      "chain": "manekineko",
+      "store_name": "カラオケまねきねこ なんばHIPS店",
+      "branch_name": "なんばＨＩＰＳ店",
+      "detail_url": "https://www.karaokemanekineko.jp/locations/osaka/osaka-shi/namba-hips-store/",
+      "address": "大阪府 大阪市 中央区難波1-8-16 3F",
+      "area_hint": "中央区難波1-8-16",
+      "station_name": ""
+    },
+    {
+      "chain": "manekineko",
+      "store_name": "カラオケまねきねこ 京橋店",
+      "branch_name": "京橋店",
+      "detail_url": "https://www.karaokemanekineko.jp/locations/osaka/osaka-shi/kyobashi-store/",
+      "address": "大阪府 大阪市 都島区東野田町3-12-1 京橋ダブルスタービル3Ｆ",
+      "area_hint": "都島区東野田町3-12-1",
+      "station_name": ""
+    },
+    {
+      "chain": "manekineko",
+      "store_name": "カラオケまねきねこ 京橋駅前店",
+      "branch_name": "京橋駅前店",
+      "detail_url": "https://www.karaokemanekineko.jp/locations/osaka/osaka-shi/kyobashi-ekimae-store/",
+      "address": "大阪府 大阪市 都島区東野田町３丁目２−９",
+      "area_hint": "都島区東野田町３丁目２−９",
+      "station_name": ""
+    },
+    {
+      "chain": "manekineko",
+      "store_name": "カラオケまねきねこ 京阪守口店",
+      "branch_name": "京阪守口店",
+      "detail_url": "https://www.karaokemanekineko.jp/locations/osaka/moriguchi-shi/keihan-moriguchi-store/",
+      "address": "大阪府 守口市 本町1-6-19",
+      "area_hint": "本町1-6-19",
+      "station_name": ""
+    },
+    {
+      "chain": "manekineko",
+      "store_name": "カラオケまねきねこ 住之江公園店",
+      "branch_name": "住之江公園店",
+      "detail_url": "https://www.karaokemanekineko.jp/locations/osaka/osaka-shi/suminoekoen-store/",
+      "address": "大阪府 大阪市 住之江区新北島1-1-7 ビッグドッグプラザ2F",
+      "area_hint": "住之江区新北島1-1-7",
+      "station_name": ""
+    },
+    {
+      "chain": "manekineko",
+      "store_name": "カラオケまねきねこ 八戸ノ里店",
+      "branch_name": "八戸ノ里店",
+      "detail_url": "https://www.karaokemanekineko.jp/locations/osaka/higashiosaka/yaenosato-store/",
+      "address": "大阪府 東大阪市 御厨南1-1-26",
+      "area_hint": "御厨南1-1-26",
+      "station_name": ""
+    },
+    {
+      "chain": "manekineko",
+      "store_name": "カラオケまねきねこ 千日前2号店",
+      "branch_name": "千日前2号店",
+      "detail_url": "https://www.karaokemanekineko.jp/locations/osaka/osaka-shi/sennichimae-2nd-store/",
+      "address": "大阪府 大阪市 中央区千日前2-11-5 敷島ビル3F",
+      "area_hint": "中央区千日前2-11-5",
+      "station_name": ""
+    },
+    {
+      "chain": "manekineko",
+      "store_name": "カラオケまねきねこ 千日前店",
+      "branch_name": "千日前店",
+      "detail_url": "https://www.karaokemanekineko.jp/locations/osaka/osaka-shi/sennichimae-store/",
+      "address": "大阪府 大阪市 中央区 千日前 １丁目 ８−１３",
+      "area_hint": "中央区",
+      "station_name": ""
+    },
+    {
+      "chain": "manekineko",
+      "store_name": "カラオケまねきねこ 南海通り2号店",
+      "branch_name": "南海通り2号店",
+      "detail_url": "https://www.karaokemanekineko.jp/locations/osaka/osaka-shi/nankaidori-2nd-store/",
+      "address": "大阪府 大阪市 中央区難波3-1-16 赤垣屋南海通りビル1F～3F",
+      "area_hint": "中央区難波3-1-16",
+      "station_name": ""
+    },
+    {
+      "chain": "manekineko",
+      "store_name": "カラオケまねきねこ 南海通り店",
+      "branch_name": "南海通り店",
+      "detail_url": "https://www.karaokemanekineko.jp/locations/osaka/osaka-shi/nankaidori-store/",
+      "address": "大阪府 大阪市 中央区難波千日前12-35 SWINGヨシモト3F",
+      "area_hint": "中央区難波千日前12-35",
+      "station_name": ""
+    },
+    {
+      "chain": "manekineko",
+      "store_name": "カラオケまねきねこ 古川橋店",
+      "branch_name": "古川橋店",
+      "detail_url": "https://www.karaokemanekineko.jp/locations/osaka/kadoma/furukawabashi-store/",
+      "address": "大阪府 門真市 末広町8-1 三福ビル2F",
+      "area_hint": "末広町8-1",
+      "station_name": ""
+    },
+    {
+      "chain": "manekineko",
+      "store_name": "カラオケまねきねこ 大阪福島店",
+      "branch_name": "大阪福島店",
+      "detail_url": "https://www.karaokemanekineko.jp/locations/osaka/osaka-shi/osaka-fukushima-store/",
+      "address": "大阪府 大阪市 福島区 福島 ７丁目 ９−２９",
+      "area_hint": "福島区",
+      "station_name": ""
+    },
+    {
+      "chain": "manekineko",
+      "store_name": "カラオケまねきねこ 寺田町駅前店",
+      "branch_name": "寺田町駅前店",
+      "detail_url": "https://www.karaokemanekineko.jp/locations/osaka/osaka-shi/teradacho-ekimae-store/",
+      "address": "大阪府 大阪市 天王寺区大道4-10-12 中村ビル2･3F",
+      "area_hint": "天王寺区大道4-10-12",
+      "station_name": ""
+    },
+    {
+      "chain": "manekineko",
+      "store_name": "カラオケまねきねこ 布施駅前店",
+      "branch_name": "布施駅前店",
+      "detail_url": "https://www.karaokemanekineko.jp/locations/osaka/higashiosaka/fuse-ekimae-store/",
+      "address": "大阪府 東大阪市 足代新町1-48 あじロード2F",
+      "area_hint": "足代新町1-48",
+      "station_name": ""
+    },
+    {
+      "chain": "manekineko",
+      "store_name": "カラオケまねきねこ 心斎橋2号店",
+      "branch_name": "心斎橋2号店",
+      "detail_url": "https://www.karaokemanekineko.jp/locations/osaka/osaka-shi/shinsaibashi-2nd-store/",
+      "address": "大阪府 大阪市 中央区東心斎橋1-19-11 鰻谷スクエア 2F",
+      "area_hint": "中央区東心斎橋1-19-11",
+      "station_name": ""
+    },
+    {
+      "chain": "manekineko",
+      "store_name": "カラオケまねきねこ 心斎橋店",
+      "branch_name": "心斎橋店",
+      "detail_url": "https://www.karaokemanekineko.jp/locations/osaka/osaka-shi/shinsaibashi-store/",
+      "address": "大阪府 大阪市 中央区東心斎橋1-18-27 PARK10ビル1F",
+      "area_hint": "中央区東心斎橋1-18-27",
+      "station_name": ""
+    },
+    {
+      "chain": "manekineko",
+      "store_name": "カラオケまねきねこ 戎橋店",
+      "branch_name": "戎橋店",
+      "detail_url": "https://www.karaokemanekineko.jp/locations/osaka/osaka-shi/ebisubashi-store/",
+      "address": "大阪府 大阪市 中央区宗右衛門町7-2 DEKA戎橋ビル 4F",
+      "area_hint": "中央区宗右衛門町7-2",
+      "station_name": ""
+    },
+    {
+      "chain": "manekineko",
+      "store_name": "カラオケまねきねこ 新石切店",
+      "branch_name": "新石切店",
+      "detail_url": "https://www.karaokemanekineko.jp/locations/osaka/higashiosaka/shinishikiri-store/",
+      "address": "大阪府 東大阪市 西石切町3-3-10 新石切中野ビル3F",
+      "area_hint": "西石切町3-3-10",
+      "station_name": ""
+    },
+    {
+      "chain": "manekineko",
+      "store_name": "カラオケまねきねこ 梅田芝田店",
+      "branch_name": "梅田芝田店",
+      "detail_url": "https://www.karaokemanekineko.jp/locations/osaka/osaka-shi/umeda-shibata-store/",
+      "address": "大阪府 大阪市 北区芝田2-2-5 芝田二丁目ビル3～5F",
+      "area_hint": "北区芝田2-2-5",
+      "station_name": ""
+    },
+    {
+      "chain": "manekineko",
+      "store_name": "カラオケまねきねこ 江坂駅前店",
+      "branch_name": "江坂駅前店",
+      "detail_url": "https://www.karaokemanekineko.jp/locations/osaka/suita-shi/esaka-ekimae-store/",
+      "address": "大阪府 吹田市 江坂町1-23-37 西浦江坂ビル５Ｆ",
+      "area_hint": "江坂町1-23-37",
+      "station_name": ""
+    },
+    {
+      "chain": "manekineko",
+      "store_name": "カラオケまねきねこ 瓢箪山駅前店",
+      "branch_name": "瓢箪山駅前店",
+      "detail_url": "https://www.karaokemanekineko.jp/locations/osaka/higashiosaka/hyotanyama-ekimae-store/",
+      "address": "大阪府 東大阪市 本町 １５−１２",
+      "area_hint": "本町",
+      "station_name": ""
+    },
+    {
+      "chain": "manekineko",
+      "store_name": "カラオケまねきねこ 石橋店",
+      "branch_name": "石橋店",
+      "detail_url": "https://www.karaokemanekineko.jp/locations/osaka/ikeda/ishibashi-store/",
+      "address": "大阪府 池田市 石橋2-17-12",
+      "area_hint": "石橋2-17-12",
+      "station_name": ""
+    },
+    {
+      "chain": "manekineko",
+      "store_name": "カラオケまねきねこ 茶屋町店",
+      "branch_name": "茶屋町店",
+      "detail_url": "https://www.karaokemanekineko.jp/locations/osaka/osaka-shi/chayamachi-store/",
+      "address": "大阪府 大阪市 北区茶屋町3-2 チロル茶屋町6F",
+      "area_hint": "北区茶屋町3-2",
+      "station_name": ""
+    },
+    {
+      "chain": "manekineko",
+      "store_name": "カラオケまねきねこ 貝塚店",
+      "branch_name": "貝塚店",
+      "detail_url": "https://www.karaokemanekineko.jp/locations/osaka/kaizuka/kaizuka-store/",
+      "address": "大阪府 貝塚市 石才 ３５６−１",
+      "area_hint": "石才",
+      "station_name": ""
+    },
+    {
+      "chain": "manekineko",
+      "store_name": "カラオケまねきねこ 近鉄八尾駅前店",
+      "branch_name": "近鉄八尾駅前店",
+      "detail_url": "https://www.karaokemanekineko.jp/locations/osaka/yao-shi/kintetsuyao-ekimae-store/",
+      "address": "大阪府 八尾市 北本町2-15-1 アロービル３Ｆ",
+      "area_hint": "北本町2-15-1",
+      "station_name": ""
+    },
+    {
+      "chain": "manekineko",
+      "store_name": "カラオケまねきねこ 道頓堀店",
+      "branch_name": "道頓堀店",
+      "detail_url": "https://www.karaokemanekineko.jp/locations/osaka/osaka-shi/dotonbori-store/",
+      "address": "大阪府 大阪市 中央区道頓堀1-7-21 中座くいだおれビル4F",
+      "area_hint": "中央区道頓堀1-7-21",
+      "station_name": ""
+    },
+    {
+      "chain": "manekineko",
+      "store_name": "カラオケまねきねこ 阪急東通り2号店",
+      "branch_name": "阪急東通り2号店",
+      "detail_url": "https://www.karaokemanekineko.jp/locations/osaka/osaka-shi/hankyuhigashidori-2nd-store/",
+      "address": "大阪府 大阪市 北区堂山町6‐5 ペンギンスクエアビル2～3F",
+      "area_hint": "北区堂山町6‐5",
+      "station_name": ""
+    },
+    {
+      "chain": "manekineko",
+      "store_name": "カラオケまねきねこ 阪急東通り店",
+      "branch_name": "阪急東通り店",
+      "detail_url": "https://www.karaokemanekineko.jp/locations/osaka/osaka-shi/hankyu-higashidori-store/",
+      "address": "大阪府 大阪市 北区 堂山町 ５−４",
+      "area_hint": "北区",
+      "station_name": ""
+    },
+    {
+      "chain": "manekineko",
+      "store_name": "カラオケまねきねこ 香里園店",
+      "branch_name": "香里園店",
+      "detail_url": "https://www.karaokemanekineko.jp/locations/osaka/neyagawa/korien-store/",
+      "address": "大阪府 寝屋川市 香里新町8-3",
+      "area_hint": "香里新町8-3",
+      "station_name": ""
+    },
+    {
+      "chain": "manekineko",
+      "store_name": "カラオケまねきねこ 鶴橋店",
+      "branch_name": "鶴橋店",
+      "detail_url": "https://www.karaokemanekineko.jp/locations/osaka/osaka-shi/tsuruhashi-store/",
+      "address": "大阪府 大阪市 東成区東小橋3-16-3 D⁺鶴橋Ⅱビル3F～5F（受付4F）",
+      "area_hint": "東成区東小橋3-16-3",
+      "station_name": ""
+    }
+  ]
+}

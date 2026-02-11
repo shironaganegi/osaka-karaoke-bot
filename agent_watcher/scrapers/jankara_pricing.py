@@ -225,6 +225,28 @@ def format_price_summary(pricing: dict) -> str:
     return " | ".join(parts) if parts else ""
 
 
+    # 結果を駅グループに再構成（後で使うため、既存データ読み込み用関数を定義）
+    
+def load_existing_pricing() -> dict:
+    """既存の出力ファイルから価格データを読み込む"""
+    if not OUTPUT_FILE.exists():
+        return {}
+    try:
+        with open(OUTPUT_FILE, "r", encoding="utf-8") as f:
+            data = json.load(f)
+        cache = {}
+        for station_stores in data.get("stations", {}).values():
+            for store in station_stores:
+                # unique key: price_url or url
+                key = store.get("price_url") or store.get("url")
+                if key and store.get("pricing"):
+                    cache[key] = store["pricing"]
+        return cache
+    except Exception as e:
+        print(f"キャッシュ読み込みエラー: {e}", file=sys.stderr)
+        return {}
+
+
 def main():
     """メイン実行関数"""
     print("=" * 60, file=sys.stderr)
@@ -250,8 +272,11 @@ def main():
 
     total = len(all_stores)
     print(f"対象店舗数: {total}", file=sys.stderr)
-    print(f"リクエスト間隔: {REQUEST_DELAY}秒", file=sys.stderr)
-    print(f"推定所要時間: 約{total * REQUEST_DELAY // 60}分{total * REQUEST_DELAY % 60}秒", file=sys.stderr)
+    
+    # キャッシュ読み込み
+    pricing_cache = load_existing_pricing()
+    print(f"キャッシュ済み店舗数: {len(pricing_cache)}", file=sys.stderr)
+
     print("-" * 60, file=sys.stderr)
 
     # スクレイピング実行
@@ -269,10 +294,34 @@ def main():
         for i, store in enumerate(all_stores, 1):
             name = store.get("name", "不明")
             price_url = store.get("price_url") or store.get("url", "")
+            
+            # キャッシュチェック
+            if price_url in pricing_cache:
+                store["pricing"] = pricing_cache[price_url]
+                # status check
+                if store["pricing"].get("status") == "success":
+                    print(f"  [{i}/{total}] {name}... (キャッシュ済み)", file=sys.stderr)
+                    success_count += 1
+                else:
+                    # 失敗ステータスもキャッシュするならここ。
+                    # 今回はスキップ済みの店舗(manekineko)もキャッシュされているはず
+                     print(f"  [{i}/{total}] {name}... (キャッシュ: {store['pricing'].get('status')})", file=sys.stderr)
+                     if store['pricing'].get('status') == 'skip':
+                         pass
+                     else:
+                         error_count += 1
+                continue
+
 
             if not price_url:
                 store["pricing"] = {"status": "no_url"}
                 error_count += 1
+                continue
+
+            # ジャンカラ以外はスキップ（今のところ）
+            if store.get("chain") != "jankara":
+                store["pricing"] = {"status": "skip"}
+                print(f"  [{i}/{total}] {name}... (スキップ: {store.get('chain')})", file=sys.stderr)
                 continue
 
             print(f"  [{i}/{total}] {name}...", end=" ", file=sys.stderr)

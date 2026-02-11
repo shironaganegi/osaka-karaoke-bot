@@ -1,10 +1,15 @@
 {
-  "generated_at": "2026-02-12T01:52:35.056857",
-  "total_stations": 49,
-  "total_stores": 83,
+  "generated_at": "2026-02-12T03:27:52.262890",
+  "total_stations": 50,
+  "total_stores": 113,
+  "chains": {
+    "jankara": 83,
+    "manekineko": 30
+  },
   "stations": {
     "あびこ": [
       {
+        "chain": "jankara",
         "name": "ジャンカラあびこ店",
         "area": "その他大阪市",
         "address": "大阪市住吉区苅田7-12-29 はりまやビル5〜6F\nOsakaMetro御堂筋線 あびこ駅 1番口より徒歩3分",
@@ -15,6 +20,7 @@
     ],
     "なんば": [
       {
+        "chain": "jankara",
         "name": "ジャンカラセルフの方のなんば店",
         "area": "難波・心斎橋",
         "address": "大阪市中央区難波千日前12番30号 難波長和ビル2階",
@@ -23,6 +29,7 @@
         "original_station": "なんば"
       },
       {
+        "chain": "jankara",
         "name": "ジャンカラ千日前2号店",
         "area": "難波・心斎橋",
         "address": "大阪市中央区千日前2-8-4 延田ビル4F\nOsakaMetro日本橋駅 5番出口より徒歩6分",
@@ -31,6 +38,7 @@
         "original_station": "千日前"
       },
       {
+        "chain": "jankara",
         "name": "ジャンカラ千日前3号店",
         "area": "難波・心斎橋",
         "address": "大阪市中央区難波3-4-16 ECS第32ビル2F\nOsakaMetroなんば駅 18番出口より徒歩4分",
@@ -39,6 +47,7 @@
         "original_station": "千日前"
       },
       {
+        "chain": "jankara",
         "name": "ジャンカラ宗右衛門町店",
         "area": "難波・心斎橋",
         "address": "大阪市中央区心斎橋筋2-3-16 心斎橋ミツヤビル1〜4F\nOsakaMetroなんば駅1 5-A出口より徒歩7分",
@@ -47,6 +56,7 @@
         "original_station": "宗右衛門町"
       },
       {
+        "chain": "jankara",
         "name": "ジャンカラ道頓堀店",
         "area": "難波・心斎橋",
         "address": "大阪市中央区道頓堀1-7-23 B1〜5F\nOsakaMetroなんば駅 15-B出口より徒歩7分",
@@ -55,6 +65,7 @@
         "original_station": "道頓堀"
       },
       {
+        "chain": "jankara",
         "name": "ジャンカラ道頓堀だるま店",
         "area": "難波・心斎橋",
         "address": "大阪市中央区道頓堀1-6-8 道頓堀だるまビル3〜4階",
@@ -63,6 +74,7 @@
         "original_station": "道頓堀だるま"
       },
       {
+        "chain": "jankara",
         "name": "ジャンカラ南海通なんば店",
         "area": "難波・心斎橋",
         "address": "大阪市中央区難波3-1-23 すし半仲店ビル\nOsakaMetroなんば駅 1番出口より徒歩6分",
@@ -71,6 +83,7 @@
         "original_station": "南海通なんば"
       },
       {
+        "chain": "jankara",
         "name": "ジャンカラなんさん通り店",
         "area": "難波・心斎橋",
         "address": "大阪市浪速区難波中2-2-21 4〜7F\n南海なんば駅 2F中央出口より徒歩6分",
@@ -79,6 +92,7 @@
         "original_station": "なんさん通り"
       },
       {
+        "chain": "jankara",
         "name": "ジャンカラなんば店",
         "area": "難波・心斎橋",
         "address": "大阪市中央区難波3-6-16 ケニアビル2〜4F\nOsakaMetroなんば駅 20番出口より徒歩3分",
@@ -87,16 +101,81 @@
         "original_station": "なんば"
       },
       {
+        "chain": "jankara",
         "name": "ジャンカラなんば本店",
         "area": "難波・心斎橋",
         "address": "大阪市中央区難波千日前12-28 リテラ大阪ビル\n南海なんば駅 2F中央出口より徒歩6分",
         "url": "https://jankara.ne.jp/shop/096/",
         "price_url": "https://jankara.ne.jp/shop/096/#price",
         "original_station": "なんば本"
+      },
+      {
+        "chain": "manekineko",
+        "name": "カラオケまねきねこ なんばHIPS店",
+        "area": "",
+        "address": "大阪府 大阪市 中央区難波1-8-16 3F",
+        "url": "https://www.karaokemanekineko.jp/locations/osaka/osaka-shi/namba-hips-store/",
+        "price_url": "",
+        "original_station": ""
+      },
+      {
+        "chain": "manekineko",
+        "name": "カラオケまねきねこ 千日前2号店",
+        "area": "",
+        "address": "大阪府 大阪市 中央区千日前2-11-5 敷島ビル3F",
+        "url": "https://www.karaokemanekineko.jp/locations/osaka/osaka-shi/sennichimae-2nd-store/",
+        "price_url": "",
+        "original_station": ""
+      },
+      {
+        "chain": "manekineko",
+        "name": "カラオケまねきねこ 千日前店",
+        "area": "",
+        "address": "大阪府 大阪市 中央区 千日前 １丁目 ８−１３",
+        "url": "https://www.karaokemanekineko.jp/locations/osaka/osaka-shi/sennichimae-store/",
+        "price_url": "",
+        "original_station": ""
+      },
+      {
+        "chain": "manekineko",
+        "name": "カラオケまねきねこ 南海通り2号店",
+        "area": "",
+        "address": "大阪府 大阪市 中央区難波3-1-16 赤垣屋南海通りビル1F～3F",
+        "url": "https://www.karaokemanekineko.jp/locations/osaka/osaka-shi/nankaidori-2nd-store/",
+        "price_url": "",
+        "original_station": ""
+      },
+      {
+        "chain": "manekineko",
+        "name": "カラオケまねきねこ 南海通り店",
+        "area": "",
+        "address": "大阪府 大阪市 中央区難波千日前12-35 SWINGヨシモト3F",
+        "url": "https://www.karaokemanekineko.jp/locations/osaka/osaka-shi/nankaidori-store/",
+        "price_url": "",
+        "original_station": ""
+      },
+      {
+        "chain": "manekineko",
+        "name": "カラオケまねきねこ 戎橋店",
+        "area": "",
+        "address": "大阪府 大阪市 中央区宗右衛門町7-2 DEKA戎橋ビル 4F",
+        "url": "https://www.karaokemanekineko.jp/locations/osaka/osaka-shi/ebisubashi-store/",
+        "price_url": "",
+        "original_station": ""
+      },
+      {
+        "chain": "manekineko",
+        "name": "カラオケまねきねこ 道頓堀店",
+        "area": "",
+        "address": "大阪府 大阪市 中央区道頓堀1-7-21 中座くいだおれビル4F",
+        "url": "https://www.karaokemanekineko.jp/locations/osaka/osaka-shi/dotonbori-store/",
+        "price_url": "",
+        "original_station": ""
       }
     ],
     "三国": [
       {
+        "chain": "jankara",
         "name": "ジャンカラ阪急三国店",
         "area": "その他大阪市",
         "address": "大阪市淀川区西三国4-8-19 三国ビルディング3F\n阪急宝塚本線 三国駅 北出口より徒歩2分",
@@ -107,6 +186,7 @@
     ],
     "上新庄": [
       {
+        "chain": "jankara",
         "name": "ジャンカラ上新庄駅前店",
         "area": "その他大阪市",
         "address": "大阪市東淀川区豊新5-18-9\n阪急京都本線 上新庄駅 南出口より徒歩7分",
@@ -115,6 +195,7 @@
         "original_station": "上新庄"
       },
       {
+        "chain": "jankara",
         "name": "ジャンカラ上新庄ほんまに駅前店",
         "area": "その他大阪市",
         "address": "大阪市東淀川区瑞光1-2-5 グルメビルグランノア5F\n阪急京都本線 上新庄駅 南出口より徒歩1分",
@@ -125,6 +206,7 @@
     ],
     "上本町": [
       {
+        "chain": "jankara",
         "name": "ジャンカラ上本町駅前店",
         "area": "その他大阪市",
         "address": "大阪市天王寺区上本町6-4-23\n近鉄大阪上本町駅 地上改札出口より徒歩6分",
@@ -135,16 +217,18 @@
     ],
     "不明": [
       {
-        "name": "スーパージャンカラスーパージャンカラあべのプレミアム",
-        "area": "その他大阪市",
-        "address": "大阪市阿倍野区阿倍野筋2丁目4番51号 阿倍野パスカ2階\nOsakaMetro谷町線 阿倍野駅 1番出口より徒歩すぐ",
-        "url": "https://jankara.ne.jp/shop/253/",
-        "price_url": "https://jankara.ne.jp/shop/253/#price",
+        "chain": "manekineko",
+        "name": "カラオケまねきねこ 貝塚店",
+        "area": "",
+        "address": "大阪府 貝塚市 石才 ３５６−１",
+        "url": "https://www.karaokemanekineko.jp/locations/osaka/kaizuka/kaizuka-store/",
+        "price_url": "",
         "original_station": ""
       }
     ],
     "京橋": [
       {
+        "chain": "jankara",
         "name": "ジャンカラ京橋1号店",
         "area": "その他大阪市",
         "address": "大阪市都島区東野田町5-1-16 第2大永ビル2〜4F\nJR京橋駅 北出口より徒歩5分",
@@ -153,6 +237,7 @@
         "original_station": "京橋"
       },
       {
+        "chain": "jankara",
         "name": "ジャンカラ京橋Door4店",
         "area": "その他大阪市",
         "address": "大阪市都島区片町2-4-6 ウエムロプラザビル3・4・5・6F\nJR京橋駅 北出口より徒歩3分",
@@ -161,26 +246,56 @@
         "original_station": "京橋Door4"
       },
       {
+        "chain": "jankara",
         "name": "ジャンカラ京橋本店",
         "area": "その他大阪市",
         "address": "大阪市都島区東野田町三丁目11番1号\nJR京橋駅 北出口より徒歩2分",
         "url": "https://jankara.ne.jp/shop/174/",
         "price_url": "https://jankara.ne.jp/shop/174/#price",
         "original_station": "京橋本"
+      },
+      {
+        "chain": "manekineko",
+        "name": "カラオケまねきねこ 京橋店",
+        "area": "",
+        "address": "大阪府 大阪市 都島区東野田町3-12-1 京橋ダブルスタービル3Ｆ",
+        "url": "https://www.karaokemanekineko.jp/locations/osaka/osaka-shi/kyobashi-store/",
+        "price_url": "",
+        "original_station": ""
+      },
+      {
+        "chain": "manekineko",
+        "name": "カラオケまねきねこ 京橋駅前店",
+        "area": "",
+        "address": "大阪府 大阪市 都島区東野田町３丁目２−９",
+        "url": "https://www.karaokemanekineko.jp/locations/osaka/osaka-shi/kyobashi-ekimae-store/",
+        "price_url": "",
+        "original_station": ""
       }
     ],
     "住之江公園": [
       {
+        "chain": "jankara",
         "name": "ジャンカラ住之江公園駅前店",
         "area": "その他大阪市",
         "address": "大阪市住之江区新北島1丁目1-10 OsakaMetro住之江公園駅 4番出口から徒歩1分",
         "url": "https://jankara.ne.jp/shop/176/",
         "price_url": "https://jankara.ne.jp/shop/176/#price",
         "original_station": "住之江公園"
+      },
+      {
+        "chain": "manekineko",
+        "name": "カラオケまねきねこ 住之江公園店",
+        "area": "",
+        "address": "大阪府 大阪市 住之江区新北島1-1-7 ビッグドッグプラザ2F",
+        "url": "https://www.karaokemanekineko.jp/locations/osaka/osaka-shi/suminoekoen-store/",
+        "price_url": "",
+        "original_station": ""
       }
     ],
     "住道": [
       {
+        "chain": "jankara",
         "name": "ジャンカラ住道駅前店",
         "area": "大阪市以外",
         "address": "大東市赤井1-3-22 住道はりまやビル2F\nJR住道駅 北出口より徒歩5分",
@@ -191,6 +306,7 @@
     ],
     "八戸ノ里": [
       {
+        "chain": "jankara",
         "name": "ジャンカラ八戸ノ里駅前店",
         "area": "大阪市以外",
         "address": "東大阪市御厨南1丁目1番24号 アスモ八戸ノ里2〜3F\n近鉄奈良線 八戸ノ里駅 2番出口より徒歩3分",
@@ -201,6 +317,7 @@
     ],
     "北巽": [
       {
+        "chain": "jankara",
         "name": "ジャンカラ北巽駅前店",
         "area": "その他大阪市",
         "address": "大阪市生野区巽北3-15-13 アイキビルB1〜1F\nOsakaMetro千日前線 北巽駅 4番出口より徒歩3分",
@@ -211,6 +328,7 @@
     ],
     "北新地": [
       {
+        "chain": "jankara",
         "name": "ジャンカラ北新地店",
         "area": "梅田",
         "address": "大阪市北区曽根崎新地1-8-19 梅新ビル6〜7F\nOsakaMetro谷町線 東梅田駅 8番出口より徒歩4分",
@@ -221,6 +339,7 @@
     ],
     "十三": [
       {
+        "chain": "jankara",
         "name": "ジャンカラ十三駅東口店",
         "area": "その他大阪市",
         "address": "大阪市淀川区十三東2-8-6\n阪急十三駅 東出口より徒歩2分",
@@ -229,6 +348,7 @@
         "original_station": "十三"
       },
       {
+        "chain": "jankara",
         "name": "ジャンカラ十三本町店",
         "area": "その他大阪市",
         "address": "大阪市淀川区十三本町1-7-27 サンポードシティビル2F\n阪急十三駅 西出口より徒歩4分",
@@ -239,16 +359,27 @@
     ],
     "吹田": [
       {
+        "chain": "jankara",
         "name": "ジャンカラJR吹田店",
         "area": "大阪市以外",
         "address": "吹田市元町6-8 万両ビル1〜4F\nJR京都線 吹田駅 中央出口より徒歩5分",
         "url": "https://jankara.ne.jp/shop/077/",
         "price_url": "https://jankara.ne.jp/shop/077/#price",
         "original_station": "JR吹田"
+      },
+      {
+        "chain": "manekineko",
+        "name": "カラオケまねきねこ 江坂駅前店",
+        "area": "",
+        "address": "大阪府 吹田市 江坂町1-23-37 西浦江坂ビル５Ｆ",
+        "url": "https://www.karaokemanekineko.jp/locations/osaka/suita-shi/esaka-ekimae-store/",
+        "price_url": "",
+        "original_station": ""
       }
     ],
     "堺東": [
       {
+        "chain": "jankara",
         "name": "ジャンカラ堺東店",
         "area": "大阪市以外",
         "address": "堺市堺区中瓦町2-1-11 中屋ビル1〜5F\n南海高野線 堺東駅 西出口より徒歩7分",
@@ -257,6 +388,7 @@
         "original_station": "堺東"
       },
       {
+        "chain": "jankara",
         "name": "ジャンカラ堺東2号店",
         "area": "大阪市以外",
         "address": "堺市堺区中瓦町2丁目3番22号 テクノ大徳ビル6F\n南海高野線 堺東駅 西出口より徒歩6分",
@@ -267,6 +399,7 @@
     ],
     "塚本": [
       {
+        "chain": "jankara",
         "name": "ジャンカラみんなの塚本駅前店",
         "area": "その他大阪市",
         "address": "大阪市淀川区塚本2-24-7 アンダーツリービル2階\nJR塚本駅 東出口より徒歩1分",
@@ -277,6 +410,7 @@
     ],
     "大和田": [
       {
+        "chain": "jankara",
         "name": "ジャンカラ京阪大和田店",
         "area": "大阪市以外",
         "address": "門真市宮野町1-7 エル大和田北館2〜3F\n京阪本線 大和田駅 北出口より徒歩1分",
@@ -287,6 +421,7 @@
     ],
     "大正": [
       {
+        "chain": "jankara",
         "name": "ジャンカラ大正駅前店",
         "area": "その他大阪市",
         "address": "大阪市大正区三軒家東1-17-28\nJR大阪環状線 大正駅 南出口より徒歩2分",
@@ -297,6 +432,7 @@
     ],
     "天満": [
       {
+        "chain": "jankara",
         "name": "ジャンカラアジアン天満店",
         "area": "梅田",
         "address": "大阪市北区天神橋4丁目5-5 トップリービル2〜3F\nJR大阪環状線 天満駅より徒歩3分",
@@ -305,6 +441,7 @@
         "original_station": "アジアン天満"
       },
       {
+        "chain": "jankara",
         "name": "ジャンカラヨイドコロ天満店",
         "area": "梅田",
         "address": "大阪市北区天神橋5丁目6-28 天神のきょういち2〜3階",
@@ -315,6 +452,7 @@
     ],
     "天王寺": [
       {
+        "chain": "jankara",
         "name": "ジャンカラあべの店",
         "area": "その他大阪市",
         "address": "大阪市阿倍野区阿倍野筋2-4-55\nOsakaMetro谷町線 阿倍野駅 1番口より徒歩4分",
@@ -323,6 +461,16 @@
         "original_station": "あべの"
       },
       {
+        "chain": "jankara",
+        "name": "スーパージャンカラスーパージャンカラあべのプレミアム",
+        "area": "その他大阪市",
+        "address": "大阪市阿倍野区阿倍野筋2丁目4番51号 阿倍野パスカ2階\nOsakaMetro谷町線 阿倍野駅 1番出口より徒歩すぐ",
+        "url": "https://jankara.ne.jp/shop/253/",
+        "price_url": "https://jankara.ne.jp/shop/253/#price",
+        "original_station": ""
+      },
+      {
+        "chain": "jankara",
         "name": "ジャンカラ天王寺店",
         "area": "その他大阪市",
         "address": "大阪市天王寺区悲田院町9-22 宝ビル1〜5F\nJR天王寺駅 北出口より徒歩2分",
@@ -333,26 +481,67 @@
     ],
     "守口市": [
       {
+        "chain": "jankara",
         "name": "ジャンカラ京阪守口店",
         "area": "大阪市以外",
         "address": "守口市桜町9番7号 フロンテージ守口5〜6F\n京阪本線 守口市駅 東出口より徒歩3分",
         "url": "https://jankara.ne.jp/shop/037/",
         "price_url": "https://jankara.ne.jp/shop/037/#price",
         "original_station": "京阪守口"
+      },
+      {
+        "chain": "manekineko",
+        "name": "カラオケまねきねこ 京阪守口店",
+        "area": "",
+        "address": "大阪府 守口市 本町1-6-19",
+        "url": "https://www.karaokemanekineko.jp/locations/osaka/moriguchi-shi/keihan-moriguchi-store/",
+        "price_url": "",
+        "original_station": ""
+      },
+      {
+        "chain": "manekineko",
+        "name": "カラオケまねきねこ 古川橋店",
+        "area": "",
+        "address": "大阪府 門真市 末広町8-1 三福ビル2F",
+        "url": "https://www.karaokemanekineko.jp/locations/osaka/kadoma/furukawabashi-store/",
+        "price_url": "",
+        "original_station": ""
       }
     ],
     "寝屋川市": [
       {
+        "chain": "jankara",
         "name": "ジャンカラ寝屋川駅前店",
         "area": "大阪市以外",
         "address": "寝屋川市八坂町16-20 第一観光ビル2〜3F\n京阪本線 寝屋川市駅 北改札出口より徒歩3分",
         "url": "https://jankara.ne.jp/shop/227/",
         "price_url": "https://jankara.ne.jp/shop/227/#price",
         "original_station": "寝屋川"
+      },
+      {
+        "chain": "manekineko",
+        "name": "カラオケまねきねこ 香里園店",
+        "area": "",
+        "address": "大阪府 寝屋川市 香里新町8-3",
+        "url": "https://www.karaokemanekineko.jp/locations/osaka/neyagawa/korien-store/",
+        "price_url": "",
+        "original_station": ""
+      }
+    ],
+    "寺田町": [
+      {
+        "chain": "manekineko",
+        "name": "カラオケまねきねこ 寺田町駅前店",
+        "area": "",
+        "address": "大阪府 大阪市 天王寺区大道4-10-12 中村ビル2･3F",
+        "url": "https://www.karaokemanekineko.jp/locations/osaka/osaka-shi/teradacho-ekimae-store/",
+        "price_url": "",
+        "original_station": ""
       }
     ],
     "布施": [
       {
+        "chain": "jankara",
         "name": "ジャンカラディープ布施店",
         "area": "大阪市以外",
         "address": "東大阪市長堂1丁目2-1 A+FUSEビルB1〜1F\n近鉄布施駅 西北出口より徒歩3分",
@@ -361,16 +550,54 @@
         "original_station": "布施"
       },
       {
+        "chain": "jankara",
         "name": "ジャンカラ布施駅前2号店",
         "area": "大阪市以外",
         "address": "東大阪市長堂1-5-6 布施駅前セントラルビルB2〜B1F\n近鉄布施駅 中央北出口より徒歩4分",
         "url": "https://jankara.ne.jp/shop/124/",
         "price_url": "https://jankara.ne.jp/shop/124/#price",
         "original_station": "布施"
+      },
+      {
+        "chain": "manekineko",
+        "name": "カラオケまねきねこ 八戸ノ里店",
+        "area": "",
+        "address": "大阪府 東大阪市 御厨南1-1-26",
+        "url": "https://www.karaokemanekineko.jp/locations/osaka/higashiosaka/yaenosato-store/",
+        "price_url": "",
+        "original_station": ""
+      },
+      {
+        "chain": "manekineko",
+        "name": "カラオケまねきねこ 布施駅前店",
+        "area": "",
+        "address": "大阪府 東大阪市 足代新町1-48 あじロード2F",
+        "url": "https://www.karaokemanekineko.jp/locations/osaka/higashiosaka/fuse-ekimae-store/",
+        "price_url": "",
+        "original_station": ""
+      },
+      {
+        "chain": "manekineko",
+        "name": "カラオケまねきねこ 新石切店",
+        "area": "",
+        "address": "大阪府 東大阪市 西石切町3-3-10 新石切中野ビル3F",
+        "url": "https://www.karaokemanekineko.jp/locations/osaka/higashiosaka/shinishikiri-store/",
+        "price_url": "",
+        "original_station": ""
+      },
+      {
+        "chain": "manekineko",
+        "name": "カラオケまねきねこ 瓢箪山駅前店",
+        "area": "",
+        "address": "大阪府 東大阪市 本町 １５−１２",
+        "url": "https://www.karaokemanekineko.jp/locations/osaka/higashiosaka/hyotanyama-ekimae-store/",
+        "price_url": "",
+        "original_station": ""
       }
     ],
     "庄内": [
       {
+        "chain": "jankara",
         "name": "ジャンカラ庄内駅東口店",
         "area": "大阪市以外",
         "address": "豊中市庄内東町2丁目1-2 HeaRth One BLDG7〜8階",
@@ -381,6 +608,7 @@
     ],
     "心斎橋": [
       {
+        "chain": "jankara",
         "name": "ジャンカラアメリカ村店",
         "area": "難波・心斎橋",
         "address": "大阪市中央区西心斎橋2-11-30 ブルータスビル4〜5F\nOsakaMetro四つ橋線 四ツ橋駅 5番出口より徒歩5分",
@@ -389,6 +617,7 @@
         "original_station": "アメリカ村"
       },
       {
+        "chain": "jankara",
         "name": "ジャンカラ心斎橋店",
         "area": "難波・心斎橋",
         "address": "大阪市中央区心斎橋筋1-3-11\nOsakaMetro心斎橋駅 5番出口より徒歩3分",
@@ -397,16 +626,36 @@
         "original_station": "心斎橋"
       },
       {
+        "chain": "jankara",
         "name": "ジャンカラ心斎橋3号店",
         "area": "難波・心斎橋",
         "address": "大阪市中央区心斎橋筋1-3-30\nOsakaMetro心斎橋駅 5番出口より徒歩4分",
         "url": "https://jankara.ne.jp/shop/119/",
         "price_url": "https://jankara.ne.jp/shop/119/#price",
         "original_station": "心斎橋"
+      },
+      {
+        "chain": "manekineko",
+        "name": "カラオケまねきねこ 心斎橋2号店",
+        "area": "",
+        "address": "大阪府 大阪市 中央区東心斎橋1-19-11 鰻谷スクエア 2F",
+        "url": "https://www.karaokemanekineko.jp/locations/osaka/osaka-shi/shinsaibashi-2nd-store/",
+        "price_url": "",
+        "original_station": ""
+      },
+      {
+        "chain": "manekineko",
+        "name": "カラオケまねきねこ 心斎橋店",
+        "area": "",
+        "address": "大阪府 大阪市 中央区東心斎橋1-18-27 PARK10ビル1F",
+        "url": "https://www.karaokemanekineko.jp/locations/osaka/osaka-shi/shinsaibashi-store/",
+        "price_url": "",
+        "original_station": ""
       }
     ],
     "新金岡": [
       {
+        "chain": "jankara",
         "name": "ジャンカラ新金岡駅前店",
         "area": "大阪市以外",
         "address": "堺市北区新金岡町5-1-1 フレスポしんかな西館4F\nOsakaMetro御堂筋線 新金岡駅 2番出口より徒歩1分",
@@ -417,6 +666,7 @@
     ],
     "昭和町": [
       {
+        "chain": "jankara",
         "name": "ジャンカラ昭和町駅前店",
         "area": "その他大阪市",
         "address": "大阪市阿倍野区昭和町1-9-24 富士ホームビル昭和町4F\nOsakaMetro御堂筋線 昭和町駅 1番出口より徒歩1分",
@@ -427,6 +677,7 @@
     ],
     "枚方市": [
       {
+        "chain": "jankara",
         "name": "ジャンカラ枚方駅から5秒店",
         "area": "大阪市以外",
         "address": "枚方市岡本町2番22号 枚方デパートメントビル4階",
@@ -435,6 +686,7 @@
         "original_station": "枚方駅から5秒"
       },
       {
+        "chain": "jankara",
         "name": "ジャンカラ枚方駅前店",
         "area": "大阪市以外",
         "address": "枚方市新町1-2-10 テイクスリービル4F\n京阪本線 枚方市駅 中央出口より徒歩3分",
@@ -443,6 +695,7 @@
         "original_station": "枚方"
       },
       {
+        "chain": "jankara",
         "name": "ジャンカラ枚方駅前2号店",
         "area": "大阪市以外",
         "address": "枚方市岡東町19番20号 エル枚方2F\n京阪枚方市駅 中央出口より徒歩4分",
@@ -453,6 +706,7 @@
     ],
     "梅田": [
       {
+        "chain": "jankara",
         "name": "ジャンカラ梅田芝田町店",
         "area": "梅田",
         "address": "大阪市北区芝田1-4-1\n阪急大阪梅田駅 茶屋町出口より徒歩4分",
@@ -461,6 +715,7 @@
         "original_station": "梅田芝田町"
       },
       {
+        "chain": "jankara",
         "name": "ジャンカラお初天神店",
         "area": "梅田",
         "address": "大阪市北区曽根崎2-11-24\nOsakaMetro谷町線 東梅田駅 4番出口より徒歩1分",
@@ -469,6 +724,7 @@
         "original_station": "お初天神"
       },
       {
+        "chain": "jankara",
         "name": "スーパージャンカラスーパージャンカラ茶屋町店",
         "area": "梅田",
         "address": "大阪市北区茶屋町2-27 1〜4F\n阪急大阪梅田駅 中央改札口より徒歩5分",
@@ -477,6 +733,7 @@
         "original_station": "スーパージャンカラ茶屋町"
       },
       {
+        "chain": "jankara",
         "name": "ジャンカラ茶屋町店",
         "area": "梅田",
         "address": "大阪市北区茶屋町2-32 茶屋町ビルB1〜5F\n阪急大阪梅田駅 中央改札口より徒歩5分",
@@ -485,6 +742,7 @@
         "original_station": "茶屋町"
       },
       {
+        "chain": "jankara",
         "name": "ジャンカラ阪急かっぱ横丁店",
         "area": "梅田",
         "address": "大阪市北区芝田1-7-2\n阪急大阪梅田駅 茶屋町出口より徒歩5分",
@@ -493,6 +751,7 @@
         "original_station": "阪急かっぱ横丁"
       },
       {
+        "chain": "jankara",
         "name": "ジャンカラ阪急東通店",
         "area": "梅田",
         "address": "大阪市北区小松原町1-23\nOsakaMetro谷町線 東梅田駅 4番出口より徒歩6分",
@@ -501,6 +760,7 @@
         "original_station": "阪急東通"
       },
       {
+        "chain": "jankara",
         "name": "ジャンカラ阪急東通3号店",
         "area": "梅田",
         "address": "大阪市北区小松原町1-16 梅田モコビル2F・5〜6F\nOsakaMetro谷町線 東梅田駅 4番出口より徒歩5分",
@@ -509,6 +769,7 @@
         "original_station": "阪急東通"
       },
       {
+        "chain": "jankara",
         "name": "ジャンカラ阪急東通本店",
         "area": "梅田",
         "address": "大阪市北区堂山町5-2\nOsakaMetro谷町線 東梅田駅 4番出口より徒歩7分",
@@ -517,6 +778,7 @@
         "original_station": "阪急東通本"
       },
       {
+        "chain": "jankara",
         "name": "ジャンカラ阪急東中通店",
         "area": "梅田",
         "address": "大阪市北区堂山町8-9 小寺堂山ビルII\nOsakaMetro御堂筋線 梅田駅 6番出口より徒歩9分",
@@ -525,16 +787,54 @@
         "original_station": "阪急東中通"
       },
       {
+        "chain": "jankara",
         "name": "ジャンカラ東通白馬車ビル店",
         "area": "梅田",
         "address": "大阪市北区堂山町4-12 白馬車ビルPart I 4F\n阪神本線 大阪梅田駅 東出口より徒歩7分",
         "url": "https://jankara.ne.jp/shop/237/",
         "price_url": "https://jankara.ne.jp/shop/237/#price",
         "original_station": "東通白馬車ビル"
+      },
+      {
+        "chain": "manekineko",
+        "name": "カラオケまねきねこ 梅田芝田店",
+        "area": "",
+        "address": "大阪府 大阪市 北区芝田2-2-5 芝田二丁目ビル3～5F",
+        "url": "https://www.karaokemanekineko.jp/locations/osaka/osaka-shi/umeda-shibata-store/",
+        "price_url": "",
+        "original_station": ""
+      },
+      {
+        "chain": "manekineko",
+        "name": "カラオケまねきねこ 茶屋町店",
+        "area": "",
+        "address": "大阪府 大阪市 北区茶屋町3-2 チロル茶屋町6F",
+        "url": "https://www.karaokemanekineko.jp/locations/osaka/osaka-shi/chayamachi-store/",
+        "price_url": "",
+        "original_station": ""
+      },
+      {
+        "chain": "manekineko",
+        "name": "カラオケまねきねこ 阪急東通り2号店",
+        "area": "",
+        "address": "大阪府 大阪市 北区堂山町6‐5 ペンギンスクエアビル2～3F",
+        "url": "https://www.karaokemanekineko.jp/locations/osaka/osaka-shi/hankyuhigashidori-2nd-store/",
+        "price_url": "",
+        "original_station": ""
+      },
+      {
+        "chain": "manekineko",
+        "name": "カラオケまねきねこ 阪急東通り店",
+        "area": "",
+        "address": "大阪府 大阪市 北区 堂山町 ５−４",
+        "url": "https://www.karaokemanekineko.jp/locations/osaka/osaka-shi/hankyu-higashidori-store/",
+        "price_url": "",
+        "original_station": ""
       }
     ],
     "樟葉": [
       {
+        "chain": "jankara",
         "name": "ジャンカラくずは店",
         "area": "大阪市以外",
         "address": "枚方市町楠葉1-2-20 2F\n京阪本線 樟葉駅より徒歩4分",
@@ -545,6 +845,7 @@
     ],
     "江坂": [
       {
+        "chain": "jankara",
         "name": "ジャンカラ江坂店",
         "area": "大阪市以外",
         "address": "吹田市豊津町15-9 ピーイングス江坂ビル\nOsakaMetro御堂筋線 江坂駅 8番出口より徒歩5分",
@@ -553,6 +854,7 @@
         "original_station": "江坂"
       },
       {
+        "chain": "jankara",
         "name": "ジャンカラ江坂2号店",
         "area": "大阪市以外",
         "address": "吹田市豊津町10-15 モアイプラザ4F\nOsakaMetro御堂筋線 江坂駅 8番出口より徒歩5分",
@@ -563,16 +865,27 @@
     ],
     "池田": [
       {
+        "chain": "jankara",
         "name": "ジャンカラ池田駅前店",
         "area": "大阪市以外",
         "address": "池田市室町1-3 池田センタービル2F\n阪急宝塚本線 池田駅 マルシェ2番館出口より徒歩4分",
         "url": "https://jankara.ne.jp/shop/079/",
         "price_url": "https://jankara.ne.jp/shop/079/#price",
         "original_station": "池田"
+      },
+      {
+        "chain": "manekineko",
+        "name": "カラオケまねきねこ 石橋店",
+        "area": "",
+        "address": "大阪府 池田市 石橋2-17-12",
+        "url": "https://www.karaokemanekineko.jp/locations/osaka/ikeda/ishibashi-store/",
+        "price_url": "",
+        "original_station": ""
       }
     ],
     "深井": [
       {
+        "chain": "jankara",
         "name": "ジャンカラ深井駅前店",
         "area": "大阪市以外",
         "address": "堺市中区深井沢町3234番地\n泉北高速鉄道 深井駅 東出口より徒歩4分",
@@ -583,6 +896,7 @@
     ],
     "玉造": [
       {
+        "chain": "jankara",
         "name": "ジャンカラ玉造駅前店",
         "area": "その他大阪市",
         "address": "大阪市天王寺区玉造元町2-23\nOsakaMetro長堀鶴見緑地線 玉造駅より徒歩3分",
@@ -593,6 +907,7 @@
     ],
     "石橋阪大前": [
       {
+        "chain": "jankara",
         "name": "ジャンカラ石橋駅前店",
         "area": "大阪市以外",
         "address": "池田市石橋1丁目8番9号 テラスビル2F\n阪急石橋阪大前駅 西改札出口より徒歩4分",
@@ -603,16 +918,27 @@
     ],
     "福島": [
       {
+        "chain": "jankara",
         "name": "ジャンカラJR福島店",
         "area": "その他大阪市",
         "address": "大阪市福島区福島7-12-1 堀内ビル1〜5F\nJR大阪環状線 福島駅より徒歩4分",
         "url": "https://jankara.ne.jp/shop/125/",
         "price_url": "https://jankara.ne.jp/shop/125/#price",
         "original_station": "JR福島"
+      },
+      {
+        "chain": "manekineko",
+        "name": "カラオケまねきねこ 大阪福島店",
+        "area": "",
+        "address": "大阪府 大阪市 福島区 福島 ７丁目 ９−２９",
+        "url": "https://www.karaokemanekineko.jp/locations/osaka/osaka-shi/osaka-fukushima-store/",
+        "price_url": "",
+        "original_station": ""
       }
     ],
     "茨木": [
       {
+        "chain": "jankara",
         "name": "ジャンカラJR茨木店",
         "area": "大阪市以外",
         "address": "茨木市駅前1-9\nJR京都線 茨木駅 東出口より徒歩7分",
@@ -621,6 +947,7 @@
         "original_station": "JR茨木"
       },
       {
+        "chain": "jankara",
         "name": "ジャンカラみんなのJR茨木店",
         "area": "大阪市以外",
         "address": "茨木市西駅前町4 茨木駅前ビルB1〜1F\nJR京都線 茨木駅 西出口より徒歩4分",
@@ -631,6 +958,7 @@
     ],
     "茨木市": [
       {
+        "chain": "jankara",
         "name": "ジャンカラ阪急茨木店",
         "area": "大阪市以外",
         "address": "茨木市永代町6-2 スポーツプラザ茨木ビル1F\n阪急京都本線 茨木市駅 西出口より徒歩4分",
@@ -641,6 +969,7 @@
     ],
     "藤井寺": [
       {
+        "chain": "jankara",
         "name": "ジャンカラ藤井寺駅前店",
         "area": "大阪市以外",
         "address": "藤井寺市岡2丁目10-18 ＤＨ藤井寺2F\n近鉄南大阪線 藤井寺駅 北出口より徒歩4分",
@@ -651,6 +980,7 @@
     ],
     "西中島南方": [
       {
+        "chain": "jankara",
         "name": "ジャンカラ西中島店",
         "area": "その他大阪市",
         "address": "大阪市淀川区西中島3丁目17番8号 大成ビル2〜4F\nOsakaMetro御堂筋線 西中島南方駅より徒歩3分",
@@ -661,6 +991,7 @@
     ],
     "西九条": [
       {
+        "chain": "jankara",
         "name": "ジャンカラ西九条駅前店",
         "area": "その他大阪市",
         "address": "大阪市此花区西九条3-15-2 ソンサンビル3F（4F一部）\nJR西九条駅 1番出口より徒歩4分",
@@ -671,6 +1002,7 @@
     ],
     "豊中": [
       {
+        "chain": "jankara",
         "name": "ジャンカラ豊中駅前店",
         "area": "大阪市以外",
         "address": "豊中市玉井1-2-1 豊中駅前ビルディング6〜7F\n阪急宝塚本線 豊中駅 北改札出口より徒歩3分",
@@ -681,16 +1013,27 @@
     ],
     "近鉄八尾": [
       {
+        "chain": "jankara",
         "name": "ジャンカラ近鉄八尾店",
         "area": "大阪市以外",
         "address": "八尾市光町2-9 フレックスビル3〜6F\n近鉄大阪線 近鉄八尾駅 中央北出口より徒歩5分",
         "url": "https://jankara.ne.jp/shop/235/",
         "price_url": "https://jankara.ne.jp/shop/235/#price",
         "original_station": "近鉄八尾"
+      },
+      {
+        "chain": "manekineko",
+        "name": "カラオケまねきねこ 近鉄八尾駅前店",
+        "area": "",
+        "address": "大阪府 八尾市 北本町2-15-1 アロービル３Ｆ",
+        "url": "https://www.karaokemanekineko.jp/locations/osaka/yao-shi/kintetsuyao-ekimae-store/",
+        "price_url": "",
+        "original_station": ""
       }
     ],
     "長居": [
       {
+        "chain": "jankara",
         "name": "ジャンカラ長居駅前店",
         "area": "その他大阪市",
         "address": "大阪市住吉区長居東4-11-25 タケ＆ハルビル第一9〜10F\nOsakaMetro御堂筋線 長居駅 6番出口より徒歩2分",
@@ -701,6 +1044,7 @@
     ],
     "関大前": [
       {
+        "chain": "jankara",
         "name": "ジャンカラオールナイト関大前店",
         "area": "大阪市以外",
         "address": "吹田市千里山東1丁目7番25号 グランド観光ビル2階",
@@ -711,6 +1055,7 @@
     ],
     "香里園": [
       {
+        "chain": "jankara",
         "name": "ジャンカラ香里園駅前店",
         "area": "大阪市以外",
         "address": "寝屋川市香里新町31-19 香里園栄ビル3〜4F\n京阪本線 香里園駅 西出口より徒歩2分",
@@ -721,6 +1066,7 @@
     ],
     "高槻市": [
       {
+        "chain": "jankara",
         "name": "ジャンカラ高槻2号店",
         "area": "大阪市以外",
         "address": "高槻市城北町2-5-13 生駒ビル\n阪急京都線 高槻市駅 7番出口より徒歩5分",
@@ -729,6 +1075,7 @@
         "original_station": "高槻"
       },
       {
+        "chain": "jankara",
         "name": "ジャンカラ高槻3号店",
         "area": "大阪市以外",
         "address": "高槻市高槻町18番5号 銀雅ビル2〜3F\n阪急京都本線 高槻市駅 7番出口より徒歩6分",
@@ -737,6 +1084,7 @@
         "original_station": "高槻"
       },
       {
+        "chain": "jankara",
         "name": "ジャンカラ高槻シースー店",
         "area": "大阪市以外",
         "address": "高槻市北園町14-18 2〜3F\n阪急京都線 高槻市駅 6番出口より徒歩2分",
@@ -747,6 +1095,7 @@
     ],
     "鳳": [
       {
+        "chain": "jankara",
         "name": "ジャンカラJR鳳駅前店",
         "area": "大阪市以外",
         "address": "堺市西区鳳東町 1丁4番地31 KSビル3F\nJR鳳駅 東出口より徒歩3分",
@@ -757,12 +1106,22 @@
     ],
     "鶴橋": [
       {
+        "chain": "jankara",
         "name": "ジャンカラ鶴橋駅前店",
         "area": "その他大阪市",
         "address": "大阪市東成区東小橋3-15-4 サンエイ中日ビル3〜5F\nJR大阪環状線 鶴橋駅 中央出口より徒歩2分",
         "url": "https://jankara.ne.jp/shop/010/",
         "price_url": "https://jankara.ne.jp/shop/010/#price",
         "original_station": "鶴橋"
+      },
+      {
+        "chain": "manekineko",
+        "name": "カラオケまねきねこ 鶴橋店",
+        "area": "",
+        "address": "大阪府 大阪市 東成区東小橋3-16-3 D⁺鶴橋Ⅱビル3F～5F（受付4F）",
+        "url": "https://www.karaokemanekineko.jp/locations/osaka/osaka-shi/tsuruhashi-store/",
+        "price_url": "",
+        "original_station": ""
       }
     ]
   }

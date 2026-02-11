@@ -3,6 +3,7 @@ defaultContentLanguage = 'ja'
 defaultContentLanguageInSubdir = false
 theme = "PaperMod"
 title = "大阪カラオケ料金ナビ"
+buildFuture = true
 
 [languages]
   [languages.ja]

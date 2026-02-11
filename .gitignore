@@ -10,8 +10,17 @@ venv/
 
 # System
 .DS_Store
+Thumbs.db
 
-# Data (We might want to commit data/drafts for now to see them, but typically data is ignored. 
-# For this "Human Node" workflow, committing drafts is good.)
-# data/
-# drafts/
+# Hugo build output
+website/public/
+website/resources/_gen/
+
+# Temp files
+normalizer_output.txt
+*.tmp
+
+# Debug / local analysis
+debug_*.py
+jankara_osaka.html
+jankara_output.txt

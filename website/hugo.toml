@@ -1,94 +1,59 @@
-baseURL = "https://techtrend-watch.com/"
+baseURL = "https://shironaganegi.github.io/osaka-karaoke-bot/"
 defaultContentLanguage = 'ja'
 defaultContentLanguageInSubdir = false
 theme = "PaperMod"
+title = "大阪カラオケ料金ナビ"
 
 [languages]
   [languages.ja]
-    languageName = "Japanese"
+    languageName = "日本語"
     weight = 1
-    title = "TechTrend Watch"
+    title = "大阪カラオケ料金ナビ"
     [languages.ja.params]
-      description = "AIが厳選する、今日の最新技術トレンド"
+      description = "大阪エリアのカラオケ店の料金比較・最安値まとめサイト"
       [languages.ja.params.homeInfoParams]
-        Title = "TechTrend Watch 🚀"
-        Content = "世界中のGitHub、HackerNews、Qiitaから、今注目すべき技術トレンドをAIが毎日発掘・要約してお届けします。"
+        Title = "大阪カラオケ料金ナビ 🎤"
+        Content = "大阪エリアのジャンカラなどカラオケ店の30分料金・フリータイム料金を駅ごとに比較。最安値をすぐに見つけられます。"
 
     [languages.ja.menu]
       [[languages.ja.menu.main]]
-        identifier = "archives"
-        name = "Archives"
-        url = "/archives/"
+        identifier = "stations"
+        name = "駅一覧"
+        url = "/stations/"
         weight = 10
       [[languages.ja.menu.main]]
-        identifier = "tags"
-        name = "Tags"
-        url = "/tags/"
+        identifier = "search"
+        name = "検索 🔍"
+        url = "/search/"
         weight = 20
       [[languages.ja.menu.main]]
-        identifier = "search"
-        name = "Search 🔍"
-        url = "/search/"
-        weight = 30
-      [[languages.ja.menu.main]]
         identifier = "about"
-        name = "About"
+        name = "このサイトについて"
         url = "/about/"
-        weight = 40
-      [[languages.ja.menu.main]]
-        identifier = "contact"
-        name = "Contact"
-        url = "/contact/"
-        weight = 60
-
-  [languages.en]
-    languageName = "English"
-    weight = 2
-    title = "TechTrend Watch"
-    [languages.en.params]
-      description = "Daily Tech Trends Curated by AI"
-      [languages.en.params.homeInfoParams]
-        Title = "TechTrend Watch 🚀"
-        Content = "Daily curated tech trends from GitHub, Hacker News, and more. Summarized by AI."
-
-    [languages.en.menu]
-      [[languages.en.menu.main]]
-        identifier = "archives"
-        name = "Archives"
-        url = "/en/archives/"
-        weight = 10
-      [[languages.en.menu.main]]
-        identifier = "search"
-        name = "Search 🔍"
-        url = "/en/search/"
         weight = 30
-      [[languages.en.menu.main]]
-        identifier = "about"
-        name = "About"
-        url = "/en/about/"
-        weight = 40
 
 [params]
   defaultTheme = "auto"
-  description = "AIが厳選する、今日の最新技術トレンド"
-  author = "TechTrend Observer"
+  description = "大阪エリアのカラオケ店の料金比較・最安値まとめサイト"
+  author = "大阪カラオケナビ運営"
+  env = "production"
   
   # Site Features
-  ShowReadingTime = true
+  ShowReadingTime = false
   ShowShareButtons = true
   ShowPostNavLinks = true
   ShowBreadCrumbs = true
-  ShowCodeCopyButtons = true
-  ShowToc = true
+  ShowCodeCopyButtons = false
+  ShowToc = false
   
   [params.homeInfoParams]
-    Title = "TechTrend Watch 🚀"
-    Content = "世界中のGitHub、HackerNews、Qiitaから、今注目すべき技術トレンドをAIが毎日発掘・要約してお届けします。"
+    Title = "大阪カラオケ料金ナビ 🎤"
+    Content = "大阪エリアのジャンカラなどカラオケ店の30分料金・フリータイム料金を駅ごとに比較。最安値をすぐに見つけられます。"
 
   [[params.socialIcons]]
      name = "github"
-     url = "https://github.com/shironaganegi/ai-affiliate-bot-1"
-     
+     url = "https://github.com/shironaganegi/osaka-karaoke-bot"
+
   [params.fuseOpts]
     isCaseSensitive = false
     shouldSort = true
@@ -98,9 +63,5 @@ theme = "PaperMod"
     minMatchCharLength = 0
     keys = ["title", "permalink", "summary", "content"]
 
-[services]
-  [services.googleAnalytics]
-    id = "G-T3QN96SJXT" # TechTrend Watch
-
 [markup.goldmark.renderer]
-  unsafe = true # Allow raw HTML (for affiliate links etc)
+  unsafe = true # Allow raw HTML (for affiliate banners)

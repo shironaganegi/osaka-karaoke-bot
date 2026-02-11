@@ -1,0 +1,1 @@
+# Karaoke store scrapers package

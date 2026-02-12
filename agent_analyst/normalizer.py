@@ -340,10 +340,15 @@ def group_by_station(stores: list[dict]) -> dict[str, list[dict]]:
             "name": store_name,
             "area": store.get("area", ""),
             "address": address,
-            "url": store.get("detail_url", ""),
-            "price_url": store.get("pricing_url", ""),
+            "url": store.get("detail_url") or store.get("url", ""),
+            "price_url": store.get("pricing_url") or store.get("price_url", ""),
             "original_station": raw_station,
         }
+        # 料金データ・PDF URLがあれば保持
+        if store.get("pricing"):
+            entry["pricing"] = store["pricing"]
+        if store.get("pdf_url"):
+            entry["pdf_url"] = store["pdf_url"]
         grouped[normalized].append(entry)
 
     # キーをソートした辞書に変換
@@ -375,6 +380,67 @@ def print_station_summary(grouped: dict[str, list[dict]]) -> None:
     print("チェーン別:", file=sys.stderr)
     for chain, count in sorted(chain_counts.items()):
         print(f"  - {chain}: {count} 店舗", file=sys.stderr)
+
+
+def merge_existing_pricing(
+    grouped: dict[str, list[dict]],
+    data_dir: str = "data",
+) -> int:
+    """
+    既存の stations_master.json から料金データ・URLをマージする。
+
+    bigecho_pricing.py 等が更新したデータが normalizer.py の
+    再実行で消えないようにする。
+
+    Returns:
+        マージされた店舗数
+    """
+    master_path = Path(data_dir) / "stations_master.json"
+    if not master_path.exists():
+        return 0
+
+    try:
+        with open(master_path, "r", encoding="utf-8") as f:
+            old_data = json.load(f)
+    except (json.JSONDecodeError, OSError):
+        return 0
+
+    old_stations = old_data.get("stations", {})
+
+    # 旧データから店舗名 → データの索引を作成
+    old_lookup: dict[str, dict] = {}
+    for stores in old_stations.values():
+        for s in stores:
+            name = s.get("name", "")
+            if name:
+                old_lookup[name] = s
+
+    merged = 0
+    for stores in grouped.values():
+        for store in stores:
+            name = store.get("name", "")
+            old = old_lookup.get(name)
+            if not old:
+                continue
+
+            # 料金データをマージ（新データになければ旧データから継承）
+            if not store.get("pricing") and old.get("pricing"):
+                store["pricing"] = old["pricing"]
+                merged += 1
+
+            # URLをマージ（新データが汎用URLの場合、旧データの具体URLに置換）
+            old_url = old.get("url", "")
+            new_url = store.get("url", "")
+            if old_url and "shop_info" in old_url and (
+                not new_url or "shop_search" in new_url or new_url == "#"
+            ):
+                store["url"] = old_url
+
+            # _station_key をマージ
+            if not store.get("_station_key") and old.get("_station_key"):
+                store["_station_key"] = old["_station_key"]
+
+    return merged
 
 
 def save_stations_master(
@@ -476,10 +542,15 @@ def main():
     # 3. 駅名正規化 & グルーピング
     grouped = group_by_station(all_stores)
 
-    # 4. サマリー表示（検証用）
+    # 4. 既存の料金データをマージ（bigecho_pricing.py 等の成果を維持）
+    merged_count = merge_existing_pricing(grouped)
+    if merged_count > 0:
+        print(f"  → 既存料金データをマージ: {merged_count} 店舗", file=sys.stderr)
+
+    # 5. サマリー表示（検証用）
     print_station_summary(grouped)
 
-    # 5. stations_master.json を保存
+    # 6. stations_master.json を保存
     filepath = save_stations_master(grouped)
     print(f"\n保存完了: {filepath}", file=sys.stderr)
 

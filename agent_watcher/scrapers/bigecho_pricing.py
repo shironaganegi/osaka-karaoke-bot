@@ -37,7 +37,6 @@ def extract_price(text):
         return int(match.group(1))
     return None
 
-import sys
 # WindowsでUTF-8出力を強制
 sys.stdout.reconfigure(encoding='utf-8')
 
@@ -52,7 +51,7 @@ def get_store_url_from_shop_search(page, store_name):
         # 検索ボックス待機
         search_input = page.locator('input[placeholder*="地名"], input[placeholder*="駅名"], input#keyword').first
         try:
-            search_input.wait_for(state="visible", timeout=15000)
+            search_input.wait_for(state="visible", timeout=30000)
         except:
             return None
         
@@ -72,48 +71,54 @@ def get_store_url_from_shop_search(page, store_name):
         for q in queries:
             if not q: continue
             print(f"    Trying query: {q}")
-            search_input.fill(q)
-            search_input.press("Enter")
-            page.wait_for_timeout(3000) 
-            
-            # 検索結果をチェック
-            items = page.locator('.result-box ul.stores li:not(.result-heading)').all()
-            target_item = None
-            for item in items:
-                item_name = item.locator('.name').text_content() or ""
-                # 相互に部分一致するか
-                c_item = item_name.replace(" ", "").replace("　", "").replace("店", "")
-                c_query = name_only.replace(" ", "").replace("　", "").replace("店", "")
-                if c_query in c_item or c_item in c_query:
-                    target_item = item
-                    break
-            
-            if target_item:
-                target_item.click()
-                page.wait_for_timeout(1000) 
+            try:
+                search_input.fill(q)
+                search_input.press("Enter")
+                page.wait_for_timeout(5000) 
                 
-                detail_link = page.locator('a:has-text("店舗詳細"), a.btn-detail').last
-                if detail_link.is_visible():
-                    pages_count = len(page.context.pages)
-                    detail_link.click()
-                    page.wait_for_timeout(5000) 
-                    
-                    if len(page.context.pages) > pages_count:
-                        new_page = page.context.pages[-1]
-                        new_page.wait_for_load_state()
-                        final_url = new_page.url
-                        new_page.close()
-                    else:
-                        final_url = page.url
-                    
-                    if final_url and ("big-echo.jp" in final_url and "shop.big-echo.jp" not in final_url):
-                        return final_url
-            
-            # 次のクエリを試す前に再検索ページへ
-            if not final_url:
-                page.goto("https://shop.big-echo.jp/", timeout=20000)
-                search_input = page.locator('input#keyword').first
-                search_input.wait_for(state="visible", timeout=10000)
+                # 検索結果をチェック
+                items = page.locator('.result-box ul.stores li:not(.result-heading)').all()
+                target_item = None
+                for item in items:
+                    item_name = item.locator('.name').text_content() or ""
+                    # 相互に部分一致するか
+                    c_item = item_name.replace(" ", "").replace("　", "").replace("店", "")
+                    c_query = name_only.replace(" ", "").replace("　", "").replace("店", "")
+                    if c_query in c_item or c_item in c_query:
+                        target_item = item
+                        break
+                
+                if target_item:
+                    try:
+                        target_item.click()
+                        page.wait_for_timeout(3000) 
+                        
+                        detail_link = page.locator('a:has-text("店舗詳細"), a.btn-detail').last
+                        if detail_link.is_visible():
+                            pages_count = len(page.context.pages)
+                            detail_link.click()
+                            page.wait_for_timeout(8000) 
+                            
+                            if len(page.context.pages) > pages_count:
+                                new_page = page.context.pages[-1]
+                                new_page.wait_for_load_state()
+                                final_url = new_page.url
+                                new_page.close()
+                            else:
+                                final_url = page.url
+                            
+                            if final_url and ("big-echo.jp" in final_url and "shop.big-echo.jp" not in final_url):
+                                return final_url
+                    except Exception as e:
+                         print(f"    Click/Nav error: {e}")
+
+                # 次のクエリを試す前に再検索ページへ
+                if not final_url:
+                    page.goto("https://shop.big-echo.jp/", timeout=30000)
+                    search_input = page.locator('input#keyword').first
+                    search_input.wait_for(state="visible", timeout=30000)
+            except Exception as e:
+                print(f"    Query error {q}: {e}")
 
     except Exception as e:
         print(f"    Map search failed: {e}")
@@ -241,80 +246,138 @@ def main():
     data = load_master_data()
     
     all_stores = []
-    stations = data.get("stations", {})
-    for station_name, store_list in stations.items():
-        for store in store_list:
-            if store.get("chain") == "bigecho" or store.get("name", "").startswith("ビッグエコー") or store.get("name", "").startswith("カラオケ ビッグエコー"):
-                # 重複回避のため、名前と駅の組み合わせで一意にする
-                store["_station_key"] = station_name
+    
+    # データ構造の正規化 (リストか辞書か)
+    if isinstance(data, list):
+        for store in data:
+             if store.get("chain") == "bigecho" or store.get("name", "").startswith("ビッグエコー") or store.get("name", "").startswith("カラオケ ビッグエコー"):
+                store["_station_key"] = "unknown"
                 all_stores.append(store)
+    elif isinstance(data, dict):
+        stations = data.get("stations", {})
+        for station_name, store_list in stations.items():
+            for store in store_list:
+                if store.get("chain") == "bigecho" or store.get("name", "").startswith("ビッグエコー") or store.get("name", "").startswith("カラオケ ビッグエコー"):
+                    store["_station_key"] = station_name
+                    all_stores.append(store)
         
     print(f"Found {len(all_stores)} Big Echo store entries.")
     
-    with sync_playwright() as p:
-        browser = p.chromium.launch(headless=True)
+    browser = None
+    context = None
+    
+    try:
+        pw = sync_playwright().start()
+        browser = pw.chromium.launch(headless=True)
         context = browser.new_context(
             user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
             viewport={"width": 1280, "height": 800}
         )
-        page = context.new_page()
         
         updated_count = 0
+        processed_urls = {}  # 処理済みキャッシュ
         
-        # 処理済みの店舗URLを記録して重複アクセスを避ける
-        processed_urls = {}
-        
-        for store in all_stores:
+        for i, store in enumerate(all_stores):
             name = store.get("name")
             url = store.get("url")
+            print(f"\n[{i+1}/{len(all_stores)}] {name}")
             
-            # 取得済みデータがある場合は再利用（キャッシュ）
+            # キャッシュチェック
             cache_key = f"{name}"
             if cache_key in processed_urls:
                 store["url"] = processed_urls[cache_key].get("url")
                 store["pricing"] = processed_urls[cache_key].get("pricing")
+                print(f"  (cached)")
                 continue
 
             # 既存のpricingデータが成功しているならスキップ
             if store.get("pricing") and store.get("pricing").get("status") == "success":
                 processed_urls[cache_key] = {"url": url, "pricing": store["pricing"]}
+                print(f"  (already has pricing, skipped)")
                 continue
             
-            should_search = False
-            if not url or "big-echo.jp" not in url:
-                should_search = True
-            elif "big-echo.jp/shop_info/" in url and "?p=" not in url:
-                should_search = True
-            elif "shop.big-echo.jp" in url:
-                should_search = True
+            # === 各店舗ごとに新しいページを作成・確実に閉じる ===
+            page = context.new_page()
+            try:
+                # URLの有効性チェック
+                should_search = False
+                if not url or "big-echo.jp" not in url:
+                    should_search = True
+                elif "shop.big-echo.jp" in url:
+                    should_search = True
 
-            if should_search:
-                new_url = get_store_url_from_shop_search(page, name)
-                if new_url:
-                    print(f"  URL Updated: {new_url}")
-                    store["url"] = new_url
-                    url = new_url
-                    save_master_data(data)
-                else:
-                     print(f"  Skipping {name} (URL not found)")
-                     continue
-            
-            pricing = scrape_store_pricing(page, url)
-            
-            if pricing:
-                pricing["status"] = "success"
-                store["pricing"] = pricing
-                updated_count += 1
-                processed_urls[cache_key] = {"url": url, "pricing": pricing}
-                save_master_data(data)
-            else:
+                # URLが有効そうな場合は先にスクレイピングを試みる
+                if not should_search:
+                    print(f"  Using existing URL: {url}")
+                    pricing = scrape_store_pricing(page, url)
+                    if pricing:
+                        pricing["status"] = "success"
+                        store["pricing"] = pricing
+                        updated_count += 1
+                        processed_urls[cache_key] = {"url": url, "pricing": pricing}
+                        save_master_data(data)
+                    else:
+                        print(f"  Existing URL failed. Trying search...")
+                        should_search = True
+                
+                # 検索が必要な場合
+                if should_search:
+                    new_url = get_store_url_from_shop_search(page, name)
+                    if new_url:
+                        print(f"  URL Updated: {new_url}")
+                        store["url"] = new_url
+                        url = new_url
+                        save_master_data(data)
+                        
+                        # 更新されたURLで再トライ
+                        pricing = scrape_store_pricing(page, url)
+                        if pricing:
+                            pricing["status"] = "success"
+                            store["pricing"] = pricing
+                            updated_count += 1
+                            processed_urls[cache_key] = {"url": url, "pricing": pricing}
+                            save_master_data(data)
+                        else:
+                            print(f"  Scraping failed even with new URL.")
+                            store["pricing"] = {"status": "error"}
+                    else:
+                        print(f"  Skipping {name} (URL not found)")
+                        store["pricing"] = {"status": "error"}
+
+            except Exception as e:
+                print(f"  Error processing {name}: {e}")
                 store["pricing"] = {"status": "error"}
+            finally:
+                # ★ 重要: ページを確実に閉じてメモリを解放
+                page.close()
+                print(f"  [page closed]")
             
-            time.sleep(2)
-            
-        browser.close()
+            # ★ CPU冷却のためのクールダウン (3秒)
+            time.sleep(3)
+    
+    except Exception as e:
+        print(f"Fatal error: {e}")
+    finally:
+        # ★ ブラウザ・コンテキストを確実にクリーンアップ
+        if context:
+            try:
+                context.close()
+                print("\n[context closed]")
+            except Exception:
+                pass
+        if browser:
+            try:
+                browser.close()
+                print("[browser closed]")
+            except Exception:
+                pass
+        try:
+            pw.stop()
+            print("[playwright stopped]")
+        except Exception:
+            pass
         
-    print(f"Updated pricing for {updated_count} stores.")
+    print(f"\nUpdated pricing for {updated_count} stores.")
     save_master_data(data)
 
 

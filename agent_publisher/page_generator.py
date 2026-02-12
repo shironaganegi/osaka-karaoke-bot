@@ -15,6 +15,7 @@ Agent Publisher - Hugo ページ生成モジュール
 
 import json
 import sys
+import urllib.parse
 from datetime import date
 from pathlib import Path
 
@@ -85,6 +86,11 @@ def load_stations_data(data_dir: str = "data") -> dict | None:
                 if sec_pricing.get("status") == "success":
                     store["pricing"] = sec_pricing
                     merged += 1
+
+            # 座標データをマージ
+            if not store.get("lat") and sec_store.get("lat"):
+                store["lat"] = sec_store["lat"]
+                store["lon"] = sec_store["lon"]
 
             # URL をマージ（primary が汎用URLの場合、secondary の具体URLに置換）
             pri_url = store.get("url", "")
@@ -190,11 +196,22 @@ def build_store_table(stores: list[dict]) -> str:
         
         price_col = format_pricing_cell(store)
         
-        # 公式料金表ボタン
-        official_url = store.get("price_url") or store.get("url") or "#"
-        official_col = f"[店舗ページ]({official_url})"
+        # Google Maps リンク（座標がある場合）
+        lat = store.get("lat")
+        lon = store.get("lon")
+        if lat and lon:
+            gmap_url = f"https://www.google.com/maps/search/?api=1&query={lat},{lon}"
+            map_col = f"[📍 地図]({gmap_url})"
+        else:
+            # 住所で検索
+            addr = store.get("address", "").split("\n")[0]
+            if addr:
+                gmap_url = f"https://www.google.com/maps/search/?api=1&query={urllib.parse.quote(addr)}"
+                map_col = f"[📍 地図]({gmap_url})"
+            else:
+                map_col = "-"
 
-        lines.append(f"| {name_col} | {price_col} | {official_col} |")
+        lines.append(f"| {name_col} | {price_col} | {map_col} |")
 
     return "\n".join(lines)
 
@@ -234,6 +251,82 @@ def find_cheapest(stores: list[dict]) -> str:
     return "\n".join(parts) if parts else ""
 
 
+def build_map_section(stores: list[dict], station: str) -> str:
+    """
+    Leaflet.js マップの HTML/JS セクションを生成する。
+    座標データがある店舗のみマーカーを表示。
+    """
+    # 座標がある店舗をフィルタ
+    geo_stores = [
+        s for s in stores
+        if s.get("lat") and s.get("lon")
+    ]
+
+    if not geo_stores:
+        return ""  # 座標データなし → マップ非表示
+
+    # マップ中心座標（全店舗の平均）
+    avg_lat = sum(s["lat"] for s in geo_stores) / len(geo_stores)
+    avg_lon = sum(s["lon"] for s in geo_stores) / len(geo_stores)
+
+    # チェーン別マーカーカラー
+    chain_colors = {
+        "jankara": "blue",
+        "bigecho": "red",
+        "manekineko": "gold",
+    }
+
+    # マーカーデータを生成
+    markers_js = []
+    for s in geo_stores:
+        lat = s["lat"]
+        lon = s["lon"]
+        name = s.get("name", "").replace("'", "\\'")
+        chain = s.get("chain", "jankara")
+        color = chain_colors.get(chain, "blue")
+
+        # 料金情報をポップアップに含める
+        pricing = s.get("pricing", {})
+        price_text = ""
+        if pricing.get("status") == "success":
+            day_30 = pricing.get("day", {}).get("30min", {})
+            p = day_30.get("general") or day_30.get("member")
+            if p:
+                price_text = f"30分: {p}円"
+
+        popup = f"{name}"
+        if price_text:
+            popup += f"<br>{price_text}"
+
+        markers_js.append(
+            f"      L.circleMarker([{lat}, {lon}], "
+            f"{{radius: 10, color: '{color}', fillColor: '{color}', fillOpacity: 0.7}})"
+            f".addTo(map).bindPopup('{popup}');"
+        )
+
+    markers_str = "\n".join(markers_js)
+
+    return f"""
+## 📍 {station}駅周辺カラオケマップ
+
+<div id="map" style="height: 400px; width: 100%; border-radius: 8px; margin: 1em 0;"></div>
+
+<p style="font-size: 0.85em; color: #888;">🔴 ビッグエコー　🔵 ジャンカラ　🟡 まねきねこ</p>
+
+<script>
+  (function() {{
+    if (typeof L === 'undefined') return;
+    var map = L.map('map').setView([{avg_lat}, {avg_lon}], 15);
+    L.tileLayer('https://{{s}}.tile.openstreetmap.org/{{z}}/{{x}}/{{y}}.png', {{
+      attribution: '&copy; <a href="https://openstreetmap.org">OpenStreetMap</a>',
+      maxZoom: 19
+    }}).addTo(map);
+{markers_str}
+  }})();
+</script>
+"""
+
+
 def build_markdown(station: str, stores: list[dict], today: str) -> str:
     """
     駅ページのマークダウンコンテンツを生成する。
@@ -242,6 +335,7 @@ def build_markdown(station: str, stores: list[dict], today: str) -> str:
     store_count = len(stores)
     table_md = build_store_table(stores)
     cheapest_md = find_cheapest(stores)
+    map_section = build_map_section(stores, station)
 
     # エリア情報を取得（最初の店舗から）
     area = stores[0].get("area", "") if stores else ""
@@ -271,12 +365,12 @@ store_count: {store_count}
 
 {station}駅周辺にあるカラオケ店の料金・店舗情報をまとめました。各店舗の公式料金表へのリンクから、最新の料金プランを確認できます。
 {cheapest_section}
-| 店舗名 | 料金（平日昼） | 公式料金表 |
+| 店舗名 | 料金（平日昼） | 地図 |
 | --- | --- | --- |
 {table_md}
 
 > ※ 料金は時期・曜日・時間帯により異なります。最新情報は各店舗の公式サイトをご確認ください。
-
+{map_section}
 ---
 
 ## {station}周辺でカラオケを探すコツ

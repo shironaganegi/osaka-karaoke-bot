@@ -363,11 +363,11 @@ brandsafe_js_async('//ad-verification.a8.net/ad', '_site=1734&_article=658&_link
 """
 
     sticky_footer_html = f"""
-<div style="position: fixed; bottom: 0; left: 0; width: 100%; background: #222; border-top: 3px solid #f4d03f; z-index: 2147483647; text-align: center; padding: 5px 0; box-shadow: 0 -4px 10px rgba(0,0,0,0.3);">
-   <div style="color: #f4d03f; font-weight: bold; font-size: 0.8rem; margin-bottom: 2px;">🉐 室料30%OFFクーポン</div>
+<div style="position: fixed; bottom: 0; left: 0; width: 100%; background: rgba(255, 255, 255, 0.98); border-top: 1px solid #e0e0e0; z-index: 2147483647; text-align: center; padding: 4px 0; box-shadow: 0 -2px 6px rgba(0,0,0,0.05);">
+   <div style="font-size: 0.7rem; color: #d35400; font-weight: bold; margin-bottom: 2px;">🉐 エポスカード提示で室料30%OFF！</div>
    {a8_tag}
 </div>
-<div style="height: 100px;"></div>
+<div style="height: 80px;"></div>
 """
 
     # 2. コンテンツ生成

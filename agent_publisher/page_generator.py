@@ -21,31 +21,87 @@ from pathlib import Path
 
 def load_stations_data(data_dir: str = "data") -> dict | None:
     """
-    データファイルを読み込む。
-    stations_with_prices.json を優先、なければ stations_master.json。
+    データファイルを読み込み、複数ソースの料金データをマージする。
 
-    Returns:
-        (JSONデータ, 料金データあり?)
+    - stations_with_prices.json: ジャンカラの料金データ
+    - stations_master.json: ビッグエコーの料金データ・URL
+
+    両方のファイルから最新の料金データを統合して返す。
     """
     data_path_prices = Path(data_dir) / "stations_with_prices.json"
     data_path_master = Path(data_dir) / "stations_master.json"
 
+    primary = None
+    secondary = None
+
+    # プライマリ: stations_with_prices.json（ジャンカラ料金）
     if data_path_prices.exists():
         print(f"読み込み: {data_path_prices} (料金データ付き)", file=sys.stderr)
         with open(data_path_prices, "r", encoding="utf-8") as f:
-            return json.load(f)
+            primary = json.load(f)
 
+    # セカンダリ: stations_master.json（ビッグエコー料金・URL等）
     if data_path_master.exists():
-        print(f"読み込み: {data_path_master} (料金データなし)", file=sys.stderr)
+        print(f"読み込み: {data_path_master} (マスターデータ)", file=sys.stderr)
         with open(data_path_master, "r", encoding="utf-8") as f:
-            return json.load(f)
+            secondary = json.load(f)
 
-    print(
-        "エラー: データファイルが見つかりません。\n"
-        "先に agent_analyst/normalizer.py を実行してください。",
-        file=sys.stderr,
-    )
-    return None
+    if not primary and not secondary:
+        print(
+            "エラー: データファイルが見つかりません。\n"
+            "先に agent_analyst/normalizer.py を実行してください。",
+            file=sys.stderr,
+        )
+        return None
+
+    if not primary:
+        return secondary
+    if not secondary:
+        return primary
+
+    # 両方あればマージ: secondary の料金データ・URL を primary に統合
+    primary_stations = primary.get("stations", {})
+    secondary_stations = secondary.get("stations", {})
+
+    # secondary から店舗名→データの索引を作成
+    sec_lookup: dict[str, dict] = {}
+    for stores in secondary_stations.values():
+        for s in stores:
+            name = s.get("name", "")
+            if name:
+                sec_lookup[name] = s
+
+    merged = 0
+    for station, stores in primary_stations.items():
+        for store in stores:
+            name = store.get("name", "")
+            sec_store = sec_lookup.get(name)
+            if not sec_store:
+                continue
+
+            # 料金データをマージ（primary になければ secondary から）
+            if not store.get("pricing") or store.get("pricing", {}).get("status") != "success":
+                sec_pricing = sec_store.get("pricing", {})
+                if sec_pricing.get("status") == "success":
+                    store["pricing"] = sec_pricing
+                    merged += 1
+
+            # URL をマージ（primary が汎用URLの場合、secondary の具体URLに置換）
+            pri_url = store.get("url", "")
+            sec_url = sec_store.get("url", "")
+            if sec_url and "shop_info" in sec_url and (
+                not pri_url or "shop_search" in pri_url or pri_url == "#"
+            ):
+                store["url"] = sec_url
+
+            # pdf_url をマージ
+            if not store.get("pdf_url") and sec_store.get("pdf_url"):
+                store["pdf_url"] = sec_store["pdf_url"]
+
+    if merged > 0:
+        print(f"  マージ: {merged} 店舗の料金データを統合", file=sys.stderr)
+
+    return primary
 
 
 # =====================================================
@@ -91,19 +147,28 @@ def format_pricing_cell(store: dict) -> str:
 
     # 昼30分料金
     day_30 = pricing.get("day", {}).get("30min", {})
-    if day_30.get("general"):
-        price_str = f"30分: {day_30['general']}円"
-        if day_30.get("member"):
-            price_str += f" (会員{day_30['member']}円)"
+    general_30 = day_30.get("general")
+    member_30 = day_30.get("member")
+    if general_30:
+        price_str = f"30分: {general_30}円"
+        if member_30:
+            price_str += f" (会員{member_30}円)"
         parts.append(price_str)
+    elif member_30:
+        # general が null でも member があれば表示
+        parts.append(f"30分: {member_30}円 (会員)")
 
     # 昼フリータイム
     day_ft = pricing.get("day", {}).get("free_time", {})
-    if day_ft.get("general"):
-        price_str = f"フリータイム: {day_ft['general']}円"
-        if day_ft.get("member"):
-            price_str += f" (会員{day_ft['member']}円)"
+    general_ft = day_ft.get("general")
+    member_ft = day_ft.get("member")
+    if general_ft:
+        price_str = f"フリータイム: {general_ft}円"
+        if member_ft:
+            price_str += f" (会員{member_ft}円)"
         parts.append(price_str)
+    elif member_ft:
+        parts.append(f"フリータイム: {member_ft}円 (会員)")
 
     if parts:
         return " / ".join(parts)
@@ -149,15 +214,15 @@ def find_cheapest(stores: list[dict]) -> str:
             continue
 
         day_30 = pricing.get("day", {}).get("30min", {})
-        general_30 = day_30.get("general")
-        if general_30 and (cheapest_30 is None or general_30 < cheapest_30):
-            cheapest_30 = general_30
+        price_30 = day_30.get("general") or day_30.get("member")
+        if price_30 and (cheapest_30 is None or price_30 < cheapest_30):
+            cheapest_30 = price_30
             cheapest_30_name = s.get("name", "")
 
         day_ft = pricing.get("day", {}).get("free_time", {})
-        general_ft = day_ft.get("general")
-        if general_ft and (cheapest_ft is None or general_ft < cheapest_ft):
-            cheapest_ft = general_ft
+        price_ft = day_ft.get("general") or day_ft.get("member")
+        if price_ft and (cheapest_ft is None or price_ft < cheapest_ft):
+            cheapest_ft = price_ft
             cheapest_ft_name = s.get("name", "")
 
     parts = []

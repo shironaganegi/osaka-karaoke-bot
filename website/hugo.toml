@@ -64,5 +64,7 @@ buildFuture = true
     minMatchCharLength = 0
     keys = ["title", "permalink", "summary", "content"]
 
-[markup.goldmark.renderer]
-  unsafe = true # Allow raw HTML (for affiliate banners)
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true # Allow raw HTML (for affiliate banners)

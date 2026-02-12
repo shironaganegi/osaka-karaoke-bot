@@ -335,82 +335,55 @@ def build_markdown(station: str, stores: list[dict], today: str) -> str:
     store_count = len(stores)
     area = stores[0].get("area", "") if stores else ""
     
-    # --- コンテンツ生成 ---
+    # 1. 広告HTMLの定義 (関数内で確実に定義)
+    # ユーザー提供のA8タグ
+    a8_tag = """
+<div style="display:inline-block;">
+<script type='text/javascript' src='https://ad-verification.a8.net/ad/js/brandsafe.js'></script>
+<div id='div_admane_async_1734_658_2969'>
+<script type='text/javascript'>
+brandsafe_js_async('//ad-verification.a8.net/ad', '_site=1734&_article=658&_link=2969&_image=3216&_ns=1&sad=s00000015110002', '260212769785', '4AX9GH+CZDC76+38L8+BXIYP');
+</script>
+</div>
+<img border="0" width="1" height="1" src="https://www12.a8.net/0.gif?a8mat=4AX9GH+CZDC76+38L8+BXIYP" alt="">
+</div>
+"""
+
+    inline_ad_html = f"""
+<div class="ad-epos-box" style="background-color: #fffbe6; border: 2px solid #f4d03f; border-radius: 8px; padding: 15px; margin: 30px 0; text-align: center; color: #333;">
+  <div style="font-weight: bold; font-size: 1.1em; margin-bottom: 10px; color: #d35400;">💡 【裏技】カラオケ料金をさらに安くする方法</div>
+  <div style="font-size: 0.9em; margin-bottom: 15px; text-align: left; line-height: 1.6;">
+    エポスカードを持っているだけで、実はここから大幅割引になります。<br>
+    🟥 <strong>ビッグエコー: 室料 30% OFF</strong><br>
+    🟦 <strong>ジャンカラ: 室料 20% OFF</strong><br>
+    「今日作りたい」もOK（最短即日発行）。
+  </div>
+  {a8_tag}
+</div>
+"""
+
+    sticky_footer_html = f"""
+<div style="position: fixed; bottom: 0; left: 0; width: 100%; background: #222; border-top: 3px solid #f4d03f; z-index: 2147483647; text-align: center; padding: 5px 0; box-shadow: 0 -4px 10px rgba(0,0,0,0.3);">
+   <div style="color: #f4d03f; font-weight: bold; font-size: 0.8rem; margin-bottom: 2px;">🉐 室料30%OFFクーポン</div>
+   {a8_tag}
+</div>
+<div style="height: 100px;"></div>
+"""
+
+    # 2. コンテンツ生成
     table_md = build_store_table(stores)
     cheapest_md = find_cheapest(stores)
-    map_html = build_map_section(stores, station) # map_section -> map_html に統一
+    map_html = build_map_section(stores, station)
 
     # 最安値セクション
     cheapest_section = ""
     if cheapest_md:
         cheapest_section = f"### 💰 最安値ハイライト\n\n{cheapest_md}\n\n"
 
-    # --- 広告パーツ定義（関数内で確実に定義） ---
-    inline_ad_html = """
-<style>
-  .ad-epos-box {
-    background-color: #fffbe6; /* Light yellow */
-    border: 2px solid #f4d03f; /* Gold border */
-    border-radius: 8px;
-    padding: 15px;
-    margin: 25px 0;
-    text-align: center;
-    color: #333;
-  }
-  .ad-epos-title {
-    font-weight: bold;
-    font-size: 1.1em;
-    margin-bottom: 10px;
-    color: #d35400;
-  }
-  .ad-epos-text {
-    font-size: 0.9em;
-    margin-bottom: 15px;
-    text-align: left;
-    line-height: 1.6;
-  }
-  .ad-epos-banner {
-    margin-top: 10px;
-    display: inline-block;
-  }
-</style>
-
-<div class="ad-epos-box">
-  <div class="ad-epos-title">💡 【裏技】カラオケ料金をさらに安くする方法</div>
-  <div class="ad-epos-text">
-    エポスカード（入会金・年会費永年無料）を持っているだけで、実はここから大幅割引になります。<br>
-    🟥 <strong>ビッグエコー: 室料 30% OFF</strong><br>
-    🟦 <strong>ジャンカラ: 室料 20% OFF</strong> (優待適用時)<br>
-    <br>
-    「今日作りたい」もOK（最短即日発行）。持っていないと正直損です。
-  </div>
-  
-  <div class="ad-epos-banner">
-    <script type='text/javascript' src='https://ad-verification.a8.net/ad/js/brandsafe.js'></script>
-    <div id='div_admane_async_1734_658_2969'>
-    <script type='text/javascript'>
-    </script>
-    </div>
-    <img border="0" width="1" height="1" src="https://www12.a8.net/0.gif?a8mat=4AX9GH+CZDC76+38L8+BXIYP" alt="">
-  </div>
-</div>
-"""
-
-    sticky_footer_html = """
-<div style="position: fixed; bottom: 0; left: 0; width: 100%; background: #333; color: #fff; padding: 10px; text-align: center; z-index: 9999; border-top: 3px solid #f4d03f; box-shadow: 0 -2px 10px rgba(0,0,0,0.3);">
-  <span style="font-weight:bold; color: #f4d03f;">🉐 室料30%OFF!</span>
-  <span style="font-size: 0.9em;">エポスカード持ってる？</span>
-  <a href="https://px.a8.net/svt/ejp?a8mat=4AX9GH+CZDC76+38L8+BXIYP" target="_blank" rel="nofollow" style="background: #f4d03f; color: #000; padding: 5px 15px; border-radius: 4px; text-decoration: none; font-weight: bold; margin-left: 10px;">
-    詳細を見る
-  </a>
-  <img border="0" width="1" height="1" src="https://www12.a8.net/0.gif?a8mat=4AX9GH+CZDC76+38L8+BXIYP" alt="">
-</div>
-<div style="height: 60px;"></div>
-"""
-
-    # --- コンテンツ組み立て ---
-    # ヘッダー
+    # 3. コンテンツ組み立て (リスト結合で安全に)
     parts = []
+    
+    # ヘッダー
     parts.append(f"""---
 title: "{station}のカラオケ最安値・店舗一覧【{year}年最新】"
 description: "{station}駅周辺のジャンカラなどカラオケ店の料金比較。30分料金、フリータイム最安値を掲載。"
@@ -429,7 +402,6 @@ store_count: {store_count}
 
     # 最安値 & テーブル
     parts.append(cheapest_section)
-    
     parts.append(f"""
 | 店舗名 | 料金（平日昼） | 地図 |
 | --- | --- | --- |

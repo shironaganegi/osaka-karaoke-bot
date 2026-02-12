@@ -333,24 +333,19 @@ def build_markdown(station: str, stores: list[dict], today: str) -> str:
     """
     year = today[:4]
     store_count = len(stores)
+    area = stores[0].get("area", "") if stores else ""
+    
+    # --- コンテンツ生成 ---
     table_md = build_store_table(stores)
     cheapest_md = find_cheapest(stores)
-    map_section = build_map_section(stores, station)
-
-    # エリア情報を取得（最初の店舗から）
-    area = stores[0].get("area", "") if stores else ""
+    map_html = build_map_section(stores, station) # map_section -> map_html に統一
 
     # 最安値セクション
     cheapest_section = ""
     if cheapest_md:
-        cheapest_section = f"""
-### 💰 最安値ハイライト
+        cheapest_section = f"### 💰 最安値ハイライト\n\n{cheapest_md}\n\n"
 
-{cheapest_md}
-
-"""
-
-    # インライン広告（料金テーブルとマップの間）
+    # --- 広告パーツ定義（関数内で確実に定義） ---
     inline_ad_html = """
 <style>
   .ad-epos-box {
@@ -401,7 +396,6 @@ def build_markdown(station: str, stores: list[dict], today: str) -> str:
 </div>
 """
 
-    # 固定フッター広告（Sticky Footer）
     sticky_footer_html = """
 <div style="position: fixed; bottom: 0; left: 0; width: 100%; background: #333; color: #fff; padding: 10px; text-align: center; z-index: 9999; border-top: 3px solid #f4d03f; box-shadow: 0 -2px 10px rgba(0,0,0,0.3);">
   <span style="font-weight:bold; color: #f4d03f;">🉐 室料30%OFF!</span>
@@ -414,7 +408,10 @@ def build_markdown(station: str, stores: list[dict], today: str) -> str:
 <div style="height: 60px;"></div>
 """
 
-    md = f"""---
+    # --- コンテンツ組み立て ---
+    # ヘッダー
+    parts = []
+    parts.append(f"""---
 title: "{station}のカラオケ最安値・店舗一覧【{year}年最新】"
 description: "{station}駅周辺のジャンカラなどカラオケ店の料金比較。30分料金、フリータイム最安値を掲載。"
 date: {today}
@@ -428,18 +425,28 @@ store_count: {store_count}
 ## {station}駅周辺のカラオケ店（{store_count}店舗）
 
 {station}駅周辺にあるカラオケ店の料金・店舗情報をまとめました。各店舗の公式料金表へのリンクから、最新の料金プランを確認できます。
-{cheapest_section}
+""")
+
+    # 最安値 & テーブル
+    parts.append(cheapest_section)
+    
+    parts.append(f"""
 | 店舗名 | 料金（平日昼） | 地図 |
 | --- | --- | --- |
 {table_md}
 
 > ※ 料金は時期・曜日・時間帯により異なります。最新情報は各店舗の公式サイトをご確認ください。
+""")
 
-{inline_ad_html}
+    # インライン広告
+    parts.append(inline_ad_html)
 
-{map_section}
----
+    # マップ
+    parts.append(map_html)
+    parts.append("\n---\n")
 
+    # コツ & アフィリエイトバナー
+    parts.append(f"""
 ## {station}周辺でカラオケを探すコツ
 
 - **平日昼間**が最も安い時間帯です
@@ -457,10 +464,12 @@ store_count: {store_count}
   <p>🍽️ <strong>カラオケの前後にグルメも楽しむなら</strong><br>
   <a href="https://www.hotpepper.jp/" rel="nofollow">ホットペッパーで{station}周辺のお店を探す</a></p>
 </div>
+""")
 
-{sticky_footer_html}
-"""
-    return md
+    # 固定フッター
+    parts.append(sticky_footer_html)
+
+    return "\n".join(parts)
 
 
 def save_stations_geo_json(stations: dict, output_path: str = "website/static/stations_geo.json"):

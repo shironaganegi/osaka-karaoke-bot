@@ -394,6 +394,46 @@ store_count: {store_count}
     return md
 
 
+def save_stations_geo_json(stations: dict, output_path: str = "website/static/stations_geo.json"):
+    """
+    駅ごとの平均座標を計算し、フロントエンド用のJSONを生成する。
+    """
+    geo_data = []
+
+    for station, stores in stations.items():
+        if not station or station == "不明":
+            continue
+
+        lat_sum = 0
+        lon_sum = 0
+        count = 0
+
+        for s in stores:
+            if s.get("lat") and s.get("lon"):
+                lat_sum += s["lat"]
+                lon_sum += s["lon"]
+                count += 1
+        
+        if count > 0:
+            avg_lat = lat_sum / count
+            avg_lon = lon_sum / count
+            # URLエンコードされたパスが必要か確認 (Hugoは /stations/梅田/ のように生成される)
+            geo_data.append({
+                "name": station,
+                "lat": round(avg_lat, 6),
+                "lon": round(avg_lon, 6),
+                "url": f"/stations/{station}/"
+            })
+    
+    # staticディレクトリ作成
+    Path(output_path).parent.mkdir(parents=True, exist_ok=True)
+    
+    with open(output_path, "w", encoding="utf-8") as f:
+        json.dump(geo_data, f, ensure_ascii=False)
+    
+    print(f"  GeoJSON生成: {len(geo_data)} 駅の座標データ ({output_path})", file=sys.stderr)
+
+
 def generate_pages(
     data_dir: str = "data",
     output_base: str = "website/content/stations",
@@ -407,6 +447,9 @@ def generate_pages(
     if not stations:
         print("エラー: stations データが空です。", file=sys.stderr)
         return 0
+
+    # フロントエンド用GeoJSON生成
+    save_stations_geo_json(stations)
 
     output_dir = Path(output_base)
     output_dir.mkdir(parents=True, exist_ok=True)

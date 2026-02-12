@@ -1,0 +1,153 @@
+{{- with site.Params.homeInfoParams }}
+<article class="first-entry home-info">
+    <header class="entry-header">
+        <h1>{{ .Title | markdownify }}</h1>
+    </header>
+    <div class="entry-content">
+        {{ .Content | markdownify }}
+    </div>
+
+    <!-- 📍 現在地から探すボタン -->
+    <div style="margin-top: 24px; margin-bottom: 24px; text-align: center;">
+        <button id="btn-near-me" style="
+            background-color: #e60012; 
+            color: white; 
+            border: none; 
+            padding: 14px 28px; 
+            font-size: 16px; 
+            border-radius: 50px; 
+            cursor: pointer; 
+            font-weight: bold; 
+            box-shadow: 0 4px 6px rgba(0,0,0,0.15); 
+            transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        ">
+            <span>📍</span> 現在地から探す
+        </button>
+        <p id="near-me-status" style="font-size: 13px; color: #666; margin-top: 10px; min-height: 1.2em;"></p>
+    </div>
+
+    <footer class="entry-footer">
+        {{ partial "social_icons.html" (dict "align" site.Params.homeInfoParams.AlignSocialIconsTo) }}
+    </footer>
+</article>
+
+<script>
+    document.getElementById('btn-near-me').addEventListener('click', function () {
+        const status = document.getElementById('near-me-status');
+        const btn = document.getElementById('btn-near-me');
+
+        if (!navigator.geolocation) {
+            status.textContent = "お使いのブラウザは位置情報をサポートしていません。";
+            return;
+        }
+
+        status.textContent = "位置情報を取得中...";
+        btn.disabled = true;
+        btn.style.opacity = "0.7";
+        btn.style.cursor = "wait";
+
+        navigator.geolocation.getCurrentPosition(success, error, {
+            enableHighAccuracy: true,
+            timeout: 10000,
+            maximumAge: 0
+        });
+
+        function success(position) {
+            const userLat = position.coords.latitude;
+            const userLon = position.coords.longitude;
+
+            status.textContent = "近くの駅を探しています...";
+
+            // JSONデータ取得（キャッシュ回避のタイムスタンプ付き）
+            fetch('/stations_geo.json?' + new Date().getTime())
+                .then(response => {
+                    if (!response.ok) throw new Error("Network response was not ok");
+                    return response.json();
+                })
+                .then(stations => {
+                    if (!stations || stations.length === 0) {
+                        status.textContent = "駅データが見つかりませんでした。";
+                        resetBtn();
+                        return;
+                    }
+
+                    let closest = null;
+                    let minDist = Infinity;
+
+                    stations.forEach(station => {
+                        const d = getDistanceFromLatLonInKm(userLat, userLon, station.lat, station.lon);
+                        // 100km以内のみ対象（遠すぎる場所を除外）
+                        if (d < 100 && d < minDist) {
+                            minDist = d;
+                            closest = station;
+                        }
+                    });
+
+                    if (closest) {
+                        const distDisplay = minDist < 1 ? Math.round(minDist * 1000) + "m" : Math.round(minDist * 10) / 10 + "km";
+                        status.textContent = `${closest.name}駅が見つかりました（約${distDisplay}）...移動します`;
+
+                        // 少しユーザーに結果を見せてから遷移
+                        setTimeout(() => {
+                            window.location.href = closest.url;
+                        }, 500);
+                    } else {
+                        status.textContent = "近く（100km圏内）に利用可能な店舗が見つかりませんでした。";
+                        resetBtn();
+                    }
+                })
+                .catch(err => {
+                    console.error(err);
+                    status.textContent = "データ読み込みエラーが発生しました。";
+                    resetBtn();
+                });
+        }
+
+        function error(err) {
+            console.warn(`ERROR(${err.code}): ${err.message}`);
+            switch (err.code) {
+                case err.PERMISSION_DENIED:
+                    status.textContent = "位置情報の利用が許可されませんでした。";
+                    break;
+                case err.POSITION_UNAVAILABLE:
+                    status.textContent = "位置情報を取得できませんでした。";
+                    break;
+                case err.TIMEOUT:
+                    status.textContent = "位置情報の取得がタイムアウトしました。";
+                    break;
+                default:
+                    status.textContent = "エラーが発生しました。(" + err.message + ")";
+            }
+            resetBtn();
+        }
+
+        function resetBtn() {
+            btn.disabled = false;
+            btn.style.opacity = "1";
+            btn.style.cursor = "pointer";
+        }
+
+        // Haversine formula
+        function getDistanceFromLatLonInKm(lat1, lon1, lat2, lon2) {
+            var R = 6371; // Radius of the earth in km
+            var dLat = deg2rad(lat2 - lat1);
+            var dLon = deg2rad(lon2 - lon1);
+            var a =
+                Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+                Math.cos(deg2rad(lat1)) * Math.cos(deg2rad(lat2)) *
+                Math.sin(dLon / 2) * Math.sin(dLon / 2)
+                ;
+            var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+            var d = R * c; // Distance in km
+            return d;
+        }
+
+        function deg2rad(deg) {
+            return deg * (Math.PI / 180)
+        }
+    });
+</script>
+{{- end -}}

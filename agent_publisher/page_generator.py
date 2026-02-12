@@ -336,43 +336,40 @@ def build_markdown(station: str, stores: list[dict], today: str) -> str:
     area = stores[0].get("area", "") if stores else ""
     
     # 1. 広告HTMLの定義 (関数内で確実に定義)
-    # ユーザー提供のA8タグ
-    a8_tag = """
-<div style="display:inline-block;">
-<script type='text/javascript' src='https://ad-verification.a8.net/ad/js/brandsafe.js'></script>
-<div id='div_admane_async_1734_658_2969'>
-<script type='text/javascript'>
-brandsafe_js_async('//ad-verification.a8.net/ad', '_site=1734&_article=658&_link=2969&_image=3216&_ns=1&sad=s00000015110002', '260212769785', '4AX9GH+CZDC76+38L8+BXIYP');
-</script>
-</div>
-<img border="0" width="1" height="1" src="https://www12.a8.net/0.gif?a8mat=4AX9GH+CZDC76+38L8+BXIYP" alt="">
-</div>
-"""
-
-    inline_ad_html = f"""
-<div class="ad-epos-box" style="background-color: #fffbe6; border: 2px solid #f4d03f; border-radius: 8px; padding: 15px; margin: 30px 0; text-align: center; color: #333;">
-  <div style="font-weight: bold; font-size: 1.1em; margin-bottom: 10px; color: #d35400;">💡 【裏技】カラオケ料金をさらに安くする方法</div>
-  <div style="font-size: 0.9em; margin-bottom: 15px; text-align: left; line-height: 1.6;">
-    エポスカードを持っているだけで、実はここから大幅割引になります。<br>
-    🟥 <strong>ビッグエコー: 室料 30% OFF</strong><br>
-    🟦 <strong>ジャンカラ: 室料 20% OFF</strong><br>
-    「今日作りたい」もOK（最短即日発行）。
+    
+    # Inline Ad: 300x250 (ID 005)
+    # コンテンツの合間に自然に配置できるレクタングルバナー
+    inline_ad_html = """
+<div style="margin: 30px 0; text-align: center;">
+  <div style="font-size: 0.8rem; color: #999; margin-bottom: 5px;">PR</div>
+  <div style="display: inline-block;">
+    <script type='text/javascript' src='https://ad-verification.a8.net/ad/js/brandsafe.js'></script>
+    <div id='div_admane_async_1734_658_2971'>
+    <script type='text/javascript'>
+    brandsafe_js_async('//ad-verification.a8.net/ad', '_site=1734&_article=658&_link=2971&_image=3218&_ns=1&sad=s00000015110002', '260212769785', '4AX9GH+CZDC76+38L8+BXQOH');
+    </script>
+    </div>
+    <img border="0" width="1" height="1" src="https://www15.a8.net/0.gif?a8mat=4AX9GH+CZDC76+38L8+BXQOH" alt="">
   </div>
-  {a8_tag}
 </div>
 """
 
-    sticky_footer_html = f"""
-<div style="position: fixed; bottom: 0; left: 0; width: 100%; background: rgba(255, 255, 255, 0.98); border-top: 1px solid #ddd; z-index: 2147483647; box-shadow: 0 -2px 5px rgba(0,0,0,0.05); display: flex; align-items: center; justify-content: center; padding: 0; height: 50px; box-sizing: border-box;">
-   <span style="font-size: 0.75rem; color: #333; margin-right: 12px; font-weight: bold;">
-     <span style="color: #d35400;">🉐 30%OFF</span> <span style="font-size: 0.7rem; color: #666;">エポスカード</span>
-   </span>
-   
-   <div style="display: flex; align-items: center;">
-     {a8_tag}
-   </div>
+    # Sticky Footer: 320x50 (ID 006)
+    # スマホの下部に追従する細いバナー
+    sticky_footer_html = """
+<div style="position: fixed; bottom: 0; left: 0; width: 100%; text-align: center; z-index: 2147483647; pointer-events: none;">
+  <div style="display: inline-block; background: rgba(255,255,255,0.9); box-shadow: 0 -2px 10px rgba(0,0,0,0.1); padding: 5px 0 0 0; pointer-events: auto; width: 100%; max-width: 100%;">
+    <script type='text/javascript' src='https://ad-verification.a8.net/ad/js/brandsafe.js'></script>
+    <div id='div_admane_async_1734_658_2972'>
+    <script type='text/javascript'>
+    brandsafe_js_async('//ad-verification.a8.net/ad', '_site=1734&_article=658&_link=2972&_image=3219&_ns=1&sad=s00000015110002', '260212769785', '4AX9GH+CZDC76+38L8+BXYE9');
+    </script>
+    </div>
+    <img border="0" width="1" height="1" src="https://www11.a8.net/0.gif?a8mat=4AX9GH+CZDC76+38L8+BXYE9" alt="">
+    <div style="padding-bottom: env(safe-area-inset-bottom); background: white;"></div>
+  </div>
 </div>
-<div style="height: 50px;"></div>
+<div style="height: 60px;"></div>
 """
 
     # 2. コンテンツ生成

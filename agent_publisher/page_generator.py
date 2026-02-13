@@ -121,12 +121,11 @@ CHAIN_ICONS = {
 
 
 def get_store_display_name(store: dict) -> str:
-    """店舗の表示名（チェーンアイコン付き）を取得"""
+    """店舗の表示名（チェーンアイコン付き）を取得（互換用）"""
     chain = store.get("chain", "jankara")
     icon = CHAIN_ICONS.get(chain, "🎤")
     name = store.get("name", "")
     return f"{icon} {name}"
-
 
 
 # =====================================================
@@ -259,7 +258,6 @@ STYLE_BLOCK = """
   border: 1px solid #2980b9;
 }
 .btn-reserve:hover { background-color: #2980b9; }
-
 </style>
 """
 
@@ -474,10 +472,9 @@ def build_markdown(station: str, stores: list[dict], today: str) -> str:
     store_count = len(stores)
     area = stores[0].get("area", "") if stores else ""
     
-    # 1. 広告HTMLの定義 (関数内で確実に定義)
+    # 1. 広告HTMLの定義
     
     # Inline Ad: 300x250 (ID 005)
-    # コンテンツの合間に自然に配置できるレクタングルバナー
     inline_ad_html = """
 <div style="margin: 30px 0; text-align: center;">
   <div style="font-size: 0.8rem; color: #999; margin-bottom: 5px;">PR</div>
@@ -494,7 +491,6 @@ def build_markdown(station: str, stores: list[dict], today: str) -> str:
 """
 
     # Sticky Footer: 320x50 (ID 006)
-    # シンプルな横並びレイアウト: テキスト + バナー
     sticky_footer_html = """
 <div style="position: fixed; bottom: 0; left: 0; width: 100%; background: rgba(255, 255, 255, 0.95); border-top: 1px solid #ddd; z-index: 2147483647; display: flex; align-items: center; justify-content: center; padding: 4px 0; height: 58px; box-sizing: border-box;">
    <span style="font-size: 0.8rem; color: #333; margin-right: 10px; font-weight: bold; white-space: nowrap;">
@@ -515,7 +511,7 @@ def build_markdown(station: str, stores: list[dict], today: str) -> str:
 """
 
     # 2. コンテンツ生成
-    # テーブルではなくカードリストを生成
+    # テーブルではなくカードリストを生成 (build_store_list_html)
     store_list_html = build_store_list_html(stores)
     cheapest_md = find_cheapest(stores)
     map_html = build_map_section(stores, station)
@@ -525,7 +521,7 @@ def build_markdown(station: str, stores: list[dict], today: str) -> str:
     if cheapest_md:
         cheapest_section = f"### 💰 最安値ハイライト\n\n{cheapest_md}\n\n"
 
-    # 3. コンテンツ組み立て (リスト結合で安全に)
+    # 3. コンテンツ組み立て
     parts = []
     
     # ヘッダー & スタイル定義
@@ -553,7 +549,6 @@ store_count: {store_count}
     parts.append(f"""
 > ※ 料金は時期・曜日・時間帯により異なります。最新情報は各店舗の公式サイトをご確認ください。
 """)
-
 
     # インライン広告
     parts.append(inline_ad_html)

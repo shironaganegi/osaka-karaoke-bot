@@ -286,6 +286,10 @@ def build_store_list_html(stores: list[dict]) -> str:
             day_ft = pricing.get("day", {}).get("free_time", {})
             pft = day_ft.get("general") or day_ft.get("member")
             if pft: price_ft_str = f"{pft}円〜"
+
+            # デバッグログ: まねきねこの場合
+            if chain == "manekineko":
+                print(f"DEBUG: Manekineko {display_name} - 30min: {p30}, FT: {pft}", file=sys.stderr)
         
         url = store.get("url") or store.get("price_url") or "#"
         map_url = "#"

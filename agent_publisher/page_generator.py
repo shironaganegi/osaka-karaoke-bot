@@ -539,7 +539,7 @@ def generate_pages(data_dir: str = "data", output_base: str = "website/content/s
     # _index.md の生成（駅一覧用）
     index_md_path = output_dir / "_index.md"
     with open(index_md_path, "w", encoding="utf-8") as f:
-        f.write('---\ntitle: "大阪カラオケ駅別一覧"\nlayout: "list"\n---\n')
+        f.write('---\ntitle: "駅一覧"\n---\n')
     print(f"作成: {index_md_path}", file=sys.stderr)
 
     today = date.today().strftime("%Y-%m-%d")

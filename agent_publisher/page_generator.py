@@ -138,7 +138,7 @@ STYLE_BLOCK = """
 .store-list-container {
   display: grid;
   grid-template-columns: 1fr; /* スマホ: 1列 */
-  gap: 20px;
+  gap: 15px;
   margin-bottom: 40px;
 }
 

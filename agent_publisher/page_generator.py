@@ -356,6 +356,7 @@ def build_markdown(station: str, stores: list[dict], today: str) -> str:
 
     # Sticky Footer: 320x50 (ID 006)
     # スマホの下部に追従する細いバナー
+    # ユーザー要望: "縦が小さくなるように", "バナーを浮かせるだけでもいい"
     sticky_footer_html = """
 <div style="position: fixed; bottom: 0; left: 0; width: 100%; text-align: center; z-index: 2147483647; pointer-events: none;">
   <div style="display: inline-block; background: rgba(255,255,255,0.9); box-shadow: 0 -2px 10px rgba(0,0,0,0.1); padding: 5px 0 0 0; pointer-events: auto; width: 100%; max-width: 100%;">

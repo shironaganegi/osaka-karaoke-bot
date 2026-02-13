@@ -356,10 +356,14 @@ def build_markdown(station: str, stores: list[dict], today: str) -> str:
 
     # Sticky Footer: 320x50 (ID 006)
     # スマホの下部に追従する細いバナー
-    # ユーザー要望: "縦が小さくなるように", "バナーを浮かせるだけでもいい"
+    # ユーザー要望: "『🉐 30%OFF エポスカード』という短い文字と、A8のバナー（320x50）だけを横並びにする、極限までシンプルなコード"
     sticky_footer_html = """
-<div style="position: fixed; bottom: 0; left: 0; width: 100%; text-align: center; z-index: 2147483647; pointer-events: none;">
-  <div style="display: inline-block; background: rgba(255,255,255,0.9); box-shadow: 0 -2px 10px rgba(0,0,0,0.1); padding: 5px 0 0 0; pointer-events: auto; width: 100%; max-width: 100%;">
+<div style="position: fixed; bottom: 0; left: 0; width: 100%; background: rgba(255, 255, 255, 0.98); border-top: 1px solid #ddd; z-index: 2147483647; box-shadow: 0 -2px 5px rgba(0,0,0,0.05); display: flex; align-items: center; justify-content: center; padding: 0; height: 52px; box-sizing: border-box;">
+   <span style="font-size: 0.75rem; color: #333; margin-right: 8px; font-weight: bold; white-space: nowrap;">
+     <span style="color: #d35400;">🉐 30%OFF</span> <span style="font-size: 0.7rem; color: #666;">エポスカード</span>
+   </span>
+   
+   <div style="display: flex; align-items: center;">
     <script type='text/javascript' src='https://ad-verification.a8.net/ad/js/brandsafe.js'></script>
     <div id='div_admane_async_1734_658_2972'>
     <script type='text/javascript'>
@@ -367,10 +371,9 @@ def build_markdown(station: str, stores: list[dict], today: str) -> str:
     </script>
     </div>
     <img border="0" width="1" height="1" src="https://www11.a8.net/0.gif?a8mat=4AX9GH+CZDC76+38L8+BXYE9" alt="">
-    <div style="padding-bottom: env(safe-area-inset-bottom); background: white;"></div>
-  </div>
+   </div>
 </div>
-<div style="height: 60px;"></div>
+<div style="height: 52px;"></div>
 """
 
     # 2. コンテンツ生成

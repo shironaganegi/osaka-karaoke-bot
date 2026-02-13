@@ -161,6 +161,9 @@ def extract_prices_with_gemini(pdf_bytes):
                         break # 成功したらループを抜ける
                     except Exception as e:
                         print(f"    [Warning] Failed with {model_name}: {e}", file=sys.stderr)
+                        if "429" in str(e):
+                            print("    [Info] Rate limit detected. Waiting 30s...", file=sys.stderr)
+                            time.sleep(30)
                         continue
                 
                 if not response:
@@ -210,9 +213,10 @@ def extract_prices_from_pdf(pdf_bytes):
                 page = pdf.pages[0]
                 text = page.extract_text()
                 
-                # テキストが十分に取れない場合は画像PDFとみなす
-                if not text or len(text.strip()) < 50:
-                    print("  [Info] Image-based PDF detected. Switching to Gemini Vision.", file=sys.stderr)
+                # 強制的にGemini Visionを使用する (テキスト抽出ロジック未実装のためVisionに頼る)
+                # if not text or len(text.strip()) < 50:
+                if True:
+                    print("  [Info] Forced Gemini Vision for price extraction.", file=sys.stderr)
                     gemini_result = extract_prices_with_gemini(pdf_bytes)
                     if gemini_result:
                          # Geminiの結果を統合

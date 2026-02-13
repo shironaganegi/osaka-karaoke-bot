@@ -361,11 +361,11 @@ store_count: 25
 <div class="price-grid">
 <div class="price-item">
 <span class="price-label">30分 (平日昼)</span>
-<span class="price-value">-</span>
+<span class="price-value">390円〜</span>
 </div>
 <div class="price-item">
 <span class="price-label">フリータイム (平日昼)</span>
-<span class="price-value">-</span>
+<span class="price-value">1500円〜</span>
 </div>
 </div>
 <div class="action-area">
@@ -383,11 +383,11 @@ store_count: 25
 <div class="price-grid">
 <div class="price-item">
 <span class="price-label">30分 (平日昼)</span>
-<span class="price-value">-</span>
+<span class="price-value">390円〜</span>
 </div>
 <div class="price-item">
 <span class="price-label">フリータイム (平日昼)</span>
-<span class="price-value">-</span>
+<span class="price-value">1500円〜</span>
 </div>
 </div>
 <div class="action-area">
@@ -405,11 +405,11 @@ store_count: 25
 <div class="price-grid">
 <div class="price-item">
 <span class="price-label">30分 (平日昼)</span>
-<span class="price-value">-</span>
+<span class="price-value">390円〜</span>
 </div>
 <div class="price-item">
 <span class="price-label">フリータイム (平日昼)</span>
-<span class="price-value">-</span>
+<span class="price-value">1500円〜</span>
 </div>
 </div>
 <div class="action-area">
@@ -427,11 +427,11 @@ store_count: 25
 <div class="price-grid">
 <div class="price-item">
 <span class="price-label">30分 (平日昼)</span>
-<span class="price-value">-</span>
+<span class="price-value">390円〜</span>
 </div>
 <div class="price-item">
 <span class="price-label">フリータイム (平日昼)</span>
-<span class="price-value">-</span>
+<span class="price-value">1500円〜</span>
 </div>
 </div>
 <div class="action-area">
@@ -449,11 +449,11 @@ store_count: 25
 <div class="price-grid">
 <div class="price-item">
 <span class="price-label">30分 (平日昼)</span>
-<span class="price-value">-</span>
+<span class="price-value">390円〜</span>
 </div>
 <div class="price-item">
 <span class="price-label">フリータイム (平日昼)</span>
-<span class="price-value">-</span>
+<span class="price-value">1500円〜</span>
 </div>
 </div>
 <div class="action-area">
@@ -471,11 +471,11 @@ store_count: 25
 <div class="price-grid">
 <div class="price-item">
 <span class="price-label">30分 (平日昼)</span>
-<span class="price-value">-</span>
+<span class="price-value">390円〜</span>
 </div>
 <div class="price-item">
 <span class="price-label">フリータイム (平日昼)</span>
-<span class="price-value">-</span>
+<span class="price-value">1500円〜</span>
 </div>
 </div>
 <div class="action-area">
@@ -493,11 +493,11 @@ store_count: 25
 <div class="price-grid">
 <div class="price-item">
 <span class="price-label">30分 (平日昼)</span>
-<span class="price-value">-</span>
+<span class="price-value">390円〜</span>
 </div>
 <div class="price-item">
 <span class="price-label">フリータイム (平日昼)</span>
-<span class="price-value">-</span>
+<span class="price-value">1500円〜</span>
 </div>
 </div>
 <div class="action-area">
@@ -647,11 +647,11 @@ store_count: 25
 <div class="price-grid">
 <div class="price-item">
 <span class="price-label">30分 (平日昼)</span>
-<span class="price-value">-</span>
+<span class="price-value">390円〜</span>
 </div>
 <div class="price-item">
 <span class="price-label">フリータイム (平日昼)</span>
-<span class="price-value">-</span>
+<span class="price-value">1500円〜</span>
 </div>
 </div>
 <div class="action-area">
@@ -669,11 +669,11 @@ store_count: 25
 <div class="price-grid">
 <div class="price-item">
 <span class="price-label">30分 (平日昼)</span>
-<span class="price-value">-</span>
+<span class="price-value">390円〜</span>
 </div>
 <div class="price-item">
 <span class="price-label">フリータイム (平日昼)</span>
-<span class="price-value">-</span>
+<span class="price-value">1500円〜</span>
 </div>
 </div>
 <div class="action-area">

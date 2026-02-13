@@ -1,28 +1,34 @@
-<div id="map" style="height: 400px; width: 100%; border-radius: 12px; margin-bottom: 40px; z-index: 1;"></div>
+<div id="map-container" style="height: 400px; width: 100%; margin-bottom: 20px; z-index: 1;"></div>
 <script>
-    document.addEventListener('DOMContentLoaded', function () {
-        // マーカーデータを安全に受け取る
-        var markerData = {{ .Get "markers" }
-    };
-    var markers = JSON.parse(markerData);
+    document.addEventListener("DOMContentLoaded", function () {
+        // Hugoから渡されたJSONデータを安全に受け取る
+        var markers = {{ .Get "markers" | safeJS
+    }};
 
-    if (markers.length === 0) return;
-
-    // 中心座標を計算
-    let latSum = 0;
-    let lonSum = 0;
-    markers.forEach(m => { latSum += m.lat; lonSum += m.lon; });
-    const center = [latSum / markers.length, lonSum / markers.length];
-
-    const map = L.map('map').setView(center, 15);
-
+    if (!markers || markers.length === 0) {
+        console.warn("No markers found for map.");
+        return;
+    }
+    // 地図の初期化
+    var map = L.map('map-container');
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
+    var bounds = [];
+    markers.forEach(function (m) {
+        // ポップアップ情報の生成
+        var popupContent = "<b>" + m.name + "</b><br>" +
+            "30分: " + (m.price_30m ? m.price_30m + "円" : "-") + "<br>" +
+            "フリー: " + (m.price_free ? m.price_free + "円" : "-");
 
-    markers.forEach(m => {
         L.marker([m.lat, m.lon]).addTo(map)
-            .bindPopup(`<a href="${m.url}" target="_blank"><b>${m.name}</b></a>`);
+            .bindPopup(popupContent);
+
+        bounds.push([m.lat, m.lon]);
     });
+    // 全てのマーカーが収まるようにズーム調整
+    if (bounds.length > 0) {
+        map.fitBounds(bounds, { padding: [50, 50] });
+    }
 });
 </script>

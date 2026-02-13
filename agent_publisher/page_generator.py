@@ -336,11 +336,26 @@ def build_map_html(stores: list[dict]) -> str:
         name = s.get("name", "")
         url = s.get("url") or "#"
         if lat and lon:
+            # マーカーに価格情報も付与
+            p_30 = "-"
+            p_free = "-"
+            pricing = s.get("pricing")
+            if pricing and pricing.get("status") == "success":
+                day_30 = pricing.get("day", {}).get("30min", {})
+                val_30 = day_30.get("general") or day_30.get("member")
+                if val_30: p_30 = val_30
+                
+                day_ft = pricing.get("day", {}).get("free_time", {})
+                val_ft = day_ft.get("general") or day_ft.get("member")
+                if val_ft: p_free = val_ft
+
             markers.append({
                 "name": name,
                 "lat": lat,
                 "lon": lon,
-                "url": url
+                "url": url,
+                "price_30m": p_30,
+                "price_free": p_free
             })
     
     if not markers: return ""

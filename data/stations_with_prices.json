@@ -368,7 +368,7 @@
       {
         "chain": "manekineko",
         "name": "カラオケまねきねこ なんばHIPS店",
-        "area": "",
+        "area": "難波・心斎橋",
         "address": "大阪府 大阪市 中央区難波1-8-16 3F",
         "url": "https://www.karaokemanekineko.jp/locations/osaka/osaka-shi/namba-hips-store/",
         "price_url": "",
@@ -380,7 +380,7 @@
       {
         "chain": "manekineko",
         "name": "カラオケまねきねこ 千日前2号店",
-        "area": "",
+        "area": "難波・心斎橋",
         "address": "大阪府 大阪市 中央区千日前2-11-5 敷島ビル3F",
         "url": "https://www.karaokemanekineko.jp/locations/osaka/osaka-shi/sennichimae-2nd-store/",
         "price_url": "",
@@ -392,7 +392,7 @@
       {
         "chain": "manekineko",
         "name": "カラオケまねきねこ 千日前店",
-        "area": "",
+        "area": "難波・心斎橋",
         "address": "大阪府 大阪市 中央区 千日前 １丁目 ８−１３",
         "url": "https://www.karaokemanekineko.jp/locations/osaka/osaka-shi/sennichimae-store/",
         "price_url": "",
@@ -404,7 +404,7 @@
       {
         "chain": "manekineko",
         "name": "カラオケまねきねこ 南海通り2号店",
-        "area": "",
+        "area": "難波・心斎橋",
         "address": "大阪府 大阪市 中央区難波3-1-16 赤垣屋南海通りビル1F～3F",
         "url": "https://www.karaokemanekineko.jp/locations/osaka/osaka-shi/nankaidori-2nd-store/",
         "price_url": "",
@@ -416,7 +416,7 @@
       {
         "chain": "manekineko",
         "name": "カラオケまねきねこ 南海通り店",
-        "area": "",
+        "area": "難波・心斎橋",
         "address": "大阪府 大阪市 中央区難波千日前12-35 SWINGヨシモト3F",
         "url": "https://www.karaokemanekineko.jp/locations/osaka/osaka-shi/nankaidori-store/",
         "price_url": "",
@@ -428,7 +428,7 @@
       {
         "chain": "manekineko",
         "name": "カラオケまねきねこ 戎橋店",
-        "area": "",
+        "area": "難波・心斎橋",
         "address": "大阪府 大阪市 中央区宗右衛門町7-2 DEKA戎橋ビル 4F",
         "url": "https://www.karaokemanekineko.jp/locations/osaka/osaka-shi/ebisubashi-store/",
         "price_url": "",
@@ -440,7 +440,7 @@
       {
         "chain": "manekineko",
         "name": "カラオケまねきねこ 道頓堀店",
-        "area": "",
+        "area": "難波・心斎橋",
         "address": "大阪府 大阪市 中央区道頓堀1-7-21 中座くいだおれビル4F",
         "url": "https://www.karaokemanekineko.jp/locations/osaka/osaka-shi/dotonbori-store/",
         "price_url": "",
@@ -452,7 +452,7 @@
       {
         "chain": "bigecho",
         "name": "カラオケ ビッグエコーなんばアムザ店",
-        "area": "",
+        "area": "難波・心斎橋",
         "address": "大阪府大阪市中央区千日前2丁目9-17 　アムザ1000　3F",
         "url": "https://big-echo.jp/shop_info/%E3%82%AB%E3%83%A9%E3%82%AA%E3%82%B1-%E3%83%93%E3%83%83%E3%82%B0%E3%82%A8%E3%82%B3%E3%83%BC-%E3%81%AA%E3%82%93%E3%81%B0%E6%88%8E%E6%A9%8B%E5%BA%97",
         "price_url": "",
@@ -465,7 +465,7 @@
       {
         "chain": "bigecho",
         "name": "カラオケ ビッグエコー なんば戎橋店",
-        "area": "",
+        "area": "難波・心斎橋",
         "address": "大阪府大阪市中央区難波 3-5-1 　ナンバ一番ビルB1F",
         "url": "https://big-echo.jp/shop_info/%E3%82%AB%E3%83%A9%E3%82%AA%E3%82%B1-%E3%83%93%E3%83%83%E3%82%B0%E3%82%A8%E3%82%B3%E3%83%BC-%E3%81%AA%E3%82%93%E3%81%B0%E6%88%8E%E6%A9%8B%E5%BA%97",
         "price_url": "",
@@ -478,7 +478,7 @@
       {
         "chain": "bigecho",
         "name": "カラオケ ビッグエコーなんば千日前店",
-        "area": "",
+        "area": "難波・心斎橋",
         "address": "大阪府大阪市中央区千日前2丁目11番9号 丸福ビル2F",
         "url": "https://big-echo.jp/shop_info/%E3%82%AB%E3%83%A9%E3%82%AA%E3%82%B1-%E3%83%93%E3%83%83%E3%82%B0%E3%82%A8%E3%82%B3%E3%83%BC-%E3%81%AA%E3%82%93%E3%81%B0%E6%88%8E%E6%A9%8B%E5%BA%97",
         "price_url": "",
@@ -584,7 +584,7 @@
       {
         "chain": "jankara",
         "name": "ジャンカラ上本町駅前店",
-        "area": "その他大阪市",
+        "area": "天王寺",
         "address": "大阪市天王寺区上本町6-4-23\n近鉄大阪上本町駅 地上改札出口より徒歩6分",
         "url": "https://jankara.ne.jp/shop/021/",
         "price_url": "https://jankara.ne.jp/shop/021/#price",
@@ -659,7 +659,7 @@
       {
         "chain": "jankara",
         "name": "ジャンカラ京橋1号店",
-        "area": "その他大阪市",
+        "area": "京橋",
         "address": "大阪市都島区東野田町5-1-16 第2大永ビル2〜4F\nJR京橋駅 北出口より徒歩5分",
         "url": "https://jankara.ne.jp/shop/032/",
         "price_url": "https://jankara.ne.jp/shop/032/#price",
@@ -688,7 +688,7 @@
       {
         "chain": "jankara",
         "name": "ジャンカラ京橋Door4店",
-        "area": "その他大阪市",
+        "area": "京橋",
         "address": "大阪市都島区片町2-4-6 ウエムロプラザビル3・4・5・6F\nJR京橋駅 北出口より徒歩3分",
         "url": "https://jankara.ne.jp/shop/236/",
         "price_url": "https://jankara.ne.jp/shop/236/#price",
@@ -717,7 +717,7 @@
       {
         "chain": "jankara",
         "name": "ジャンカラ京橋本店",
-        "area": "その他大阪市",
+        "area": "京橋",
         "address": "大阪市都島区東野田町三丁目11番1号\nJR京橋駅 北出口より徒歩2分",
         "url": "https://jankara.ne.jp/shop/174/",
         "price_url": "https://jankara.ne.jp/shop/174/#price",
@@ -746,7 +746,7 @@
       {
         "chain": "manekineko",
         "name": "カラオケまねきねこ 京橋店",
-        "area": "",
+        "area": "京橋",
         "address": "大阪府 大阪市 都島区東野田町3-12-1 京橋ダブルスタービル3Ｆ",
         "url": "https://www.karaokemanekineko.jp/locations/osaka/osaka-shi/kyobashi-store/",
         "price_url": "",
@@ -758,7 +758,7 @@
       {
         "chain": "manekineko",
         "name": "カラオケまねきねこ 京橋駅前店",
-        "area": "",
+        "area": "京橋",
         "address": "大阪府 大阪市 都島区東野田町３丁目２−９",
         "url": "https://www.karaokemanekineko.jp/locations/osaka/osaka-shi/kyobashi-ekimae-store/",
         "price_url": "",
@@ -770,7 +770,7 @@
       {
         "chain": "bigecho",
         "name": "カラオケ ビッグエコー京橋京阪モール前店",
-        "area": "",
+        "area": "京橋",
         "address": "大阪府大阪市都島区東野田町2-9-23",
         "url": "https://big-echo.jp/shop_info/%E3%83%93%E3%83%83%E3%82%B0%E3%82%A8%E3%82%B3%E3%83%BC%E4%BA%AC%E6%A9%8B%E4%BA%AC%E9%98%AA%E3%83%A2%E3%83%BC%E3%83%AB%E5%89%8D%E5%BA%97",
         "price_url": "",
@@ -783,7 +783,7 @@
       {
         "chain": "bigecho",
         "name": "カラオケ ビッグエコーＪＲ京橋駅前店",
-        "area": "",
+        "area": "京橋",
         "address": "大阪府大阪市都島区東野田町3-10-1 　第２晃進ビル５F",
         "url": "https://big-echo.jp/shop_info/%E3%83%93%E3%83%83%E3%82%B0%E3%82%A8%E3%82%B3%E3%83%BC%E4%BA%AC%E6%A9%8B%E9%A7%85%E5%89%8D%E5%BA%97",
         "price_url": "",
@@ -979,7 +979,7 @@
       {
         "chain": "bigecho",
         "name": "カラオケ ビッグエコー梅田北新地店",
-        "area": "",
+        "area": "梅田",
         "address": "大阪府大阪市北区曾根崎新地1丁目11-20 　北新地HAT BOY BLD．2階",
         "url": "https://big-echo.jp/shop_info/%E3%83%93%E3%83%83%E3%82%B0%E3%82%A8%E3%82%B3%E3%83%BC%E6%A2%85%E7%94%B0%E6%A1%9C%E6%A9%8B%E5%8C%97%E6%96%B0%E5%9C%B0%E5%BA%97",
         "price_url": "",
@@ -992,7 +992,7 @@
       {
         "chain": "bigecho",
         "name": "カラオケ ビッグエコー梅田桜橋北新地店",
-        "area": "",
+        "area": "梅田",
         "address": "大阪府大阪市北区曾根崎新地1-4-17",
         "url": "https://big-echo.jp/shop_info/%E3%83%93%E3%83%83%E3%82%B0%E3%82%A8%E3%82%B3%E3%83%BC%E6%A2%85%E7%94%B0%E6%A1%9C%E6%A9%8B%E5%8C%97%E6%96%B0%E5%9C%B0%E5%BA%97",
         "price_url": "",
@@ -1405,7 +1405,7 @@
       {
         "chain": "jankara",
         "name": "ジャンカラあべの店",
-        "area": "その他大阪市",
+        "area": "天王寺",
         "address": "大阪市阿倍野区阿倍野筋2-4-55\nOsakaMetro谷町線 阿倍野駅 1番口より徒歩4分",
         "url": "https://jankara.ne.jp/shop/107/",
         "price_url": "https://jankara.ne.jp/shop/107/#price",
@@ -1438,7 +1438,7 @@
       {
         "chain": "jankara",
         "name": "スーパージャンカラスーパージャンカラあべのプレミアム",
-        "area": "その他大阪市",
+        "area": "天王寺",
         "address": "大阪市阿倍野区阿倍野筋2丁目4番51号 阿倍野パスカ2階\nOsakaMetro谷町線 阿倍野駅 1番出口より徒歩すぐ",
         "url": "https://jankara.ne.jp/shop/253/",
         "price_url": "https://jankara.ne.jp/shop/253/#price",
@@ -1453,7 +1453,7 @@
       {
         "chain": "jankara",
         "name": "ジャンカラ天王寺店",
-        "area": "その他大阪市",
+        "area": "天王寺",
         "address": "大阪市天王寺区悲田院町9-22 宝ビル1〜5F\nJR天王寺駅 北出口より徒歩2分",
         "url": "https://jankara.ne.jp/shop/086/",
         "price_url": "https://jankara.ne.jp/shop/086/#price",
@@ -1486,7 +1486,7 @@
       {
         "chain": "bigecho",
         "name": "カラオケ ビッグエコーあべのごちそうビル店",
-        "area": "",
+        "area": "天王寺",
         "address": "大阪府大阪市阿倍野区阿倍野筋1-1-61 　新宿ごちそうビル６Ｆ",
         "url": "https://big-echo.jp/shop_info/%E3%82%AB%E3%83%A9%E3%82%AA%E3%82%B1-%E3%83%93%E3%83%83%E3%82%B0%E3%82%A8%E3%82%B3%E3%83%BC%E3%81%82%E3%81%B9%E3%81%AE%E3%81%94%E3%81%A1%E3%81%9D%E3%81%86%E3%83%93%E3%83%AB%E5%BA%97",
         "price_url": "",
@@ -1499,7 +1499,7 @@
       {
         "chain": "bigecho",
         "name": "カラオケ ビッグエコー近鉄あべの店",
-        "area": "",
+        "area": "天王寺",
         "address": "大阪府大阪市阿倍野区阿倍野筋1丁目2-1",
         "url": "https://big-echo.jp/shop_info/%E3%82%AB%E3%83%A9%E3%82%AA%E3%82%B1-%E3%83%93%E3%83%83%E3%82%B0%E3%82%A8%E3%82%B3%E3%83%BC%E5%A4%A9%E7%8E%8B%E5%AF%BA%E3%81%82%E3%81%B9%E3%81%AE%E9%A7%85%E5%89%8D%E5%BA%97",
         "price_url": "",
@@ -1512,7 +1512,7 @@
       {
         "chain": "bigecho",
         "name": "カラオケ ビッグエコー天王寺あべの駅前店",
-        "area": "",
+        "area": "天王寺",
         "address": "大阪府大阪市阿倍野区阿倍野筋1-3-18",
         "url": "https://big-echo.jp/shop_info/%E3%81%82%E3%81%B9%E3%81%AE%E5%BA%97",
         "price_url": "",
@@ -1525,7 +1525,7 @@
       {
         "chain": "bigecho",
         "name": "カラオケ ビッグエコーあべの店",
-        "area": "",
+        "area": "天王寺",
         "address": "大阪府大阪市阿倍野区阿倍野筋2-1-20 　クロワッサンビル2F",
         "url": "https://big-echo.jp/shop_info/%E3%81%82%E3%81%B9%E3%81%AE%E5%BA%97",
         "price_url": "",
@@ -1661,7 +1661,7 @@
       {
         "chain": "manekineko",
         "name": "カラオケまねきねこ 寺田町駅前店",
-        "area": "",
+        "area": "天王寺",
         "address": "大阪府 大阪市 天王寺区大道4-10-12 中村ビル2･3F",
         "url": "https://www.karaokemanekineko.jp/locations/osaka/osaka-shi/teradacho-ekimae-store/",
         "price_url": "",
@@ -1925,7 +1925,7 @@
       {
         "chain": "manekineko",
         "name": "カラオケまねきねこ 心斎橋2号店",
-        "area": "",
+        "area": "難波・心斎橋",
         "address": "大阪府 大阪市 中央区東心斎橋1-19-11 鰻谷スクエア 2F",
         "url": "https://www.karaokemanekineko.jp/locations/osaka/osaka-shi/shinsaibashi-2nd-store/",
         "price_url": "",
@@ -1937,7 +1937,7 @@
       {
         "chain": "manekineko",
         "name": "カラオケまねきねこ 心斎橋店",
-        "area": "",
+        "area": "難波・心斎橋",
         "address": "大阪府 大阪市 中央区東心斎橋1-18-27 PARK10ビル1F",
         "url": "https://www.karaokemanekineko.jp/locations/osaka/osaka-shi/shinsaibashi-store/",
         "price_url": "",
@@ -1986,7 +1986,7 @@
       {
         "chain": "jankara",
         "name": "ジャンカラ昭和町駅前店",
-        "area": "その他大阪市",
+        "area": "天王寺",
         "address": "大阪市阿倍野区昭和町1-9-24 富士ホームビル昭和町4F\nOsakaMetro御堂筋線 昭和町駅 1番出口より徒歩1分",
         "url": "https://jankara.ne.jp/shop/224/",
         "price_url": "https://jankara.ne.jp/shop/224/#price",
@@ -2402,7 +2402,7 @@
       {
         "chain": "manekineko",
         "name": "カラオケまねきねこ 梅田芝田店",
-        "area": "",
+        "area": "梅田",
         "address": "大阪府 大阪市 北区芝田2-2-5 芝田二丁目ビル3～5F",
         "url": "https://www.karaokemanekineko.jp/locations/osaka/osaka-shi/umeda-shibata-store/",
         "price_url": "",
@@ -2414,7 +2414,7 @@
       {
         "chain": "manekineko",
         "name": "カラオケまねきねこ 茶屋町店",
-        "area": "",
+        "area": "梅田",
         "address": "大阪府 大阪市 北区茶屋町3-2 チロル茶屋町6F",
         "url": "https://www.karaokemanekineko.jp/locations/osaka/osaka-shi/chayamachi-store/",
         "price_url": "",
@@ -2426,7 +2426,7 @@
       {
         "chain": "manekineko",
         "name": "カラオケまねきねこ 阪急東通り2号店",
-        "area": "",
+        "area": "梅田",
         "address": "大阪府 大阪市 北区堂山町6‐5 ペンギンスクエアビル2～3F",
         "url": "https://www.karaokemanekineko.jp/locations/osaka/osaka-shi/hankyuhigashidori-2nd-store/",
         "price_url": "",
@@ -2438,7 +2438,7 @@
       {
         "chain": "manekineko",
         "name": "カラオケまねきねこ 阪急東通り店",
-        "area": "",
+        "area": "梅田",
         "address": "大阪府 大阪市 北区 堂山町 ５−４",
         "url": "https://www.karaokemanekineko.jp/locations/osaka/osaka-shi/hankyu-higashidori-store/",
         "price_url": "",
@@ -2450,7 +2450,7 @@
       {
         "chain": "bigecho",
         "name": "カラオケ ビッグエコー お初天神店",
-        "area": "",
+        "area": "梅田",
         "address": "大阪府大阪市北区曽根崎2-8-15 K'sスクエアビル 1F",
         "url": "https://big-echo.jp/shop_info/%E3%82%AB%E3%83%A9%E3%82%AA%E3%82%B1-%E3%83%93%E3%83%83%E3%82%B0%E3%82%A8%E3%82%B3%E3%83%BC-%E3%81%8A%E5%88%9D%E5%A4%A9%E7%A5%9E%E5%BA%97",
         "price_url": "",
@@ -2463,7 +2463,7 @@
       {
         "chain": "bigecho",
         "name": "カラオケ ビッグエコー 曽根崎お初天神通り店",
-        "area": "",
+        "area": "梅田",
         "address": "大阪府大阪市北区曽根崎2-13-17 　曽根崎渡辺ビル2F",
         "url": "https://big-echo.jp/shop_info/%E3%82%AB%E3%83%A9%E3%82%AA%E3%82%B1-%E3%83%93%E3%83%83%E3%82%B0%E3%82%A8%E3%82%B3%E3%83%BC-%E3%81%8A%E5%88%9D%E5%A4%A9%E7%A5%9E%E5%BA%97",
         "price_url": "",
@@ -2476,7 +2476,7 @@
       {
         "chain": "bigecho",
         "name": "カラオケ ビッグエコー梅田中央店",
-        "area": "",
+        "area": "梅田",
         "address": "大阪府大阪市北区小松原町1番10号",
         "url": "https://big-echo.jp/shop_info/%E3%83%93%E3%83%83%E3%82%B0%E3%82%A8%E3%82%B3%E3%83%BC%E6%A2%85%E7%94%B0%E4%B8%AD%E5%A4%AE%E5%BA%97",
         "price_url": "",
@@ -2489,7 +2489,7 @@
       {
         "chain": "bigecho",
         "name": "カラオケ ビッグエコー阪急東通り店",
-        "area": "",
+        "area": "梅田",
         "address": "大阪府大阪市北区堂山町5-6 　起世ビル",
         "url": "https://big-echo.jp/shop_info/%E3%83%93%E3%83%83%E3%82%B0%E3%82%A8%E3%82%B3%E3%83%BC%E9%98%AA%E6%80%A5%E6%9D%B1%E9%80%9A%E3%82%8A%E5%BA%97",
         "price_url": "",
@@ -2502,7 +2502,7 @@
       {
         "chain": "bigecho",
         "name": "カラオケ ビッグエコー西梅田店",
-        "area": "",
+        "area": "梅田",
         "address": "大阪府大阪市北区梅田2-1-21 　レイズウメダビル6階",
         "url": "https://big-echo.jp/shop_info/%E3%83%93%E3%83%83%E3%82%B0%E3%82%A8%E3%82%B3%E3%83%BC%E5%85%AB%E9%87%8D%E6%B4%B2%E6%9C%AC%E5%BA%97",
         "price_url": "",
@@ -2515,7 +2515,7 @@
       {
         "chain": "bigecho",
         "name": "カラオケ ビッグエコー大阪梅田本店",
-        "area": "",
+        "area": "梅田",
         "address": "大阪府大阪市北区小松原町1番11号 　田園ビル",
         "url": "https://big-echo.jp/shop_info/%E3%83%93%E3%83%83%E3%82%B0%E3%82%A8%E3%82%B3%E3%83%BC%E8%A5%BF%E6%A2%85%E7%94%B0%E5%BA%97",
         "price_url": "",
@@ -2528,7 +2528,7 @@
       {
         "chain": "bigecho",
         "name": "カラオケ ビッグエコー梅田東通り店",
-        "area": "",
+        "area": "梅田",
         "address": "大阪府大阪市北区小松原町4-5 　純情モンテカルロビル",
         "url": "https://big-echo.jp/shop_info/%E3%83%93%E3%83%83%E3%82%B0%E3%82%A8%E3%82%B3%E3%83%BC%E8%A5%BF%E6%A2%85%E7%94%B0%E5%BA%97",
         "price_url": "",
@@ -2541,7 +2541,7 @@
       {
         "chain": "bigecho",
         "name": "カラオケ ビッグエコー梅田駅前本店",
-        "area": "",
+        "area": "梅田",
         "address": "大阪府大阪市北区角田町6-2 　ラッキービル",
         "url": "https://big-echo.jp/shop_info/%E6%A2%85%E7%94%B0%E9%A7%85%E5%89%8D%E6%9C%AC%E5%BA%97",
         "price_url": "",
@@ -2554,7 +2554,7 @@
       {
         "chain": "bigecho",
         "name": "カラオケ ビッグエコー茶屋町店",
-        "area": "",
+        "area": "梅田",
         "address": "大阪府大阪市北区茶屋町1-5 　茶屋町MDビル",
         "url": "https://big-echo.jp/shop_info/%E3%82%AB%E3%83%A9%E3%82%AA%E3%82%B1-%E3%83%93%E3%83%83%E3%82%B0%E3%82%A8%E3%82%B3%E3%83%BC%E6%A2%85%E7%94%B0%E8%8C%B6%E5%B1%8B%E7%94%BA%E6%9C%AC%E5%BA%97",
         "price_url": "",
@@ -2567,7 +2567,7 @@
       {
         "chain": "bigecho",
         "name": "カラオケ ビッグエコー 梅田茶屋町本店",
-        "area": "",
+        "area": "梅田",
         "address": "大阪府大阪市北区茶屋町2-16 　イースクエア茶屋町2F",
         "url": "https://big-echo.jp/shop_info/%E3%82%AB%E3%83%A9%E3%82%AA%E3%82%B1-%E3%83%93%E3%83%83%E3%82%B0%E3%82%A8%E3%82%B3%E3%83%BC%E6%A2%85%E7%94%B0%E8%8C%B6%E5%B1%8B%E7%94%BA%E6%9C%AC%E5%BA%97",
         "price_url": "",
@@ -2580,7 +2580,7 @@
       {
         "chain": "bigecho",
         "name": "カラオケ ビッグエコー梅田DDハウス店",
-        "area": "",
+        "area": "梅田",
         "address": "大阪府大阪市北区芝田1-8-1 　D.D.ハウス",
         "url": "https://big-echo.jp/shop_info/%E3%83%93%E3%83%83%E3%82%B0%E3%82%A8%E3%82%B3%E3%83%BC%E6%A2%85%E7%94%B0dd%E3%83%8F%E3%82%A6%E3%82%B9%E5%BA%97",
         "price_url": "",
@@ -3023,7 +3023,7 @@
       {
         "chain": "bigecho",
         "name": "カラオケ ビッグエコー蒲生四丁目駅前店",
-        "area": "",
+        "area": "京橋",
         "address": "大阪府大阪市城東区蒲生4-22-4",
         "url": "https://big-echo.jp/shop_info/%E3%83%93%E3%83%83%E3%82%B0%E3%82%A8%E3%82%B3%E3%83%BC%E8%92%B2%E7%94%9F%E5%9B%9B%E4%B8%81%E7%9B%AE%E9%A7%85%E5%89%8D%E5%BA%97",
         "price_url": "",
@@ -3221,7 +3221,7 @@
       {
         "chain": "bigecho",
         "name": "カラオケ ビッグエコー都島ベルファⅡ店",
-        "area": "",
+        "area": "京橋",
         "address": "大阪府大阪市都島区友渕町 2丁目15-28 　 ベルファⅡ 3F",
         "url": "https://big-echo.jp/shop_info/%E9%83%BD%E5%B3%B6%E3%83%99%E3%83%AB%E3%83%95%E3%82%A1%E2%85%A1%E5%BA%97",
         "price_url": "",
@@ -3484,7 +3484,7 @@
       {
         "chain": "jankara",
         "name": "ジャンカラ鶴橋駅前店",
-        "area": "その他大阪市",
+        "area": "天王寺",
         "address": "大阪市東成区東小橋3-15-4 サンエイ中日ビル3〜5F\nJR大阪環状線 鶴橋駅 中央出口より徒歩2分",
         "url": "https://jankara.ne.jp/shop/010/",
         "price_url": "https://jankara.ne.jp/shop/010/#price",
@@ -3517,7 +3517,7 @@
       {
         "chain": "manekineko",
         "name": "カラオケまねきねこ 鶴橋店",
-        "area": "",
+        "area": "天王寺",
         "address": "大阪府 大阪市 東成区東小橋3-16-3 D⁺鶴橋Ⅱビル3F～5F（受付4F）",
         "url": "https://www.karaokemanekineko.jp/locations/osaka/osaka-shi/tsuruhashi-store/",
         "price_url": "",

@@ -4,18 +4,16 @@ import os
 import sys
 from pathlib import Path
 
-# プロジェクトルートの特定（実行場所に関わらず動作させる）
 current_dir = Path(__file__).resolve().parent
 project_root = current_dir.parent
 json_path = project_root / "data/stations_with_prices.json"
 
-# 書き換え対象の店舗と、強制適用する価格
-# ※あえてバラバラの数字にして、更新されたことを視認できるようにする
+# 店舗名と適用する価格 {店舗名: (30分会員, フリータイム会員)}
 TARGET_PRICES = {
-    "カラオケまねきねこ 阪急東通り店": 330,
-    "カラオケまねきねこ 梅田芝田店": 290,
-    "カラオケまねきねこ 茶屋町店": 350,
-    "カラオケまねきねこ 阪急東通り2号店": 310
+    "カラオケまねきねこ 阪急東通り店": (330, 1400),
+    "カラオケまねきねこ 梅田芝田店": (290, 1250),
+    "カラオケまねきねこ 茶屋町店": (350, 1500),
+    "カラオケまねきねこ 阪急東通り2号店": (310, 1300)
 }
 
 def main():
@@ -35,23 +33,20 @@ def main():
         for store in stores:
             name = store.get("name")
             if name in TARGET_PRICES:
-                new_price = TARGET_PRICES[name]
+                price_30m, price_free = TARGET_PRICES[name]
                 
-                # 必要なキー構造を作成（データ欠損対策）
+                # 構造補完
                 if "pricing" not in store: store["pricing"] = {}
                 if "day" not in store["pricing"]: store["pricing"]["day"] = {}
                 if "30min" not in store["pricing"]["day"]: store["pricing"]["day"]["30min"] = {}
+                if "free_time" not in store["pricing"]["day"]: store["pricing"]["day"]["free_time"] = {}
                 
-                # 価格を強制上書き
-                if "member" in store["pricing"]["day"]["30min"]:
-                    old_price = store["pricing"]["day"]["30min"]["member"]
-                else:
-                    old_price = "None"
-                    
-                store["pricing"]["day"]["30min"]["member"] = new_price
+                # 強制上書き
+                store["pricing"]["day"]["30min"]["member"] = price_30m
+                store["pricing"]["day"]["free_time"]["member"] = price_free
                 store["pricing"]["status"] = "success"
                 
-                print(f"{name}: {old_price} -> {new_price} 円")
+                print(f"{name}: 30min {price_30m} yen / Free {price_free} yen updated")
                 updated_count += 1
 
     if updated_count > 0:
@@ -59,7 +54,7 @@ def main():
             json.dump(data, f, ensure_ascii=False, indent=2)
         print(f"\nSaved updates for {updated_count} stores.")
     else:
-        print("\nNo target stores found in the JSON data.")
+        print("\nNo target stores found.")
 
 if __name__ == "__main__":
     main()

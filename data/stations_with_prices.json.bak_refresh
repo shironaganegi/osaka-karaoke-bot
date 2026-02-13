@@ -2630,11 +2630,11 @@
         "pricing": {
           "day": {
             "30min": {
-              "member": 290,
+              "member": 300,
               "general": null
             },
             "free_time": {
-              "member": 1250,
+              "member": null,
               "general": null
             }
           },
@@ -2652,11 +2652,11 @@
         "pricing": {
           "day": {
             "30min": {
-              "member": 350,
+              "member": 300,
               "general": null
             },
             "free_time": {
-              "member": 1500,
+              "member": null,
               "general": null
             }
           },
@@ -2674,11 +2674,11 @@
         "pricing": {
           "day": {
             "30min": {
-              "member": 310,
+              "member": 300,
               "general": null
             },
             "free_time": {
-              "member": 1300,
+              "member": null,
               "general": null
             }
           },
@@ -2696,11 +2696,11 @@
         "pricing": {
           "day": {
             "30min": {
-              "member": 330,
+              "member": 55,
               "general": null
             },
             "free_time": {
-              "member": 1400,
+              "member": 550,
               "general": null
             }
           },

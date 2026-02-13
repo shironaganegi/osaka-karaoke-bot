@@ -1,5 +1,5 @@
 """
-まねきねこPDF料金表スクレイピング (Chain of Thought強化版)
+まねきねこPDF料金表スクレイピング (Chain of Thought強化版 + キャッシュ機能)
 =====================================================
 """
 
@@ -14,7 +14,7 @@ import os
 from pathlib import Path
 from dotenv import load_dotenv
 import google.generativeai as genai
-from bs4 import BeautifulSoup # 追加
+from bs4 import BeautifulSoup
 
 # .envファイルの読み込み
 load_dotenv()
@@ -132,6 +132,21 @@ def extract_prices_with_gemini(pdf_bytes):
         return None
 
 def main():
+    # キャッシュデータの読み込み
+    json_path = "data/stations_with_prices.json"
+    cache_map = {}
+    if os.path.exists(json_path):
+        try:
+            with open(json_path, 'r', encoding='utf-8') as f:
+                data = json.load(f)
+                for station, stores in data.get("stations", {}).items():
+                    for store in stores:
+                        # 検索用に正規化
+                        norm_name = store.get("name", "").replace(" ", "").replace("　", "")
+                        cache_map[norm_name] = store
+        except Exception as e:
+            print(f"Warning: Failed to load cache: {e}", file=sys.stderr)
+
     results = []
     print("[", file=sys.stdout)
     first = True
@@ -142,9 +157,46 @@ def main():
         
         pricing_data = {"status": "failed"}
         
+        # キャッシュチェック
+        norm_target = store['name'].replace(" ", "").replace("　", "")
+        cached_store = cache_map.get(norm_target)
+        
+        # 部分一致検索 (キャッシュマップにない場合)
+        if not cached_store:
+             for k, v in cache_map.items():
+                if norm_target in k or k in norm_target:
+                    if "まねきねこ" in v.get("name", ""):
+                        cached_store = v
+                        break
+
+        # キャッシュヒット判定
+        # URLが一致し、かつ以前の取得が「成功」している場合
+        if pdf_url and cached_store:
+            old_url = cached_store.get("pdf_url")
+            old_status = cached_store.get("pricing", {}).get("status")
+            
+            if old_url == pdf_url and old_status == "success":
+                print(f"  ✨ Cache Hit! PDF has not changed. Using existing data.", file=sys.stderr)
+                # 既存データをそのまま使う
+                pricing_data = cached_store["pricing"]
+                
+                # 結果出力して次へ
+                result = {
+                    "store_name": store['name'],
+                    "pdf_url": pdf_url, 
+                    "pricing": pricing_data
+                }
+                if not first: print(",", file=sys.stdout)
+                print(json.dumps(result, ensure_ascii=False, indent=2), file=sys.stdout)
+                sys.stdout.flush()
+                first = False
+                continue
+
+        # キャッシュミス -> 実処理
         if pdf_url:
             print(f"  PDF Found: {pdf_url}", file=sys.stderr)
             pdf_bytes = download_pdf(pdf_url)
+            
             if pdf_bytes:
                 extracted = extract_prices_with_gemini(pdf_bytes)
                 if extracted and extracted.get("weekday_30min"):

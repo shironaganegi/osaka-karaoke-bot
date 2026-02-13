@@ -2630,16 +2630,17 @@
         "pricing": {
           "day": {
             "30min": {
-              "member": 300,
+              "member": 290,
               "general": null
             },
             "free_time": {
-              "member": null,
+              "member": 1250,
               "general": null
             }
           },
           "status": "success"
-        }
+        },
+        "pdf_url": "https://d1k5d0nneloh3k.cloudfront.net/wp-content/uploads/2025/11/13222302/%E6%A2%85%E7%94%B0%E8%8A%9D%E7%94%B0%E5%BA%97-4.pdf"
       },
       {
         "chain": "manekineko",
@@ -2652,16 +2653,17 @@
         "pricing": {
           "day": {
             "30min": {
-              "member": 300,
+              "member": 350,
               "general": null
             },
             "free_time": {
-              "member": null,
+              "member": 1500,
               "general": null
             }
           },
           "status": "success"
-        }
+        },
+        "pdf_url": "https://d1k5d0nneloh3k.cloudfront.net/wp-content/uploads/2025/11/13070238/%E8%8C%B6%E5%B1%8B%E7%94%BA%E5%BA%97-4.pdf"
       },
       {
         "chain": "manekineko",
@@ -2674,16 +2676,17 @@
         "pricing": {
           "day": {
             "30min": {
-              "member": 300,
+              "member": 310,
               "general": null
             },
             "free_time": {
-              "member": null,
+              "member": 1300,
               "general": null
             }
           },
           "status": "success"
-        }
+        },
+        "pdf_url": "https://d1k5d0nneloh3k.cloudfront.net/wp-content/uploads/2025/11/02185022/%E9%98%AA%E6%80%A5%E6%9D%B1%E9%80%9A%E3%82%8A2%E5%8F%B7%E5%BA%97-4.pdf"
       },
       {
         "chain": "manekineko",
@@ -2696,16 +2699,17 @@
         "pricing": {
           "day": {
             "30min": {
-              "member": 300,
+              "member": 330,
               "general": null
             },
             "free_time": {
-              "member": null,
+              "member": 1400,
               "general": null
             }
           },
           "status": "success"
-        }
+        },
+        "pdf_url": "https://d1k5d0nneloh3k.cloudfront.net/wp-content/uploads/2025/11/04002746/%E5%9C%A7%E7%B8%AE-2.pdf"
       },
       {
         "chain": "bigecho",

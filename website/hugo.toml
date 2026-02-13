@@ -67,4 +67,4 @@ buildFuture = true
 [markup]
   [markup.goldmark]
     [markup.goldmark.renderer]
-      unsafe = true # Allow raw HTML (for affiliate banners)
+      unsafe = true

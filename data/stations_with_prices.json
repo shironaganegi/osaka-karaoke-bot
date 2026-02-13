@@ -2696,11 +2696,11 @@
         "pricing": {
           "day": {
             "30min": {
-              "member": 300,
+              "member": 55,
               "general": null
             },
             "free_time": {
-              "member": null,
+              "member": 550,
               "general": null
             }
           },

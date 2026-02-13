@@ -115,8 +115,13 @@ def merge_manekineko_data():
         # 全駅の店舗リストを走査
         for station_name, stores in data["stations"].items():
             for store in stores:
-                if store.get("name") == target_name:
-                    print(f"Updating {target_name} in {station_name}...")
+                # 正規化して比較 (空白除去)
+                store_n = store.get("name", "").replace(" ", "").replace("　", "")
+                target_n = target_name.replace(" ", "").replace("　", "")
+                
+                # 完全一致または包含関係で判定 (「カラオケまねきねこ」などの接頭辞ブレ対応)
+                if store_n == target_n or (target_n in store_n and "まねきねこ" in store_n):
+                    print(f"Updating {store.get('name')} (matched {target_name}) in {station_name}...")
                     
                     # 既存のpricing情報を安全に更新
                     # 'pricing'キーが存在しない場合や、'status'が'skip'の場合も上書き

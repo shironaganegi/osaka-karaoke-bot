@@ -1,0 +1,28 @@
+<div id="map" style="height: 400px; width: 100%; border-radius: 12px; margin-bottom: 40px; z-index: 1;"></div>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // マーカーデータを安全に受け取る
+        var markerData = {{ .Get "markers" }
+    };
+    var markers = JSON.parse(markerData);
+
+    if (markers.length === 0) return;
+
+    // 中心座標を計算
+    let latSum = 0;
+    let lonSum = 0;
+    markers.forEach(m => { latSum += m.lat; lonSum += m.lon; });
+    const center = [latSum / markers.length, lonSum / markers.length];
+
+    const map = L.map('map').setView(center, 15);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+    markers.forEach(m => {
+        L.marker([m.lat, m.lon]).addTo(map)
+            .bindPopup(`<a href="${m.url}" target="_blank"><b>${m.name}</b></a>`);
+    });
+});
+</script>

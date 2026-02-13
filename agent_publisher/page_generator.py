@@ -345,33 +345,14 @@ def build_map_html(stores: list[dict]) -> str:
     
     if not markers: return ""
 
-    map_script = f"""
-<div id="map" style="height: 400px; width: 100%; border-radius: 12px; margin-bottom: 40px; z-index: 1;"></div>
-<script>
-document.addEventListener('DOMContentLoaded', function() {{
-    const markers = {json.dumps(markers, ensure_ascii=False)};
-    if (markers.length === 0) return;
-
-    // 中心座標を計算
-    let latSum = 0;
-    let lonSum = 0;
-    markers.forEach(m => {{ latSum += m.lat; lonSum += m.lon; }});
-    const center = [latSum / markers.length, lonSum / markers.length];
-
-    const map = L.map('map').setView(center, 15);
     
-    L.tileLayer('https://{{s}}.tile.openstreetmap.org/{{z}}/{{x}}/{{y}}.png', {{
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-    }}).addTo(map);
-
-    markers.forEach(m => {{
-        L.marker([m.lat, m.lon]).addTo(map)
-            .bindPopup(`<a href="${{m.url}}" target="_blank"><b>${{m.name}}</b></a>`);
-    }});
-}});
-</script>
-"""
-    return map_script
+    # マーカーリストをJSON文字列に変換
+    markers_json = json.dumps(markers, ensure_ascii=False)
+    
+    # Hugoのショートコードとして返す
+    # 注意: ショートコード内のJSONはエスケープされる可能性があるため、シングルクォートで囲むなどの工夫が必要
+    # ここでは単純に文字列として渡す
+    return f'{{{{< leaflet-map markers=`{markers_json}` >}}}}'
 
 
 def find_cheapest(stores: list[dict]) -> str:

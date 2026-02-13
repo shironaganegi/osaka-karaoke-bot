@@ -2408,7 +2408,17 @@
         "price_url": "",
         "original_station": "",
         "pricing": {
-          "status": "skip"
+          "day": {
+            "30min": {
+              "member": 300,
+              "general": null
+            },
+            "free_time": {
+              "member": null,
+              "general": null
+            }
+          },
+          "status": "success"
         }
       },
       {
@@ -2420,7 +2430,17 @@
         "price_url": "",
         "original_station": "",
         "pricing": {
-          "status": "skip"
+          "day": {
+            "30min": {
+              "member": 300,
+              "general": null
+            },
+            "free_time": {
+              "member": null,
+              "general": null
+            }
+          },
+          "status": "success"
         }
       },
       {
@@ -2432,7 +2452,17 @@
         "price_url": "",
         "original_station": "",
         "pricing": {
-          "status": "skip"
+          "day": {
+            "30min": {
+              "member": 300,
+              "general": null
+            },
+            "free_time": {
+              "member": null,
+              "general": null
+            }
+          },
+          "status": "success"
         }
       },
       {

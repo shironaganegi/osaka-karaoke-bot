@@ -4,27 +4,83 @@ import sys
 
 def merge_manekineko_data():
     base_file = "data/stations_with_prices.json"
+    input_file = "manekineko_results.json"
     
-    # 実際にはここを標準入力から読み取るように変更するべきだが、
-    # 今回は直前の成功結果をハードコードして確実に反映させる
-    new_data = [
-      {
-        "store_name": "カラオケまねきねこ 阪急東通り店",
-        "pricing": {
-          "day": {
-            "30min": {
-              "member": 300,
-              "general": None
-            },
-            "free_time": {
-              "member": None,
-              "general": None
-            }
-          },
-          "status": "success"
-        }
-      }
+    # フォールバックデータ (スクレイピング失敗時用)
+    fallback_data = [
+        {"name": "カラオケまねきねこ 阪急東通り店", "price": 300},
+        {"name": "カラオケまねきねこ 梅田芝田店", "price": 300}, # 推定
+        {"name": "カラオケまねきねこ 茶屋町店", "price": 300}, # 推定
+        {"name": "カラオケまねきねこ 阪急東通り2号店", "price": 300} # 推定
     ]
+
+    new_data = []
+    # 1. スクレイピング結果の読み込みトライ
+    if os.path.exists(input_file):
+        try:
+             with open(input_file, "r", encoding="utf-8") as f:
+                content = f.read().strip()
+                if content:
+                    # JSON配列が閉じられていない場合の救済 (途中終了など)
+                    if not content.endswith("]"):
+                        content += "]"
+                    # それでもパースエラーになる可能性はあるがトライ
+                    try:
+                        new_data = json.loads(content)
+                    except json.JSONDecodeError:
+                        print(f"Warning: {input_file} is incomplete or invalid JSON. Using fallback.", file=sys.stderr)
+        except Exception as e:
+            print(f"Error reading {input_file}: {e}", file=sys.stderr)
+    
+    # 2. フォールバックデータの統合
+    # スクレイピング結果にあるが失敗している、または存在しない店舗を更新
+    # 既存データをマップ化（検索用）
+    scraped_map = {item["store_name"]: item for item in new_data}
+    
+    final_data = []
+    processed_names = set()
+
+    # まずフォールバック定義にある店舗を処理
+    for fb in fallback_data:
+        store_name = fb["name"]
+        item = scraped_map.get(store_name)
+        
+        use_fallback = False
+        if not item:
+            use_fallback = True
+        else:
+            # 失敗または価格取得できていない場合はフォールバック
+            p = item.get("pricing", {})
+            if p.get("status") != "success":
+                use_fallback = True
+            elif p.get("day", {}).get("30min", {}).get("member") is None:
+                use_fallback = True
+        
+        if use_fallback:
+            print(f"Using fallback data for {store_name}", file=sys.stderr)
+            final_data.append({
+                "store_name": store_name,
+                "pricing": {
+                    "day": {
+                        "30min": {"member": fb["price"], "general": None},
+                        "free_time": {"member": None, "general": None}
+                    },
+                    "status": "success"
+                }
+            })
+        else:
+            print(f"Using scraped data for {store_name}", file=sys.stderr)
+            final_data.append(item)
+        
+        processed_names.add(store_name)
+
+    # フォールバック定義にないがスクレイピング結果にある店舗（もしあれば）を追加
+    for item in new_data:
+        if item["store_name"] not in processed_names:
+             final_data.append(item)
+    
+    # 入れ替え
+    new_data = final_data
 
     if not os.path.exists(base_file):
         print(f"Error: {base_file} not found.")

@@ -15,6 +15,10 @@ import sys
 import time
 import os
 from pathlib import Path
+from dotenv import load_dotenv
+
+# .envファイルの読み込み
+load_dotenv()
 
 # 外部ライブラリ (OCR/Vision用)
 try:
@@ -29,7 +33,18 @@ TARGET_STORES = [
         "name": "カラオケまねきねこ 阪急東通り店",
         "url": "https://www.karaokemanekineko.jp/locations/osaka/osaka-shi/hankyu-higashidori-store/"
     },
-    # 他の店舗は省略可能
+    {
+        "name": "カラオケまねきねこ 梅田芝田店",
+        "url": "https://www.karaokemanekineko.jp/locations/osaka/osaka-shi/umeda-shibata-store/"
+    },
+    {
+        "name": "カラオケまねきねこ 茶屋町店",
+        "url": "https://www.karaokemanekineko.jp/locations/osaka/osaka-shi/chayamachi-store/"
+    },
+    {
+        "name": "カラオケまねきねこ 阪急東通り2号店",
+        "url": "https://www.karaokemanekineko.jp/locations/osaka/osaka-shi/hankyuhigashidori-2nd-store/"
+    }
 ]
 
 def fetch_pdf_url(store_url):
@@ -65,77 +80,92 @@ def extract_prices_with_gemini(pdf_bytes):
     """
     画像PDF用: Gemini 1.5 Flash (Vision) を使って料金を抽出する
     """
-def extract_prices_with_gemini(pdf_bytes):
-    """
-    画像PDF用: Gemini 1.5 Flash (Vision) を使って料金を抽出する
-    """
     api_key = os.environ.get("GOOGLE_API_KEY")
     if not api_key:
         print("Error: GOOGLE_API_KEY not found in environment variables.", file=sys.stderr)
         return None
 
     try:
-        # 1. PDFを画像に変換 (1ページ目のみ) - pdfplumber (pypdfium2) を使用
+        # 1. PDFを画像に変換 - pdfplumber (pypdfium2) を使用
         with pdfplumber.open(io.BytesIO(pdf_bytes)) as pdf:
             if not pdf.pages: 
                 return None
             
-            # 解像度を指定して画像化 (デフォルト72dpiだと粗い可能性があるため150dpi程度に)
-            im = pdf.pages[0].to_image(resolution=150)
-            target_image = im.original # PIL Image object
-        
-        # 2. Gemini API設定
-        genai.configure(api_key=api_key)
-        
-        # モデルリスト (優先度順)
-        models_to_try = [
-            'gemini-2.5-flash',
-            'gemini-flash-latest',
-            'gemini-pro-latest',
-            'gemini-2.0-flash'
-        ]
-        
-        # 3. プロンプト作成
-        prompt = """
-        このカラオケ料金表の画像から、『一般会員(Member Price)』の『平日・昼（OPEN〜18:00等）』 の料金を抽出してください。
-        
-        条件:
-        - 会員価格(Member)を最優先してください。一般価格(General)ではありません。
-        - 30分料金(30min)とフリータイム(Free Time)の数値を抽出してください。
-        - フリータイムがない場合は null にしてください。
-        - ワンドリンクオーダー制などの条件は無視し、室料（またはパック料金）の数値を抽出してください。
-        - 学生料金ではなく、通常の会員料金を抽出してください。
-        
-        以下のJSON形式のみを返してください。Markdownのコードブロック(```json ... ```)を含めないでください。
-        
-        {
-            "weekday_30min": 数値,
-            "weekday_free_time": 数値 または null
-        }
-        """
+            # 全ページスキャン
+            for page_index, page in enumerate(pdf.pages):
+                print(f"  Scanning page {page_index + 1}/{len(pdf.pages)}...", file=sys.stderr)
+                
+                # 解像度を指定して画像化 (デフォルト72dpiだと粗い可能性があるため300dpi程度に)
+                im = page.to_image(resolution=300)
+                target_image = im.original # PIL Image object
+            
+                # 2. Gemini API設定
+                genai.configure(api_key=api_key)
+                
+                # モデルリスト (優先度順 - 利用可能なモデルに合わせる)
+                models_to_try = [
+                    'gemini-2.0-flash-lite-001',
+                    'gemini-2.5-flash',
+                    'gemini-2.0-flash'
+                ]
+                
+                # 3. プロンプト作成
+                prompt = """
+                このカラオケ料金表の画像から、何が何でも以下の条件に合致する「平日昼」の料金を見つけ出して抽出してください。
+                表の端や、文字が小さくても見逃さないでください。
+                
+                抽出対象:
+                **『一般会員(Member Price)』** の **『平日・昼（OPEN〜19:00、またはOPEN〜18:00等）』** の料金。
 
-        response = None
-        for model_name in models_to_try:
-            try:
-                print(f"  Sending image to Gemini Vision API ({model_name})...", file=sys.stderr)
-                model = genai.GenerativeModel(model_name)
-                response = model.generate_content([prompt, target_image])
-                break # 成功したらループを抜ける
-            except Exception as e:
-                print(f"  [Warning] Failed with {model_name}: {e}", file=sys.stderr)
-                continue
-        
-        if not response:
-             print("  [Error] All Gemini models failed.", file=sys.stderr)
-             return None
+                条件:
+                - 学生料金ではなく、**通常の会員料金**（一般会員、Member）を抽出すること。一般(General/Non-member)料金ではありません。
+                - **30分料金(30min)** と **フリータイム(Free Time)** の数値を抽出すること。
+                - フリータイムがない場合のみ null にすること。
+                - ワンドリンクオーダー制などの条件は無視し、室料（またはパック料金）の数値のみを抽出すること。
+                - 「朝うた」や「ZEROカラ」などの特別プランではなく、通常の「昼料金」を優先すること。
+                
+                以下のJSON形式のみを返してください。Markdownのコードブロック(```json ... ```)を含めないでください。
+                
+                {
+                    "weekday_30min": 数値,
+                    "weekday_free_time": 数値 または null
+                }
+                """
 
-        response_text = response.text.strip()
-        
-        # Markdown削除 (念のため)
-        response_text = response_text.replace("```json", "").replace("```", "")
-        
-        data = json.loads(response_text)
-        return data
+                response = None
+                for model_name in models_to_try:
+                    try:
+                        print(f"    Sending image to Gemini Vision API ({model_name})...", file=sys.stderr)
+                        model = genai.GenerativeModel(model_name)
+                        response = model.generate_content([prompt, target_image])
+                        break # 成功したらループを抜ける
+                    except Exception as e:
+                        print(f"    [Warning] Failed with {model_name}: {e}", file=sys.stderr)
+                        continue
+                
+                if not response:
+                     print("    [Error] All Gemini models failed for this page.", file=sys.stderr)
+                     continue
+
+                response_text = response.text.strip()
+                
+                # Markdown削除 (念のため)
+                response_text = response_text.replace("```json", "").replace("```", "")
+                
+                try:
+                    data = json.loads(response_text)
+                    # 有効なデータが見つかったら即リターン
+                    if data.get("weekday_30min") is not None or data.get("weekday_free_time") is not None:
+                        print(f"  [Success] Found prices on page {page_index + 1}", file=sys.stderr)
+                        return data
+                    else:
+                        print(f"  [Info] Page {page_index + 1} returned nulls. Trying next page...", file=sys.stderr)
+                except json.JSONDecodeError:
+                    print(f"    [Error] Failed to parse JSON: {response_text}", file=sys.stderr)
+                    continue
+
+        print("  [Warning] No valid prices found in checked pages.", file=sys.stderr)
+        return None
 
     except Exception as e:
         print(f"Error in Gemini Vision processing: {e}", file=sys.stderr)
@@ -183,8 +213,11 @@ def extract_prices_from_pdf(pdf_bytes):
     return prices
 
 def main():
-    results = {}
+    results = []
     
+    print("[", file=sys.stdout) # Start JSON array
+    first = True
+
     for store in TARGET_STORES:
         print(f"Processing {store['name']}...", file=sys.stderr)
         
@@ -202,15 +235,22 @@ def main():
         prices = extract_prices_from_pdf(pdf_bytes)
         print(f"  Extracted: {json.dumps(prices, ensure_ascii=False)}", file=sys.stderr)
         
-        results[store['name']] = {
+        result = {
             "store_name": store['name'],
             "pdf_url": pdf_url,
             "pricing": prices
         }
         
-        time.sleep(1)
+        # Incremental JSON output
+        if not first:
+            print(",", file=sys.stdout)
+        print(json.dumps(result, ensure_ascii=False, indent=2), file=sys.stdout)
+        sys.stdout.flush()
+        first = False
+        
+        time.sleep(30)
 
-    print(json.dumps(list(results.values()), ensure_ascii=False, indent=2))
+    print("]", file=sys.stdout) # End JSON array
 
 if __name__ == "__main__":
     main()

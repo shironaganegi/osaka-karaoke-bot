@@ -126,7 +126,7 @@ store_count: 28
 梅田エリアで特に安い店舗はこちらです：
 
 - 🏆 **平日昼30分最安**: 220円（カラオケ ビッグエコー梅田DDハウス店）
-- 🏆 **平日昼フリータイム最安**: 1250円（カラオケまねきねこ 梅田芝田店）
+- 🏆 **平日昼フリータイム最安**: 1290円（ジャンカラ阪急東通本店）
 
 
 
@@ -427,11 +427,11 @@ store_count: 28
 <div class="price-grid">
 <div class="price-item">
 <span class="price-label">30分 (平日昼)</span>
-<span class="price-value">290円〜</span>
+<span class="price-value">300円〜</span>
 </div>
 <div class="price-item">
 <span class="price-label">フリータイム (平日昼)</span>
-<span class="price-value">1250円〜</span>
+<span class="price-value">-</span>
 </div>
 </div>
 <div class="action-area">
@@ -449,11 +449,11 @@ store_count: 28
 <div class="price-grid">
 <div class="price-item">
 <span class="price-label">30分 (平日昼)</span>
-<span class="price-value">350円〜</span>
+<span class="price-value">300円〜</span>
 </div>
 <div class="price-item">
 <span class="price-label">フリータイム (平日昼)</span>
-<span class="price-value">1500円〜</span>
+<span class="price-value">-</span>
 </div>
 </div>
 <div class="action-area">
@@ -471,11 +471,11 @@ store_count: 28
 <div class="price-grid">
 <div class="price-item">
 <span class="price-label">30分 (平日昼)</span>
-<span class="price-value">310円〜</span>
+<span class="price-value">300円〜</span>
 </div>
 <div class="price-item">
 <span class="price-label">フリータイム (平日昼)</span>
-<span class="price-value">1300円〜</span>
+<span class="price-value">-</span>
 </div>
 </div>
 <div class="action-area">
@@ -493,11 +493,11 @@ store_count: 28
 <div class="price-grid">
 <div class="price-item">
 <span class="price-label">30分 (平日昼)</span>
-<span class="price-value">330円〜</span>
+<span class="price-value">300円〜</span>
 </div>
 <div class="price-item">
 <span class="price-label">フリータイム (平日昼)</span>
-<span class="price-value">1400円〜</span>
+<span class="price-value">-</span>
 </div>
 </div>
 <div class="action-area">

@@ -321,33 +321,30 @@ def build_store_list_html(stores: list[dict]) -> str:
             if addr:
                 map_url = f"https://www.google.com/maps/search/?api=1&query={urllib.parse.quote(addr)}"
 
-        # カードHTML組み立て
+        # カードHTML組み立て (インデントなしで記述)
         card = f"""
-        <div class="store-card">
-            <div class="store-header">
-                <h3 class="store-name">
-                    <span class="chain-badge {badge_class}">{chain_label}</span>
-                    {display_name}
-                </h3>
-            </div>
-            
-            <div class="price-grid">
-                <div class="price-item">
-                    <span class="price-label">30分 (平日昼)</span>
-                    <span class="price-value">{price_30_str}</span>
-                </div>
-                <div class="price-item">
-                    <span class="price-label">フリータイム (平日昼)</span>
-                    <span class="price-value">{price_ft_str}</span>
-                </div>
-            </div>
-
-            <div class="action-area">
-                <a href="{map_url}" target="_blank" rel="noopener" class="action-btn btn-map">📍 地図</a>
-                <a href="{url}" target="_blank" rel="noopener" class="action-btn btn-reserve">🔗 予約・詳細</a>
-            </div>
-        </div>
-        """
+<div class="store-card">
+  <div class="store-header">
+    <h3 class="store-name">
+      <span class="chain-badge {badge_class}">{chain_label}</span>
+      {display_name}
+    </h3>
+  </div>
+  <div class="price-grid">
+    <div class="price-item">
+      <span class="price-label">30分 (平日昼)</span>
+      <span class="price-value">{price_30_str}</span>
+    </div>
+    <div class="price-item">
+      <span class="price-label">フリータイム (平日昼)</span>
+      <span class="price-value">{price_ft_str}</span>
+    </div>
+  </div>
+  <div class="action-area">
+    <a href="{map_url}" target="_blank" rel="noopener" class="action-btn btn-map">📍 地図</a>
+    <a href="{url}" target="_blank" rel="noopener" class="action-btn btn-reserve">🔗 予約・詳細</a>
+  </div>
+</div>"""
         cards.append(card)
 
     return f'<div class="store-list-container">{"".join(cards)}</div>'
@@ -472,7 +469,7 @@ def build_markdown(station: str, stores: list[dict], today: str) -> str:
     store_count = len(stores)
     area = stores[0].get("area", "") if stores else ""
     
-    # 1. 広告HTMLの定義
+    # 1. 広告HTMLの定義 (関数内で確実に定義)
     
     # Inline Ad: 300x250 (ID 005)
     inline_ad_html = """
@@ -521,7 +518,7 @@ def build_markdown(station: str, stores: list[dict], today: str) -> str:
     if cheapest_md:
         cheapest_section = f"### 💰 最安値ハイライト\n\n{cheapest_md}\n\n"
 
-    # 3. コンテンツ組み立て
+    # 3. コンテンツ組み立て (リスト結合で安全に)
     parts = []
     
     # ヘッダー & スタイル定義
@@ -543,15 +540,15 @@ store_count: {store_count}
 {station}駅周辺にあるカラオケ店の料金・店舗情報をまとめました。各店舗の公式料金表へのリンクから、最新の料金プランを確認できます。
 """)
 
-    # 最安値 & 店舗リスト (カード型)
+    # 最安値 & 店舗リスト (カード型) - 前後に空行を入れる
     parts.append(cheapest_section)
-    parts.append(store_list_html)
+    parts.append("\n\n" + store_list_html + "\n\n")
     parts.append(f"""
 > ※ 料金は時期・曜日・時間帯により異なります。最新情報は各店舗の公式サイトをご確認ください。
 """)
 
-    # インライン広告
-    parts.append(inline_ad_html)
+    # インライン広告 - 前後に空行
+    parts.append("\n\n" + inline_ad_html + "\n\n")
 
     # マップ
     parts.append(map_html)
@@ -578,8 +575,8 @@ store_count: {store_count}
 </div>
 """)
 
-    # 固定フッター
-    parts.append(sticky_footer_html)
+    # 固定フッター - 前後に空行
+    parts.append("\n\n" + sticky_footer_html + "\n\n")
 
     return "\n".join(parts)
 

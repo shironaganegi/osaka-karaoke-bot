@@ -2628,17 +2628,17 @@
         "price_url": "",
         "original_station": "",
         "pricing": {
-          "status": "success",
           "day": {
             "30min": {
               "member": 300,
-              "general": 390
+              "general": null
             },
             "free_time": {
-              "member": 1200,
-              "general": 1500
+              "member": null,
+              "general": null
             }
-          }
+          },
+          "status": "success"
         }
       },
       {
@@ -2650,17 +2650,17 @@
         "price_url": "",
         "original_station": "",
         "pricing": {
-          "status": "success",
           "day": {
             "30min": {
               "member": 300,
-              "general": 390
+              "general": null
             },
             "free_time": {
-              "member": 1200,
-              "general": 1500
+              "member": null,
+              "general": null
             }
-          }
+          },
+          "status": "success"
         }
       },
       {
@@ -2672,17 +2672,17 @@
         "price_url": "",
         "original_station": "",
         "pricing": {
-          "status": "success",
           "day": {
             "30min": {
               "member": 300,
-              "general": 390
+              "general": null
             },
             "free_time": {
-              "member": 1200,
-              "general": 1500
+              "member": null,
+              "general": null
             }
-          }
+          },
+          "status": "success"
         }
       },
       {
@@ -2694,17 +2694,17 @@
         "price_url": "",
         "original_station": "",
         "pricing": {
-          "status": "success",
           "day": {
             "30min": {
               "member": 300,
-              "general": 390
+              "general": null
             },
             "free_time": {
-              "member": 1200,
-              "general": 1500
+              "member": null,
+              "general": null
             }
-          }
+          },
+          "status": "success"
         }
       },
       {

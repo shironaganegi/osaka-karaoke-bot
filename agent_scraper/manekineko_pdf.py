@@ -47,20 +47,40 @@ TARGET_STORES = [
     }
 ]
 
+from bs4 import BeautifulSoup
+
 def fetch_pdf_url(store_url):
-    """店舗ページのHTMLからPDFリンクを抽出する"""
+    """店舗ページのHTMLからPDFリンクを抽出する (BeautifulSoup使用)"""
     try:
-        response = requests.get(store_url, timeout=10)
+        headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"}
+        response = requests.get(store_url, headers=headers, timeout=10)
         response.raise_for_status()
-        html = response.text
         
-        match = re.search(r'href="([^"]+\.pdf)"', html)
-        if match:
-            pdf_path = match.group(1)
-            if pdf_path.startswith("http"):
-                return pdf_path
-            else:
-                return "https://www.karaokemanekineko.jp" + pdf_path
+        soup = BeautifulSoup(response.text, 'html.parser')
+        
+        # .pdf で終わるリンクをすべて探す
+        pdf_links = soup.find_all('a', href=re.compile(r'\.pdf$', re.I))
+        
+        if not pdf_links:
+            # hrefの中に .pdf が含まれるものを探す (クエリパラメータ付きなど)
+            pdf_links = soup.find_all('a', href=re.compile(r'\.pdf', re.I))
+
+        for link in pdf_links:
+            pdf_url = link.get('href')
+            if not pdf_url:
+                continue
+                
+            # 相対パスなら絶対パスに変換
+            if not pdf_url.startswith('http'):
+                if pdf_url.startswith('/'):
+                     pdf_url = "https://www.karaokemanekineko.jp" + pdf_url
+                else:
+                     pdf_url = "https://www.karaokemanekineko.jp/" + pdf_url
+            
+            # 優先度判定: "料金" "price" などが含まれるか、または特定のキーワード(圧縮など)
+            # 今回は最初に見つかったPDFを返す (まねきねこは通常1つか、料金表がメイン)
+            return pdf_url
+            
         return None
     except Exception as e:
         print(f"Error fetching HTML for {store_url}: {e}", file=sys.stderr)
@@ -69,7 +89,8 @@ def fetch_pdf_url(store_url):
 def download_pdf(pdf_url):
     """PDFをメモリ上にダウンロードする"""
     try:
-        response = requests.get(pdf_url, timeout=10)
+        headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"}
+        response = requests.get(pdf_url, headers=headers, timeout=10)
         response.raise_for_status()
         return response.content # bytesを返す
     except Exception as e:
@@ -109,20 +130,19 @@ def extract_prices_with_gemini(pdf_bytes):
                     'gemini-2.0-flash'
                 ]
                 
-                # 3. プロンプト作成
+                # 3. プロンプト作成 (強化版)
                 prompt = """
-                このカラオケ料金表の画像から、何が何でも以下の条件に合致する「平日昼」の料金を見つけ出して抽出してください。
-                表の端や、文字が小さくても見逃さないでください。
-                
-                抽出対象:
-                **『一般会員(Member Price)』** の **『平日・昼（OPEN〜19:00、またはOPEN〜18:00等）』** の料金。
+                この画像は、店舗がスキャンした料金表（または料金表を含むチラシ）です。
+                たとえ『飲み放題』などのキャンペーン情報がメインであっても、画像の隅や下部にある小さな料金グリッドを絶対に見逃さないでください。
 
-                条件:
-                - 学生料金ではなく、**通常の会員料金**（一般会員、Member）を抽出すること。一般(General/Non-member)料金ではありません。
-                - **30分料金(30min)** と **フリータイム(Free Time)** の数値を抽出すること。
-                - フリータイムがない場合のみ null にすること。
-                - ワンドリンクオーダー制などの条件は無視し、室料（またはパック料金）の数値のみを抽出すること。
-                - 「朝うた」や「ZEROカラ」などの特別プランではなく、通常の「昼料金」を優先すること。
+                以下の優先順位で『平日・昼（OPEN〜18:00頃）』の 30分室料 を抽出してください：
+
+                1. 『会員料金(Member)』の記載があればそれを採用。
+                2. なければ『一般料金』でも可。
+                3. 『ワンドリンク制』の表記があっても、室料の数字を抽出する。
+
+                絶対に null で返さないでください。 推定でも構わないので、表の中にある『30分 xxx円』の数字を拾ってください。
+                フリータイムも同様に探してください。なければ null で構いません。
                 
                 以下のJSON形式のみを返してください。Markdownのコードブロック(```json ... ```)を含めないでください。
                 

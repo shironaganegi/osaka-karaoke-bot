@@ -17,20 +17,28 @@ def merge_manekineko_data():
     new_data = []
     # 1. スクレイピング結果の読み込みトライ
     if os.path.exists(input_file):
+        content = ""
         try:
-             with open(input_file, "r", encoding="utf-8") as f:
+            # First try utf-8
+            with open(input_file, "r", encoding="utf-8") as f:
                 content = f.read().strip()
-                if content:
-                    # JSON配列が閉じられていない場合の救済 (途中終了など)
-                    if not content.endswith("]"):
-                        content += "]"
-                    # それでもパースエラーになる可能性はあるがトライ
-                    try:
-                        new_data = json.loads(content)
-                    except json.JSONDecodeError:
-                        print(f"Warning: {input_file} is incomplete or invalid JSON. Using fallback.", file=sys.stderr)
-        except Exception as e:
-            print(f"Error reading {input_file}: {e}", file=sys.stderr)
+        except UnicodeDecodeError:
+            try:
+                # Fallback to utf-16 (PowerShell default redirection)
+                with open(input_file, "r", encoding="utf-16") as f:
+                    content = f.read().strip()
+            except Exception as e:
+                 print(f"Error reading {input_file} with utf-16: {e}", file=sys.stderr)
+
+        if content:
+            # JSON配列が閉じられていない場合の救済 (途中終了など)
+            if not content.endswith("]"):
+                content += "]"
+            # それでもパースエラーになる可能性はあるがトライ
+            try:
+                new_data = json.loads(content)
+            except json.JSONDecodeError:
+                print(f"Warning: {input_file} is incomplete or invalid JSON. Using fallback.", file=sys.stderr)
     
     # 2. フォールバックデータの統合
     # スクレイピング結果にあるが失敗している、または存在しない店舗を更新

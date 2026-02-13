@@ -6,7 +6,7 @@ draft: false
 keywords: ["梅田 カラオケ", "梅田 カラオケ 安い", "大阪 カラオケ 最安値"]
 type: "area"
 area: "梅田"
-store_count: 30
+store_count: 28
 ---
 
 
@@ -117,7 +117,7 @@ store_count: 30
 </style>
 
 
-## 梅田エリアのカラオケ店一覧（30店舗）
+## 梅田エリアのカラオケ店一覧（28店舗）
 
 梅田エリアにある各駅周辺のカラオケ店をまとめました。
 
@@ -125,8 +125,8 @@ store_count: 30
 
 梅田エリアで特に安い店舗はこちらです：
 
-- 🏆 **平日昼30分最安**: 150円（ジャンカラアジアン天満店）
-- 🏆 **平日昼フリータイム最安**: 890円（ジャンカラアジアン天満店）
+- 🏆 **平日昼30分最安**: 220円（カラオケ ビッグエコー梅田DDハウス店）
+- 🏆 **平日昼フリータイム最安**: 1290円（ジャンカラ阪急東通本店）
 
 
 
@@ -195,50 +195,6 @@ store_count: 30
 <div class="action-area">
 <a href="https://www.google.com/maps/search/?api=1&query=34.6982513,135.4988377" target="_blank" rel="noopener" class="action-btn btn-map">📍 地図</a>
 <a href="https://big-echo.jp/shop_info/%E3%83%93%E3%83%83%E3%82%B0%E3%82%A8%E3%82%B3%E3%83%BC%E6%A2%85%E7%94%B0%E6%A1%9C%E6%A9%8B%E5%8C%97%E6%96%B0%E5%9C%B0%E5%BA%97" target="_blank" rel="noopener" class="action-btn btn-reserve">🔗 予約・詳細</a>
-</div>
-</div>
-<div class="store-card">
-<div class="store-header">
-<h3 class="store-name">
-<span class="chain-badge badge-jankara">ジャンカラ</span>
-アジアン天満店
-</h3>
-</div>
-<div class="price-grid">
-<div class="price-item">
-<span class="price-label">30分 (平日昼)</span>
-<span class="price-value">150円〜</span>
-</div>
-<div class="price-item">
-<span class="price-label">フリータイム (平日昼)</span>
-<span class="price-value">890円〜</span>
-</div>
-</div>
-<div class="action-area">
-<a href="https://www.google.com/maps/search/?api=1&query=34.7046041,135.5117136" target="_blank" rel="noopener" class="action-btn btn-map">📍 地図</a>
-<a href="https://jankara.ne.jp/shop/234/" target="_blank" rel="noopener" class="action-btn btn-reserve">🔗 予約・詳細</a>
-</div>
-</div>
-<div class="store-card">
-<div class="store-header">
-<h3 class="store-name">
-<span class="chain-badge badge-jankara">ジャンカラ</span>
-ヨイドコロ天満店
-</h3>
-</div>
-<div class="price-grid">
-<div class="price-item">
-<span class="price-label">30分 (平日昼)</span>
-<span class="price-value">150円〜</span>
-</div>
-<div class="price-item">
-<span class="price-label">フリータイム (平日昼)</span>
-<span class="price-value">890円〜</span>
-</div>
-</div>
-<div class="action-area">
-<a href="https://www.google.com/maps/search/?api=1&query=34.7076073,135.511565" target="_blank" rel="noopener" class="action-btn btn-map">📍 地図</a>
-<a href="https://jankara.ne.jp/shop/272/" target="_blank" rel="noopener" class="action-btn btn-reserve">🔗 予約・詳細</a>
 </div>
 </div>
 <div class="store-card">

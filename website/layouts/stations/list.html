@@ -3,76 +3,66 @@
     <header class="page-header">
         <h1>📍 {{ .Title }}</h1>
         <div class="post-description">
-            大阪の全駅カラオケ最安値一覧
+            エリアを選択してください
         </div>
     </header>
 
     <style>
         .station-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-            /* スマホで2列、PCで4列など自動調整 */
-            gap: 15px;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            /* スマホで見やすい幅 */
+            gap: 20px;
             padding: 20px 0;
         }
 
         .station-card {
-            background: var(--entry);
-            /* PaperModのテーマ色に合わせる */
+            background-color: var(--entry);
+            /* テーマ色 */
             border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            /* 影をつけて浮き上がらせる */
+            padding: 25px;
             text-align: center;
-            transition: transform 0.2s, box-shadow 0.2s;
-            height: 100%;
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             cursor: pointer;
-            position: relative;
+            text-decoration: none;
+            height: 100%;
         }
 
         .station-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transform: translateY(-5px);
+            /* ホバー時にふわっと浮く */
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
             border-color: var(--primary);
         }
 
         .station-name {
-            font-size: 1.1rem;
+            font-size: 1.4rem;
             font-weight: bold;
-            margin-bottom: 5px;
             color: var(--primary);
+            margin-bottom: 5px;
         }
 
-        .station-link {
-            text-decoration: none;
-            color: inherit;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-            height: 100%;
-        }
-
-        .station-count {
-            font-size: 0.85rem;
+        .station-sub {
+            font-size: 0.9rem;
             color: var(--secondary);
         }
     </style>
 
     <div class="station-grid">
         {{- range .Pages }}
-        <div class="station-card">
-            <a class="station-link" href="{{ .Permalink }}">
-                <div class="station-name">{{ .Title }}</div>
-                {{ if .Params.store_count }}
-                <div class="station-count">{{ .Params.store_count }}店舗</div>
-                {{ end }}
-            </a>
-        </div>
+        <a class="station-card" href="{{ .Permalink }}">
+            <div class="station-name">{{ .Title }}</div>
+            {{ if .Params.store_count }}
+            <div class="station-sub">{{ .Params.store_count }}店舗</div>
+            {{ end }}
+        </a>
         {{- end }}
     </div>
 

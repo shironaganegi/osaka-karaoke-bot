@@ -1,0 +1,34 @@
+{{ define "main" }}
+<main class="main">
+    <header class="page-header">
+        <h1>{{ .Title }}</h1>
+        <div class="post-description">
+            大阪の全駅カラオケ最安値一覧
+        </div>
+    </header>
+
+    <div class="post-content">
+        <p>以下は大阪府内の各駅ごとのカラオケ店料金比較ページ一覧です。</p>
+    </div>
+
+    {{- range .Pages }}
+    <article class="post-entry">
+        <header class="entry-header">
+            <h2>
+                {{ .Title }}
+            </h2>
+        </header>
+        {{- if .Description }}
+        <section class="entry-content">
+            <p>{{ .Description }}</p>
+        </section>
+        {{- end }}
+        <footer class="entry-footer">
+            店舗数: {{ .Params.store_count }}
+        </footer>
+        <a class="entry-link" aria-label="post link to {{ .Title }}" href="{{ .Permalink }}"></a>
+    </article>
+    {{- end }}
+
+</main>
+{{ end }}

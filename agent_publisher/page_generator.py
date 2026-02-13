@@ -325,6 +325,55 @@ def build_store_list_html(stores: list[dict]) -> str:
     return f'<div class="store-list-container">{"".join(cards)}</div>'
 
 
+def build_map_html(stores: list[dict]) -> str:
+    """地図表示用のHTMLとスクリプトを生成する"""
+    if not stores: return ""
+    
+    markers = []
+    for s in stores:
+        lat = s.get("lat")
+        lon = s.get("lon")
+        name = s.get("name", "")
+        url = s.get("url") or "#"
+        if lat and lon:
+            markers.append({
+                "name": name,
+                "lat": lat,
+                "lon": lon,
+                "url": url
+            })
+    
+    if not markers: return ""
+
+    map_script = f"""
+<div id="map" style="height: 400px; width: 100%; border-radius: 12px; margin-bottom: 40px; z-index: 1;"></div>
+<script>
+document.addEventListener('DOMContentLoaded', function() {{
+    const markers = {json.dumps(markers, ensure_ascii=False)};
+    if (markers.length === 0) return;
+
+    // 中心座標を計算
+    let latSum = 0;
+    let lonSum = 0;
+    markers.forEach(m => {{ latSum += m.lat; lonSum += m.lon; }});
+    const center = [latSum / markers.length, lonSum / markers.length];
+
+    const map = L.map('map').setView(center, 15);
+    
+    L.tileLayer('https://{{s}}.tile.openstreetmap.org/{{z}}/{{x}}/{{y}}.png', {{
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }}).addTo(map);
+
+    markers.forEach(m => {{
+        L.marker([m.lat, m.lon]).addTo(map)
+            .bindPopup(`<a href="${{m.url}}" target="_blank"><b>${{m.name}}</b></a>`);
+    }});
+}});
+</script>
+"""
+    return map_script
+
+
 def find_cheapest(stores: list[dict]) -> str:
     """最安値情報を生成する"""
     cheapest_30 = None
@@ -338,13 +387,13 @@ def find_cheapest(stores: list[dict]) -> str:
 
         day_30 = pricing.get("day", {}).get("30min", {})
         price_30 = day_30.get("general") or day_30.get("member")
-        if price_30 and (cheapest_30 is None or price_30 < cheapest_30):
+        if price_30 is not None and (cheapest_30 is None or price_30 < cheapest_30):
             cheapest_30 = price_30
             cheapest_30_name = s.get("name", "")
 
         day_ft = pricing.get("day", {}).get("free_time", {})
         price_ft = day_ft.get("general") or day_ft.get("member")
-        if price_ft and (cheapest_ft is None or price_ft < cheapest_ft):
+        if price_ft is not None and (cheapest_ft is None or price_ft < cheapest_ft):
             cheapest_ft = price_ft
             cheapest_ft_name = s.get("name", "")
 
@@ -364,6 +413,7 @@ def build_markdown(station: str, stores: list[dict], today: str) -> str:
     area = stores[0].get("area", "") if stores else ""
     
     store_list_html = build_store_list_html(stores)
+    map_html = build_map_html(stores)
     cheapest_md = find_cheapest(stores)
 
     cheapest_section = ""
@@ -394,6 +444,7 @@ store_count: {store_count}
 """,
     cheapest_section,
     "\n\n" + store_list_html + "\n\n",
+    "\n\n" + map_html + "\n\n",
     "\n> ※ 料金は時期・曜日・時間帯により異なります。最新情報は各店舗の公式サイトをご確認ください。\n",
     "\n\n" + INLINE_AD_HTML + "\n\n",
     area_link_section,
@@ -445,6 +496,15 @@ store_count: {store_count}
 def generate_area_pages(area_to_stores: dict, today: str, output_base: str = "website/content/areas"):
     """エリアごとのまとめページを生成する"""
     output_dir = Path(output_base)
+    
+    # 強制再生成: 既存のMarkdownファイルを削除
+    if output_dir.exists():
+        for file in output_dir.glob("*.md"):
+            try:
+                file.unlink()
+            except Exception as e:
+                print(f"Warning: Failed to delete {file}: {e}", file=sys.stderr)
+
     output_dir.mkdir(parents=True, exist_ok=True)
     count = 0
 
@@ -469,6 +529,15 @@ def generate_pages(data_dir: str = "data", output_base: str = "website/content/s
     if not stations: return 0
 
     output_dir = Path(output_base)
+    
+    # 強制再生成: 既存のMarkdownファイルを削除
+    if output_dir.exists():
+        for file in output_dir.glob("*.md"):
+            try:
+                file.unlink()
+            except Exception as e:
+                print(f"Warning: Failed to delete {file}: {e}", file=sys.stderr)
+    
     output_dir.mkdir(parents=True, exist_ok=True)
 
     today = date.today().strftime("%Y-%m-%d")

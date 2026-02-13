@@ -128,59 +128,6 @@ def get_store_display_name(store: dict) -> str:
     return f"{icon} {name}"
 
 
-def format_pricing_cell(store: dict) -> str:
-    """
-    店舗の料金情報をテーブルセル用に整形する。
-
-    Args:
-        store: 店舗データ（pricing キーを含む場合がある）
-
-    Returns:
-        表示用文字列
-    """
-    pricing = store.get("pricing")
-    price_url = store.get("price_url") or store.get("url") or "#"
-    pdf_url = store.get("pdf_url")
-
-    if not pricing or pricing.get("status") != "success":
-        # 料金データなし
-        if pdf_url:
-            return f'[📄 料金表(PDF)]({pdf_url})'
-        # なければ公式サイトへのリンク
-        return f'[公式サイトで確認]({price_url})'
-
-    parts = []
-
-    # 昼30分料金
-    day_30 = pricing.get("day", {}).get("30min", {})
-    general_30 = day_30.get("general")
-    member_30 = day_30.get("member")
-    if general_30:
-        price_str = f"30分: {general_30}円"
-        if member_30:
-            price_str += f" (会員{member_30}円)"
-        parts.append(price_str)
-    elif member_30:
-        # general が null でも member があれば表示
-        parts.append(f"30分: {member_30}円 (会員)")
-
-    # 昼フリータイム
-    day_ft = pricing.get("day", {}).get("free_time", {})
-    general_ft = day_ft.get("general")
-    member_ft = day_ft.get("member")
-    if general_ft:
-        price_str = f"フリータイム: {general_ft}円"
-        if member_ft:
-            price_str += f" (会員{member_ft}円)"
-        parts.append(price_str)
-    elif member_ft:
-        parts.append(f"フリータイム: {member_ft}円 (会員)")
-
-    if parts:
-        return " / ".join(parts)
-
-    return f'[公式サイトで確認]({price_url})'
-
 
 # =====================================================
 # CSS スタイル (カードレイアウト & グリッド)
@@ -318,7 +265,7 @@ STYLE_BLOCK = """
 
 
 def build_store_list_html(stores: list[dict]) -> str:
-    """カード型リストHTMLを生成する (テーブル廃止)"""
+    """カード型リストHTMLを生成する (テーブル廃止・レスポンシブGrid)"""
     cards = []
     
     for store in stores:

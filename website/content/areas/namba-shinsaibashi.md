@@ -131,7 +131,7 @@ store_count: 25
 
 
 <div class="store-list-container">
-<div class="store-card">
+<div class="store-card" data-chain="jankara" data-price="390" data-amenities="drinkbar">
 <div class="store-header">
 <h3 class="store-name">
 <span class="chain-badge badge-jankara">ジャンカラ</span>
@@ -153,7 +153,7 @@ store_count: 25
 <a href="https://jankara.ne.jp/shop/266/" target="_blank" rel="noopener" class="action-btn btn-reserve">🔗 予約・詳細</a>
 </div>
 </div>
-<div class="store-card">
+<div class="store-card" data-chain="jankara" data-price="260" data-amenities="drinkbar">
 <div class="store-header">
 <h3 class="store-name">
 <span class="chain-badge badge-jankara">ジャンカラ</span>
@@ -175,7 +175,7 @@ store_count: 25
 <a href="https://jankara.ne.jp/shop/091/" target="_blank" rel="noopener" class="action-btn btn-reserve">🔗 予約・詳細</a>
 </div>
 </div>
-<div class="store-card">
+<div class="store-card" data-chain="jankara" data-price="260" data-amenities="drinkbar">
 <div class="store-header">
 <h3 class="store-name">
 <span class="chain-badge badge-jankara">ジャンカラ</span>
@@ -197,7 +197,7 @@ store_count: 25
 <a href="https://jankara.ne.jp/shop/203/" target="_blank" rel="noopener" class="action-btn btn-reserve">🔗 予約・詳細</a>
 </div>
 </div>
-<div class="store-card">
+<div class="store-card" data-chain="jankara" data-price="370" data-amenities="drinkbar">
 <div class="store-header">
 <h3 class="store-name">
 <span class="chain-badge badge-jankara">ジャンカラ</span>
@@ -219,7 +219,7 @@ store_count: 25
 <a href="https://jankara.ne.jp/shop/222/" target="_blank" rel="noopener" class="action-btn btn-reserve">🔗 予約・詳細</a>
 </div>
 </div>
-<div class="store-card">
+<div class="store-card" data-chain="jankara" data-price="325" data-amenities="drinkbar">
 <div class="store-header">
 <h3 class="store-name">
 <span class="chain-badge badge-jankara">ジャンカラ</span>
@@ -241,7 +241,7 @@ store_count: 25
 <a href="https://jankara.ne.jp/shop/109/" target="_blank" rel="noopener" class="action-btn btn-reserve">🔗 予約・詳細</a>
 </div>
 </div>
-<div class="store-card">
+<div class="store-card" data-chain="jankara" data-price="325" data-amenities="drinkbar">
 <div class="store-header">
 <h3 class="store-name">
 <span class="chain-badge badge-jankara">ジャンカラ</span>
@@ -263,7 +263,7 @@ store_count: 25
 <a href="https://jankara.ne.jp/shop/269/" target="_blank" rel="noopener" class="action-btn btn-reserve">🔗 予約・詳細</a>
 </div>
 </div>
-<div class="store-card">
+<div class="store-card" data-chain="jankara" data-price="390" data-amenities="drinkbar">
 <div class="store-header">
 <h3 class="store-name">
 <span class="chain-badge badge-jankara">ジャンカラ</span>
@@ -285,7 +285,7 @@ store_count: 25
 <a href="https://jankara.ne.jp/shop/070/" target="_blank" rel="noopener" class="action-btn btn-reserve">🔗 予約・詳細</a>
 </div>
 </div>
-<div class="store-card">
+<div class="store-card" data-chain="jankara" data-price="260" data-amenities="drinkbar">
 <div class="store-header">
 <h3 class="store-name">
 <span class="chain-badge badge-jankara">ジャンカラ</span>
@@ -307,7 +307,7 @@ store_count: 25
 <a href="https://jankara.ne.jp/shop/172/" target="_blank" rel="noopener" class="action-btn btn-reserve">🔗 予約・詳細</a>
 </div>
 </div>
-<div class="store-card">
+<div class="store-card" data-chain="jankara" data-price="390" data-amenities="drinkbar">
 <div class="store-header">
 <h3 class="store-name">
 <span class="chain-badge badge-jankara">ジャンカラ</span>
@@ -329,7 +329,7 @@ store_count: 25
 <a href="https://jankara.ne.jp/shop/051/" target="_blank" rel="noopener" class="action-btn btn-reserve">🔗 予約・詳細</a>
 </div>
 </div>
-<div class="store-card">
+<div class="store-card" data-chain="jankara" data-price="590" data-amenities="drinkbar">
 <div class="store-header">
 <h3 class="store-name">
 <span class="chain-badge badge-jankara">ジャンカラ</span>
@@ -351,7 +351,7 @@ store_count: 25
 <a href="https://jankara.ne.jp/shop/096/" target="_blank" rel="noopener" class="action-btn btn-reserve">🔗 予約・詳細</a>
 </div>
 </div>
-<div class="store-card">
+<div class="store-card" data-chain="manekineko" data-price="390" data-amenities="mochikomi">
 <div class="store-header">
 <h3 class="store-name">
 <span class="chain-badge badge-manekineko">まねきねこ</span>
@@ -373,7 +373,7 @@ store_count: 25
 <a href="https://www.karaokemanekineko.jp/locations/osaka/osaka-shi/namba-hips-store/" target="_blank" rel="noopener" class="action-btn btn-reserve">🔗 予約・詳細</a>
 </div>
 </div>
-<div class="store-card">
+<div class="store-card" data-chain="manekineko" data-price="390" data-amenities="mochikomi">
 <div class="store-header">
 <h3 class="store-name">
 <span class="chain-badge badge-manekineko">まねきねこ</span>
@@ -395,7 +395,7 @@ store_count: 25
 <a href="https://www.karaokemanekineko.jp/locations/osaka/osaka-shi/sennichimae-2nd-store/" target="_blank" rel="noopener" class="action-btn btn-reserve">🔗 予約・詳細</a>
 </div>
 </div>
-<div class="store-card">
+<div class="store-card" data-chain="manekineko" data-price="390" data-amenities="mochikomi">
 <div class="store-header">
 <h3 class="store-name">
 <span class="chain-badge badge-manekineko">まねきねこ</span>
@@ -417,7 +417,7 @@ store_count: 25
 <a href="https://www.karaokemanekineko.jp/locations/osaka/osaka-shi/sennichimae-store/" target="_blank" rel="noopener" class="action-btn btn-reserve">🔗 予約・詳細</a>
 </div>
 </div>
-<div class="store-card">
+<div class="store-card" data-chain="manekineko" data-price="390" data-amenities="mochikomi">
 <div class="store-header">
 <h3 class="store-name">
 <span class="chain-badge badge-manekineko">まねきねこ</span>
@@ -439,7 +439,7 @@ store_count: 25
 <a href="https://www.karaokemanekineko.jp/locations/osaka/osaka-shi/nankaidori-2nd-store/" target="_blank" rel="noopener" class="action-btn btn-reserve">🔗 予約・詳細</a>
 </div>
 </div>
-<div class="store-card">
+<div class="store-card" data-chain="manekineko" data-price="390" data-amenities="mochikomi">
 <div class="store-header">
 <h3 class="store-name">
 <span class="chain-badge badge-manekineko">まねきねこ</span>
@@ -461,7 +461,7 @@ store_count: 25
 <a href="https://www.karaokemanekineko.jp/locations/osaka/osaka-shi/nankaidori-store/" target="_blank" rel="noopener" class="action-btn btn-reserve">🔗 予約・詳細</a>
 </div>
 </div>
-<div class="store-card">
+<div class="store-card" data-chain="manekineko" data-price="390" data-amenities="mochikomi">
 <div class="store-header">
 <h3 class="store-name">
 <span class="chain-badge badge-manekineko">まねきねこ</span>
@@ -483,7 +483,7 @@ store_count: 25
 <a href="https://www.karaokemanekineko.jp/locations/osaka/osaka-shi/ebisubashi-store/" target="_blank" rel="noopener" class="action-btn btn-reserve">🔗 予約・詳細</a>
 </div>
 </div>
-<div class="store-card">
+<div class="store-card" data-chain="manekineko" data-price="390" data-amenities="mochikomi">
 <div class="store-header">
 <h3 class="store-name">
 <span class="chain-badge badge-manekineko">まねきねこ</span>
@@ -505,7 +505,7 @@ store_count: 25
 <a href="https://www.karaokemanekineko.jp/locations/osaka/osaka-shi/dotonbori-store/" target="_blank" rel="noopener" class="action-btn btn-reserve">🔗 予約・詳細</a>
 </div>
 </div>
-<div class="store-card">
+<div class="store-card" data-chain="bigecho" data-price="150" data-amenities="">
 <div class="store-header">
 <h3 class="store-name">
 <span class="chain-badge badge-bigecho">ビッグエコー</span>
@@ -527,7 +527,7 @@ store_count: 25
 <a href="https://big-echo.jp/shop_info/%E3%82%AB%E3%83%A9%E3%82%AA%E3%82%B1-%E3%83%93%E3%83%83%E3%82%B0%E3%82%A8%E3%82%B3%E3%83%BC-%E3%81%AA%E3%82%93%E3%81%B0%E6%88%8E%E6%A9%8B%E5%BA%97" target="_blank" rel="noopener" class="action-btn btn-reserve">🔗 予約・詳細</a>
 </div>
 </div>
-<div class="store-card">
+<div class="store-card" data-chain="bigecho" data-price="150" data-amenities="">
 <div class="store-header">
 <h3 class="store-name">
 <span class="chain-badge badge-bigecho">ビッグエコー</span>
@@ -549,7 +549,7 @@ store_count: 25
 <a href="https://big-echo.jp/shop_info/%E3%82%AB%E3%83%A9%E3%82%AA%E3%82%B1-%E3%83%93%E3%83%83%E3%82%B0%E3%82%A8%E3%82%B3%E3%83%BC-%E3%81%AA%E3%82%93%E3%81%B0%E6%88%8E%E6%A9%8B%E5%BA%97" target="_blank" rel="noopener" class="action-btn btn-reserve">🔗 予約・詳細</a>
 </div>
 </div>
-<div class="store-card">
+<div class="store-card" data-chain="bigecho" data-price="150" data-amenities="">
 <div class="store-header">
 <h3 class="store-name">
 <span class="chain-badge badge-bigecho">ビッグエコー</span>
@@ -571,7 +571,7 @@ store_count: 25
 <a href="https://big-echo.jp/shop_info/%E3%82%AB%E3%83%A9%E3%82%AA%E3%82%B1-%E3%83%93%E3%83%83%E3%82%B0%E3%82%A8%E3%82%B3%E3%83%BC-%E3%81%AA%E3%82%93%E3%81%B0%E6%88%8E%E6%A9%8B%E5%BA%97" target="_blank" rel="noopener" class="action-btn btn-reserve">🔗 予約・詳細</a>
 </div>
 </div>
-<div class="store-card">
+<div class="store-card" data-chain="jankara" data-price="250" data-amenities="drinkbar">
 <div class="store-header">
 <h3 class="store-name">
 <span class="chain-badge badge-jankara">ジャンカラ</span>
@@ -593,7 +593,7 @@ store_count: 25
 <a href="https://jankara.ne.jp/shop/045/" target="_blank" rel="noopener" class="action-btn btn-reserve">🔗 予約・詳細</a>
 </div>
 </div>
-<div class="store-card">
+<div class="store-card" data-chain="jankara" data-price="345" data-amenities="drinkbar">
 <div class="store-header">
 <h3 class="store-name">
 <span class="chain-badge badge-jankara">ジャンカラ</span>
@@ -615,7 +615,7 @@ store_count: 25
 <a href="https://jankara.ne.jp/shop/023/" target="_blank" rel="noopener" class="action-btn btn-reserve">🔗 予約・詳細</a>
 </div>
 </div>
-<div class="store-card">
+<div class="store-card" data-chain="jankara" data-price="345" data-amenities="drinkbar">
 <div class="store-header">
 <h3 class="store-name">
 <span class="chain-badge badge-jankara">ジャンカラ</span>
@@ -637,7 +637,7 @@ store_count: 25
 <a href="https://jankara.ne.jp/shop/119/" target="_blank" rel="noopener" class="action-btn btn-reserve">🔗 予約・詳細</a>
 </div>
 </div>
-<div class="store-card">
+<div class="store-card" data-chain="manekineko" data-price="390" data-amenities="mochikomi">
 <div class="store-header">
 <h3 class="store-name">
 <span class="chain-badge badge-manekineko">まねきねこ</span>
@@ -659,7 +659,7 @@ store_count: 25
 <a href="https://www.karaokemanekineko.jp/locations/osaka/osaka-shi/shinsaibashi-2nd-store/" target="_blank" rel="noopener" class="action-btn btn-reserve">🔗 予約・詳細</a>
 </div>
 </div>
-<div class="store-card">
+<div class="store-card" data-chain="manekineko" data-price="390" data-amenities="mochikomi">
 <div class="store-header">
 <h3 class="store-name">
 <span class="chain-badge badge-manekineko">まねきねこ</span>

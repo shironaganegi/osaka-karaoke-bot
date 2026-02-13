@@ -301,8 +301,21 @@ def build_store_list_html(stores: list[dict]) -> str:
             addr = store.get("address", "").split("\n")[0]
             if addr: map_url = f"https://www.google.com/maps/search/?api=1&query={urllib.parse.quote(addr)}"
 
+        # データ属性用の値を準備
+        data_price = "99999"
+        if p30:
+             data_price = str(p30)
+        
+        amenities = []
+        if chain == "manekineko":
+            amenities.append("mochikomi") # 持込OK
+        if chain == "jankara":
+            amenities.append("drinkbar") # ドリンクバー付(標準)
+        
+        data_amenities = " ".join(amenities)
+
         card = f"""
-<div class="store-card">
+<div class="store-card" data-chain="{chain}" data-price="{data_price}" data-amenities="{data_amenities}">
 <div class="store-header">
 <h3 class="store-name">
 <span class="chain-badge {badge_class}">{chain_label}</span>

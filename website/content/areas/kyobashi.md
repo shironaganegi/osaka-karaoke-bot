@@ -131,7 +131,7 @@ store_count: 9
 
 
 <div class="store-list-container">
-<div class="store-card" data-chain="jankara" data-price="480" data-amenities="drinkbar">
+<div class="store-card" data-chain="jankara" data-price="480" data-name="ジャンカラ 京橋1号店" data-amenities="drinkbar">
 <div class="store-header">
 <h3 class="store-name">
 <span class="chain-badge badge-jankara">ジャンカラ</span>
@@ -153,7 +153,7 @@ store_count: 9
 <a href="https://jankara.ne.jp/shop/032/" target="_blank" rel="noopener" class="action-btn btn-reserve">🔗 予約・詳細</a>
 </div>
 </div>
-<div class="store-card" data-chain="jankara" data-price="480" data-amenities="drinkbar">
+<div class="store-card" data-chain="jankara" data-price="480" data-name="ジャンカラ 京橋Door4店" data-amenities="drinkbar">
 <div class="store-header">
 <h3 class="store-name">
 <span class="chain-badge badge-jankara">ジャンカラ</span>
@@ -175,7 +175,7 @@ store_count: 9
 <a href="https://jankara.ne.jp/shop/236/" target="_blank" rel="noopener" class="action-btn btn-reserve">🔗 予約・詳細</a>
 </div>
 </div>
-<div class="store-card" data-chain="jankara" data-price="480" data-amenities="drinkbar">
+<div class="store-card" data-chain="jankara" data-price="480" data-name="ジャンカラ 京橋本店" data-amenities="drinkbar">
 <div class="store-header">
 <h3 class="store-name">
 <span class="chain-badge badge-jankara">ジャンカラ</span>
@@ -197,7 +197,7 @@ store_count: 9
 <a href="https://jankara.ne.jp/shop/174/" target="_blank" rel="noopener" class="action-btn btn-reserve">🔗 予約・詳細</a>
 </div>
 </div>
-<div class="store-card" data-chain="manekineko" data-price="390" data-amenities="mochikomi">
+<div class="store-card" data-chain="manekineko" data-price="390" data-name="まねきねこ 京橋店" data-amenities="mochikomi">
 <div class="store-header">
 <h3 class="store-name">
 <span class="chain-badge badge-manekineko">まねきねこ</span>
@@ -219,7 +219,7 @@ store_count: 9
 <a href="https://www.karaokemanekineko.jp/locations/osaka/osaka-shi/kyobashi-store/" target="_blank" rel="noopener" class="action-btn btn-reserve">🔗 予約・詳細</a>
 </div>
 </div>
-<div class="store-card" data-chain="manekineko" data-price="390" data-amenities="mochikomi">
+<div class="store-card" data-chain="manekineko" data-price="390" data-name="まねきねこ 京橋駅前店" data-amenities="mochikomi">
 <div class="store-header">
 <h3 class="store-name">
 <span class="chain-badge badge-manekineko">まねきねこ</span>
@@ -241,7 +241,7 @@ store_count: 9
 <a href="https://www.karaokemanekineko.jp/locations/osaka/osaka-shi/kyobashi-ekimae-store/" target="_blank" rel="noopener" class="action-btn btn-reserve">🔗 予約・詳細</a>
 </div>
 </div>
-<div class="store-card" data-chain="bigecho" data-price="250" data-amenities="">
+<div class="store-card" data-chain="bigecho" data-price="250" data-name="ビッグエコー カラオケ 京橋京阪モール前店" data-amenities="">
 <div class="store-header">
 <h3 class="store-name">
 <span class="chain-badge badge-bigecho">ビッグエコー</span>
@@ -263,7 +263,7 @@ store_count: 9
 <a href="https://big-echo.jp/shop_info/%E3%83%93%E3%83%83%E3%82%B0%E3%82%A8%E3%82%B3%E3%83%BC%E4%BA%AC%E6%A9%8B%E4%BA%AC%E9%98%AA%E3%83%A2%E3%83%BC%E3%83%AB%E5%89%8D%E5%BA%97" target="_blank" rel="noopener" class="action-btn btn-reserve">🔗 予約・詳細</a>
 </div>
 </div>
-<div class="store-card" data-chain="bigecho" data-price="250" data-amenities="">
+<div class="store-card" data-chain="bigecho" data-price="250" data-name="ビッグエコー カラオケ ＪＲ京橋駅前店" data-amenities="">
 <div class="store-header">
 <h3 class="store-name">
 <span class="chain-badge badge-bigecho">ビッグエコー</span>
@@ -285,7 +285,7 @@ store_count: 9
 <a href="https://big-echo.jp/shop_info/%E3%83%93%E3%83%83%E3%82%B0%E3%82%A8%E3%82%B3%E3%83%BC%E4%BA%AC%E6%A9%8B%E9%A7%85%E5%89%8D%E5%BA%97" target="_blank" rel="noopener" class="action-btn btn-reserve">🔗 予約・詳細</a>
 </div>
 </div>
-<div class="store-card" data-chain="bigecho" data-price="250" data-amenities="">
+<div class="store-card" data-chain="bigecho" data-price="250" data-name="ビッグエコー カラオケ 蒲生四丁目駅前店" data-amenities="">
 <div class="store-header">
 <h3 class="store-name">
 <span class="chain-badge badge-bigecho">ビッグエコー</span>
@@ -307,7 +307,7 @@ store_count: 9
 <a href="https://big-echo.jp/shop_info/%E3%83%93%E3%83%83%E3%82%B0%E3%82%A8%E3%82%B3%E3%83%BC%E8%92%B2%E7%94%9F%E5%9B%9B%E4%B8%81%E7%9B%AE%E9%A7%85%E5%89%8D%E5%BA%97" target="_blank" rel="noopener" class="action-btn btn-reserve">🔗 予約・詳細</a>
 </div>
 </div>
-<div class="store-card" data-chain="bigecho" data-price="300" data-amenities="">
+<div class="store-card" data-chain="bigecho" data-price="300" data-name="ビッグエコー カラオケ 都島ベルファⅡ店" data-amenities="">
 <div class="store-header">
 <h3 class="store-name">
 <span class="chain-badge badge-bigecho">ビッグエコー</span>

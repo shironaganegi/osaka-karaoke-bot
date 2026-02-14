@@ -1,74 +1,86 @@
-document.addEventListener('DOMContentLoaded', function () {
-    console.log("Filter.js loaded");
+document.addEventListener('DOMContentLoaded', () => {
+    console.log("🚀 Filter.js initialized");
 
     const searchInput = document.getElementById('store-search-input');
     const sortBtn = document.getElementById('sort-price-btn');
     const chainFilters = document.querySelectorAll('.filter-chain');
-    const container = document.querySelector('.store-list-container');
+    const cardsContainer = document.querySelector('.store-list-container');
 
-    if (!container) return;
+    if (!cardsContainer) {
+        console.error("❌ Error: .store-list-container not found");
+        return;
+    }
 
-    // 初期カードリストの取得 (NodeList -> Array)
-    let cards = Array.from(container.getElementsByClassName('store-card'));
+    // NodeListを配列に変換
+    let cards = Array.from(document.querySelectorAll('.store-card'));
+    console.log(`🔍 Found ${cards.length} store cards`);
 
     // --- フィルタリング関数 ---
-    function filterCards() {
-        const query = searchInput.value.toLowerCase().replace(/\s+/g, '');
+    const filterStores = () => {
+        // 入力値を小文字化＆スペース除去
+        const query = searchInput ? searchInput.value.toLowerCase().replace(/[\s　]+/g, '') : "";
+
+        // チェックされたチェーンの値を取得
         const selectedChains = Array.from(chainFilters)
             .filter(cb => cb.checked)
             .map(cb => cb.value);
 
+        console.log(`Filter: query="${query}", chains=[${selectedChains.join(',')}]`);
+
         cards.forEach(card => {
-            const name = card.querySelector('.store-name').textContent.toLowerCase().replace(/\s+/g, '');
+            // data-name属性（なければ空文字）を取得・正規化
+            const name = (card.getAttribute('data-name') || "").toLowerCase().replace(/[\s　]+/g, '');
             const chain = card.getAttribute('data-chain');
 
             // 検索ワード判定
-            const matchesSearch = name.includes(query);
+            // queryが空なら常にtrue、そうでなければnameに含まれるか
+            const matchesSearch = !query || name.includes(query);
 
-            // チェーン判定 (チェックなし＝全表示、あり＝該当のみ)
+            // チェーン判定
+            // 選択なしなら常にtrue、そうでなければchainが選択肢に含まれるか
             const matchesChain = selectedChains.length === 0 || selectedChains.includes(chain);
 
             if (matchesSearch && matchesChain) {
-                card.style.display = ""; // flex/block等に戻す
+                card.style.display = ""; // 表示
             } else {
-                card.style.display = "none";
+                card.style.display = "none"; // 非表示
             }
         });
-    }
+    };
 
-    // --- ソート関数 ---
-    let sortAsc = true;
-    function sortCards() {
-        // 表示されているカードだけソートするか、全体をソートするか？
-        // ここでは全体をソートして並べ替える
+    // --- ソート関数 (安い順) ---
+    const sortStores = () => {
+        console.log("💰 Sorting by price...");
 
+        // ソート実行
         cards.sort((a, b) => {
-            let priceA = parseInt(a.getAttribute('data-price')) || 99999; // dataなしは後ろへ
-            let priceB = parseInt(b.getAttribute('data-price')) || 99999;
-
-            if (priceA === priceB) return 0;
-            return sortAsc ? (priceA - priceB) : (priceB - priceA);
+            const priceA = parseInt(a.getAttribute('data-price')) || 99999;
+            const priceB = parseInt(b.getAttribute('data-price')) || 99999;
+            return priceA - priceB;
         });
 
-        // DOM再配置
-        cards.forEach(card => container.appendChild(card));
+        // DOM再配置（appendChildで末尾に移動＝並び替え）
+        cards.forEach(card => cardsContainer.appendChild(card));
+        console.log("✅ Sort complete");
+    };
 
-        // トグル
-        // sortAsc = !sortAsc; // 今回は「安い順」固定ボタンっぽいのでトグルさせないか、させるか。
-        // リクエスト「安い順に並び替える」 -> 押すたびにではなく、ワンショットで安い順にするだけでよいかも。
-        // でもトグルできたほうが便利なのでトグルにするが、表記を変える
-        // sortBtn.querySelector('span').textContent = sortAsc ? '💰' : '💹';
+    // イベントリスナー設定
+    if (searchInput) {
+        searchInput.addEventListener('input', filterStores);
+    } else {
+        console.warn("⚠️ Search input not found");
     }
 
-    // イベントリスナー
-    searchInput.addEventListener('input', filterCards);
+    if (sortBtn) {
+        sortBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            sortStores();
+        });
+    }
 
-    chainFilters.forEach(cb => {
-        cb.addEventListener('change', filterCards);
-    });
-
-    sortBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        sortCards();
-    });
+    if (chainFilters.length > 0) {
+        chainFilters.forEach(cb => {
+            cb.addEventListener('change', filterStores);
+        });
+    }
 });

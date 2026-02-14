@@ -313,9 +313,12 @@ def build_store_list_html(stores: list[dict]) -> str:
             amenities.append("drinkbar") # ドリンクバー付(標準)
         
         data_amenities = " ".join(amenities)
+        
+        # 検索用名称（チェーン名 + 店舗名）
+        search_name = f"{chain_label} {display_name}"
 
         card = f"""
-<div class="store-card" data-chain="{chain}" data-price="{data_price}" data-amenities="{data_amenities}">
+<div class="store-card" data-chain="{chain}" data-price="{data_price}" data-name="{search_name}" data-amenities="{data_amenities}">
 <div class="store-header">
 <h3 class="store-name">
 <span class="chain-badge {badge_class}">{chain_label}</span>

@@ -1,3 +1,9 @@
+window.onload = () => {
+    const cards = document.querySelectorAll('.store-card');
+    console.log("🛠️ Diagnostic: Found " + cards.length + " store cards.");
+    alert("診断結果: " + cards.length + "件の店舗を認識しました。");
+};
+
 document.addEventListener('DOMContentLoaded', () => {
     console.log("🚀 Filter.js initialized");
 

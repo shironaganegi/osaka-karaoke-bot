@@ -20,9 +20,9 @@
     {{- range $i, $e := .Params.tags }}{{ if $i }}, {{ end }}{{ $e }}{{ end }} {{- end -}}">
 {{- end }}
 <meta name="description" content="{{- with .Description }}{{ . }}{{- else }}{{- if or .IsPage .IsSection}}
-    {{- .Summary | default (printf " %s - %s" .Title site.Title) }}{{- else }} {{- with site.Params.description }}{{ .
+    {{- .Summary | default (printf "%s - %s" .Title site.Title) }}{{- else }} {{- with site.Params.description }}{{ .
     }}{{- end }}{{- end }}{{- end -}}">
-<meta name="author" content="{{ (partial " author.html" . ) }}">
+<meta name="author" content="{{ (partial "author.html" . ) }}">
 <link rel="canonical"
     href="{{ if .Params.canonicalURL -}} {{ trim .Params.canonicalURL " " }} {{- else -}} {{ .Permalink }} {{- end }}">
 {{- if site.Params.analytics.google.SiteVerificationTag }}
@@ -42,7 +42,7 @@
 
 {{- /* includes */}}
 {{- $includes := slice }}
-{{- $includes = $includes | append (" " | resources.FromString "assets/css/includes-blank.css")}}
+{{- $includes = $includes | append ("" | resources.FromString "assets/css/includes-blank.css")}}
 
 {{- if not (eq site.Params.assets.disableScrollBarStyle true) }}
 {{- $ScrollStyle := (resources.Get "css/includes/scroll-bar.css") }}
@@ -98,13 +98,13 @@ resources.Minify }}
 
 {{- /* Favicons */}}
 {{- /* Favicons */}}
-<link rel="icon" href="{{ " favicon.ico" | absURL }}">
-<link rel="icon" type="image/png" sizes="16x16" href="{{ " favicon-16x16.png" | absURL }}">
-<link rel="icon" type="image/png" sizes="32x32" href="{{ " favicon-32x32.png" | absURL }}">
-<link rel="apple-touch-icon" href="{{ " apple-touch-icon.png" | absURL }}">
-<link rel="mask-icon" href="{{ " safari-pinned-tab.svg" | absURL }}">
-<meta name="theme-color" content="{{ site.Params.assets.theme_color | default " #2e2e33" }}">
-<meta name="msapplication-TileColor" content="{{ site.Params.assets.msapplication_TileColor | default " #2e2e33" }}">
+<link rel="icon" href="{{ "favicon.ico" | absURL }}">
+<link rel="icon" type="image/png" sizes="16x16" href="{{ "favicon-16x16.png" | absURL }}">
+<link rel="icon" type="image/png" sizes="32x32" href="{{ "favicon-32x32.png" | absURL }}">
+<link rel="apple-touch-icon" href="{{ "apple-touch-icon.png" | absURL }}">
+<link rel="mask-icon" href="{{ "safari-pinned-tab.svg" | absURL }}">
+<meta name="theme-color" content="{{ site.Params.assets.theme_color | default "#2e2e33" }}">
+<meta name="msapplication-TileColor" content="{{ site.Params.assets.msapplication_TileColor | default "#2e2e33" }}">
 
 {{- /* RSS */}}
 {{ range .AlternativeOutputFormats -}}

@@ -249,6 +249,41 @@ STICKY_FOOTER_HTML = """
 """
 
 
+
+def format_price(price_data: dict) -> str:
+    """一般/会員価格を併記するフォーマット関数"""
+    if not price_data:
+        return "-"
+        
+    general = price_data.get("general")
+    member = price_data.get("member")
+    
+    if general and member:
+        return f"一般:{general}円<br>会員:{member}円"
+    elif general:
+        return f"{general}円"
+    elif member:
+        return f"<span style='font-size:0.9em; color:#666'>会員:</span>{member}円"
+    else:
+        return "-"
+
+def get_lowest_price(price_data: dict) -> tuple[int | None, str]:
+    """最安値とその種別（一般/会員）を返す"""
+    if not price_data:
+        return None, ""
+        
+    g = price_data.get("general")
+    m = price_data.get("member")
+    
+    # 両方ある場合は安い方を返す（通常は会員）
+    if g and m:
+        if m < g: return m, "会員"
+        return g, "一般"
+    if m: return m, "会員"
+    if g: return g, "一般"
+    return None, ""
+
+
 def build_store_list_html(stores: list[dict]) -> str:
     """カード型リストHTMLを生成する (憲法第3条: インデント禁止)"""
     cards = []
@@ -277,19 +312,23 @@ def build_store_list_html(stores: list[dict]) -> str:
         pricing = store.get("pricing")
         price_30_str = "-"
         price_ft_str = "-"
+        data_price = "99999"
         
         if pricing and pricing.get("status") == "success":
             day_30 = pricing.get("day", {}).get("30min", {})
-            p30 = day_30.get("general") or day_30.get("member")
-            if p30: price_30_str = f"{p30}円〜"
+            price_30_str = format_price(day_30)
             
             day_ft = pricing.get("day", {}).get("free_time", {})
-            pft = day_ft.get("general") or day_ft.get("member")
-            if pft: price_ft_str = f"{pft}円〜"
+            price_ft_str = format_price(day_ft)
+
+            # ソート用価格（最安値を使用）
+            low_30, _ = get_lowest_price(day_30)
+            if low_30:
+                data_price = str(low_30)
 
             # デバッグログ: まねきねこの場合
             if chain == "manekineko":
-                print(f"DEBUG: Manekineko {display_name} - 30min: {p30}, FT: {pft}", file=sys.stderr)
+                print(f"DEBUG: {display_name} - {price_30_str}", file=sys.stderr)
         
         url = store.get("url") or store.get("price_url") or "#"
         map_url = "#"
@@ -301,11 +340,6 @@ def build_store_list_html(stores: list[dict]) -> str:
             addr = store.get("address", "").split("\n")[0]
             if addr: map_url = f"https://www.google.com/maps/search/?api=1&query={urllib.parse.quote(addr)}"
 
-        # データ属性用の値を準備
-        data_price = "99999"
-        if p30:
-             data_price = str(p30)
-        
         amenities = []
         if chain == "manekineko":
             amenities.append("mochikomi") # 持込OK
@@ -313,8 +347,6 @@ def build_store_list_html(stores: list[dict]) -> str:
             amenities.append("drinkbar") # ドリンクバー付(標準)
         
         data_amenities = " ".join(amenities)
-        
-        # 検索用名称（チェーン名 + 店舗名）
         search_name = f"{chain_label} {display_name}"
 
         card = f"""
@@ -356,18 +388,20 @@ def build_map_html(stores: list[dict]) -> str:
         name = s.get("name", "")
         url = s.get("url") or "#"
         if lat and lon:
-            # マーカーに価格情報も付与
+            # マーカーに価格情報も付与（最安値を表示）
             p_30 = "-"
             p_free = "-"
             pricing = s.get("pricing")
             if pricing and pricing.get("status") == "success":
                 day_30 = pricing.get("day", {}).get("30min", {})
-                val_30 = day_30.get("general") or day_30.get("member")
-                if val_30: p_30 = val_30
+                low_30, type_30 = get_lowest_price(day_30)
+                if low_30:
+                    p_30 = f"{low_30}" 
                 
                 day_ft = pricing.get("day", {}).get("free_time", {})
-                val_ft = day_ft.get("general") or day_ft.get("member")
-                if val_ft: p_free = val_ft
+                low_ft, type_ft = get_lowest_price(day_ft)
+                if low_ft:
+                    p_free = f"{low_ft}"
 
             markers.append({
                 "name": name,
@@ -380,13 +414,9 @@ def build_map_html(stores: list[dict]) -> str:
     
     if not markers: return ""
 
-    
     # マーカーリストをJSON文字列に変換
     markers_json = json.dumps(markers, ensure_ascii=False)
     
-    # Hugoのショートコードとして返す
-    # 注意: ショートコード内のJSONはエスケープされる可能性があるため、シングルクォートで囲むなどの工夫が必要
-    # ここでは単純に文字列として渡す
     return f'{{{{< leaflet-map markers=`{markers_json}` >}}}}'
 
 
@@ -402,24 +432,30 @@ def find_cheapest(stores: list[dict]) -> str:
         if pricing.get("status") != "success": continue
 
         day_30 = pricing.get("day", {}).get("30min", {})
-        price_30 = day_30.get("general") or day_30.get("member")
+        price_30, type_30 = get_lowest_price(day_30)
+        
         if price_30 is not None and (cheapest_30 is None or price_30 < cheapest_30):
             cheapest_30 = price_30
-            cheapest_30_name = s.get("name", "")
+            # 種別が会員なら店舗名に付記
+            suffix = f"（{type_30}）" if type_30 == "会員" else ""
+            cheapest_30_name = f"{s.get('name', '')}{suffix}"
 
         day_ft = pricing.get("day", {}).get("free_time", {})
-        price_ft = day_ft.get("general") or day_ft.get("member")
+        price_ft, type_ft = get_lowest_price(day_ft)
+        
         if price_ft is not None and (cheapest_ft is None or price_ft < cheapest_ft):
             cheapest_ft = price_ft
-            cheapest_ft_name = s.get("name", "")
+            suffix = f"（{type_ft}）" if type_ft == "会員" else ""
+            cheapest_ft_name = f"{s.get('name', '')}{suffix}"
 
     parts = []
     if cheapest_30:
-        parts.append(f"- 🏆 **平日昼30分最安**: {cheapest_30}円（{cheapest_30_name}）")
+        parts.append(f"- 🏆 **平日昼30分最安**: {cheapest_30}円 / {cheapest_30_name}")
     if cheapest_ft:
-        parts.append(f"- 🏆 **平日昼フリータイム最安**: {cheapest_ft}円（{cheapest_ft_name}）")
+        parts.append(f"- 🏆 **平日昼フリータイム最安**: {cheapest_ft}円 / {cheapest_ft_name}")
 
     return "\n".join(parts) if parts else ""
+
 
 
 def build_markdown(station: str, stores: list[dict], today: str) -> str:

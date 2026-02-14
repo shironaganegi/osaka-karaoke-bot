@@ -91,10 +91,19 @@
         let cards = Array.from(document.querySelectorAll('.store-card'));
         console.log(`🔍 Found ${cards.length} store cards`);
 
+        // --- カタカナ→ひらがな変換 ---
+        const kanaToHira = (str) => {
+            return str.replace(/[\u30a1-\u30f6]/g, function (match) {
+                const chr = match.charCodeAt(0) - 0x60;
+                return String.fromCharCode(chr);
+            });
+        };
+
         // --- フィルタリング関数 ---
         const filterStores = () => {
-            // 入力値を小文字化＆スペース除去
-            const query = searchInput ? searchInput.value.toLowerCase().replace(/[\s　]+/g, '') : "";
+            // 入力値を小文字化＆ひらがな化＆スペース除去
+            let query = searchInput ? searchInput.value.toLowerCase().replace(/[\s　]+/g, '') : "";
+            query = kanaToHira(query);
 
             // チェックされたチェーンの値を取得
             const selectedChains = Array.from(chainFilters)
@@ -104,8 +113,10 @@
             console.log(`Filter: query="${query}", chains=[${selectedChains.join(',')}]`);
 
             cards.forEach(card => {
-                // data-name属性（なければ空文字）を取得・正規化
-                const name = (card.getAttribute('data-name') || "").toLowerCase().replace(/[\s　]+/g, '');
+                // data-name属性（なければ空文字）を取得・正規化（小文字化＆ひらがな化）
+                let name = (card.getAttribute('data-name') || "").toLowerCase().replace(/[\s　]+/g, '');
+                name = kanaToHira(name);
+
                 const chain = card.getAttribute('data-chain');
 
                 // 検索ワード判定

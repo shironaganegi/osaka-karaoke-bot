@@ -80,8 +80,8 @@
     document.addEventListener('DOMContentLoaded', () => {
         console.log("🚀 Filter.js initialized");
 
-        const searchInput = document.getElementById('store-search-input');
-        const sortBtn = document.getElementById('sort-price-btn');
+        const searchInput = document.getElementById('search-input');
+        const sortBtn = document.getElementById('sort-price-asc');
         const chainFilters = document.querySelectorAll('.filter-chain');
         const cardsContainer = document.querySelector('.store-list-container');
 
@@ -143,9 +143,12 @@
 
         // イベントリスナー設定
         if (searchInput) {
-            searchInput.addEventListener('input', filterStores);
+            searchInput.addEventListener('input', (e) => {
+                console.log("⌨️ Typing detected: " + e.target.value);
+                filterStores();
+            });
         } else {
-            console.warn("⚠️ Search input not found");
+            console.warn("❌ Error: 'search-input' element not found in HTML!");
         }
 
         if (sortBtn) {

@@ -1,26 +1,7 @@
-# Environment variables
-.env
-.env.local
 
-# Python
 __pycache__/
 *.pyc
-venv/
-.pytest_cache/
-
-# System
+.env
 .DS_Store
-Thumbs.db
-
-# Hugo build output
-website/public/
-website/resources/_gen/
-
-# Temp files
-normalizer_output.txt
-*.tmp
-
-# Debug / local analysis
-debug_*.py
-jankara_osaka.html
-jankara_output.txt
+tessdata/
+*.log

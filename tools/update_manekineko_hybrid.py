@@ -63,15 +63,27 @@ def ocr_pdf_to_text(pdf_bytes):
         print(f"  OCR Error: {e}", file=sys.stderr)
         return ""
 
-def analyze_text_with_ai(text):
+def get_pdf_first_page_image(pdf_bytes):
+    try:
+        doc = fitz.open(stream=pdf_bytes, filetype="pdf")
+        if len(doc) == 0: return None
+        page = doc[0]
+        pix = page.get_pixmap(dpi=300)
+        img = Image.frombytes("RGB", [pix.width, pix.height], pix.samples)
+        return img
+    except Exception as e:
+        print(f"  Image Extraction Error: {e}", file=sys.stderr)
+        return None
+
+def analyze_image_with_ai(img):
     prompt = """
     あなたはカラオケ料金のデータ抽出AIです。
-    提供されたOCRテキストから、「平日・昼（OPEN〜18:00頃）」の「30分料金」を抽出してください。
+    提供された料金表の画像から、「平日・昼（OPEN〜18:00頃）」の「30分料金」を抽出してください。
     
     ## 抽出ルール (絶対遵守)
     1. **ターゲット**: 「一般（非会員）」と「会員（アプリ会員/LINE会員など）」の両方の価格。
     2. **除外**: 「朝うた」「ゼロカラ」「深夜料金」「シニア割引」「高校生室料0円」などは無視してください。
-    3. **検証**: 価格は通常 **150円〜500円** の範囲内です。これより安すぎる（例: 10円、100円）場合は「朝うた」の可能性が高いので無視してください。
+    3. **検証**: 価格は通常 **100円〜600円** の範囲内です。特に安価（100円〜150円）な場合も、それが「学生限定」や「朝うた」でなければ正当な価格として抽出してください。
     4. **フリータイム**: もし記載があれば「平日昼フリータイム」の価格も抽出してください。
 
     ## 出力フォーマット (JSONのみ)
@@ -81,18 +93,20 @@ def analyze_text_with_ai(text):
         "weekday_30min_member": 数値 または null,
         "weekday_free_member": 数値 または null,
         "weekday_free_general": 数値 または null,
-        "reasoning": "テキストのどの部分から判断したか簡潔に"
+        "reasoning": "画像のどこを見て判断したか"
     }
     ```
     """
     
     try:
-        response = model.generate_content([prompt, text])
+        response = model.generate_content([prompt, img])
         raw_json = response.text.replace("```json", "").replace("```", "").strip()
         data = json.loads(raw_json)
         return data
     except Exception as e:
-        print(f"  AI Analysis Error: {e}", file=sys.stderr)
+        # print(f"  AI Image Analysis Error: {e}", file=sys.stderr)
+        # Re-raise 429 to be handled by caller
+        if "429" in str(e): raise e
         return None
 
 def validate_price(price):
@@ -334,11 +348,11 @@ def main():
             pdf_bytes = fetch_pdf_bytes(pdf_url)
             if not pdf_bytes: continue
 
-            # 2. Local OCR
-            text = ocr_pdf_to_text(pdf_bytes)
-            if not text:
-                print("  No text extracted from OCR.", file=sys.stderr)
-                continue
+            # 2. Get Image and OCR
+            img = get_pdf_first_page_image(pdf_bytes)
+            if not img: continue
+            
+            text = pytesseract.image_to_string(img, lang='jpn+eng', config='--psm 6')
             
             mem_30 = None
             gen_30 = None
@@ -346,24 +360,20 @@ def main():
             gen_free = None
             source = "None"
             
-            # Priority: Context Aware Regex (Trusted for structural logic) matches Day block
-            # This is specifically to catch Namba HIPS "150 yen" which is valid but filtrated
-            
+            # Priority 1: Context Aware Regex (Trusted for structural logic) matches Day block
             c_mem_30, c_gen_30, c_mem_free, c_gen_free = extract_price_context_aware(text)
             if c_mem_30 and c_gen_30:
                  mem_30, gen_30 = c_mem_30, c_gen_30
                  mem_free, gen_free = c_mem_free, c_gen_free
                  source = "ContextRegex"
-                 print(f"  ContextRegex Result: 30min={mem_30}/{gen_30}, Free={mem_free}/{gen_free}", file=sys.stderr)
+                 print(f"  ContextRegex Result: 30min={mem_30}/{gen_30}", file=sys.stderr)
 
-            # 3. AI Analysis (If Context Failed or to supplement)
-            # Only use AI if we didn't get confident match or if we want to confirm?
-            # AI is expensive/rate-limited. Let's use it if ContextRegex returned nothing
-            
+            # Priority 2: Gemini Vision (If Context Failed)
             ai_success = False
             if not mem_30:
+                print("  ContextRegex failed. Trying Gemini Vision...", file=sys.stderr)
                 try:
-                    ai_data = analyze_text_with_ai(text)
+                    ai_data = analyze_image_with_ai(img)
                     if ai_data:
                         mem_30 = ai_data.get("weekday_30min_member")
                         gen_30 = ai_data.get("weekday_30min_general")
@@ -372,12 +382,13 @@ def main():
                         
                         if validate_price(mem_30) or validate_price(gen_30):
                             ai_success = True
-                            source = "Gemini"
-                            print(f"  AI Result: Mem={mem_30}, Gen={gen_30} ({ai_data.get('reasoning')})", file=sys.stderr)
+                            source = "GeminiVision"
+                            print(f"  Gemini Vision Result: Mem={mem_30}, Gen={gen_30}", file=sys.stderr)
                 except Exception as e:
-                    print(f"  AI skipped/failed: {e}", file=sys.stderr)
+                    print(f"  Gemini Vision Failed: {e}", file=sys.stderr)
                     if "429" in str(e):
                          print("  ⚠️ API Rate Limit 429. Waiting 30s...", file=sys.stderr)
+                         time.sleep(30)
                          time.sleep(30)
 
             # 4. Fallback to Simple Regex (if neither Context nor AI worked)

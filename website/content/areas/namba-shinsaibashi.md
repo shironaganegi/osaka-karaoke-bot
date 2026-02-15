@@ -9,114 +9,6 @@ area: "難波・心斎橋"
 store_count: 25
 ---
 
-
-<style>
-.store-list-container {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 15px;
-  margin-bottom: 40px;
-}
-@media (min-width: 768px) {
-  .store-list-container {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-@media (min-width: 1024px) {
-  .store-list-container {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-.store-card {
-  background: white;
-  border-radius: 12px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.05), 0 1px 3px rgba(0,0,0,0.1);
-  padding: 20px;
-  border: 1px solid #eee;
-  display: flex;
-  flex-direction: column;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-.store-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 12px rgba(0,0,0,0.1);
-}
-.store-header {
-  margin-bottom: 15px;
-  border-bottom: 1px solid #f0f0f0;
-  padding-bottom: 10px;
-}
-.store-name {
-  font-weight: bold;
-  font-size: 1.1rem;
-  color: #333;
-  margin: 0;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-.chain-badge {
-  font-size: 0.8rem;
-  padding: 2px 6px;
-  border-radius: 4px;
-  color: white;
-  font-weight: normal;
-}
-.badge-jankara { background-color: #0044cc; }
-.badge-bigecho { background-color: #cc0000; }
-.badge-manekineko { background-color: #f1c40f; color: #333; }
-.price-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
-  margin-bottom: 20px;
-  background: #f9f9f9;
-  padding: 10px;
-  border-radius: 8px;
-}
-.price-item {
-  display: flex;
-  flex-direction: column;
-}
-.price-label {
-  font-size: 0.75rem;
-  color: #888;
-  margin-bottom: 2px;
-}
-.price-value {
-  font-weight: bold;
-  font-size: 0.95rem;
-  color: #d35400;
-}
-.action-area {
-  margin-top: auto;
-  display: flex;
-  gap: 10px;
-}
-.action-btn {
-  flex: 1;
-  text-align: center;
-  padding: 8px 0;
-  border-radius: 6px;
-  font-size: 0.85rem;
-  text-decoration: none;
-  font-weight: bold;
-  transition: background 0.2s;
-  display: block;
-}
-.btn-map {
-  background-color: #f0f2f5;
-  color: #555;
-  border: 1px solid #dcdfe6;
-}
-.btn-reserve {
-  background-color: #3498db;
-  color: white;
-  border: 1px solid #2980b9;
-}
-</style>
-
-
 ## 難波・心斎橋エリアのカラオケ店一覧（25店舗）
 
 難波・心斎橋エリアにある各駅周辺のカラオケ店をまとめました。
@@ -389,8 +281,8 @@ store_count: 25
 </div>
 </div>
         
-        <div style="text-align: center; margin-bottom: 10px;">
-<a href="https://d1k5d0nneloh3k.cloudfront.net/wp-content/uploads/2025/11/28132223/448-7.pdf" target="_blank" rel="noopener" style="font-size: 0.85rem; color: #d35400; text-decoration: underline;">📄 公式料金表を見る (PDF)</a>
+        <div class="pdf-link-container">
+<a href="https://d1k5d0nneloh3k.cloudfront.net/wp-content/uploads/2025/11/28132223/448-7.pdf" target="_blank" rel="noopener" class="pdf-link">📄 公式料金表を見る (PDF)</a>
 </div>
 <div class="action-area">
 <a href="https://www.google.com/maps/search/?api=1&query=34.6737295,135.518806" target="_blank" rel="noopener" class="action-btn btn-map">📍 地図</a>
@@ -415,8 +307,8 @@ store_count: 25
 </div>
 </div>
         
-        <div style="text-align: center; margin-bottom: 10px;">
-<a href="https://d1k5d0nneloh3k.cloudfront.net/wp-content/uploads/2025/11/28132640/767-8.pdf" target="_blank" rel="noopener" style="font-size: 0.85rem; color: #d35400; text-decoration: underline;">📄 公式料金表を見る (PDF)</a>
+        <div class="pdf-link-container">
+<a href="https://d1k5d0nneloh3k.cloudfront.net/wp-content/uploads/2025/11/28132640/767-8.pdf" target="_blank" rel="noopener" class="pdf-link">📄 公式料金表を見る (PDF)</a>
 </div>
 <div class="action-area">
 <a href="https://www.google.com/maps/search/?api=1&query=34.6643444,135.5038988" target="_blank" rel="noopener" class="action-btn btn-map">📍 地図</a>
@@ -441,8 +333,8 @@ store_count: 25
 </div>
 </div>
         
-        <div style="text-align: center; margin-bottom: 10px;">
-<a href="https://d1k5d0nneloh3k.cloudfront.net/wp-content/uploads/2025/11/28132355/738-10.pdf" target="_blank" rel="noopener" style="font-size: 0.85rem; color: #d35400; text-decoration: underline;">📄 公式料金表を見る (PDF)</a>
+        <div class="pdf-link-container">
+<a href="https://d1k5d0nneloh3k.cloudfront.net/wp-content/uploads/2025/11/28132355/738-10.pdf" target="_blank" rel="noopener" class="pdf-link">📄 公式料金表を見る (PDF)</a>
 </div>
 <div class="action-area">
 <a href="https://www.google.com/maps/search/?api=1&query=34.6643444,135.5038988" target="_blank" rel="noopener" class="action-btn btn-map">📍 地図</a>
@@ -467,8 +359,8 @@ store_count: 25
 </div>
 </div>
         
-        <div style="text-align: center; margin-bottom: 10px;">
-<a href="https://d1k5d0nneloh3k.cloudfront.net/wp-content/uploads/2025/11/28132751/768-6.pdf" target="_blank" rel="noopener" style="font-size: 0.85rem; color: #d35400; text-decoration: underline;">📄 公式料金表を見る (PDF)</a>
+        <div class="pdf-link-container">
+<a href="https://d1k5d0nneloh3k.cloudfront.net/wp-content/uploads/2025/11/28132751/768-6.pdf" target="_blank" rel="noopener" class="pdf-link">📄 公式料金表を見る (PDF)</a>
 </div>
 <div class="action-area">
 <a href="https://www.google.com/maps/search/?api=1&query=34.6737295,135.518806" target="_blank" rel="noopener" class="action-btn btn-map">📍 地図</a>
@@ -493,8 +385,8 @@ store_count: 25
 </div>
 </div>
         
-        <div style="text-align: center; margin-bottom: 10px;">
-<a href="https://d1k5d0nneloh3k.cloudfront.net/wp-content/uploads/2025/11/04154443/740-13.pdf" target="_blank" rel="noopener" style="font-size: 0.85rem; color: #d35400; text-decoration: underline;">📄 公式料金表を見る (PDF)</a>
+        <div class="pdf-link-container">
+<a href="https://d1k5d0nneloh3k.cloudfront.net/wp-content/uploads/2025/11/04154443/740-13.pdf" target="_blank" rel="noopener" class="pdf-link">📄 公式料金表を見る (PDF)</a>
 </div>
 <div class="action-area">
 <a href="https://www.google.com/maps/search/?api=1&query=34.6643444,135.5038988" target="_blank" rel="noopener" class="action-btn btn-map">📍 地図</a>
@@ -519,8 +411,8 @@ store_count: 25
 </div>
 </div>
         
-        <div style="text-align: center; margin-bottom: 10px;">
-<a href="https://d1k5d0nneloh3k.cloudfront.net/wp-content/uploads/2025/11/28133142/903-6.pdf" target="_blank" rel="noopener" style="font-size: 0.85rem; color: #d35400; text-decoration: underline;">📄 公式料金表を見る (PDF)</a>
+        <div class="pdf-link-container">
+<a href="https://d1k5d0nneloh3k.cloudfront.net/wp-content/uploads/2025/11/28133142/903-6.pdf" target="_blank" rel="noopener" class="pdf-link">📄 公式料金表を見る (PDF)</a>
 </div>
 <div class="action-area">
 <a href="https://www.google.com/maps/search/?api=1&query=34.6696978,135.5042317" target="_blank" rel="noopener" class="action-btn btn-map">📍 地図</a>
@@ -545,8 +437,8 @@ store_count: 25
 </div>
 </div>
         
-        <div style="text-align: center; margin-bottom: 10px;">
-<a href="https://d1k5d0nneloh3k.cloudfront.net/wp-content/uploads/2025/11/28133255/741-6.pdf" target="_blank" rel="noopener" style="font-size: 0.85rem; color: #d35400; text-decoration: underline;">📄 公式料金表を見る (PDF)</a>
+        <div class="pdf-link-container">
+<a href="https://d1k5d0nneloh3k.cloudfront.net/wp-content/uploads/2025/11/28133255/741-6.pdf" target="_blank" rel="noopener" class="pdf-link">📄 公式料金表を見る (PDF)</a>
 </div>
 <div class="action-area">
 <a href="https://www.google.com/maps/search/?api=1&query=34.6690306,135.5015715" target="_blank" rel="noopener" class="action-btn btn-map">📍 地図</a>
@@ -563,11 +455,11 @@ store_count: 25
 <div class="price-grid">
 <div class="price-item">
 <span class="price-label">30分 (平日昼)</span>
-<span class="price-value"><span style='font-size:0.9em; color:#666'>会員:</span>150円</span>
+<span class="price-value"><span class='member-label'>会員:</span>150円</span>
 </div>
 <div class="price-item">
 <span class="price-label">フリータイム (平日昼)</span>
-<span class="price-value"><span style='font-size:0.9em; color:#666'>会員:</span>960円</span>
+<span class="price-value"><span class='member-label'>会員:</span>960円</span>
 </div>
 </div>
         
@@ -587,11 +479,11 @@ store_count: 25
 <div class="price-grid">
 <div class="price-item">
 <span class="price-label">30分 (平日昼)</span>
-<span class="price-value"><span style='font-size:0.9em; color:#666'>会員:</span>150円</span>
+<span class="price-value"><span class='member-label'>会員:</span>150円</span>
 </div>
 <div class="price-item">
 <span class="price-label">フリータイム (平日昼)</span>
-<span class="price-value"><span style='font-size:0.9em; color:#666'>会員:</span>960円</span>
+<span class="price-value"><span class='member-label'>会員:</span>960円</span>
 </div>
 </div>
         
@@ -611,11 +503,11 @@ store_count: 25
 <div class="price-grid">
 <div class="price-item">
 <span class="price-label">30分 (平日昼)</span>
-<span class="price-value"><span style='font-size:0.9em; color:#666'>会員:</span>150円</span>
+<span class="price-value"><span class='member-label'>会員:</span>150円</span>
 </div>
 <div class="price-item">
 <span class="price-label">フリータイム (平日昼)</span>
-<span class="price-value"><span style='font-size:0.9em; color:#666'>会員:</span>960円</span>
+<span class="price-value"><span class='member-label'>会員:</span>960円</span>
 </div>
 </div>
         
@@ -715,8 +607,8 @@ store_count: 25
 </div>
 </div>
         
-        <div style="text-align: center; margin-bottom: 10px;">
-<a href="https://d1k5d0nneloh3k.cloudfront.net/wp-content/uploads/2025/11/28133031/907-8.pdf" target="_blank" rel="noopener" style="font-size: 0.85rem; color: #d35400; text-decoration: underline;">📄 公式料金表を見る (PDF)</a>
+        <div class="pdf-link-container">
+<a href="https://d1k5d0nneloh3k.cloudfront.net/wp-content/uploads/2025/11/28133031/907-8.pdf" target="_blank" rel="noopener" class="pdf-link">📄 公式料金表を見る (PDF)</a>
 </div>
 <div class="action-area">
 <a href="https://www.google.com/maps/search/?api=1&query=34.6722212,135.5023455" target="_blank" rel="noopener" class="action-btn btn-map">📍 地図</a>
@@ -741,8 +633,8 @@ store_count: 25
 </div>
 </div>
         
-        <div style="text-align: center; margin-bottom: 10px;">
-<a href="https://d1k5d0nneloh3k.cloudfront.net/wp-content/uploads/2025/11/08175252/801-11.pdf" target="_blank" rel="noopener" style="font-size: 0.85rem; color: #d35400; text-decoration: underline;">📄 公式料金表を見る (PDF)</a>
+        <div class="pdf-link-container">
+<a href="https://d1k5d0nneloh3k.cloudfront.net/wp-content/uploads/2025/11/08175252/801-11.pdf" target="_blank" rel="noopener" class="pdf-link">📄 公式料金表を見る (PDF)</a>
 </div>
 <div class="action-area">
 <a href="https://www.google.com/maps/search/?api=1&query=34.6722212,135.5023455" target="_blank" rel="noopener" class="action-btn btn-map">📍 地図</a>
@@ -753,9 +645,9 @@ store_count: 25
 
 
 
-<div style="margin: 30px 0; text-align: center;">
-  <div style="font-size: 0.8rem; color: #999; margin-bottom: 5px;">PR</div>
-  <div style="display: inline-block;">
+<div class="ad-container">
+  <div class="ad-pr-label">PR</div>
+  <div class="ad-content">
     <script type='text/javascript' src='https://ad-verification.a8.net/ad/js/brandsafe.js'></script>
     <div id='div_admane_async_1734_658_2971'>
     <script type='text/javascript'>
@@ -770,12 +662,12 @@ store_count: 25
 
 
 
-<div style="position: fixed; bottom: 0; left: 0; width: 100%; background: rgba(255, 255, 255, 0.95); border-top: 1px solid #ddd; z-index: 2147483647; display: flex; align-items: center; justify-content: center; padding: 4px 0; height: 58px; box-sizing: border-box;">
-   <span style="font-size: 0.8rem; color: #333; margin-right: 10px; font-weight: bold; white-space: nowrap;">
-     🉐 30%OFF <span style="font-size: 0.75rem;">エポスカード</span>
+<div class="sticky-footer">
+   <span class="sticky-footer-badge">
+     🉐 30%OFF <span class="sticky-footer-small">エポスカード</span>
    </span>
    
-   <div style="display: flex; align-items: center;">
+   <div class="sticky-footer-ad">
     <script type='text/javascript' src='https://ad-verification.a8.net/ad/js/brandsafe.js'></script>
     <div id='div_admane_async_1734_658_2972'>
     <script type='text/javascript'>
@@ -785,6 +677,6 @@ store_count: 25
     <img border="0" width="1" height="1" src="https://www11.a8.net/0.gif?a8mat=4AX9GH+CZDC76+38L8+BXYE9" alt="">
    </div>
 </div>
-<div style="height: 60px;"></div>
+<div class="sticky-footer-spacer"></div>
 
 

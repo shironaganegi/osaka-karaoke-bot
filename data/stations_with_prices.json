@@ -377,15 +377,15 @@
           "status": "success",
           "day": {
             "30min": {
-              "general": 390,
-              "member": 300
+              "member": 105,
+              "general": 150
             },
             "free_time": {
-              "general": 1560,
-              "member": 1200
+              "member": 1300,
+              "general": 1450
             }
           },
-          "scraped_at": "2026-02-15T22:30:26.430576"
+          "scraped_at": "2026-02-15T22:58:22.403224"
         },
         "pdf_url": "https://d1k5d0nneloh3k.cloudfront.net/wp-content/uploads/2025/11/28132223/448-7.pdf"
       },
@@ -425,15 +425,15 @@
           "status": "success",
           "day": {
             "30min": {
-              "general": 390,
-              "member": 300
+              "member": 105,
+              "general": 150
             },
             "free_time": {
-              "general": 1560,
-              "member": 1200
+              "member": 420,
+              "general": 600
             }
           },
-          "scraped_at": "2026-02-15T22:30:26.430609"
+          "scraped_at": "2026-02-15T22:51:31.263453"
         },
         "pdf_url": "https://d1k5d0nneloh3k.cloudfront.net/wp-content/uploads/2025/11/28132355/738-10.pdf"
       },
@@ -529,7 +529,7 @@
               "general": 2000
             }
           },
-          "scraped_at": "2026-02-15T22:31:56.134180"
+          "scraped_at": "2026-02-15T22:52:26.348900"
         },
         "pdf_url": "https://d1k5d0nneloh3k.cloudfront.net/wp-content/uploads/2025/11/28133255/741-6.pdf"
       },
@@ -3552,13 +3552,15 @@
           "status": "success",
           "day": {
             "30min": {
-              "member": 187
+              "member": 187,
+              "general": 243
             },
             "free_time": {
-              "member": 748
+              "member": 748,
+              "general": 972
             }
           },
-          "scraped_at": "2026-02-15T22:37:04.573577"
+          "scraped_at": "2026-02-15T22:57:37.454672"
         },
         "pdf_url": "https://d1k5d0nneloh3k.cloudfront.net/wp-content/uploads/2025/11/13080508/615-4.pdf"
       }

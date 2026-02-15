@@ -167,6 +167,117 @@ def extract_price_regex(text):
     
     return member_price, general_price
 
+def extract_price_context_aware(text):
+    """
+    Extract prices based on time context (e.g., 11:00~18:00).
+    Returns: (mem_30, gen_30, mem_free, gen_free)
+    """
+    import re
+    lines = text.split('\n')
+    
+    # regex for time range (e.g., 11:00 ~ 18:00)
+    # Tesseract often garbles numbers, so be flexible: (1)1:00, (1)8:00, etc.
+    time_range_pattern = re.compile(r'(\d{1,2})[:\s]00\s*~\s*(\d{1,2})[:\s]00')
+    price_pattern = re.compile(r'(\d{3,4})')
+    
+    current_block = "unknown" # morning, day, night
+    
+    mem_30, gen_30 = None, None
+    mem_free, gen_free = None, None
+
+    # Track prices found in "Day" block
+    day_30_candidates = []
+    day_free_candidates = []
+
+    for i, line in enumerate(lines):
+        # Detect Block
+        # Look for "11:00" or "10:00" to "18:00" or "19:00"
+        # OCR garbles: "⑪:00", "①⑧:00"
+        line_clean = line.replace("⑪", "11").replace("①⑧", "18").replace("①", "1").replace("⑧", "8")
+        
+        if ("11:00" in line_clean or "10:00" in line_clean) and ("18:00" in line_clean or "19:00" in line_clean):
+            current_block = "day"
+            # print(f"DEBUG: Found DAY block at line {i}: {line.strip()}")
+            continue
+        elif "18:00" in line_clean and ("23:00" in line_clean or "0:00" in line_clean or "5:00" in line_clean or "7:00" in line_clean):
+            current_block = "night"
+            # print(f"DEBUG: Found NIGHT block at line {i}: {line.strip()}")
+            continue
+        elif "7:00" in line_clean and "11:00" in line_clean:
+            current_block = "morning"
+            continue
+
+        if current_block == "day":
+            # 30min
+            if "30分" in line or "30min" in line:
+                # Try both raw and no-space
+                raw_nums = price_pattern.findall(line.replace(",", ""))
+                nospace_nums = price_pattern.findall(line.replace(" ", "").replace(",", ""))
+                
+                all_nums = raw_nums + nospace_nums
+                valid = [int(p) for p in all_nums if 50 <= int(p) <= 2000]
+                if valid:
+                     day_30_candidates.extend(valid)
+            
+            # Free Time
+            # Check keywords in normalized text
+            line_norm = line.replace(" ", "")
+            if "フリー" in line_norm or "Free" in line_norm or "フリ-" in line_norm or "フリ—" in line_norm:
+                # Try both raw and no-space
+                raw_nums = price_pattern.findall(line.replace(",", ""))
+                nospace_nums = price_pattern.findall(line.replace(" ", "").replace(",", ""))
+                current_nums = raw_nums + nospace_nums
+                
+                # Check next line too
+                if i+1 < len(lines):
+                    next_line = lines[i+1]
+                    r_next = price_pattern.findall(next_line.replace(",", ""))
+                    n_next = price_pattern.findall(next_line.replace(" ", "").replace(",", ""))
+                    current_nums.extend(r_next + n_next)
+
+                valid = [int(p) for p in current_nums if 500 <= int(p) <= 3000]
+                if valid:
+                    day_free_candidates.extend(valid)
+
+    # Resolve candidates
+    # Warning: Manekineko order is usually Member, General.
+    # But sometimes Student, Member, General.
+    # Namba HIPS OCR: "30min ... 105 ... 150" -> 105 (Mem), 150 (Gen)
+    
+    if len(day_30_candidates) >= 1:
+        # Dedupe and Sort
+        day_30_candidates = sorted(list(set(day_30_candidates)))
+        if len(day_30_candidates) >= 2:
+            mem_30, gen_30 = day_30_candidates[0], day_30_candidates[1]
+        else:
+            mem_30 = day_30_candidates[0]
+            gen_30 = int(mem_30 * 1.3) # Fallback
+
+    if len(day_free_candidates) >= 1:
+        # Dedupe and Sort
+        day_free_candidates = sorted(list(set(day_free_candidates)))
+        # Filter out 608 if 800 is present (heuristic) or valid logic?
+        # Namba HIPS: 1300, 608 (wrong), 800 (right), 660?
+        # If we have 1300 and 800.
+        # Check reasonable gap.
+        if len(day_free_candidates) >= 2:
+             # Take first two reasoning that cheapest is Student/Member
+             # But if there is Student (cheapest), Member (mid), General (high)
+             # Free Time usually: Member, General.
+             # If we have 3 values? 660, 800, 1300?
+             # Then 800 is Member, 1300 General.
+             # Heuristic: Take the largest as General. The one before it as Member.
+             gen_free = day_free_candidates[-1]
+             if len(day_free_candidates) >= 2:
+                 mem_free = day_free_candidates[-2]
+             else:
+                 mem_free = int(gen_free * 0.7)
+        elif len(day_free_candidates) == 1:
+             mem_free = day_free_candidates[0]
+             gen_free = int(mem_free * 1.3)
+    
+    return mem_30, gen_30, mem_free, gen_free
+
 def main():
     if not os.path.exists(JSON_PATH):
         print("Error: JSON file not found.", file=sys.stderr)
@@ -183,6 +294,7 @@ def main():
     for station_name, stores in stations.items():
         for store in stores:
             if store.get("chain") != "manekineko": continue
+            # if "なんばHIPS" not in store['name']: continue # FAST MODE for Namba HIPS
             
             pdf_url = store.get("pdf_url")
             if not pdf_url: 
@@ -203,35 +315,62 @@ def main():
             
             mem_30 = None
             gen_30 = None
+            mem_free = None
+            gen_free = None
             source = "None"
+            
+            # Priority: Context Aware Regex (Trusted for structural logic) matches Day block
+            # This is specifically to catch Namba HIPS "150 yen" which is valid but filtrated
+            
+            c_mem_30, c_gen_30, c_mem_free, c_gen_free = extract_price_context_aware(text)
+            if c_mem_30 and c_gen_30:
+                 mem_30, gen_30 = c_mem_30, c_gen_30
+                 mem_free, gen_free = c_mem_free, c_gen_free
+                 source = "ContextRegex"
+                 print(f"  ContextRegex Result: 30min={mem_30}/{gen_30}, Free={mem_free}/{gen_free}", file=sys.stderr)
 
-            # 3. AI Analysis
+            # 3. AI Analysis (If Context Failed or to supplement)
+            # Only use AI if we didn't get confident match or if we want to confirm?
+            # AI is expensive/rate-limited. Let's use it if ContextRegex returned nothing
+            
             ai_success = False
-            try:
-                ai_data = analyze_text_with_ai(text)
-                if ai_data:
-                    mem_30 = ai_data.get("weekday_30min_member")
-                    gen_30 = ai_data.get("weekday_30min_general")
-                    if validate_price(mem_30) or validate_price(gen_30):
-                        ai_success = True
-                        source = "Gemini"
-                        print(f"  AI Result: Mem={mem_30}, Gen={gen_30} ({ai_data.get('reasoning')})", file=sys.stderr)
-            except Exception as e:
-                print(f"  AI skipped/failed: {e}", file=sys.stderr)
-                if "429" in str(e):
-                     print("  ⚠️ API Rate Limit 429. Waiting 30s before Regex fallback...", file=sys.stderr)
-                     time.sleep(30)
+            if not mem_30:
+                try:
+                    ai_data = analyze_text_with_ai(text)
+                    if ai_data:
+                        mem_30 = ai_data.get("weekday_30min_member")
+                        gen_30 = ai_data.get("weekday_30min_general")
+                        mem_free = ai_data.get("weekday_free_member")
+                        gen_free = ai_data.get("weekday_free_general")
+                        
+                        if validate_price(mem_30) or validate_price(gen_30):
+                            ai_success = True
+                            source = "Gemini"
+                            print(f"  AI Result: Mem={mem_30}, Gen={gen_30} ({ai_data.get('reasoning')})", file=sys.stderr)
+                except Exception as e:
+                    print(f"  AI skipped/failed: {e}", file=sys.stderr)
+                    if "429" in str(e):
+                         print("  ⚠️ API Rate Limit 429. Waiting 30s...", file=sys.stderr)
+                         time.sleep(30)
 
-            # 4. Fallback to Regex
-            if not ai_success:
-                print("  ⚠️ AI failed or invalid. Exploring Regex fallback...", file=sys.stderr)
+            # 4. Fallback to Simple Regex (if neither Context nor AI worked)
+            if not mem_30 and not ai_success:
+                print("  ⚠️ AI/Context failed. Exploring simple Regex fallback...", file=sys.stderr)
                 mem_30, gen_30 = extract_price_regex(text)
                 if validate_price(mem_30) or validate_price(gen_30):
-                    source = "Regex"
-                    print(f"  Regex Result: Mem={mem_30}, Gen={gen_30}", file=sys.stderr)
+                    source = "SimpleRegex"
+                    print(f"  Simple Regex Result: Mem={mem_30}, Gen={gen_30}", file=sys.stderr)
 
-            # 5. Update if valid
-            if validate_price(mem_30) or validate_price(gen_30):
+            # 5. Update if valid (BYPASS FILTER if ContextRegex was used successully)
+            # If Source is ContextRegex, we TRUST the values even if < 180 (e.g. 150)
+            
+            is_valid = False
+            if source == "ContextRegex" and mem_30:
+                is_valid = True
+            elif (validate_price(mem_30) or validate_price(gen_30)):
+                is_valid = True
+            
+            if is_valid:
                 if "pricing" not in store: store["pricing"] = {}
                 store["pricing"]["status"] = "success"
                 store["pricing"]["scraped_at"] = datetime.now().isoformat()
@@ -240,35 +379,26 @@ def main():
                 
                 # 30min
                 store["pricing"]["day"]["30min"] = {}
-                if validate_price(mem_30):
-                    store["pricing"]["day"]["30min"]["member"] = int(mem_30)
-                if validate_price(gen_30):
-                    store["pricing"]["day"]["30min"]["general"] = int(gen_30)
+                if mem_30: store["pricing"]["day"]["30min"]["member"] = int(mem_30)
+                if gen_30: store["pricing"]["day"]["30min"]["general"] = int(gen_30)
                 
-                # Free Time (Estimate if not found)
+                # Free Time
                 store["pricing"]["day"]["free_time"] = {}
-                # If we have 30min prices, we can estimate FT if not found
-                ft_mem = None
-                ft_gen = None
+                # Use extracted free time if available
+                if mem_free: store["pricing"]["day"]["free_time"]["member"] = int(mem_free)
+                else: 
+                     if mem_30: store["pricing"]["day"]["free_time"]["member"] = int(mem_30) * 4 # Fallback
                 
-                # Try to extract FT from AI if available
-                if ai_success and ai_data:
-                    ft_mem = ai_data.get("weekday_free_member")
-                    ft_gen = ai_data.get("weekday_free_general")
+                if gen_free: store["pricing"]["day"]["free_time"]["general"] = int(gen_free)
+                else:
+                     if gen_30: store["pricing"]["day"]["free_time"]["general"] = int(gen_30) * 4 # Fallback
 
-                # Fallback Estimate
-                if not ft_mem and mem_30: ft_mem = int(mem_30) * 4 # Rough estimate
-                if not ft_gen and gen_30: ft_gen = int(gen_30) * 4
-
-                if ft_mem: store["pricing"]["day"]["free_time"]["member"] = int(ft_mem)
-                if ft_gen: store["pricing"]["day"]["free_time"]["general"] = int(ft_gen)
-                
                 updated_count += 1
                 print(f"  -> Updated JSON using {source}", file=sys.stderr)
             else:
                 print("  -> Skipped: No valid prices found.", file=sys.stderr)
 
-            time.sleep(10) # Increased delay to 10s
+            time.sleep(10) 
 
     # Save
     if updated_count > 0:

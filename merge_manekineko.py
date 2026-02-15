@@ -4,7 +4,7 @@ import sys
 
 def merge_manekineko_data():
     base_file = "data/stations_with_prices.json"
-    input_file = "manekineko_results.json"
+    input_file = "manekineko_pdf_urls.json"
     
     # 1. リアルなフォールバックデータ (ユーザー指定)
     fallback_data = [
@@ -59,10 +59,13 @@ def merge_manekineko_data():
     
     updated_count = 0
     
-    # 4. マージ処理 (フォールバック定義にある店舗を主軸に処理)
-    for fb in fallback_data:
-        target_name = fb["name"]
-        norm_target = target_name.replace(" ", "").replace("　", "")
+    # 4. マージ処理 (全店舗対応)
+    for norm_name, existing_store in existing_map.items():
+        # まねきねこ以外はスキップ
+        if existing_store.get("chain") != "manekineko":
+            continue
+
+        target_name = existing_store.get("name")
         
         # 4-A. スクレイピング結果の確認
         scraped_item = scraped_map.get(target_name)
@@ -72,59 +75,54 @@ def merge_manekineko_data():
         if scraped_item:
             new_pdf_url = scraped_item.get("pdf_url")
             p = scraped_item.get("pricing", {})
-            if p.get("status") == "success" and p.get("day", {}).get("30min", {}).get("member") is not None:
-                new_pricing = p
-        
-        # 4-B. 既存データ(JSON)の確認
-        existing_store = existing_map.get(norm_target)
-        if not existing_store:
-            # 接頭辞「カラオケ」有無などで見つからない場合の予備検索
-            for k, v in existing_map.items():
-                if norm_target in k or k in norm_target: # 部分一致
-                    if "まねきねこ" in v.get("name", ""):
-                        existing_store = v
-                        break
-        
-        if existing_store:
-            print(f"Processing {existing_store['name']}...", file=sys.stderr)
             
-            # PDF URLの保存 (キャッシュ用)
-            if new_pdf_url:
-                existing_store["pdf_url"] = new_pdf_url
+            # スクレイピング成功かつデータあり
+            if p.get("status") == "success":
+                # 会員価格か一般価格のいずれかがあればOKとする
+                day_30 = p.get("day", {}).get("30min", {})
+                if day_30.get("member") is not None or day_30.get("general") is not None:
+                    new_pricing = p
+        
+        print(f"Processing {target_name}...", file=sys.stderr)
+        
+        # PDF URLの保存 (キャッシュ用)
+        if new_pdf_url:
+            existing_store["pdf_url"] = new_pdf_url
 
-            # --- 価格決定ロジック ---
-            final_pricing = None
-            
-            # Case 1: スクレイピング成功 -> 採用
-            if new_pricing:
-                print(f"  -> Using NEW scraped data.", file=sys.stderr)
-                final_pricing = new_pricing
-            
-            # Case 2: スクレイピング失敗 だが 既存データが生きている -> 維持 (上書きしない)
-            elif existing_store.get("pricing", {}).get("status") == "success":
-                print(f"  -> Keeping EXISTING data (Scrape failed/skipped).", file=sys.stderr)
-                # 何もしない (既存維持)
-                final_pricing = existing_store["pricing"]
-            
-            # Case 3: 両方だめ -> フォールバック適用
-            else:
-                print(f"  -> Applying FALLBACK data ({fb['price']} yen).", file=sys.stderr)
+        # --- 価格決定ロジック ---
+        final_pricing = None
+        
+        # Case 1: スクレイピング成功 -> 採用
+        if new_pricing:
+            print(f"  -> Using NEW scraped data.", file=sys.stderr)
+            final_pricing = new_pricing
+        
+        # Case 2: スクレイピング失敗 だが 既存データが生きている -> 維持 (上書きしない)
+        elif existing_store.get("pricing", {}).get("status") == "success":
+            print(f"  -> Keeping EXISTING data (Scrape failed/skipped).", file=sys.stderr)
+            # 何もしない (既存維持)
+            final_pricing = existing_store["pricing"]
+        
+        # Case 3: 両方だめ -> フォールバック適用 (主要店舗のみ)
+        else:
+            # フォールバックデータにあるか確認
+            fb_price = next((fb["price"] for fb in fallback_data if fb["name"] == target_name), None)
+            if fb_price:
+                print(f"  -> Applying FALLBACK data ({fb_price} yen).", file=sys.stderr)
                 final_pricing = {
                     "day": {
-                        "30min": {"member": fb["price"], "general": None},
+                        "30min": {"member": fb_price, "general": None},
                         "free_time": {"member": None, "general": None}
                     },
                     "status": "success"
                 }
-            
-            # データ適用
-            if final_pricing:
-                # 既存のpricing構造を壊さないようにマージするか、完全置換するか
-                # ここでは「決定された最強のpricing」で置換する
-                existing_store["pricing"] = final_pricing
-                updated_count += 1
-        else:
-            print(f"Warning: Store {target_name} not found in base JSON.", file=sys.stderr)
+            else:
+                 print(f"  -> No data available.", file=sys.stderr)
+
+        # データ適用
+        if final_pricing:
+            existing_store["pricing"] = final_pricing
+            updated_count += 1
 
     if updated_count > 0:
         import shutil

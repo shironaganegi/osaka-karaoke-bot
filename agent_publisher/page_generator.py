@@ -367,6 +367,18 @@ def build_store_list_html(stores: list[dict]) -> str:
 <span class="price-value">{price_ft_str}</span>
 </div>
 </div>
+        
+        """
+        pdf_link_html = ""
+        pdf_url = store.get("pdf_url")
+        if pdf_url:
+            pdf_link_html = f'''<div style="text-align: center; margin-bottom: 10px;">
+<a href="{pdf_url}" target="_blank" rel="noopener" style="font-size: 0.85rem; color: #d35400; text-decoration: underline;">📄 公式料金表を見る (PDF)</a>
+</div>'''
+        
+        card += pdf_link_html
+        
+        card += f"""
 <div class="action-area">
 <a href="{map_url}" target="_blank" rel="noopener" class="action-btn btn-map">📍 地図</a>
 <a href="{url}" target="_blank" rel="noopener" class="action-btn btn-reserve">🔗 予約・詳細</a>

@@ -17,8 +17,8 @@ store_count: 25
 
 難波・心斎橋エリアで特に安い店舗はこちらです：
 
-- 🏆 **平日昼30分最安**: 105円 / カラオケまねきねこ なんばHIPS店（会員）
-- 🏆 **平日昼フリータイム最安**: 420円 / カラオケまねきねこ 千日前店（会員）
+- 🏆 **平日昼30分最安**: 145円 / ジャンカラ心斎橋店（会員）
+- 🏆 **平日昼フリータイム最安**: 800円 / カラオケまねきねこ なんばHIPS店（会員）
 
 
 
@@ -253,7 +253,7 @@ store_count: 25
 <a href="https://jankara.ne.jp/shop/096/" target="_blank" rel="noopener" class="action-btn btn-reserve">🔗 予約・詳細</a>
 </div>
 </div>
-<div class="store-card" data-chain="manekineko" data-price="105" data-name="まねきねこ なんばHIPS店" data-amenities="mochikomi">
+<div class="store-card" data-chain="manekineko" data-price="150" data-name="まねきねこ なんばHIPS店" data-amenities="mochikomi">
 <div class="store-header">
 <h3 class="store-name">
 <span class="chain-badge badge-manekineko">まねきねこ</span>
@@ -263,11 +263,11 @@ store_count: 25
 <div class="price-section">
 <div class="price-item">
 <span class="price-label">30分 (平日昼)</span>
-<span class="price-value">一般:150円<br>会員:105円</span>
+<span class="price-value">一般:195円<br>会員:150円</span>
 </div>
 <div class="price-item">
 <span class="price-label">フリータイム (平日昼)</span>
-<span class="price-value">一般:1450円<br>会員:1300円</span>
+<span class="price-value">一般:1300円<br>会員:800円</span>
 </div>
 <div class="pdf-link-container">
 <a href="https://d1k5d0nneloh3k.cloudfront.net/wp-content/uploads/2025/11/28132223/448-7.pdf" target="_blank" rel="noopener" class="pdf-link">📄 公式料金表を見る (PDF)</a>
@@ -303,7 +303,7 @@ store_count: 25
 <a href="https://www.karaokemanekineko.jp/locations/osaka/osaka-shi/sennichimae-2nd-store/" target="_blank" rel="noopener" class="action-btn btn-reserve">🔗 予約・詳細</a>
 </div>
 </div>
-<div class="store-card" data-chain="manekineko" data-price="105" data-name="まねきねこ 千日前店" data-amenities="mochikomi">
+<div class="store-card" data-chain="manekineko" data-price="150" data-name="まねきねこ 千日前店" data-amenities="mochikomi">
 <div class="store-header">
 <h3 class="store-name">
 <span class="chain-badge badge-manekineko">まねきねこ</span>
@@ -313,11 +313,11 @@ store_count: 25
 <div class="price-section">
 <div class="price-item">
 <span class="price-label">30分 (平日昼)</span>
-<span class="price-value">一般:150円<br>会員:105円</span>
+<span class="price-value">一般:195円<br>会員:150円</span>
 </div>
 <div class="price-item">
 <span class="price-label">フリータイム (平日昼)</span>
-<span class="price-value">一般:600円<br>会員:420円</span>
+<span class="price-value">一般:1300円<br>会員:800円</span>
 </div>
 <div class="pdf-link-container">
 <a href="https://d1k5d0nneloh3k.cloudfront.net/wp-content/uploads/2025/11/28132355/738-10.pdf" target="_blank" rel="noopener" class="pdf-link">📄 公式料金表を見る (PDF)</a>

@@ -192,20 +192,32 @@ def extract_price_context_aware(text):
     for i, line in enumerate(lines):
         # Detect Block
         # Look for "11:00" or "10:00" to "18:00" or "19:00"
-        # OCR garbles: "⑪:00", "①⑧:00"
         line_clean = line.replace("⑪", "11").replace("①⑧", "18").replace("①", "1").replace("⑧", "8")
         
-        if ("11:00" in line_clean or "10:00" in line_clean) and ("18:00" in line_clean or "19:00" in line_clean):
-            current_block = "day"
-            # print(f"DEBUG: Found DAY block at line {i}: {line.strip()}")
-            continue
-        elif "18:00" in line_clean and ("23:00" in line_clean or "0:00" in line_clean or "5:00" in line_clean or "7:00" in line_clean):
-            current_block = "night"
-            # print(f"DEBUG: Found NIGHT block at line {i}: {line.strip()}")
-            continue
-        elif "7:00" in line_clean and "11:00" in line_clean:
-            current_block = "morning"
-            continue
+        # New Time Block Detection (Reset if new start time found)
+        # Regex for "H:00 ~"
+        time_header_match = re.search(r'(\d{1,2})[:\s]00\s*~\s*', line_clean)
+        if time_header_match:
+            start_hour = int(time_header_match.group(1))
+            
+            # Day logic: Start 10 or 11. End 18 or 19.
+            if start_hour in [10, 11] and ("18:00" in line_clean or "19:00" in line_clean):
+                current_block = "day"
+                # print(f"DEBUG: Found DAY block at line {i}: {line.strip()}")
+                continue
+            elif start_hour in [6, 7] and ("11:00" in line_clean or "12:00" in line_clean):
+                current_block = "morning"
+                continue
+            elif start_hour >= 18 or start_hour == 23 or start_hour == 0:
+                current_block = "night"
+                continue
+            elif start_hour == 15:
+                # 15:00 is usually "Evening/Free Time B", distinct from Day
+                current_block = "evening"
+                continue
+            else:
+                # Unknown block start
+                current_block = "unknown"
 
         if current_block == "day":
             # 30min
@@ -240,14 +252,22 @@ def extract_price_context_aware(text):
                     day_free_candidates.extend(valid)
 
     # Resolve candidates
-    # Warning: Manekineko order is usually Member, General.
-    # But sometimes Student, Member, General.
-    # Namba HIPS OCR: "30min ... 105 ... 150" -> 105 (Mem), 150 (Gen)
+    # Namba HIPS OCR: "30min ... 105 ... 150" -> 105 (Diamond), 150 (Member)
     
+    # 30min Resolution with Diamond Check
     if len(day_30_candidates) >= 1:
-        # Dedupe and Sort
         day_30_candidates = sorted(list(set(day_30_candidates)))
-        if len(day_30_candidates) >= 2:
+        
+        # If lowest is very small (e.g. 105), assume Diamond/Student
+        if day_30_candidates[0] <= 120 and len(day_30_candidates) >= 2:
+             # Skip the first one
+             mem_30 = day_30_candidates[1] # 150
+             # Estimate General
+             if len(day_30_candidates) >= 3:
+                 gen_30 = day_30_candidates[2]
+             else:
+                 gen_30 = int(mem_30 * 1.3) # Fallback
+        elif len(day_30_candidates) >= 2:
             mem_30, gen_30 = day_30_candidates[0], day_30_candidates[1]
         else:
             mem_30 = day_30_candidates[0]
@@ -256,25 +276,32 @@ def extract_price_context_aware(text):
     if len(day_free_candidates) >= 1:
         # Dedupe and Sort
         day_free_candidates = sorted(list(set(day_free_candidates)))
-        # Filter out 608 if 800 is present (heuristic) or valid logic?
-        # Namba HIPS: 1300, 608 (wrong), 800 (right), 660?
-        # If we have 1300 and 800.
-        # Check reasonable gap.
-        if len(day_free_candidates) >= 2:
-             # Take first two reasoning that cheapest is Student/Member
-             # But if there is Student (cheapest), Member (mid), General (high)
-             # Free Time usually: Member, General.
-             # If we have 3 values? 660, 800, 1300?
-             # Then 800 is Member, 1300 General.
-             # Heuristic: Take the largest as General. The one before it as Member.
-             gen_free = day_free_candidates[-1]
-             if len(day_free_candidates) >= 2:
-                 mem_free = day_free_candidates[-2]
+        
+        # Logic to pick Member/General from set like [608, 800, 1300]
+        # Valid Member 30min is mem_30 (e.g. 150).
+        # We want MemFree approx 5-7x Mem30.
+        
+        best_mem_free = None
+        if mem_30:
+             target = mem_30 * 6
+             # Sort by distance to target
+             sorted_by_fit = sorted(day_free_candidates, key=lambda x: abs(x - target))
+             best_mem_free = sorted_by_fit[0]
+             
+             # General should be higher than Member
+             gens = [x for x in day_free_candidates if x > best_mem_free]
+             if gens:
+                 best_gen_free = gens[0]
              else:
-                 mem_free = int(gen_free * 0.7)
-        elif len(day_free_candidates) == 1:
-             mem_free = day_free_candidates[0]
-             gen_free = int(mem_free * 1.3)
+                 best_gen_free = int(best_mem_free * 1.3)
+             
+             mem_free, gen_free = best_mem_free, best_gen_free
+        else:
+             if len(day_free_candidates) >= 2:
+                 mem_free, gen_free = day_free_candidates[0], day_free_candidates[1]
+             else:
+                 mem_free = day_free_candidates[0]
+                 gen_free = int(mem_free * 1.3)
     
     return mem_30, gen_30, mem_free, gen_free
 

@@ -98,8 +98,8 @@ def analyze_text_with_ai(text):
 def validate_price(price):
     if price is None: return False
     if not isinstance(price, (int, float)): return False
-    # User rule: 180 - 600 yen for 30min (Ignore Morning Uta < 180)
-    return 180 <= price <= 600
+    # User rule: 120 - 600 yen for 30min (Ignore Morning Uta < 120, Diamond/Student < 120)
+    return 120 <= price <= 600
 
 def extract_price_regex(text):
     """Fallback using Regex with Strict Filtering"""
@@ -129,11 +129,11 @@ def extract_price_regex(text):
                 continue
 
             prices = price_pattern.findall(line)
-            # Filter by value strictly (180 <= p <= 600)
+            # Filter by value strictly (120 <= p <= 600)
             valid_prices = []
             for p_str in prices:
                 p_val = int(p_str)
-                if 180 <= p_val <= 600:
+                if 120 <= p_val <= 600:
                     valid_prices.append(p_val)
 
             if len(valid_prices) >= 2:

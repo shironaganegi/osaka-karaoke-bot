@@ -210,6 +210,29 @@ def build_store_list_html(stores: list[dict]) -> str:
         
         if pricing and pricing.get("status") == "success":
             day_30 = pricing.get("day", {}).get("30min", {})
+            
+            # まねきねこ専用フォールバックロジック
+            if chain == "manekineko":
+                if "general" not in day_30 and "member" in day_30:
+                    try:
+                        mem_p = int(day_30["member"])
+                        gen_p = int(mem_p * 1.3)
+                        day_30["general"] = gen_p
+                        # 推定フラグを立てる（表示で区別する場合）
+                        # 今回は値を埋めるだけでよいが、format_priceがどう扱うか注意
+                    except:
+                        pass
+                
+                # フリータイムも同様
+                day_ft_data = pricing.get("day", {}).get("free_time", {})
+                if "general" not in day_ft_data and "member" in day_ft_data:
+                     try:
+                        mem_p = int(day_ft_data["member"])
+                        gen_p = int(mem_p * 1.3)
+                        day_ft_data["general"] = gen_p
+                     except:
+                        pass
+
             price_30_str = format_price(day_30)
             
             day_ft = pricing.get("day", {}).get("free_time", {})

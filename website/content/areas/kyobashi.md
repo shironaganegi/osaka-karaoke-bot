@@ -106,7 +106,7 @@ store_count: 9
 </div>
 <div class="price-item">
 <span class="price-label">フリータイム (平日昼)</span>
-<span class="price-value">一般:1500円<br>会員:1200円</span>
+<span class="price-value">一般:1560円<br>会員:1200円</span>
 </div>
 <div class="pdf-link-container">
 <a href="https://d1k5d0nneloh3k.cloudfront.net/wp-content/uploads/2025/11/03235622/%E4%BA%AC%E6%A9%8B%E5%BA%97-4.pdf" target="_blank" rel="noopener" class="pdf-link">📄 公式料金表を見る (PDF)</a>
@@ -131,7 +131,7 @@ store_count: 9
 </div>
 <div class="price-item">
 <span class="price-label">フリータイム (平日昼)</span>
-<span class="price-value">一般:1500円<br>会員:1200円</span>
+<span class="price-value">一般:1560円<br>会員:1200円</span>
 </div>
 <div class="pdf-link-container">
 <a href="https://d1k5d0nneloh3k.cloudfront.net/wp-content/uploads/2025/11/13070619/%E4%BA%AC%E6%A9%8B%E9%A7%85%E5%89%8D%E5%BA%97-4.pdf" target="_blank" rel="noopener" class="pdf-link">📄 公式料金表を見る (PDF)</a>

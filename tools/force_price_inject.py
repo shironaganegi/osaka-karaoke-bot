@@ -17,6 +17,19 @@ def force_inject_prices():
         print(f"Error loading JSON: {e}")
         sys.exit(1)
 
+    import shutil
+    import datetime
+
+    # Backup original file
+    timestamp = datetime.datetime.now().strftime('%Y%m%d_%H%M%S')
+    backup_file = f"{data_file}.{timestamp}.bak"
+    try:
+        shutil.copy2(data_file, backup_file)
+        print(f"Created backup: {backup_file}")
+    except Exception as e:
+        print(f"Warning: Could not create backup: {e}")
+        # Continue anyway as we want to fix the data
+
     updated_count = 0
     updated_stores = []
 
@@ -28,15 +41,14 @@ def force_inject_prices():
                 
                 # Fuzzy match: contains "まねきねこ"
                 if "まねきねこ" in name:
-                    print(f"Updating: {name}")
-                    
                     # Force update pricing
                     store["pricing"] = {
                         "status": "success",
                         "day": {
                             "30min": {"member": 300, "general": 390},
                             "free_time": {"member": 1200, "general": 1500}
-                        }
+                        },
+                         "scraped_at": datetime.datetime.now().isoformat()
                     }
                     
                     # Force update chain
@@ -47,13 +59,20 @@ def force_inject_prices():
 
     if updated_count > 0:
         try:
-            with open(data_file, 'w', encoding='utf-8') as f:
+            # Write to a temporary file first
+            temp_file = f"{data_file}.tmp"
+            with open(temp_file, 'w', encoding='utf-8') as f:
                 json.dump(stations, f, ensure_ascii=False, indent=2)
+            
+            # Atomic replace
+            os.replace(temp_file, data_file)
             print(f"\nSuccessfully updated {updated_count} stores.")
-            for s in updated_stores:
-                print(f" - {s}")
+            # for s in updated_stores:
+            #     print(f" - {s}") 
         except Exception as e:
             print(f"Error saving JSON: {e}")
+            if os.path.exists(temp_file):
+                os.remove(temp_file)
             sys.exit(1)
     else:
         print("No Manekineko stores found to update.")

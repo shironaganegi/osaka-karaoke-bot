@@ -263,15 +263,13 @@ store_count: 25
 <div class="price-section">
 <div class="price-item">
 <span class="price-label">30分 (平日昼)</span>
-<span class="price-value">一般:195円<br>会員:150円</span>
+<span class="price-value">会員:150円</span>
 </div>
 <div class="price-item">
 <span class="price-label">フリータイム (平日昼)</span>
-<span class="price-value">一般:1300円<br>会員:800円</span>
+<span class="price-value">会員:800円</span>
 </div>
-<div class="pdf-link-container">
-<a href="https://d1k5d0nneloh3k.cloudfront.net/wp-content/uploads/2025/11/28132223/448-7.pdf" target="_blank" rel="noopener" class="pdf-link">📄 公式料金表を見る (PDF)</a>
-</div>
+
 </div>
 <div class="card-footer">
 <a href="https://www.google.com/maps/search/?api=1&query=34.6737295,135.518806" target="_blank" rel="noopener" class="action-btn btn-map">📍 地図</a>
@@ -288,15 +286,13 @@ store_count: 25
 <div class="price-section">
 <div class="price-item">
 <span class="price-label">30分 (平日昼)</span>
-<span class="price-value">一般:390円<br>会員:300円</span>
+<span class="price-value">会員:300円</span>
 </div>
 <div class="price-item">
 <span class="price-label">フリータイム (平日昼)</span>
-<span class="price-value">一般:1560円<br>会員:1200円</span>
+<span class="price-value">会員:1200円</span>
 </div>
-<div class="pdf-link-container">
-<a href="https://d1k5d0nneloh3k.cloudfront.net/wp-content/uploads/2025/11/28132640/767-8.pdf" target="_blank" rel="noopener" class="pdf-link">📄 公式料金表を見る (PDF)</a>
-</div>
+
 </div>
 <div class="card-footer">
 <a href="https://www.google.com/maps/search/?api=1&query=34.6643444,135.5038988" target="_blank" rel="noopener" class="action-btn btn-map">📍 地図</a>
@@ -313,15 +309,13 @@ store_count: 25
 <div class="price-section">
 <div class="price-item">
 <span class="price-label">30分 (平日昼)</span>
-<span class="price-value">一般:195円<br>会員:150円</span>
+<span class="price-value">会員:150円</span>
 </div>
 <div class="price-item">
 <span class="price-label">フリータイム (平日昼)</span>
-<span class="price-value">一般:1300円<br>会員:800円</span>
+<span class="price-value">会員:800円</span>
 </div>
-<div class="pdf-link-container">
-<a href="https://d1k5d0nneloh3k.cloudfront.net/wp-content/uploads/2025/11/28132355/738-10.pdf" target="_blank" rel="noopener" class="pdf-link">📄 公式料金表を見る (PDF)</a>
-</div>
+
 </div>
 <div class="card-footer">
 <a href="https://www.google.com/maps/search/?api=1&query=34.6643444,135.5038988" target="_blank" rel="noopener" class="action-btn btn-map">📍 地図</a>
@@ -338,15 +332,13 @@ store_count: 25
 <div class="price-section">
 <div class="price-item">
 <span class="price-label">30分 (平日昼)</span>
-<span class="price-value">一般:390円<br>会員:300円</span>
+<span class="price-value">会員:300円</span>
 </div>
 <div class="price-item">
 <span class="price-label">フリータイム (平日昼)</span>
-<span class="price-value">一般:1560円<br>会員:1200円</span>
+<span class="price-value">会員:1200円</span>
 </div>
-<div class="pdf-link-container">
-<a href="https://d1k5d0nneloh3k.cloudfront.net/wp-content/uploads/2025/11/28132751/768-6.pdf" target="_blank" rel="noopener" class="pdf-link">📄 公式料金表を見る (PDF)</a>
-</div>
+
 </div>
 <div class="card-footer">
 <a href="https://www.google.com/maps/search/?api=1&query=34.6737295,135.518806" target="_blank" rel="noopener" class="action-btn btn-map">📍 地図</a>
@@ -363,15 +355,13 @@ store_count: 25
 <div class="price-section">
 <div class="price-item">
 <span class="price-label">30分 (平日昼)</span>
-<span class="price-value">一般:390円<br>会員:300円</span>
+<span class="price-value">会員:300円</span>
 </div>
 <div class="price-item">
 <span class="price-label">フリータイム (平日昼)</span>
-<span class="price-value">一般:1560円<br>会員:1200円</span>
+<span class="price-value">会員:1200円</span>
 </div>
-<div class="pdf-link-container">
-<a href="https://d1k5d0nneloh3k.cloudfront.net/wp-content/uploads/2025/11/04154443/740-13.pdf" target="_blank" rel="noopener" class="pdf-link">📄 公式料金表を見る (PDF)</a>
-</div>
+
 </div>
 <div class="card-footer">
 <a href="https://www.google.com/maps/search/?api=1&query=34.6643444,135.5038988" target="_blank" rel="noopener" class="action-btn btn-map">📍 地図</a>
@@ -388,15 +378,13 @@ store_count: 25
 <div class="price-section">
 <div class="price-item">
 <span class="price-label">30分 (平日昼)</span>
-<span class="price-value">一般:390円<br>会員:300円</span>
+<span class="price-value">会員:300円</span>
 </div>
 <div class="price-item">
 <span class="price-label">フリータイム (平日昼)</span>
-<span class="price-value">一般:1560円<br>会員:1200円</span>
+<span class="price-value">会員:1200円</span>
 </div>
-<div class="pdf-link-container">
-<a href="https://d1k5d0nneloh3k.cloudfront.net/wp-content/uploads/2025/11/28133142/903-6.pdf" target="_blank" rel="noopener" class="pdf-link">📄 公式料金表を見る (PDF)</a>
-</div>
+
 </div>
 <div class="card-footer">
 <a href="https://www.google.com/maps/search/?api=1&query=34.6696978,135.5042317" target="_blank" rel="noopener" class="action-btn btn-map">📍 地図</a>
@@ -413,15 +401,13 @@ store_count: 25
 <div class="price-section">
 <div class="price-item">
 <span class="price-label">30分 (平日昼)</span>
-<span class="price-value">一般:500円<br>会員:250円</span>
+<span class="price-value">会員:250円</span>
 </div>
 <div class="price-item">
 <span class="price-label">フリータイム (平日昼)</span>
-<span class="price-value">一般:2000円<br>会員:1000円</span>
+<span class="price-value">会員:1000円</span>
 </div>
-<div class="pdf-link-container">
-<a href="https://d1k5d0nneloh3k.cloudfront.net/wp-content/uploads/2025/11/28133255/741-6.pdf" target="_blank" rel="noopener" class="pdf-link">📄 公式料金表を見る (PDF)</a>
-</div>
+
 </div>
 <div class="card-footer">
 <a href="https://www.google.com/maps/search/?api=1&query=34.6690306,135.5015715" target="_blank" rel="noopener" class="action-btn btn-map">📍 地図</a>
@@ -576,15 +562,13 @@ store_count: 25
 <div class="price-section">
 <div class="price-item">
 <span class="price-label">30分 (平日昼)</span>
-<span class="price-value">一般:390円<br>会員:300円</span>
+<span class="price-value">会員:300円</span>
 </div>
 <div class="price-item">
 <span class="price-label">フリータイム (平日昼)</span>
-<span class="price-value">一般:1560円<br>会員:1200円</span>
+<span class="price-value">会員:1200円</span>
 </div>
-<div class="pdf-link-container">
-<a href="https://d1k5d0nneloh3k.cloudfront.net/wp-content/uploads/2025/11/28133031/907-8.pdf" target="_blank" rel="noopener" class="pdf-link">📄 公式料金表を見る (PDF)</a>
-</div>
+
 </div>
 <div class="card-footer">
 <a href="https://www.google.com/maps/search/?api=1&query=34.6722212,135.5023455" target="_blank" rel="noopener" class="action-btn btn-map">📍 地図</a>
@@ -601,15 +585,13 @@ store_count: 25
 <div class="price-section">
 <div class="price-item">
 <span class="price-label">30分 (平日昼)</span>
-<span class="price-value">一般:390円<br>会員:300円</span>
+<span class="price-value">会員:300円</span>
 </div>
 <div class="price-item">
 <span class="price-label">フリータイム (平日昼)</span>
-<span class="price-value">一般:1560円<br>会員:1200円</span>
+<span class="price-value">会員:1200円</span>
 </div>
-<div class="pdf-link-container">
-<a href="https://d1k5d0nneloh3k.cloudfront.net/wp-content/uploads/2025/11/08175252/801-11.pdf" target="_blank" rel="noopener" class="pdf-link">📄 公式料金表を見る (PDF)</a>
-</div>
+
 </div>
 <div class="card-footer">
 <a href="https://www.google.com/maps/search/?api=1&query=34.6722212,135.5023455" target="_blank" rel="noopener" class="action-btn btn-map">📍 地図</a>

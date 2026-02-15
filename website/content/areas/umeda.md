@@ -30,7 +30,7 @@ store_count: 28
 北新地店
 </h3>
 </div>
-<div class="price-grid">
+<div class="price-section">
 <div class="price-item">
 <span class="price-label">30分 (平日昼)</span>
 <span class="price-value">一般:310円<br>会員:250円</span>
@@ -39,10 +39,9 @@ store_count: 28
 <span class="price-label">フリータイム (平日昼)</span>
 <span class="price-value">一般:1950円<br>会員:1670円</span>
 </div>
+
 </div>
-        
-        
-<div class="action-area">
+<div class="card-footer">
 <a href="https://www.google.com/maps/search/?api=1&query=34.6965666,135.495456" target="_blank" rel="noopener" class="action-btn btn-map">📍 地図</a>
 <a href="https://jankara.ne.jp/shop/144/" target="_blank" rel="noopener" class="action-btn btn-reserve">🔗 予約・詳細</a>
 </div>
@@ -54,7 +53,7 @@ store_count: 28
 カラオケ 梅田北新地店
 </h3>
 </div>
-<div class="price-grid">
+<div class="price-section">
 <div class="price-item">
 <span class="price-label">30分 (平日昼)</span>
 <span class="price-value">一般:430円<br>会員:130円</span>
@@ -63,10 +62,9 @@ store_count: 28
 <span class="price-label">フリータイム (平日昼)</span>
 <span class="price-value">-</span>
 </div>
+
 </div>
-        
-        
-<div class="action-area">
+<div class="card-footer">
 <a href="https://www.google.com/maps/search/?api=1&query=34.6973144,135.4987412" target="_blank" rel="noopener" class="action-btn btn-map">📍 地図</a>
 <a href="https://big-echo.jp/shop_info/%E3%83%93%E3%83%83%E3%82%B0%E3%82%A8%E3%82%B3%E3%83%BC%E6%A2%85%E7%94%B0%E6%A1%9C%E6%A9%8B%E5%8C%97%E6%96%B0%E5%9C%B0%E5%BA%97" target="_blank" rel="noopener" class="action-btn btn-reserve">🔗 予約・詳細</a>
 </div>
@@ -78,7 +76,7 @@ store_count: 28
 カラオケ 梅田桜橋北新地店
 </h3>
 </div>
-<div class="price-grid">
+<div class="price-section">
 <div class="price-item">
 <span class="price-label">30分 (平日昼)</span>
 <span class="price-value">一般:430円<br>会員:130円</span>
@@ -87,10 +85,9 @@ store_count: 28
 <span class="price-label">フリータイム (平日昼)</span>
 <span class="price-value">-</span>
 </div>
+
 </div>
-        
-        
-<div class="action-area">
+<div class="card-footer">
 <a href="https://www.google.com/maps/search/?api=1&query=34.6982513,135.4988377" target="_blank" rel="noopener" class="action-btn btn-map">📍 地図</a>
 <a href="https://big-echo.jp/shop_info/%E3%83%93%E3%83%83%E3%82%B0%E3%82%A8%E3%82%B3%E3%83%BC%E6%A2%85%E7%94%B0%E6%A1%9C%E6%A9%8B%E5%8C%97%E6%96%B0%E5%9C%B0%E5%BA%97" target="_blank" rel="noopener" class="action-btn btn-reserve">🔗 予約・詳細</a>
 </div>
@@ -102,7 +99,7 @@ store_count: 28
 梅田芝田町店
 </h3>
 </div>
-<div class="price-grid">
+<div class="price-section">
 <div class="price-item">
 <span class="price-label">30分 (平日昼)</span>
 <span class="price-value">一般:460円<br>会員:370円</span>
@@ -111,10 +108,9 @@ store_count: 28
 <span class="price-label">フリータイム (平日昼)</span>
 <span class="price-value">一般:2140円<br>会員:1770円</span>
 </div>
+
 </div>
-        
-        
-<div class="action-area">
+<div class="card-footer">
 <a href="https://www.google.com/maps/search/?api=1&query=34.7050957,135.4957138" target="_blank" rel="noopener" class="action-btn btn-map">📍 地図</a>
 <a href="https://jankara.ne.jp/shop/199/" target="_blank" rel="noopener" class="action-btn btn-reserve">🔗 予約・詳細</a>
 </div>
@@ -126,7 +122,7 @@ store_count: 28
 お初天神店
 </h3>
 </div>
-<div class="price-grid">
+<div class="price-section">
 <div class="price-item">
 <span class="price-label">30分 (平日昼)</span>
 <span class="price-value">一般:350円<br>会員:240円</span>
@@ -135,10 +131,9 @@ store_count: 28
 <span class="price-label">フリータイム (平日昼)</span>
 <span class="price-value">一般:2220円<br>会員:1610円</span>
 </div>
+
 </div>
-        
-        
-<div class="action-area">
+<div class="card-footer">
 <a href="https://www.google.com/maps/search/?api=1&query=34.69836,135.5009977" target="_blank" rel="noopener" class="action-btn btn-map">📍 地図</a>
 <a href="https://jankara.ne.jp/shop/094/" target="_blank" rel="noopener" class="action-btn btn-reserve">🔗 予約・詳細</a>
 </div>
@@ -150,7 +145,7 @@ store_count: 28
 スーパースーパー茶屋町店
 </h3>
 </div>
-<div class="price-grid">
+<div class="price-section">
 <div class="price-item">
 <span class="price-label">30分 (平日昼)</span>
 <span class="price-value">-</span>
@@ -159,10 +154,9 @@ store_count: 28
 <span class="price-label">フリータイム (平日昼)</span>
 <span class="price-value">-</span>
 </div>
+
 </div>
-        
-        
-<div class="action-area">
+<div class="card-footer">
 <a href="https://www.google.com/maps/search/?api=1&query=34.7067973,135.4995594" target="_blank" rel="noopener" class="action-btn btn-map">📍 地図</a>
 <a href="https://jankara.ne.jp/shop/106/" target="_blank" rel="noopener" class="action-btn btn-reserve">🔗 予約・詳細</a>
 </div>
@@ -174,7 +168,7 @@ store_count: 28
 茶屋町店
 </h3>
 </div>
-<div class="price-grid">
+<div class="price-section">
 <div class="price-item">
 <span class="price-label">30分 (平日昼)</span>
 <span class="price-value">一般:325円<br>会員:220円</span>
@@ -183,10 +177,9 @@ store_count: 28
 <span class="price-label">フリータイム (平日昼)</span>
 <span class="price-value">一般:2160円<br>会員:1920円</span>
 </div>
+
 </div>
-        
-        
-<div class="action-area">
+<div class="card-footer">
 <a href="https://www.google.com/maps/search/?api=1&query=34.7067973,135.4995594" target="_blank" rel="noopener" class="action-btn btn-map">📍 地図</a>
 <a href="https://jankara.ne.jp/shop/100/" target="_blank" rel="noopener" class="action-btn btn-reserve">🔗 予約・詳細</a>
 </div>
@@ -198,7 +191,7 @@ store_count: 28
 阪急かっぱ横丁店
 </h3>
 </div>
-<div class="price-grid">
+<div class="price-section">
 <div class="price-item">
 <span class="price-label">30分 (平日昼)</span>
 <span class="price-value">一般:325円<br>会員:220円</span>
@@ -207,10 +200,9 @@ store_count: 28
 <span class="price-label">フリータイム (平日昼)</span>
 <span class="price-value">一般:2160円<br>会員:1920円</span>
 </div>
+
 </div>
-        
-        
-<div class="action-area">
+<div class="card-footer">
 <a href="https://www.google.com/maps/search/?api=1&query=34.7050957,135.4957138" target="_blank" rel="noopener" class="action-btn btn-map">📍 地図</a>
 <a href="https://jankara.ne.jp/shop/120/" target="_blank" rel="noopener" class="action-btn btn-reserve">🔗 予約・詳細</a>
 </div>
@@ -222,7 +214,7 @@ store_count: 28
 阪急東通店
 </h3>
 </div>
-<div class="price-grid">
+<div class="price-section">
 <div class="price-item">
 <span class="price-label">30分 (平日昼)</span>
 <span class="price-value">一般:320円<br>会員:220円</span>
@@ -231,10 +223,9 @@ store_count: 28
 <span class="price-label">フリータイム (平日昼)</span>
 <span class="price-value">一般:2020円<br>会員:1460円</span>
 </div>
+
 </div>
-        
-        
-<div class="action-area">
+<div class="card-footer">
 <a href="https://www.google.com/maps/search/?api=1&query=34.7029585,135.5010041" target="_blank" rel="noopener" class="action-btn btn-map">📍 地図</a>
 <a href="https://jankara.ne.jp/shop/155/" target="_blank" rel="noopener" class="action-btn btn-reserve">🔗 予約・詳細</a>
 </div>
@@ -246,7 +237,7 @@ store_count: 28
 阪急東通3号店
 </h3>
 </div>
-<div class="price-grid">
+<div class="price-section">
 <div class="price-item">
 <span class="price-label">30分 (平日昼)</span>
 <span class="price-value">一般:320円<br>会員:220円</span>
@@ -255,10 +246,9 @@ store_count: 28
 <span class="price-label">フリータイム (平日昼)</span>
 <span class="price-value">一般:2020円<br>会員:1460円</span>
 </div>
+
 </div>
-        
-        
-<div class="action-area">
+<div class="card-footer">
 <a href="https://www.google.com/maps/search/?api=1&query=34.7029585,135.5010041" target="_blank" rel="noopener" class="action-btn btn-map">📍 地図</a>
 <a href="https://jankara.ne.jp/shop/103/" target="_blank" rel="noopener" class="action-btn btn-reserve">🔗 予約・詳細</a>
 </div>
@@ -270,7 +260,7 @@ store_count: 28
 阪急東通本店
 </h3>
 </div>
-<div class="price-grid">
+<div class="price-section">
 <div class="price-item">
 <span class="price-label">30分 (平日昼)</span>
 <span class="price-value">一般:315円<br>会員:205円</span>
@@ -279,10 +269,9 @@ store_count: 28
 <span class="price-label">フリータイム (平日昼)</span>
 <span class="price-value">一般:1290円<br>会員:1020円</span>
 </div>
+
 </div>
-        
-        
-<div class="action-area">
+<div class="card-footer">
 <a href="https://www.google.com/maps/search/?api=1&query=34.7036959,135.5033788" target="_blank" rel="noopener" class="action-btn btn-map">📍 地図</a>
 <a href="https://jankara.ne.jp/shop/116/" target="_blank" rel="noopener" class="action-btn btn-reserve">🔗 予約・詳細</a>
 </div>
@@ -294,7 +283,7 @@ store_count: 28
 阪急東中通店
 </h3>
 </div>
-<div class="price-grid">
+<div class="price-section">
 <div class="price-item">
 <span class="price-label">30分 (平日昼)</span>
 <span class="price-value">一般:315円<br>会員:205円</span>
@@ -303,10 +292,9 @@ store_count: 28
 <span class="price-label">フリータイム (平日昼)</span>
 <span class="price-value">一般:1290円<br>会員:1020円</span>
 </div>
+
 </div>
-        
-        
-<div class="action-area">
+<div class="card-footer">
 <a href="https://www.google.com/maps/search/?api=1&query=34.7036959,135.5033788" target="_blank" rel="noopener" class="action-btn btn-map">📍 地図</a>
 <a href="https://jankara.ne.jp/shop/076/" target="_blank" rel="noopener" class="action-btn btn-reserve">🔗 予約・詳細</a>
 </div>
@@ -318,7 +306,7 @@ store_count: 28
 東通白馬車ビル店
 </h3>
 </div>
-<div class="price-grid">
+<div class="price-section">
 <div class="price-item">
 <span class="price-label">30分 (平日昼)</span>
 <span class="price-value">一般:315円<br>会員:205円</span>
@@ -327,10 +315,9 @@ store_count: 28
 <span class="price-label">フリータイム (平日昼)</span>
 <span class="price-value">一般:1290円<br>会員:1020円</span>
 </div>
+
 </div>
-        
-        
-<div class="action-area">
+<div class="card-footer">
 <a href="https://www.google.com/maps/search/?api=1&query=34.7036959,135.5033788" target="_blank" rel="noopener" class="action-btn btn-map">📍 地図</a>
 <a href="https://jankara.ne.jp/shop/237/" target="_blank" rel="noopener" class="action-btn btn-reserve">🔗 予約・詳細</a>
 </div>
@@ -342,7 +329,7 @@ store_count: 28
 梅田芝田店
 </h3>
 </div>
-<div class="price-grid">
+<div class="price-section">
 <div class="price-item">
 <span class="price-label">30分 (平日昼)</span>
 <span class="price-value">一般:390円<br>会員:300円</span>
@@ -351,12 +338,11 @@ store_count: 28
 <span class="price-label">フリータイム (平日昼)</span>
 <span class="price-value">一般:1500円<br>会員:1200円</span>
 </div>
-</div>
-        
-        <div class="pdf-link-container">
+<div class="pdf-link-container">
 <a href="https://d1k5d0nneloh3k.cloudfront.net/wp-content/uploads/2025/11/13222302/%E6%A2%85%E7%94%B0%E8%8A%9D%E7%94%B0%E5%BA%97-4.pdf" target="_blank" rel="noopener" class="pdf-link">📄 公式料金表を見る (PDF)</a>
 </div>
-<div class="action-area">
+</div>
+<div class="card-footer">
 <a href="https://www.google.com/maps/search/?api=1&query=34.7050957,135.4957138" target="_blank" rel="noopener" class="action-btn btn-map">📍 地図</a>
 <a href="https://www.karaokemanekineko.jp/locations/osaka/osaka-shi/umeda-shibata-store/" target="_blank" rel="noopener" class="action-btn btn-reserve">🔗 予約・詳細</a>
 </div>
@@ -368,7 +354,7 @@ store_count: 28
 茶屋町店
 </h3>
 </div>
-<div class="price-grid">
+<div class="price-section">
 <div class="price-item">
 <span class="price-label">30分 (平日昼)</span>
 <span class="price-value">一般:390円<br>会員:300円</span>
@@ -377,12 +363,11 @@ store_count: 28
 <span class="price-label">フリータイム (平日昼)</span>
 <span class="price-value">一般:1500円<br>会員:1200円</span>
 </div>
-</div>
-        
-        <div class="pdf-link-container">
+<div class="pdf-link-container">
 <a href="https://d1k5d0nneloh3k.cloudfront.net/wp-content/uploads/2025/11/13070238/%E8%8C%B6%E5%B1%8B%E7%94%BA%E5%BA%97-4.pdf" target="_blank" rel="noopener" class="pdf-link">📄 公式料金表を見る (PDF)</a>
 </div>
-<div class="action-area">
+</div>
+<div class="card-footer">
 <a href="https://www.google.com/maps/search/?api=1&query=34.7067973,135.4995594" target="_blank" rel="noopener" class="action-btn btn-map">📍 地図</a>
 <a href="https://www.karaokemanekineko.jp/locations/osaka/osaka-shi/chayamachi-store/" target="_blank" rel="noopener" class="action-btn btn-reserve">🔗 予約・詳細</a>
 </div>
@@ -394,7 +379,7 @@ store_count: 28
 阪急東通り2号店
 </h3>
 </div>
-<div class="price-grid">
+<div class="price-section">
 <div class="price-item">
 <span class="price-label">30分 (平日昼)</span>
 <span class="price-value">一般:390円<br>会員:300円</span>
@@ -403,12 +388,11 @@ store_count: 28
 <span class="price-label">フリータイム (平日昼)</span>
 <span class="price-value">一般:1500円<br>会員:1200円</span>
 </div>
-</div>
-        
-        <div class="pdf-link-container">
+<div class="pdf-link-container">
 <a href="https://d1k5d0nneloh3k.cloudfront.net/wp-content/uploads/2025/11/02185022/%E9%98%AA%E6%80%A5%E6%9D%B1%E9%80%9A%E3%82%8A2%E5%8F%B7%E5%BA%97-4.pdf" target="_blank" rel="noopener" class="pdf-link">📄 公式料金表を見る (PDF)</a>
 </div>
-<div class="action-area">
+</div>
+<div class="card-footer">
 <a href="https://www.google.com/maps/search/?api=1&query=34.7036959,135.5033788" target="_blank" rel="noopener" class="action-btn btn-map">📍 地図</a>
 <a href="https://www.karaokemanekineko.jp/locations/osaka/osaka-shi/hankyuhigashidori-2nd-store/" target="_blank" rel="noopener" class="action-btn btn-reserve">🔗 予約・詳細</a>
 </div>
@@ -420,7 +404,7 @@ store_count: 28
 阪急東通り店
 </h3>
 </div>
-<div class="price-grid">
+<div class="price-section">
 <div class="price-item">
 <span class="price-label">30分 (平日昼)</span>
 <span class="price-value">一般:390円<br>会員:300円</span>
@@ -429,12 +413,11 @@ store_count: 28
 <span class="price-label">フリータイム (平日昼)</span>
 <span class="price-value">一般:1500円<br>会員:1200円</span>
 </div>
-</div>
-        
-        <div class="pdf-link-container">
+<div class="pdf-link-container">
 <a href="https://d1k5d0nneloh3k.cloudfront.net/wp-content/uploads/2025/11/04002746/%E5%9C%A7%E7%B8%AE-2.pdf" target="_blank" rel="noopener" class="pdf-link">📄 公式料金表を見る (PDF)</a>
 </div>
-<div class="action-area">
+</div>
+<div class="card-footer">
 <a href="https://www.google.com/maps/search/?api=1&query=34.7027789,135.5023208" target="_blank" rel="noopener" class="action-btn btn-map">📍 地図</a>
 <a href="https://www.karaokemanekineko.jp/locations/osaka/osaka-shi/hankyu-higashidori-store/" target="_blank" rel="noopener" class="action-btn btn-reserve">🔗 予約・詳細</a>
 </div>
@@ -446,7 +429,7 @@ store_count: 28
 カラオケ  お初天神店
 </h3>
 </div>
-<div class="price-grid">
+<div class="price-section">
 <div class="price-item">
 <span class="price-label">30分 (平日昼)</span>
 <span class="price-value">一般:390円<br>会員:200円</span>
@@ -455,10 +438,9 @@ store_count: 28
 <span class="price-label">フリータイム (平日昼)</span>
 <span class="price-value">-</span>
 </div>
+
 </div>
-        
-        
-<div class="action-area">
+<div class="card-footer">
 <a href="https://www.google.com/maps/search/?api=1&query=34.69836,135.5009977" target="_blank" rel="noopener" class="action-btn btn-map">📍 地図</a>
 <a href="https://big-echo.jp/shop_info/%E3%82%AB%E3%83%A9%E3%82%AA%E3%82%B1-%E3%83%93%E3%83%83%E3%82%B0%E3%82%A8%E3%82%B3%E3%83%BC-%E3%81%8A%E5%88%9D%E5%A4%A9%E7%A5%9E%E5%BA%97" target="_blank" rel="noopener" class="action-btn btn-reserve">🔗 予約・詳細</a>
 </div>
@@ -470,7 +452,7 @@ store_count: 28
 カラオケ  曽根崎お初天神通り店
 </h3>
 </div>
-<div class="price-grid">
+<div class="price-section">
 <div class="price-item">
 <span class="price-label">30分 (平日昼)</span>
 <span class="price-value">一般:390円<br>会員:200円</span>
@@ -479,10 +461,9 @@ store_count: 28
 <span class="price-label">フリータイム (平日昼)</span>
 <span class="price-value">-</span>
 </div>
+
 </div>
-        
-        
-<div class="action-area">
+<div class="card-footer">
 <a href="https://www.google.com/maps/search/?api=1&query=34.69836,135.5009977" target="_blank" rel="noopener" class="action-btn btn-map">📍 地図</a>
 <a href="https://big-echo.jp/shop_info/%E3%82%AB%E3%83%A9%E3%82%AA%E3%82%B1-%E3%83%93%E3%83%83%E3%82%B0%E3%82%A8%E3%82%B3%E3%83%BC-%E3%81%8A%E5%88%9D%E5%A4%A9%E7%A5%9E%E5%BA%97" target="_blank" rel="noopener" class="action-btn btn-reserve">🔗 予約・詳細</a>
 </div>
@@ -494,7 +475,7 @@ store_count: 28
 カラオケ 梅田中央店
 </h3>
 </div>
-<div class="price-grid">
+<div class="price-section">
 <div class="price-item">
 <span class="price-label">30分 (平日昼)</span>
 <span class="price-value">一般:390円<br>会員:200円</span>
@@ -503,10 +484,9 @@ store_count: 28
 <span class="price-label">フリータイム (平日昼)</span>
 <span class="price-value">-</span>
 </div>
+
 </div>
-        
-        
-<div class="action-area">
+<div class="card-footer">
 <a href="https://www.google.com/maps/search/?api=1&query=34.7029585,135.5010041" target="_blank" rel="noopener" class="action-btn btn-map">📍 地図</a>
 <a href="https://big-echo.jp/shop_info/%E3%83%93%E3%83%83%E3%82%B0%E3%82%A8%E3%82%B3%E3%83%BC%E6%A2%85%E7%94%B0%E4%B8%AD%E5%A4%AE%E5%BA%97" target="_blank" rel="noopener" class="action-btn btn-reserve">🔗 予約・詳細</a>
 </div>
@@ -518,7 +498,7 @@ store_count: 28
 カラオケ 阪急東通り店
 </h3>
 </div>
-<div class="price-grid">
+<div class="price-section">
 <div class="price-item">
 <span class="price-label">30分 (平日昼)</span>
 <span class="price-value">一般:390円<br>会員:200円</span>
@@ -527,10 +507,9 @@ store_count: 28
 <span class="price-label">フリータイム (平日昼)</span>
 <span class="price-value">-</span>
 </div>
+
 </div>
-        
-        
-<div class="action-area">
+<div class="card-footer">
 <a href="https://www.google.com/maps/search/?api=1&query=34.7036959,135.5033788" target="_blank" rel="noopener" class="action-btn btn-map">📍 地図</a>
 <a href="https://big-echo.jp/shop_info/%E3%83%93%E3%83%83%E3%82%B0%E3%82%A8%E3%82%B3%E3%83%BC%E9%98%AA%E6%80%A5%E6%9D%B1%E9%80%9A%E3%82%8A%E5%BA%97" target="_blank" rel="noopener" class="action-btn btn-reserve">🔗 予約・詳細</a>
 </div>
@@ -542,7 +521,7 @@ store_count: 28
 カラオケ 西梅田店
 </h3>
 </div>
-<div class="price-grid">
+<div class="price-section">
 <div class="price-item">
 <span class="price-label">30分 (平日昼)</span>
 <span class="price-value">一般:400円<br>会員:200円</span>
@@ -551,10 +530,9 @@ store_count: 28
 <span class="price-label">フリータイム (平日昼)</span>
 <span class="price-value">一般:1600円<br>会員:1000円</span>
 </div>
+
 </div>
-        
-        
-<div class="action-area">
+<div class="card-footer">
 <a href="https://www.google.com/maps/search/?api=1&query=34.7038152,135.5008648" target="_blank" rel="noopener" class="action-btn btn-map">📍 地図</a>
 <a href="https://big-echo.jp/shop_info/%E3%83%93%E3%83%83%E3%82%B0%E3%82%A8%E3%82%B3%E3%83%BC%E5%85%AB%E9%87%8D%E6%B4%B2%E6%9C%AC%E5%BA%97" target="_blank" rel="noopener" class="action-btn btn-reserve">🔗 予約・詳細</a>
 </div>
@@ -566,7 +544,7 @@ store_count: 28
 カラオケ 大阪梅田本店
 </h3>
 </div>
-<div class="price-grid">
+<div class="price-section">
 <div class="price-item">
 <span class="price-label">30分 (平日昼)</span>
 <span class="price-value">一般:430円<br>会員:130円</span>
@@ -575,10 +553,9 @@ store_count: 28
 <span class="price-label">フリータイム (平日昼)</span>
 <span class="price-value">一般:2300円<br>会員:750円</span>
 </div>
+
 </div>
-        
-        
-<div class="action-area">
+<div class="card-footer">
 <a href="https://www.google.com/maps/search/?api=1&query=34.7029585,135.5010041" target="_blank" rel="noopener" class="action-btn btn-map">📍 地図</a>
 <a href="https://big-echo.jp/shop_info/%E3%83%93%E3%83%83%E3%82%B0%E3%82%A8%E3%82%B3%E3%83%BC%E8%A5%BF%E6%A2%85%E7%94%B0%E5%BA%97" target="_blank" rel="noopener" class="action-btn btn-reserve">🔗 予約・詳細</a>
 </div>
@@ -590,7 +567,7 @@ store_count: 28
 カラオケ 梅田東通り店
 </h3>
 </div>
-<div class="price-grid">
+<div class="price-section">
 <div class="price-item">
 <span class="price-label">30分 (平日昼)</span>
 <span class="price-value">一般:430円<br>会員:130円</span>
@@ -599,10 +576,9 @@ store_count: 28
 <span class="price-label">フリータイム (平日昼)</span>
 <span class="price-value">一般:2300円<br>会員:750円</span>
 </div>
+
 </div>
-        
-        
-<div class="action-area">
+<div class="card-footer">
 <a href="https://www.google.com/maps/search/?api=1&query=34.7029585,135.5010041" target="_blank" rel="noopener" class="action-btn btn-map">📍 地図</a>
 <a href="https://big-echo.jp/shop_info/%E3%83%93%E3%83%83%E3%82%B0%E3%82%A8%E3%82%B3%E3%83%BC%E8%A5%BF%E6%A2%85%E7%94%B0%E5%BA%97" target="_blank" rel="noopener" class="action-btn btn-reserve">🔗 予約・詳細</a>
 </div>
@@ -614,7 +590,7 @@ store_count: 28
 カラオケ 梅田駅前本店
 </h3>
 </div>
-<div class="price-grid">
+<div class="price-section">
 <div class="price-item">
 <span class="price-label">30分 (平日昼)</span>
 <span class="price-value">一般:390円<br>会員:200円</span>
@@ -623,10 +599,9 @@ store_count: 28
 <span class="price-label">フリータイム (平日昼)</span>
 <span class="price-value">一般:1760円<br>会員:1220円</span>
 </div>
+
 </div>
-        
-        
-<div class="action-area">
+<div class="card-footer">
 <a href="https://www.google.com/maps/search/?api=1&query=34.7037444,135.4993314" target="_blank" rel="noopener" class="action-btn btn-map">📍 地図</a>
 <a href="https://big-echo.jp/shop_info/%E6%A2%85%E7%94%B0%E9%A7%85%E5%89%8D%E6%9C%AC%E5%BA%97" target="_blank" rel="noopener" class="action-btn btn-reserve">🔗 予約・詳細</a>
 </div>
@@ -638,7 +613,7 @@ store_count: 28
 カラオケ 茶屋町店
 </h3>
 </div>
-<div class="price-grid">
+<div class="price-section">
 <div class="price-item">
 <span class="price-label">30分 (平日昼)</span>
 <span class="price-value">一般:420円<br>会員:220円</span>
@@ -647,10 +622,9 @@ store_count: 28
 <span class="price-label">フリータイム (平日昼)</span>
 <span class="price-value">一般:1760円<br>会員:1210円</span>
 </div>
+
 </div>
-        
-        
-<div class="action-area">
+<div class="card-footer">
 <a href="https://www.google.com/maps/search/?api=1&query=34.7067973,135.4995594" target="_blank" rel="noopener" class="action-btn btn-map">📍 地図</a>
 <a href="https://big-echo.jp/shop_info/%E3%82%AB%E3%83%A9%E3%82%AA%E3%82%B1-%E3%83%93%E3%83%83%E3%82%B0%E3%82%A8%E3%82%B3%E3%83%BC%E6%A2%85%E7%94%B0%E8%8C%B6%E5%B1%8B%E7%94%BA%E6%9C%AC%E5%BA%97" target="_blank" rel="noopener" class="action-btn btn-reserve">🔗 予約・詳細</a>
 </div>
@@ -662,7 +636,7 @@ store_count: 28
 カラオケ  梅田茶屋町本店
 </h3>
 </div>
-<div class="price-grid">
+<div class="price-section">
 <div class="price-item">
 <span class="price-label">30分 (平日昼)</span>
 <span class="price-value">一般:420円<br>会員:220円</span>
@@ -671,10 +645,9 @@ store_count: 28
 <span class="price-label">フリータイム (平日昼)</span>
 <span class="price-value">一般:1760円<br>会員:1210円</span>
 </div>
+
 </div>
-        
-        
-<div class="action-area">
+<div class="card-footer">
 <a href="https://www.google.com/maps/search/?api=1&query=34.7067973,135.4995594" target="_blank" rel="noopener" class="action-btn btn-map">📍 地図</a>
 <a href="https://big-echo.jp/shop_info/%E3%82%AB%E3%83%A9%E3%82%AA%E3%82%B1-%E3%83%93%E3%83%83%E3%82%B0%E3%82%A8%E3%82%B3%E3%83%BC%E6%A2%85%E7%94%B0%E8%8C%B6%E5%B1%8B%E7%94%BA%E6%9C%AC%E5%BA%97" target="_blank" rel="noopener" class="action-btn btn-reserve">🔗 予約・詳細</a>
 </div>
@@ -686,7 +659,7 @@ store_count: 28
 カラオケ 梅田DDハウス店
 </h3>
 </div>
-<div class="price-grid">
+<div class="price-section">
 <div class="price-item">
 <span class="price-label">30分 (平日昼)</span>
 <span class="price-value"><span class='member-label'>会員:</span>220円</span>
@@ -695,10 +668,9 @@ store_count: 28
 <span class="price-label">フリータイム (平日昼)</span>
 <span class="price-value">-</span>
 </div>
+
 </div>
-        
-        
-<div class="action-area">
+<div class="card-footer">
 <a href="https://www.google.com/maps/search/?api=1&query=34.7050957,135.4957138" target="_blank" rel="noopener" class="action-btn btn-map">📍 地図</a>
 <a href="https://big-echo.jp/shop_info/%E3%83%93%E3%83%83%E3%82%B0%E3%82%A8%E3%82%B3%E3%83%BC%E6%A2%85%E7%94%B0dd%E3%83%8F%E3%82%A6%E3%82%B9%E5%BA%97" target="_blank" rel="noopener" class="action-btn btn-reserve">🔗 予約・詳細</a>
 </div>

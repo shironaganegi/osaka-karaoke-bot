@@ -243,6 +243,15 @@ def build_store_list_html(stores: list[dict]) -> str:
         data_amenities = " ".join(amenities)
         search_name = f"{chain_label} {display_name}"
 
+        # PDFリンク作成
+        pdf_link_html = ""
+        pdf_url = store.get("pdf_url")
+        if pdf_url:
+            pdf_link_html = f'''<div class="pdf-link-container">
+<a href="{pdf_url}" target="_blank" rel="noopener" class="pdf-link">📄 公式料金表を見る (PDF)</a>
+</div>'''
+
+        # カードHTML構築
         card = f"""
 <div class="store-card" data-chain="{chain}" data-price="{data_price}" data-name="{search_name}" data-amenities="{data_amenities}">
 <div class="store-header">
@@ -251,7 +260,7 @@ def build_store_list_html(stores: list[dict]) -> str:
 {display_name}
 </h3>
 </div>
-<div class="price-grid">
+<div class="price-section">
 <div class="price-item">
 <span class="price-label">30分 (平日昼)</span>
 <span class="price-value">{price_30_str}</span>
@@ -260,20 +269,9 @@ def build_store_list_html(stores: list[dict]) -> str:
 <span class="price-label">フリータイム (平日昼)</span>
 <span class="price-value">{price_ft_str}</span>
 </div>
+{pdf_link_html}
 </div>
-        
-        """
-        pdf_link_html = ""
-        pdf_url = store.get("pdf_url")
-        if pdf_url:
-            pdf_link_html = f'''<div class="pdf-link-container">
-<a href="{pdf_url}" target="_blank" rel="noopener" class="pdf-link">📄 公式料金表を見る (PDF)</a>
-</div>'''
-        
-        card += pdf_link_html
-        
-        card += f"""
-<div class="action-area">
+<div class="card-footer">
 <a href="{map_url}" target="_blank" rel="noopener" class="action-btn btn-map">📍 地図</a>
 <a href="{url}" target="_blank" rel="noopener" class="action-btn btn-reserve">🔗 予約・詳細</a>
 </div>

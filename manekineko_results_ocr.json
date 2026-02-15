@@ -1,0 +1,236 @@
+[
+  {
+    "store_name": "カラオケまねきねこ なんばHIPS店",
+    "pdf_url": "https://d1k5d0nneloh3k.cloudfront.net/wp-content/uploads/2025/11/28132223/448-7.pdf",
+    "pricing": {
+      "status": "success",
+      "day": {
+        "30min": {
+          "member": "105",
+          "general": "150"
+        }
+      }
+    }
+  },
+  {
+    "store_name": "カラオケまねきねこ 千日前2号店",
+    "pdf_url": "https://d1k5d0nneloh3k.cloudfront.net/wp-content/uploads/2025/11/28132640/767-8.pdf",
+    "pricing": {
+      "status": "failed"
+    }
+  },
+  {
+    "store_name": "カラオケまねきねこ 千日前店",
+    "pdf_url": "https://d1k5d0nneloh3k.cloudfront.net/wp-content/uploads/2025/11/28132355/738-10.pdf",
+    "pricing": {
+      "status": "success",
+      "day": {
+        "30min": {
+          "member": "105",
+          "general": "150"
+        }
+      }
+    }
+  },
+  {
+    "store_name": "カラオケまねきねこ 南海通り2号店",
+    "pdf_url": "https://d1k5d0nneloh3k.cloudfront.net/wp-content/uploads/2025/11/28132751/768-6.pdf",
+    "pricing": {
+      "status": "failed"
+    }
+  },
+  {
+    "store_name": "カラオケまねきねこ 南海通り店",
+    "pdf_url": "https://d1k5d0nneloh3k.cloudfront.net/wp-content/uploads/2025/11/04154443/740-13.pdf",
+    "pricing": {
+      "status": "failed"
+    }
+  },
+  {
+    "store_name": "カラオケまねきねこ 戎橋店",
+    "pdf_url": "https://d1k5d0nneloh3k.cloudfront.net/wp-content/uploads/2025/11/28133142/903-6.pdf",
+    "pricing": {
+      "status": "failed"
+    }
+  },
+  {
+    "store_name": "カラオケまねきねこ 道頓堀店",
+    "pdf_url": "https://d1k5d0nneloh3k.cloudfront.net/wp-content/uploads/2025/11/28133255/741-6.pdf",
+    "pricing": {
+      "status": "success",
+      "day": {
+        "30min": {
+          "member": "250",
+          "general": "500"
+        }
+      }
+    }
+  },
+  {
+    "store_name": "カラオケまねきねこ 貝塚店",
+    "pdf_url": "https://d1k5d0nneloh3k.cloudfront.net/wp-content/uploads/2025/11/05075922/377-3.pdf",
+    "pricing": {
+      "status": "failed"
+    }
+  },
+  {
+    "store_name": "カラオケまねきねこ 京橋店",
+    "pdf_url": "https://d1k5d0nneloh3k.cloudfront.net/wp-content/uploads/2025/11/03235622/%E4%BA%AC%E6%A9%8B%E5%BA%97-4.pdf",
+    "pricing": {
+      "status": "failed"
+    }
+  },
+  {
+    "store_name": "カラオケまねきねこ 京橋駅前店",
+    "pdf_url": "https://d1k5d0nneloh3k.cloudfront.net/wp-content/uploads/2025/11/13070619/%E4%BA%AC%E6%A9%8B%E9%A7%85%E5%89%8D%E5%BA%97-4.pdf",
+    "pricing": {
+      "status": "failed"
+    }
+  },
+  {
+    "store_name": "カラオケまねきねこ 住之江公園店",
+    "pdf_url": "https://d1k5d0nneloh3k.cloudfront.net/wp-content/uploads/2025/11/13081243/946-4.pdf",
+    "pricing": {
+      "status": "failed"
+    }
+  },
+  {
+    "store_name": "カラオケまねきねこ 江坂駅前店",
+    "pdf_url": "https://d1k5d0nneloh3k.cloudfront.net/wp-content/uploads/2025/11/11183225/%E6%B1%9F%E5%9D%82%E9%A7%85%E5%89%8D%E5%BA%97-6.pdf",
+    "pricing": {
+      "status": "failed"
+    }
+  },
+  {
+    "store_name": "カラオケまねきねこ 京阪守口店",
+    "pdf_url": "https://d1k5d0nneloh3k.cloudfront.net/wp-content/uploads/2025/11/13070329/%E4%BA%AC%E9%98%AA%E5%AE%88%E5%8F%A3%E5%BA%97-.pdf",
+    "pricing": {
+      "status": "failed"
+    }
+  },
+  {
+    "store_name": "カラオケまねきねこ 古川橋店",
+    "pdf_url": "https://d1k5d0nneloh3k.cloudfront.net/wp-content/uploads/2025/11/02161657/%E5%8F%A4%E5%B7%9D%E6%A9%8B%E5%BA%97-6.pdf",
+    "pricing": {
+      "status": "failed"
+    }
+  },
+  {
+    "store_name": "カラオケまねきねこ 香里園店",
+    "pdf_url": "https://d1k5d0nneloh3k.cloudfront.net/wp-content/uploads/2025/11/25053604/%E9%A6%99%E9%87%8C%E5%9C%92%E5%BA%97-4.pdf",
+    "pricing": {
+      "status": "failed"
+    }
+  },
+  {
+    "store_name": "カラオケまねきねこ 寺田町駅前店",
+    "pdf_url": "https://d1k5d0nneloh3k.cloudfront.net/wp-content/uploads/2025/11/13080624/665-3.pdf",
+    "pricing": {
+      "status": "failed"
+    }
+  },
+  {
+    "store_name": "カラオケまねきねこ 八戸ノ里店",
+    "pdf_url": "https://d1k5d0nneloh3k.cloudfront.net/wp-content/uploads/2025/11/13080230/%E5%85%AB%E6%88%B8%E3%83%8E%E9%87%8C%E5%BA%97306.pdf",
+    "pricing": {
+      "status": "failed"
+    }
+  },
+  {
+    "store_name": "カラオケまねきねこ 布施駅前店",
+    "pdf_url": "https://d1k5d0nneloh3k.cloudfront.net/wp-content/uploads/2025/11/13081143/906-5.pdf",
+    "pricing": {
+      "status": "failed"
+    }
+  },
+  {
+    "store_name": "カラオケまねきねこ 新石切店",
+    "pdf_url": "https://d1k5d0nneloh3k.cloudfront.net/wp-content/uploads/2025/11/13080357/534-2.pdf",
+    "pricing": {
+      "status": "failed"
+    }
+  },
+  {
+    "store_name": "カラオケまねきねこ 瓢箪山駅前店",
+    "pdf_url": "https://d1k5d0nneloh3k.cloudfront.net/wp-content/uploads/2025/11/07032246/679-5.pdf",
+    "pricing": {
+      "status": "failed"
+    }
+  },
+  {
+    "store_name": "カラオケまねきねこ 心斎橋2号店",
+    "pdf_url": "https://d1k5d0nneloh3k.cloudfront.net/wp-content/uploads/2025/11/28133031/907-8.pdf",
+    "pricing": {
+      "status": "failed"
+    }
+  },
+  {
+    "store_name": "カラオケまねきねこ 心斎橋店",
+    "pdf_url": "https://d1k5d0nneloh3k.cloudfront.net/wp-content/uploads/2025/11/08175252/801-11.pdf",
+    "pricing": {
+      "status": "failed"
+    }
+  },
+  {
+    "store_name": "カラオケまねきねこ 梅田芝田店",
+    "pdf_url": "https://d1k5d0nneloh3k.cloudfront.net/wp-content/uploads/2025/11/13222302/%E6%A2%85%E7%94%B0%E8%8A%9D%E7%94%B0%E5%BA%97-4.pdf",
+    "pricing": {
+      "status": "failed"
+    }
+  },
+  {
+    "store_name": "カラオケまねきねこ 茶屋町店",
+    "pdf_url": "https://d1k5d0nneloh3k.cloudfront.net/wp-content/uploads/2025/11/13070238/%E8%8C%B6%E5%B1%8B%E7%94%BA%E5%BA%97-4.pdf",
+    "pricing": {
+      "status": "failed"
+    }
+  },
+  {
+    "store_name": "カラオケまねきねこ 阪急東通り2号店",
+    "pdf_url": "https://d1k5d0nneloh3k.cloudfront.net/wp-content/uploads/2025/11/02185022/%E9%98%AA%E6%80%A5%E6%9D%B1%E9%80%9A%E3%82%8A2%E5%8F%B7%E5%BA%97-4.pdf",
+    "pricing": {
+      "status": "failed"
+    }
+  },
+  {
+    "store_name": "カラオケまねきねこ 阪急東通り店",
+    "pdf_url": "https://d1k5d0nneloh3k.cloudfront.net/wp-content/uploads/2025/11/04002746/%E5%9C%A7%E7%B8%AE-2.pdf",
+    "pricing": {
+      "status": "failed"
+    }
+  },
+  {
+    "store_name": "カラオケまねきねこ 石橋店",
+    "pdf_url": "https://d1k5d0nneloh3k.cloudfront.net/wp-content/uploads/2025/11/13064549/%E7%9F%B3%E6%A9%8B%E5%BA%97-3.pdf",
+    "pricing": {
+      "status": "failed"
+    }
+  },
+  {
+    "store_name": "カラオケまねきねこ 大阪福島店",
+    "pdf_url": "https://d1k5d0nneloh3k.cloudfront.net/wp-content/uploads/2025/11/13064824/%E5%A4%A7%E9%98%AA%E7%A6%8F%E5%B3%B6%E5%BA%97-4.pdf",
+    "pricing": {
+      "status": "failed"
+    }
+  },
+  {
+    "store_name": "カラオケまねきねこ 近鉄八尾駅前店",
+    "pdf_url": "https://d1k5d0nneloh3k.cloudfront.net/wp-content/uploads/2025/11/13080508/615-4.pdf",
+    "pricing": {
+      "status": "success",
+      "day": {
+        "30min": {
+          "member": "187",
+          "general": null
+        }
+      }
+    }
+  },
+  {
+    "store_name": "カラオケまねきねこ 鶴橋店",
+    "pdf_url": "https://d1k5d0nneloh3k.cloudfront.net/wp-content/uploads/2025/11/13080839/769-4.pdf",
+    "pricing": {
+      "status": "failed"
+    }
+  }
+]

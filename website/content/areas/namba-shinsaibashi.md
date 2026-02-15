@@ -403,7 +403,7 @@ store_count: 25
 <a href="https://www.karaokemanekineko.jp/locations/osaka/osaka-shi/ebisubashi-store/" target="_blank" rel="noopener" class="action-btn btn-reserve">🔗 予約・詳細</a>
 </div>
 </div>
-<div class="store-card" data-chain="manekineko" data-price="300" data-name="まねきねこ 道頓堀店" data-amenities="mochikomi">
+<div class="store-card" data-chain="manekineko" data-price="250" data-name="まねきねこ 道頓堀店" data-amenities="mochikomi">
 <div class="store-header">
 <h3 class="store-name">
 <span class="chain-badge badge-manekineko">まねきねこ</span>
@@ -413,11 +413,11 @@ store_count: 25
 <div class="price-section">
 <div class="price-item">
 <span class="price-label">30分 (平日昼)</span>
-<span class="price-value">一般:390円<br>会員:300円</span>
+<span class="price-value">一般:500円<br>会員:250円</span>
 </div>
 <div class="price-item">
 <span class="price-label">フリータイム (平日昼)</span>
-<span class="price-value">一般:1560円<br>会員:1200円</span>
+<span class="price-value">一般:2000円<br>会員:1000円</span>
 </div>
 <div class="pdf-link-container">
 <a href="https://d1k5d0nneloh3k.cloudfront.net/wp-content/uploads/2025/11/28133255/741-6.pdf" target="_blank" rel="noopener" class="pdf-link">📄 公式料金表を見る (PDF)</a>

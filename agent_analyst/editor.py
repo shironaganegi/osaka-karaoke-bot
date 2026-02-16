@@ -63,7 +63,9 @@ def refine_article(draft_text):
         try:
             return response_data["candidates"][0]["content"]["parts"][0]["text"]
         except (KeyError, IndexError, TypeError):
-             print(f"Editor response parsing failed: {response_data}")
+             # Log keys for debugging, but not full content
+             keys = list(response_data.keys()) if isinstance(response_data, dict) else "Not a dict"
+             print(f"Editor response parsing failed. Keys: {keys}")
              return draft_text
 
     except Exception as e:

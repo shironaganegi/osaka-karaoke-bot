@@ -54,7 +54,9 @@ def get_gemini_response(prompt, model_name, generation_config=None):
                 time.sleep(wait_time)
                 continue
                 
-            print(f"API Error ({response.status_code}): {response.text}")
+            # Truncate error message to avoid logging sensitive data reflected in response
+            error_msg = response.text[:200] + "..." if len(response.text) > 200 else response.text
+            print(f"API Error ({response.status_code}): {error_msg}")
             return None
             
         except Exception as e:

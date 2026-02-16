@@ -12,12 +12,12 @@ def check_available_models():
         print("Error: GEMINI_API_KEY not found.")
         return
 
-    url = f"https://generativelanguage.googleapis.com/v1beta/models?key={api_key}"
+    base_url = "https://generativelanguage.googleapis.com/v1beta/models"
     
-    print(f"Checking models from: {url.replace(api_key, 'HIDDEN_KEY')}")
+    print(f"Checking models from: {base_url}")
     
     try:
-        response = requests.get(url, timeout=30)
+        response = requests.get(base_url, params={"key": api_key}, timeout=30)
         
         if response.status_code == 200:
             data = response.json()
@@ -30,10 +30,10 @@ def check_available_models():
                     print("-" * 20)
             else:
                 print("No 'models' key in response.")
-                print(json.dumps(data, indent=2))
+                # print(json.dumps(data, indent=2)) # Avoid dumping full data if it might contain sensitive info
         else:
             print(f"\nAPI Error: {response.status_code}")
-            print(response.text)
+            # print(response.text) # Avoid dumping raw error text which might contain reflected secrets
             
     except Exception as e:
         print(f"Request failed: {e}")

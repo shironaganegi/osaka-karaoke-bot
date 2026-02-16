@@ -5,3 +5,6 @@ __pycache__/
 .DS_Store
 tessdata/
 *.log
+
+debug_*.html
+debug_*.png

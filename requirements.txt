@@ -1,6 +1,6 @@
 playwright
 beautifulsoup4
-requests==2.31.0
+requests==2.32.5
 beautifulsoup4==4.12.3
 feedparser==6.0.10
 python-dotenv==1.0.1

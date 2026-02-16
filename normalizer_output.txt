@@ -1,0 +1,840 @@
+﻿python : ==================================================
+発生場所 行:1 文字:1
++ python -X utf8 agent_analyst/normalizer.py 2>&1 | Out-File -Encoding  ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (===============...===============:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+Agent Analyst - 繝・・繧ｿ豁｣隕丞喧
+==================================================
+隱ｭ縺ｿ霎ｼ縺ｿ: data\raw_jankara_20260212.json
+蜈･蜉・ 83 蠎苓・
+
+==================================================
+豁｣隕丞喧蠕後・鬧・錐荳隕ｧ・亥ｺ苓・謨ｰ・・
+==================================================
+  縺ゅ・縺・(1蠎・: 繧ｸ繝｣繝ｳ繧ｫ繝ｩ縺ゅ・縺灘ｺ・
+  縺ｪ繧薙・ (10蠎・: 繧ｸ繝｣繝ｳ繧ｫ繝ｩ繧ｻ繝ｫ繝輔・譁ｹ縺ｮ縺ｪ繧薙・蠎・ 繧ｸ繝｣繝ｳ繧ｫ繝ｩ蜊・律蜑・蜿ｷ蠎・ 繧ｸ繝｣繝ｳ繧ｫ繝ｩ蜊・律蜑・蜿ｷ蠎・ 繧ｸ繝｣繝ｳ繧ｫ繝ｩ螳怜承陦幃摩逕ｺ蠎・ 繧ｸ繝｣繝ｳ繧ｫ繝ｩ驕馴灘
+蠎・ 繧ｸ繝｣繝ｳ繧ｫ繝ｩ驕馴灘縺繧九∪蠎・ 繧ｸ繝｣繝ｳ繧ｫ繝ｩ蜊玲ｵｷ騾壹↑繧薙・蠎・ 繧ｸ繝｣繝ｳ繧ｫ繝ｩ縺ｪ繧薙＆繧馴壹ｊ蠎・ 繧ｸ繝｣繝ｳ繧ｫ繝ｩ縺ｪ繧薙・蠎・ 繧ｸ繝｣繝ｳ繧ｫ繝ｩ縺ｪ繧薙・譛ｬ蠎・
+  荳牙嵜 (1蠎・: 繧ｸ繝｣繝ｳ繧ｫ繝ｩ髦ｪ諤･荳牙嵜蠎・
+  荳頑眠蠎・(2蠎・: 繧ｸ繝｣繝ｳ繧ｫ繝ｩ荳頑眠蠎・ｧ・燕蠎・ 繧ｸ繝｣繝ｳ繧ｫ繝ｩ荳頑眠蠎・⊇繧薙∪縺ｫ鬧・燕蠎・
+  荳頑悽逕ｺ (1蠎・: 繧ｸ繝｣繝ｳ繧ｫ繝ｩ荳頑悽逕ｺ鬧・燕蠎・
+  荳肴・ (1蠎・: 繧ｹ繝ｼ繝代・繧ｸ繝｣繝ｳ繧ｫ繝ｩ繧ｹ繝ｼ繝代・繧ｸ繝｣繝ｳ繧ｫ繝ｩ縺ゅ∋縺ｮ繝励Ξ繝溘い繝
+  莠ｬ讖・(3蠎・: 繧ｸ繝｣繝ｳ繧ｫ繝ｩ莠ｬ讖・蜿ｷ蠎・ 繧ｸ繝｣繝ｳ繧ｫ繝ｩ莠ｬ讖汽oor4蠎・ 繧ｸ繝｣繝ｳ繧ｫ繝ｩ莠ｬ讖区悽蠎・
+  菴丈ｹ区ｱ溷・蝨・(1蠎・: 繧ｸ繝｣繝ｳ繧ｫ繝ｩ菴丈ｹ区ｱ溷・蝨帝ｧ・燕蠎・
+  菴城％ (1蠎・: 繧ｸ繝｣繝ｳ繧ｫ繝ｩ菴城％鬧・燕蠎・
+  蜈ｫ謌ｸ繝朱㈹ (1蠎・: 繧ｸ繝｣繝ｳ繧ｫ繝ｩ蜈ｫ謌ｸ繝朱㈹鬧・燕蠎・
+  蛹怜ｷｽ (1蠎・: 繧ｸ繝｣繝ｳ繧ｫ繝ｩ蛹怜ｷｽ鬧・燕蠎・
+  蛹玲眠蝨ｰ (1蠎・: 繧ｸ繝｣繝ｳ繧ｫ繝ｩ蛹玲眠蝨ｰ蠎・
+  蜊∽ｸ・(2蠎・: 繧ｸ繝｣繝ｳ繧ｫ繝ｩ蜊∽ｸ蛾ｧ・擲蜿｣蠎・ 繧ｸ繝｣繝ｳ繧ｫ繝ｩ蜊∽ｸ画悽逕ｺ蠎・
+  蜷ｹ逕ｰ (1蠎・: 繧ｸ繝｣繝ｳ繧ｫ繝ｩJR蜷ｹ逕ｰ蠎・
+  蝣ｺ譚ｱ (2蠎・: 繧ｸ繝｣繝ｳ繧ｫ繝ｩ蝣ｺ譚ｱ蠎・ 繧ｸ繝｣繝ｳ繧ｫ繝ｩ蝣ｺ譚ｱ2蜿ｷ蠎・
+  蝪壽悽 (1蠎・: 繧ｸ繝｣繝ｳ繧ｫ繝ｩ縺ｿ繧薙↑縺ｮ蝪壽悽鬧・燕蠎・
+  螟ｧ蜥檎伐 (1蠎・: 繧ｸ繝｣繝ｳ繧ｫ繝ｩ莠ｬ髦ｪ螟ｧ蜥檎伐蠎・
+  螟ｧ豁｣ (1蠎・: 繧ｸ繝｣繝ｳ繧ｫ繝ｩ螟ｧ豁｣鬧・燕蠎・
+  螟ｩ貅 (2蠎・: 繧ｸ繝｣繝ｳ繧ｫ繝ｩ繧｢繧ｸ繧｢繝ｳ螟ｩ貅蠎・ 繧ｸ繝｣繝ｳ繧ｫ繝ｩ繝ｨ繧､繝峨さ繝ｭ螟ｩ貅蠎・
+  螟ｩ邇句ｯｺ (2蠎・: 繧ｸ繝｣繝ｳ繧ｫ繝ｩ縺ゅ∋縺ｮ蠎・ 繧ｸ繝｣繝ｳ繧ｫ繝ｩ螟ｩ邇句ｯｺ蠎・
+  螳亥哨蟶・(1蠎・: 繧ｸ繝｣繝ｳ繧ｫ繝ｩ莠ｬ髦ｪ螳亥哨蠎・
+  蟇晏ｱ句ｷ晏ｸ・(1蠎・: 繧ｸ繝｣繝ｳ繧ｫ繝ｩ蟇晏ｱ句ｷ晞ｧ・燕蠎・
+  蟶・命 (2蠎・: 繧ｸ繝｣繝ｳ繧ｫ繝ｩ繝・ぅ繝ｼ繝怜ｸ・命蠎・ 繧ｸ繝｣繝ｳ繧ｫ繝ｩ蟶・命鬧・燕2蜿ｷ蠎・
+  蠎・・ (1蠎・: 繧ｸ繝｣繝ｳ繧ｫ繝ｩ蠎・・鬧・擲蜿｣蠎・
+  蠢・鮪讖・(3蠎・: 繧ｸ繝｣繝ｳ繧ｫ繝ｩ繧｢繝｡繝ｪ繧ｫ譚大ｺ・ 繧ｸ繝｣繝ｳ繧ｫ繝ｩ蠢・鮪讖句ｺ・ 繧ｸ繝｣繝ｳ繧ｫ繝ｩ蠢・鮪讖・蜿ｷ蠎・
+  譁ｰ驥大ｲ｡ (1蠎・: 繧ｸ繝｣繝ｳ繧ｫ繝ｩ譁ｰ驥大ｲ｡鬧・燕蠎・
+  譏ｭ蜥檎伴 (1蠎・: 繧ｸ繝｣繝ｳ繧ｫ繝ｩ譏ｭ蜥檎伴鬧・燕蠎・
+  譫壽婿蟶・(3蠎・: 繧ｸ繝｣繝ｳ繧ｫ繝ｩ譫壽婿鬧・°繧・遘貞ｺ・ 繧ｸ繝｣繝ｳ繧ｫ繝ｩ譫壽婿鬧・燕蠎・ 繧ｸ繝｣繝ｳ繧ｫ繝ｩ譫壽婿鬧・燕2蜿ｷ蠎・
+  譴・伐 (10蠎・: 繧ｸ繝｣繝ｳ繧ｫ繝ｩ譴・伐闃晉伐逕ｺ蠎・ 繧ｸ繝｣繝ｳ繧ｫ繝ｩ縺雁・螟ｩ逾槫ｺ・ 繧ｹ繝ｼ繝代・繧ｸ繝｣繝ｳ繧ｫ繝ｩ繧ｹ繝ｼ繝代・繧ｸ繝｣繝ｳ繧ｫ繝ｩ闌ｶ螻狗伴蠎・ 繧ｸ繝｣繝ｳ繧ｫ繝ｩ闌ｶ螻狗伴蠎・ 繧ｸ繝｣繝
+ｳ繧ｫ繝ｩ髦ｪ諤･縺九▲縺ｱ讓ｪ荳∝ｺ・ 繧ｸ繝｣繝ｳ繧ｫ繝ｩ髦ｪ諤･譚ｱ騾壼ｺ・ 繧ｸ繝｣繝ｳ繧ｫ繝ｩ髦ｪ諤･譚ｱ騾・蜿ｷ蠎・ 繧ｸ繝｣繝ｳ繧ｫ繝ｩ髦ｪ諤･譚ｱ騾壽悽蠎・ 繧ｸ繝｣繝ｳ繧ｫ繝ｩ髦ｪ諤･譚ｱ荳ｭ騾壼ｺ・ 繧ｸ繝｣繝ｳ繧ｫ繝
+ｩ譚ｱ騾夂區鬥ｬ霆翫ン繝ｫ蠎・
+  讓溯痩 (1蠎・: 繧ｸ繝｣繝ｳ繧ｫ繝ｩ縺上★縺ｯ蠎・
+  豎溷揩 (2蠎・: 繧ｸ繝｣繝ｳ繧ｫ繝ｩ豎溷揩蠎・ 繧ｸ繝｣繝ｳ繧ｫ繝ｩ豎溷揩2蜿ｷ蠎・
+  豎逕ｰ (1蠎・: 繧ｸ繝｣繝ｳ繧ｫ繝ｩ豎逕ｰ鬧・燕蠎・
+  豺ｱ莠・(1蠎・: 繧ｸ繝｣繝ｳ繧ｫ繝ｩ豺ｱ莠暮ｧ・燕蠎・
+  邇蛾 (1蠎・: 繧ｸ繝｣繝ｳ繧ｫ繝ｩ邇蛾鬧・燕蠎・
+  遏ｳ讖矩亂螟ｧ蜑・(1蠎・: 繧ｸ繝｣繝ｳ繧ｫ繝ｩ遏ｳ讖矩ｧ・燕蠎・
+  遖丞ｳｶ (1蠎・: 繧ｸ繝｣繝ｳ繧ｫ繝ｩJR遖丞ｳｶ蠎・
+  闌ｨ譛ｨ (2蠎・: 繧ｸ繝｣繝ｳ繧ｫ繝ｩJR闌ｨ譛ｨ蠎・ 繧ｸ繝｣繝ｳ繧ｫ繝ｩ縺ｿ繧薙↑縺ｮJR闌ｨ譛ｨ蠎・
+  闌ｨ譛ｨ蟶・(1蠎・: 繧ｸ繝｣繝ｳ繧ｫ繝ｩ髦ｪ諤･闌ｨ譛ｨ蠎・
+  阯､莠募ｯｺ (1蠎・: 繧ｸ繝｣繝ｳ繧ｫ繝ｩ阯､莠募ｯｺ鬧・燕蠎・
+  隘ｿ荳ｭ蟲ｶ蜊玲婿 (1蠎・: 繧ｸ繝｣繝ｳ繧ｫ繝ｩ隘ｿ荳ｭ蟲ｶ蠎・
+  隘ｿ荵晄擅 (1蠎・: 繧ｸ繝｣繝ｳ繧ｫ繝ｩ隘ｿ荵晄擅鬧・燕蠎・
+  雎贋ｸｭ (1蠎・: 繧ｸ繝｣繝ｳ繧ｫ繝ｩ雎贋ｸｭ鬧・燕蠎・
+  霑鷹延蜈ｫ蟆ｾ (1蠎・: 繧ｸ繝｣繝ｳ繧ｫ繝ｩ霑鷹延蜈ｫ蟆ｾ蠎・
+  髟ｷ螻・(1蠎・: 繧ｸ繝｣繝ｳ繧ｫ繝ｩ髟ｷ螻・ｧ・燕蠎・
+  髢｢螟ｧ蜑・(1蠎・: 繧ｸ繝｣繝ｳ繧ｫ繝ｩ繧ｪ繝ｼ繝ｫ繝翫う繝磯未螟ｧ蜑榊ｺ・
+  鬥咎㈹蝨・(1蠎・: 繧ｸ繝｣繝ｳ繧ｫ繝ｩ鬥咎㈹蝨帝ｧ・燕蠎・
+  鬮俶ｧｻ蟶・(3蠎・: 繧ｸ繝｣繝ｳ繧ｫ繝ｩ鬮俶ｧｻ2蜿ｷ蠎・ 繧ｸ繝｣繝ｳ繧ｫ繝ｩ鬮俶ｧｻ3蜿ｷ蠎・ 繧ｸ繝｣繝ｳ繧ｫ繝ｩ鬮俶ｧｻ繧ｷ繝ｼ繧ｹ繝ｼ蠎・
+  魑ｳ (1蠎・: 繧ｸ繝｣繝ｳ繧ｫ繝ｩJR魑ｳ鬧・燕蠎・
+  鮓ｴ讖・(1蠎・: 繧ｸ繝｣繝ｳ繧ｫ繝ｩ鮓ｴ讖矩ｧ・燕蠎・
+
+蜷郁ｨ・ 49 鬧・ 83 蠎苓・
+
+菫晏ｭ伜ｮ御ｺ・ data\stations_master.json
+{
+  "generated_at": "2026-02-12T01:52:35.057718",
+  "total_stations": 49,
+  "total_stores": 83,
+  "stations": {
+    "縺ゅ・縺・: [
+      {
+        "name": "繧ｸ繝｣繝ｳ繧ｫ繝ｩ縺ゅ・縺灘ｺ・,
+        "area": "縺昴・莉門､ｧ髦ｪ蟶・,
+        "address": "螟ｧ髦ｪ蟶ゆｽ丞翠蛹ｺ闍・伐7-12-29 縺ｯ繧翫∪繧・ン繝ｫ5縲・F\nOsakaMetro蠕｡蝣らｭ狗ｷ・縺ゅ・縺馴ｧ・1逡ｪ蜿｣繧医ｊ蠕呈ｭｩ3蛻・,
+        "url": "https://jankara.ne.jp/shop/087/",
+        "price_url": "https://jankara.ne.jp/shop/087/#price",
+        "original_station": "縺ゅ・縺・
+      }
+    ],
+    "縺ｪ繧薙・": [
+      {
+        "name": "繧ｸ繝｣繝ｳ繧ｫ繝ｩ繧ｻ繝ｫ繝輔・譁ｹ縺ｮ縺ｪ繧薙・蠎・,
+        "area": "髮｣豕｢繝ｻ蠢・鮪讖・,
+        "address": "螟ｧ髦ｪ蟶ゆｸｭ螟ｮ蛹ｺ髮｣豕｢蜊・律蜑・2逡ｪ30蜿ｷ 髮｣豕｢髟ｷ蜥後ン繝ｫ2髫・,
+        "url": "https://jankara.ne.jp/shop/266/",
+        "price_url": "https://jankara.ne.jp/shop/266/#price",
+        "original_station": "縺ｪ繧薙・"
+      },
+      {
+        "name": "繧ｸ繝｣繝ｳ繧ｫ繝ｩ蜊・律蜑・蜿ｷ蠎・,
+        "area": "髮｣豕｢繝ｻ蠢・鮪讖・,
+        "address": "螟ｧ髦ｪ蟶ゆｸｭ螟ｮ蛹ｺ蜊・律蜑・-8-4 蟒ｶ逕ｰ繝薙Ν4F\nOsakaMetro譌･譛ｬ讖矩ｧ・5逡ｪ蜃ｺ蜿｣繧医ｊ蠕呈ｭｩ6蛻・,
+        "url": "https://jankara.ne.jp/shop/091/",
+        "price_url": "https://jankara.ne.jp/shop/091/#price",
+        "original_station": "蜊・律蜑・
+      },
+      {
+        "name": "繧ｸ繝｣繝ｳ繧ｫ繝ｩ蜊・律蜑・蜿ｷ蠎・,
+        "area": "髮｣豕｢繝ｻ蠢・鮪讖・,
+        "address": "螟ｧ髦ｪ蟶ゆｸｭ螟ｮ蛹ｺ髮｣豕｢3-4-16 ECS隨ｬ32繝薙Ν2F\nOsakaMetro縺ｪ繧薙・鬧・18逡ｪ蜃ｺ蜿｣繧医ｊ蠕呈ｭｩ4蛻・,
+        "url": "https://jankara.ne.jp/shop/203/",
+        "price_url": "https://jankara.ne.jp/shop/203/#price",
+        "original_station": "蜊・律蜑・
+      },
+      {
+        "name": "繧ｸ繝｣繝ｳ繧ｫ繝ｩ螳怜承陦幃摩逕ｺ蠎・,
+        "area": "髮｣豕｢繝ｻ蠢・鮪讖・,
+        "address": "螟ｧ髦ｪ蟶ゆｸｭ螟ｮ蛹ｺ蠢・鮪讖狗ｭ・-3-16 蠢・鮪讖九Α繝・Ζ繝薙Ν1縲・F\nOsakaMetro縺ｪ繧薙・鬧・ 5-A蜃ｺ蜿｣繧医ｊ蠕呈ｭｩ7蛻・,
+        "url": "https://jankara.ne.jp/shop/222/",
+        "price_url": "https://jankara.ne.jp/shop/222/#price",
+        "original_station": "螳怜承陦幃摩逕ｺ"
+      },
+      {
+        "name": "繧ｸ繝｣繝ｳ繧ｫ繝ｩ驕馴灘蠎・,
+        "area": "髮｣豕｢繝ｻ蠢・鮪讖・,
+        "address": "螟ｧ髦ｪ蟶ゆｸｭ螟ｮ蛹ｺ驕馴灘1-7-23 B1縲・F\nOsakaMetro縺ｪ繧薙・鬧・15-B蜃ｺ蜿｣繧医ｊ蠕呈ｭｩ7蛻・,
+        "url": "https://jankara.ne.jp/shop/109/",
+        "price_url": "https://jankara.ne.jp/shop/109/#price",
+        "original_station": "驕馴灘"
+      },
+      {
+        "name": "繧ｸ繝｣繝ｳ繧ｫ繝ｩ驕馴灘縺繧九∪蠎・,
+        "area": "髮｣豕｢繝ｻ蠢・鮪讖・,
+        "address": "螟ｧ髦ｪ蟶ゆｸｭ螟ｮ蛹ｺ驕馴灘1-6-8 驕馴灘縺繧九∪繝薙Ν3縲・髫・,
+        "url": "https://jankara.ne.jp/shop/269/",
+        "price_url": "https://jankara.ne.jp/shop/269/#price",
+        "original_station": "驕馴灘縺繧九∪"
+      },
+      {
+        "name": "繧ｸ繝｣繝ｳ繧ｫ繝ｩ蜊玲ｵｷ騾壹↑繧薙・蠎・,
+        "area": "髮｣豕｢繝ｻ蠢・鮪讖・,
+        "address": "螟ｧ髦ｪ蟶ゆｸｭ螟ｮ蛹ｺ髮｣豕｢3-1-23 縺吶＠蜊贋ｻｲ蠎励ン繝ｫ\nOsakaMetro縺ｪ繧薙・鬧・1逡ｪ蜃ｺ蜿｣繧医ｊ蠕呈ｭｩ6蛻・,
+        "url": "https://jankara.ne.jp/shop/070/",
+        "price_url": "https://jankara.ne.jp/shop/070/#price",
+        "original_station": "蜊玲ｵｷ騾壹↑繧薙・"
+      },
+      {
+        "name": "繧ｸ繝｣繝ｳ繧ｫ繝ｩ縺ｪ繧薙＆繧馴壹ｊ蠎・,
+        "area": "髮｣豕｢繝ｻ蠢・鮪讖・,
+        "address": "螟ｧ髦ｪ蟶よｵｪ騾溷玄髮｣豕｢荳ｭ2-2-21 4縲・F\n蜊玲ｵｷ縺ｪ繧薙・鬧・2F荳ｭ螟ｮ蜃ｺ蜿｣繧医ｊ蠕呈ｭｩ6蛻・,
+        "url": "https://jankara.ne.jp/shop/172/",
+        "price_url": "https://jankara.ne.jp/shop/172/#price",
+        "original_station": "縺ｪ繧薙＆繧馴壹ｊ"
+      },
+      {
+        "name": "繧ｸ繝｣繝ｳ繧ｫ繝ｩ縺ｪ繧薙・蠎・,
+        "area": "髮｣豕｢繝ｻ蠢・鮪讖・,
+        "address": "螟ｧ髦ｪ蟶ゆｸｭ螟ｮ蛹ｺ髮｣豕｢3-6-16 繧ｱ繝九い繝薙Ν2縲・F\nOsakaMetro縺ｪ繧薙・鬧・20逡ｪ蜃ｺ蜿｣繧医ｊ蠕呈ｭｩ3蛻・,
+        "url": "https://jankara.ne.jp/shop/051/",
+        "price_url": "https://jankara.ne.jp/shop/051/#price",
+        "original_station": "縺ｪ繧薙・"
+      },
+      {
+        "name": "繧ｸ繝｣繝ｳ繧ｫ繝ｩ縺ｪ繧薙・譛ｬ蠎・,
+        "area": "髮｣豕｢繝ｻ蠢・鮪讖・,
+        "address": "螟ｧ髦ｪ蟶ゆｸｭ螟ｮ蛹ｺ髮｣豕｢蜊・律蜑・2-28 繝ｪ繝・Λ螟ｧ髦ｪ繝薙Ν\n蜊玲ｵｷ縺ｪ繧薙・鬧・2F荳ｭ螟ｮ蜃ｺ蜿｣繧医ｊ蠕呈ｭｩ6蛻・,
+        "url": "https://jankara.ne.jp/shop/096/",
+        "price_url": "https://jankara.ne.jp/shop/096/#price",
+        "original_station": "縺ｪ繧薙・譛ｬ"
+      }
+    ],
+    "荳牙嵜": [
+      {
+        "name": "繧ｸ繝｣繝ｳ繧ｫ繝ｩ髦ｪ諤･荳牙嵜蠎・,
+        "area": "縺昴・莉門､ｧ髦ｪ蟶・,
+        "address": "螟ｧ髦ｪ蟶よｷ蟾晏玄隘ｿ荳牙嵜4-8-19 荳牙嵜繝薙Ν繝・ぅ繝ｳ繧ｰ3F\n髦ｪ諤･螳晏｡壽悽邱・荳牙嵜鬧・蛹怜・蜿｣繧医ｊ蠕呈ｭｩ2蛻・,
+        "url": "https://jankara.ne.jp/shop/089/",
+        "price_url": "https://jankara.ne.jp/shop/089/#price",
+        "original_station": "髦ｪ諤･荳牙嵜"
+      }
+    ],
+    "荳頑眠蠎・: [
+      {
+        "name": "繧ｸ繝｣繝ｳ繧ｫ繝ｩ荳頑眠蠎・ｧ・燕蠎・,
+        "area": "縺昴・莉門､ｧ髦ｪ蟶・,
+        "address": "螟ｧ髦ｪ蟶よ擲豺蟾晏玄雎頑眠5-18-9\n髦ｪ諤･莠ｬ驛ｽ譛ｬ邱・荳頑眠蠎・ｧ・蜊怜・蜿｣繧医ｊ蠕呈ｭｩ7蛻・,
+        "url": "https://jankara.ne.jp/shop/020/",
+        "price_url": "https://jankara.ne.jp/shop/020/#price",
+        "original_station": "荳頑眠蠎・
+      },
+      {
+        "name": "繧ｸ繝｣繝ｳ繧ｫ繝ｩ荳頑眠蠎・⊇繧薙∪縺ｫ鬧・燕蠎・,
+        "area": "縺昴・莉門､ｧ髦ｪ蟶・,
+        "address": "螟ｧ髦ｪ蟶よ擲豺蟾晏玄迹槫・1-2-5 繧ｰ繝ｫ繝｡繝薙Ν繧ｰ繝ｩ繝ｳ繝弱い5F\n髦ｪ諤･莠ｬ驛ｽ譛ｬ邱・荳頑眠蠎・ｧ・蜊怜・蜿｣繧医ｊ蠕呈ｭｩ1蛻・,
+        "url": "https://jankara.ne.jp/shop/238/",
+        "price_url": "https://jankara.ne.jp/shop/238/#price",
+        "original_station": "荳頑眠蠎・⊇繧薙∪縺ｫ"
+      }
+    ],
+    "荳頑悽逕ｺ": [
+      {
+        "name": "繧ｸ繝｣繝ｳ繧ｫ繝ｩ荳頑悽逕ｺ鬧・燕蠎・,
+        "area": "縺昴・莉門､ｧ髦ｪ蟶・,
+        "address": "螟ｧ髦ｪ蟶ょ､ｩ邇句ｯｺ蛹ｺ荳頑悽逕ｺ6-4-23\n霑鷹延螟ｧ髦ｪ荳頑悽逕ｺ鬧・蝨ｰ荳頑隼譛ｭ蜃ｺ蜿｣繧医ｊ蠕呈ｭｩ6蛻・,
+        "url": "https://jankara.ne.jp/shop/021/",
+        "price_url": "https://jankara.ne.jp/shop/021/#price",
+        "original_station": "荳頑悽逕ｺ"
+      }
+    ],
+    "荳肴・": [
+      {
+        "name": "繧ｹ繝ｼ繝代・繧ｸ繝｣繝ｳ繧ｫ繝ｩ繧ｹ繝ｼ繝代・繧ｸ繝｣繝ｳ繧ｫ繝ｩ縺ゅ∋縺ｮ繝励Ξ繝溘い繝",
+        "area": "縺昴・莉門､ｧ髦ｪ蟶・,
+        "address": "螟ｧ髦ｪ蟶る仭蛟埼㍽蛹ｺ髦ｿ蛟埼㍽遲・荳∫岼4逡ｪ51蜿ｷ 髦ｿ蛟埼㍽繝代せ繧ｫ2髫蚕nOsakaMetro隹ｷ逕ｺ邱・髦ｿ蛟埼㍽鬧・1逡ｪ蜃ｺ蜿｣繧医ｊ蠕呈ｭｩ縺吶＄",
+        "url": "https://jankara.ne.jp/shop/253/",
+        "price_url": "https://jankara.ne.jp/shop/253/#price",
+        "original_station": ""
+      }
+    ],
+    "莠ｬ讖・: [
+      {
+        "name": "繧ｸ繝｣繝ｳ繧ｫ繝ｩ莠ｬ讖・蜿ｷ蠎・,
+        "area": "縺昴・莉門､ｧ髦ｪ蟶・,
+        "address": "螟ｧ髦ｪ蟶る・蟲ｶ蛹ｺ譚ｱ驥守伐逕ｺ5-1-16 隨ｬ2螟ｧ豌ｸ繝薙Ν2縲・F\nJR莠ｬ讖矩ｧ・蛹怜・蜿｣繧医ｊ蠕呈ｭｩ5蛻・,
+        "url": "https://jankara.ne.jp/shop/032/",
+        "price_url": "https://jankara.ne.jp/shop/032/#price",
+        "original_station": "莠ｬ讖・
+      },
+      {
+        "name": "繧ｸ繝｣繝ｳ繧ｫ繝ｩ莠ｬ讖汽oor4蠎・,
+        "area": "縺昴・莉門､ｧ髦ｪ蟶・,
+        "address": "螟ｧ髦ｪ蟶る・蟲ｶ蛹ｺ迚・伴2-4-6 繧ｦ繧ｨ繝繝ｭ繝励Λ繧ｶ繝薙Ν3繝ｻ4繝ｻ5繝ｻ6F\nJR莠ｬ讖矩ｧ・蛹怜・蜿｣繧医ｊ蠕呈ｭｩ3蛻・,
+        "url": "https://jankara.ne.jp/shop/236/",
+        "price_url": "https://jankara.ne.jp/shop/236/#price",
+        "original_station": "莠ｬ讖汽oor4"
+      },
+      {
+        "name": "繧ｸ繝｣繝ｳ繧ｫ繝ｩ莠ｬ讖区悽蠎・,
+        "area": "縺昴・莉門､ｧ髦ｪ蟶・,
+        "address": "螟ｧ髦ｪ蟶る・蟲ｶ蛹ｺ譚ｱ驥守伐逕ｺ荳我ｸ∫岼11逡ｪ1蜿ｷ\nJR莠ｬ讖矩ｧ・蛹怜・蜿｣繧医ｊ蠕呈ｭｩ2蛻・,
+        "url": "https://jankara.ne.jp/shop/174/",
+        "price_url": "https://jankara.ne.jp/shop/174/#price",
+        "original_station": "莠ｬ讖区悽"
+      }
+    ],
+    "菴丈ｹ区ｱ溷・蝨・: [
+      {
+        "name": "繧ｸ繝｣繝ｳ繧ｫ繝ｩ菴丈ｹ区ｱ溷・蝨帝ｧ・燕蠎・,
+        "area": "縺昴・莉門､ｧ髦ｪ蟶・,
+        "address": "螟ｧ髦ｪ蟶ゆｽ丈ｹ区ｱ溷玄譁ｰ蛹怜ｳｶ1荳∫岼1-10 OsakaMetro菴丈ｹ区ｱ溷・蝨帝ｧ・4逡ｪ蜃ｺ蜿｣縺九ｉ蠕呈ｭｩ1蛻・,
+        "url": "https://jankara.ne.jp/shop/176/",
+        "price_url": "https://jankara.ne.jp/shop/176/#price",
+        "original_station": "菴丈ｹ区ｱ溷・蝨・
+      }
+    ],
+    "菴城％": [
+      {
+        "name": "繧ｸ繝｣繝ｳ繧ｫ繝ｩ菴城％鬧・燕蠎・,
+        "area": "螟ｧ髦ｪ蟶ゆｻ･螟・,
+        "address": "螟ｧ譚ｱ蟶りｵ､莠・-3-22 菴城％縺ｯ繧翫∪繧・ン繝ｫ2F\nJR菴城％鬧・蛹怜・蜿｣繧医ｊ蠕呈ｭｩ5蛻・,
+        "url": "https://jankara.ne.jp/shop/005/",
+        "price_url": "https://jankara.ne.jp/shop/005/#price",
+        "original_station": "菴城％"
+      }
+    ],
+    "蜈ｫ謌ｸ繝朱㈹": [
+      {
+        "name": "繧ｸ繝｣繝ｳ繧ｫ繝ｩ蜈ｫ謌ｸ繝朱㈹鬧・燕蠎・,
+        "area": "螟ｧ髦ｪ蟶ゆｻ･螟・,
+        "address": "譚ｱ螟ｧ髦ｪ蟶ょｾ｡蜴ｨ蜊・荳∫岼1逡ｪ24蜿ｷ 繧｢繧ｹ繝｢蜈ｫ謌ｸ繝朱㈹2縲・F\n霑鷹延螂郁憶邱・蜈ｫ謌ｸ繝朱㈹鬧・2逡ｪ蜃ｺ蜿｣繧医ｊ蠕呈ｭｩ3蛻・,
+        "url": "https://jankara.ne.jp/shop/207/",
+        "price_url": "https://jankara.ne.jp/shop/207/#price",
+        "original_station": "蜈ｫ謌ｸ繝朱㈹"
+      }
+    ],
+    "蛹怜ｷｽ": [
+      {
+        "name": "繧ｸ繝｣繝ｳ繧ｫ繝ｩ蛹怜ｷｽ鬧・燕蠎・,
+        "area": "縺昴・莉門､ｧ髦ｪ蟶・,
+        "address": "螟ｧ髦ｪ蟶ら函驥主玄蟾ｽ蛹・-15-13 繧｢繧､繧ｭ繝薙ΝB1縲・F\nOsakaMetro蜊・律蜑咲ｷ・蛹怜ｷｽ鬧・4逡ｪ蜃ｺ蜿｣繧医ｊ蠕呈ｭｩ3蛻・,
+        "url": "https://jankara.ne.jp/shop/134/",
+        "price_url": "https://jankara.ne.jp/shop/134/#price",
+        "original_station": "蛹怜ｷｽ"
+      }
+    ],
+    "蛹玲眠蝨ｰ": [
+      {
+        "name": "繧ｸ繝｣繝ｳ繧ｫ繝ｩ蛹玲眠蝨ｰ蠎・,
+        "area": "譴・伐",
+        "address": "螟ｧ髦ｪ蟶ょ圏蛹ｺ譖ｽ譬ｹ蟠取眠蝨ｰ1-8-19 譴・眠繝薙Ν6縲・F\nOsakaMetro隹ｷ逕ｺ邱・譚ｱ譴・伐鬧・8逡ｪ蜃ｺ蜿｣繧医ｊ蠕呈ｭｩ4蛻・,
+        "url": "https://jankara.ne.jp/shop/144/",
+        "price_url": "https://jankara.ne.jp/shop/144/#price",
+        "original_station": "蛹玲眠蝨ｰ"
+      }
+    ],
+    "蜊∽ｸ・: [
+      {
+        "name": "繧ｸ繝｣繝ｳ繧ｫ繝ｩ蜊∽ｸ蛾ｧ・擲蜿｣蠎・,
+        "area": "縺昴・莉門､ｧ髦ｪ蟶・,
+        "address": "螟ｧ髦ｪ蟶よｷ蟾晏玄蜊∽ｸ画擲2-8-6\n髦ｪ諤･蜊∽ｸ蛾ｧ・譚ｱ蜃ｺ蜿｣繧医ｊ蠕呈ｭｩ2蛻・,
+        "url": "https://jankara.ne.jp/shop/189/",
+        "price_url": "https://jankara.ne.jp/shop/189/#price",
+        "original_station": "蜊∽ｸ・
+      },
+      {
+        "name": "繧ｸ繝｣繝ｳ繧ｫ繝ｩ蜊∽ｸ画悽逕ｺ蠎・,
+        "area": "縺昴・莉門､ｧ髦ｪ蟶・,
+        "address": "螟ｧ髦ｪ蟶よｷ蟾晏玄蜊∽ｸ画悽逕ｺ1-7-27 繧ｵ繝ｳ繝昴・繝峨す繝・ぅ繝薙Ν2F\n髦ｪ諤･蜊∽ｸ蛾ｧ・隘ｿ蜃ｺ蜿｣繧医ｊ蠕呈ｭｩ4蛻・,
+        "url": "https://jankara.ne.jp/shop/067/",
+        "price_url": "https://jankara.ne.jp/shop/067/#price",
+        "original_station": "蜊∽ｸ画悽逕ｺ"
+      }
+    ],
+    "蜷ｹ逕ｰ": [
+      {
+        "name": "繧ｸ繝｣繝ｳ繧ｫ繝ｩJR蜷ｹ逕ｰ蠎・,
+        "area": "螟ｧ髦ｪ蟶ゆｻ･螟・,
+        "address": "蜷ｹ逕ｰ蟶ょ・逕ｺ6-8 荳・ｸ｡繝薙Ν1縲・F\nJR莠ｬ驛ｽ邱・蜷ｹ逕ｰ鬧・荳ｭ螟ｮ蜃ｺ蜿｣繧医ｊ蠕呈ｭｩ5蛻・,
+        "url": "https://jankara.ne.jp/shop/077/",
+        "price_url": "https://jankara.ne.jp/shop/077/#price",
+        "original_station": "JR蜷ｹ逕ｰ"
+      }
+    ],
+    "蝣ｺ譚ｱ": [
+      {
+        "name": "繧ｸ繝｣繝ｳ繧ｫ繝ｩ蝣ｺ譚ｱ蠎・,
+        "area": "螟ｧ髦ｪ蟶ゆｻ･螟・,
+        "address": "蝣ｺ蟶ょｺ蛹ｺ荳ｭ逑ｦ逕ｺ2-1-11 荳ｭ螻九ン繝ｫ1縲・F\n蜊玲ｵｷ鬮倬㍽邱・蝣ｺ譚ｱ鬧・隘ｿ蜃ｺ蜿｣繧医ｊ蠕呈ｭｩ7蛻・,
+        "url": "https://jankara.ne.jp/shop/048/",
+        "price_url": "https://jankara.ne.jp/shop/048/#price",
+        "original_station": "蝣ｺ譚ｱ"
+      },
+      {
+        "name": "繧ｸ繝｣繝ｳ繧ｫ繝ｩ蝣ｺ譚ｱ2蜿ｷ蠎・,
+        "area": "螟ｧ髦ｪ蟶ゆｻ･螟・,
+        "address": "蝣ｺ蟶ょｺ蛹ｺ荳ｭ逑ｦ逕ｺ2荳∫岼3逡ｪ22蜿ｷ 繝・け繝主､ｧ蠕ｳ繝薙Ν6F\n蜊玲ｵｷ鬮倬㍽邱・蝣ｺ譚ｱ鬧・隘ｿ蜃ｺ蜿｣繧医ｊ蠕呈ｭｩ6蛻・,
+        "url": "https://jankara.ne.jp/shop/210/",
+        "price_url": "https://jankara.ne.jp/shop/210/#price",
+        "original_station": "蝣ｺ譚ｱ"
+      }
+    ],
+    "蝪壽悽": [
+      {
+        "name": "繧ｸ繝｣繝ｳ繧ｫ繝ｩ縺ｿ繧薙↑縺ｮ蝪壽悽鬧・燕蠎・,
+        "area": "縺昴・莉門､ｧ髦ｪ蟶・,
+        "address": "螟ｧ髦ｪ蟶よｷ蟾晏玄蝪壽悽2-24-7 繧｢繝ｳ繝繝ｼ繝・Μ繝ｼ繝薙Ν2髫蚕nJR蝪壽悽鬧・譚ｱ蜃ｺ蜿｣繧医ｊ蠕呈ｭｩ1蛻・,
+        "url": "https://jankara.ne.jp/shop/250/",
+        "price_url": "https://jankara.ne.jp/shop/250/#price",
+        "original_station": "蝪壽悽"
+      }
+    ],
+    "螟ｧ蜥檎伐": [
+      {
+        "name": "繧ｸ繝｣繝ｳ繧ｫ繝ｩ莠ｬ髦ｪ螟ｧ蜥檎伐蠎・,
+        "area": "螟ｧ髦ｪ蟶ゆｻ･螟・,
+        "address": "髢逵溷ｸょｮｮ驥守伴1-7 繧ｨ繝ｫ螟ｧ蜥檎伐蛹鈴､ｨ2縲・F\n莠ｬ髦ｪ譛ｬ邱・螟ｧ蜥檎伐鬧・蛹怜・蜿｣繧医ｊ蠕呈ｭｩ1蛻・,
+        "url": "https://jankara.ne.jp/shop/038/",
+        "price_url": "https://jankara.ne.jp/shop/038/#price",
+        "original_station": "莠ｬ髦ｪ螟ｧ蜥檎伐"
+      }
+    ],
+    "螟ｧ豁｣": [
+      {
+        "name": "繧ｸ繝｣繝ｳ繧ｫ繝ｩ螟ｧ豁｣鬧・燕蠎・,
+        "area": "縺昴・莉門､ｧ髦ｪ蟶・,
+        "address": "螟ｧ髦ｪ蟶ょ､ｧ豁｣蛹ｺ荳芽ｻ貞ｮｶ譚ｱ1-17-28\nJR螟ｧ髦ｪ迺ｰ迥ｶ邱・螟ｧ豁｣鬧・蜊怜・蜿｣繧医ｊ蠕呈ｭｩ2蛻・,
+        "url": "https://jankara.ne.jp/shop/118/",
+        "price_url": "https://jankara.ne.jp/shop/118/#price",
+        "original_station": "螟ｧ豁｣"
+      }
+    ],
+    "螟ｩ貅": [
+      {
+        "name": "繧ｸ繝｣繝ｳ繧ｫ繝ｩ繧｢繧ｸ繧｢繝ｳ螟ｩ貅蠎・,
+        "area": "譴・伐",
+        "address": "螟ｧ髦ｪ蟶ょ圏蛹ｺ螟ｩ逾樊ｩ・荳∫岼5-5 繝医ャ繝励Μ繝ｼ繝薙Ν2縲・F\nJR螟ｧ髦ｪ迺ｰ迥ｶ邱・螟ｩ貅鬧・ｈ繧雁ｾ呈ｭｩ3蛻・,
+        "url": "https://jankara.ne.jp/shop/234/",
+        "price_url": "https://jankara.ne.jp/shop/234/#price",
+        "original_station": "繧｢繧ｸ繧｢繝ｳ螟ｩ貅"
+      },
+      {
+        "name": "繧ｸ繝｣繝ｳ繧ｫ繝ｩ繝ｨ繧､繝峨さ繝ｭ螟ｩ貅蠎・,
+        "area": "譴・伐",
+        "address": "螟ｧ髦ｪ蟶ょ圏蛹ｺ螟ｩ逾樊ｩ・荳∫岼6-28 螟ｩ逾槭・縺阪ｇ縺・＞縺｡2縲・髫・,
+        "url": "https://jankara.ne.jp/shop/272/",
+        "price_url": "https://jankara.ne.jp/shop/272/#price",
+        "original_station": "繝ｨ繧､繝峨さ繝ｭ螟ｩ貅"
+      }
+    ],
+    "螟ｩ邇句ｯｺ": [
+      {
+        "name": "繧ｸ繝｣繝ｳ繧ｫ繝ｩ縺ゅ∋縺ｮ蠎・,
+        "area": "縺昴・莉門､ｧ髦ｪ蟶・,
+        "address": "螟ｧ髦ｪ蟶る仭蛟埼㍽蛹ｺ髦ｿ蛟埼㍽遲・-4-55\nOsakaMetro隹ｷ逕ｺ邱・髦ｿ蛟埼㍽鬧・1逡ｪ蜿｣繧医ｊ蠕呈ｭｩ4蛻・,
+        "url": "https://jankara.ne.jp/shop/107/",
+        "price_url": "https://jankara.ne.jp/shop/107/#price",
+        "original_station": "縺ゅ∋縺ｮ"
+      },
+      {
+        "name": "繧ｸ繝｣繝ｳ繧ｫ繝ｩ螟ｩ邇句ｯｺ蠎・,
+        "area": "縺昴・莉門､ｧ髦ｪ蟶・,
+        "address": "螟ｧ髦ｪ蟶ょ､ｩ邇句ｯｺ蛹ｺ謔ｲ逕ｰ髯｢逕ｺ9-22 螳昴ン繝ｫ1縲・F\nJR螟ｩ邇句ｯｺ鬧・蛹怜・蜿｣繧医ｊ蠕呈ｭｩ2蛻・,
+        "url": "https://jankara.ne.jp/shop/086/",
+        "price_url": "https://jankara.ne.jp/shop/086/#price",
+        "original_station": "螟ｩ邇句ｯｺ"
+      }
+    ],
+    "螳亥哨蟶・: [
+      {
+        "name": "繧ｸ繝｣繝ｳ繧ｫ繝ｩ莠ｬ髦ｪ螳亥哨蠎・,
+        "area": "螟ｧ髦ｪ蟶ゆｻ･螟・,
+        "address": "螳亥哨蟶よ｡懃伴9逡ｪ7蜿ｷ 繝輔Ο繝ｳ繝・・繧ｸ螳亥哨5縲・F\n莠ｬ髦ｪ譛ｬ邱・螳亥哨蟶るｧ・譚ｱ蜃ｺ蜿｣繧医ｊ蠕呈ｭｩ3蛻・,
+        "url": "https://jankara.ne.jp/shop/037/",
+        "price_url": "https://jankara.ne.jp/shop/037/#price",
+        "original_station": "莠ｬ髦ｪ螳亥哨"
+      }
+    ],
+    "蟇晏ｱ句ｷ晏ｸ・: [
+      {
+        "name": "繧ｸ繝｣繝ｳ繧ｫ繝ｩ蟇晏ｱ句ｷ晞ｧ・燕蠎・,
+        "area": "螟ｧ髦ｪ蟶ゆｻ･螟・,
+        "address": "蟇晏ｱ句ｷ晏ｸょ・蝮ら伴16-20 隨ｬ荳隕ｳ蜈峨ン繝ｫ2縲・F\n莠ｬ髦ｪ譛ｬ邱・蟇晏ｱ句ｷ晏ｸるｧ・蛹玲隼譛ｭ蜃ｺ蜿｣繧医ｊ蠕呈ｭｩ3蛻・,
+        "url": "https://jankara.ne.jp/shop/227/",
+        "price_url": "https://jankara.ne.jp/shop/227/#price",
+        "original_station": "蟇晏ｱ句ｷ・
+      }
+    ],
+    "蟶・命": [
+      {
+        "name": "繧ｸ繝｣繝ｳ繧ｫ繝ｩ繝・ぅ繝ｼ繝怜ｸ・命蠎・,
+        "area": "螟ｧ髦ｪ蟶ゆｻ･螟・,
+        "address": "譚ｱ螟ｧ髦ｪ蟶る聞蝣・荳∫岼2-1 A+FUSE繝薙ΝB1縲・F\n霑鷹延蟶・命鬧・隘ｿ蛹怜・蜿｣繧医ｊ蠕呈ｭｩ3蛻・,
+        "url": "https://jankara.ne.jp/shop/230/",
+        "price_url": "https://jankara.ne.jp/shop/230/#price",
+        "original_station": "蟶・命"
+      },
+      {
+        "name": "繧ｸ繝｣繝ｳ繧ｫ繝ｩ蟶・命鬧・燕2蜿ｷ蠎・,
+        "area": "螟ｧ髦ｪ蟶ゆｻ･螟・,
+        "address": "譚ｱ螟ｧ髦ｪ蟶る聞蝣・-5-6 蟶・命鬧・燕繧ｻ繝ｳ繝医Λ繝ｫ繝薙ΝB2縲廝1F\n霑鷹延蟶・命鬧・荳ｭ螟ｮ蛹怜・蜿｣繧医ｊ蠕呈ｭｩ4蛻・,
+        "url": "https://jankara.ne.jp/shop/124/",
+        "price_url": "https://jankara.ne.jp/shop/124/#price",
+        "original_station": "蟶・命"
+      }
+    ],
+    "蠎・・": [
+      {
+        "name": "繧ｸ繝｣繝ｳ繧ｫ繝ｩ蠎・・鬧・擲蜿｣蠎・,
+        "area": "螟ｧ髦ｪ蟶ゆｻ･螟・,
+        "address": "雎贋ｸｭ蟶ょｺ・・譚ｱ逕ｺ2荳∫岼1-2 HeaRth One BLDG7縲・髫・,
+        "url": "https://jankara.ne.jp/shop/257/",
+        "price_url": "https://jankara.ne.jp/shop/257/#price",
+        "original_station": "蠎・・"
+      }
+    ],
+    "蠢・鮪讖・: [
+      {
+        "name": "繧ｸ繝｣繝ｳ繧ｫ繝ｩ繧｢繝｡繝ｪ繧ｫ譚大ｺ・,
+        "area": "髮｣豕｢繝ｻ蠢・鮪讖・,
+        "address": "螟ｧ髦ｪ蟶ゆｸｭ螟ｮ蛹ｺ隘ｿ蠢・鮪讖・-11-30 繝悶Ν繝ｼ繧ｿ繧ｹ繝薙Ν4縲・F\nOsakaMetro蝗帙▽讖狗ｷ・蝗帙ヤ讖矩ｧ・5逡ｪ蜃ｺ蜿｣繧医ｊ蠕呈ｭｩ5蛻・,
+        "url": "https://jankara.ne.jp/shop/045/",
+        "price_url": "https://jankara.ne.jp/shop/045/#price",
+        "original_station": "繧｢繝｡繝ｪ繧ｫ譚・
+      },
+      {
+        "name": "繧ｸ繝｣繝ｳ繧ｫ繝ｩ蠢・鮪讖句ｺ・,
+        "area": "髮｣豕｢繝ｻ蠢・鮪讖・,
+        "address": "螟ｧ髦ｪ蟶ゆｸｭ螟ｮ蛹ｺ蠢・鮪讖狗ｭ・-3-11\nOsakaMetro蠢・鮪讖矩ｧ・5逡ｪ蜃ｺ蜿｣繧医ｊ蠕呈ｭｩ3蛻・,
+        "url": "https://jankara.ne.jp/shop/023/",
+        "price_url": "https://jankara.ne.jp/shop/023/#price",
+        "original_station": "蠢・鮪讖・
+      },
+      {
+        "name": "繧ｸ繝｣繝ｳ繧ｫ繝ｩ蠢・鮪讖・蜿ｷ蠎・,
+        "area": "髮｣豕｢繝ｻ蠢・鮪讖・,
+        "address": "螟ｧ髦ｪ蟶ゆｸｭ螟ｮ蛹ｺ蠢・鮪讖狗ｭ・-3-30\nOsakaMetro蠢・鮪讖矩ｧ・5逡ｪ蜃ｺ蜿｣繧医ｊ蠕呈ｭｩ4蛻・,
+        "url": "https://jankara.ne.jp/shop/119/",
+        "price_url": "https://jankara.ne.jp/shop/119/#price",
+        "original_station": "蠢・鮪讖・
+      }
+    ],
+    "譁ｰ驥大ｲ｡": [
+      {
+        "name": "繧ｸ繝｣繝ｳ繧ｫ繝ｩ譁ｰ驥大ｲ｡鬧・燕蠎・,
+        "area": "螟ｧ髦ｪ蟶ゆｻ･螟・,
+        "address": "蝣ｺ蟶ょ圏蛹ｺ譁ｰ驥大ｲ｡逕ｺ5-1-1 繝輔Ξ繧ｹ繝昴＠繧薙°縺ｪ隘ｿ鬢ｨ4F\nOsakaMetro蠕｡蝣らｭ狗ｷ・譁ｰ驥大ｲ｡鬧・2逡ｪ蜃ｺ蜿｣繧医ｊ蠕呈ｭｩ1蛻・,
+        "url": "https://jankara.ne.jp/shop/156/",
+        "price_url": "https://jankara.ne.jp/shop/156/#price",
+        "original_station": "譁ｰ驥大ｲ｡"
+      }
+    ],
+    "譏ｭ蜥檎伴": [
+      {
+        "name": "繧ｸ繝｣繝ｳ繧ｫ繝ｩ譏ｭ蜥檎伴鬧・燕蠎・,
+        "area": "縺昴・莉門､ｧ髦ｪ蟶・,
+        "address": "螟ｧ髦ｪ蟶る仭蛟埼㍽蛹ｺ譏ｭ蜥檎伴1-9-24 蟇悟｣ｫ繝帙・繝繝薙Ν譏ｭ蜥檎伴4F\nOsakaMetro蠕｡蝣らｭ狗ｷ・譏ｭ蜥檎伴鬧・1逡ｪ蜃ｺ蜿｣繧医ｊ蠕呈ｭｩ1蛻・,
+        "url": "https://jankara.ne.jp/shop/224/",
+        "price_url": "https://jankara.ne.jp/shop/224/#price",
+        "original_station": "譏ｭ蜥檎伴"
+      }
+    ],
+    "譫壽婿蟶・: [
+      {
+        "name": "繧ｸ繝｣繝ｳ繧ｫ繝ｩ譫壽婿鬧・°繧・遘貞ｺ・,
+        "area": "螟ｧ髦ｪ蟶ゆｻ･螟・,
+        "address": "譫壽婿蟶ょｲ｡譛ｬ逕ｺ2逡ｪ22蜿ｷ 譫壽婿繝・ヱ繝ｼ繝医Γ繝ｳ繝医ン繝ｫ4髫・,
+        "url": "https://jankara.ne.jp/shop/260/",
+        "price_url": "https://jankara.ne.jp/shop/260/#price",
+        "original_station": "譫壽婿鬧・°繧・遘・
+      },
+      {
+        "name": "繧ｸ繝｣繝ｳ繧ｫ繝ｩ譫壽婿鬧・燕蠎・,
+        "area": "螟ｧ髦ｪ蟶ゆｻ･螟・,
+        "address": "譫壽婿蟶よ眠逕ｺ1-2-10 繝・う繧ｯ繧ｹ繝ｪ繝ｼ繝薙Ν4F\n莠ｬ髦ｪ譛ｬ邱・譫壽婿蟶るｧ・荳ｭ螟ｮ蜃ｺ蜿｣繧医ｊ蠕呈ｭｩ3蛻・,
+        "url": "https://jankara.ne.jp/shop/062/",
+        "price_url": "https://jankara.ne.jp/shop/062/#price",
+        "original_station": "譫壽婿"
+      },
+      {
+        "name": "繧ｸ繝｣繝ｳ繧ｫ繝ｩ譫壽婿鬧・燕2蜿ｷ蠎・,
+        "area": "螟ｧ髦ｪ蟶ゆｻ･螟・,
+        "address": "譫壽婿蟶ょｲ｡譚ｱ逕ｺ19逡ｪ20蜿ｷ 繧ｨ繝ｫ譫壽婿2F\n莠ｬ髦ｪ譫壽婿蟶るｧ・荳ｭ螟ｮ蜃ｺ蜿｣繧医ｊ蠕呈ｭｩ4蛻・,
+        "url": "https://jankara.ne.jp/shop/200/",
+        "price_url": "https://jankara.ne.jp/shop/200/#price",
+        "original_station": "譫壽婿"
+      }
+    ],
+    "譴・伐": [
+      {
+        "name": "繧ｸ繝｣繝ｳ繧ｫ繝ｩ譴・伐闃晉伐逕ｺ蠎・,
+        "area": "譴・伐",
+        "address": "螟ｧ髦ｪ蟶ょ圏蛹ｺ闃晉伐1-4-1\n髦ｪ諤･螟ｧ髦ｪ譴・伐鬧・闌ｶ螻狗伴蜃ｺ蜿｣繧医ｊ蠕呈ｭｩ4蛻・,
+        "url": "https://jankara.ne.jp/shop/199/",
+        "price_url": "https://jankara.ne.jp/shop/199/#price",
+        "original_station": "譴・伐闃晉伐逕ｺ"
+      },
+      {
+        "name": "繧ｸ繝｣繝ｳ繧ｫ繝ｩ縺雁・螟ｩ逾槫ｺ・,
+        "area": "譴・伐",
+        "address": "螟ｧ髦ｪ蟶ょ圏蛹ｺ譖ｽ譬ｹ蟠・-11-24\nOsakaMetro隹ｷ逕ｺ邱・譚ｱ譴・伐鬧・4逡ｪ蜃ｺ蜿｣繧医ｊ蠕呈ｭｩ1蛻・,
+        "url": "https://jankara.ne.jp/shop/094/",
+        "price_url": "https://jankara.ne.jp/shop/094/#price",
+        "original_station": "縺雁・螟ｩ逾・
+      },
+      {
+        "name": "繧ｹ繝ｼ繝代・繧ｸ繝｣繝ｳ繧ｫ繝ｩ繧ｹ繝ｼ繝代・繧ｸ繝｣繝ｳ繧ｫ繝ｩ闌ｶ螻狗伴蠎・,
+        "area": "譴・伐",
+        "address": "螟ｧ髦ｪ蟶ょ圏蛹ｺ闌ｶ螻狗伴2-27 1縲・F\n髦ｪ諤･螟ｧ髦ｪ譴・伐鬧・荳ｭ螟ｮ謾ｹ譛ｭ蜿｣繧医ｊ蠕呈ｭｩ5蛻・,
+        "url": "https://jankara.ne.jp/shop/106/",
+        "price_url": "https://jankara.ne.jp/shop/106/#price",
+        "original_station": "繧ｹ繝ｼ繝代・繧ｸ繝｣繝ｳ繧ｫ繝ｩ闌ｶ螻狗伴"
+      },
+      {
+        "name": "繧ｸ繝｣繝ｳ繧ｫ繝ｩ闌ｶ螻狗伴蠎・,
+        "area": "譴・伐",
+        "address": "螟ｧ髦ｪ蟶ょ圏蛹ｺ闌ｶ螻狗伴2-32 闌ｶ螻狗伴繝薙ΝB1縲・F\n髦ｪ諤･螟ｧ髦ｪ譴・伐鬧・荳ｭ螟ｮ謾ｹ譛ｭ蜿｣繧医ｊ蠕呈ｭｩ5蛻・,
+        "url": "https://jankara.ne.jp/shop/100/",
+        "price_url": "https://jankara.ne.jp/shop/100/#price",
+        "original_station": "闌ｶ螻狗伴"
+      },
+      {
+        "name": "繧ｸ繝｣繝ｳ繧ｫ繝ｩ髦ｪ諤･縺九▲縺ｱ讓ｪ荳∝ｺ・,
+        "area": "譴・伐",
+        "address": "螟ｧ髦ｪ蟶ょ圏蛹ｺ闃晉伐1-7-2\n髦ｪ諤･螟ｧ髦ｪ譴・伐鬧・闌ｶ螻狗伴蜃ｺ蜿｣繧医ｊ蠕呈ｭｩ5蛻・,
+        "url": "https://jankara.ne.jp/shop/120/",
+        "price_url": "https://jankara.ne.jp/shop/120/#price",
+        "original_station": "髦ｪ諤･縺九▲縺ｱ讓ｪ荳・
+      },
+      {
+        "name": "繧ｸ繝｣繝ｳ繧ｫ繝ｩ髦ｪ諤･譚ｱ騾壼ｺ・,
+        "area": "譴・伐",
+        "address": "螟ｧ髦ｪ蟶ょ圏蛹ｺ蟆乗收蜴溽伴1-23\nOsakaMetro隹ｷ逕ｺ邱・譚ｱ譴・伐鬧・4逡ｪ蜃ｺ蜿｣繧医ｊ蠕呈ｭｩ6蛻・,
+        "url": "https://jankara.ne.jp/shop/155/",
+        "price_url": "https://jankara.ne.jp/shop/155/#price",
+        "original_station": "髦ｪ諤･譚ｱ騾・
+      },
+      {
+        "name": "繧ｸ繝｣繝ｳ繧ｫ繝ｩ髦ｪ諤･譚ｱ騾・蜿ｷ蠎・,
+        "area": "譴・伐",
+        "address": "螟ｧ髦ｪ蟶ょ圏蛹ｺ蟆乗收蜴溽伴1-16 譴・伐繝｢繧ｳ繝薙Ν2F繝ｻ5縲・F\nOsakaMetro隹ｷ逕ｺ邱・譚ｱ譴・伐鬧・4逡ｪ蜃ｺ蜿｣繧医ｊ蠕呈ｭｩ5蛻・,
+        "url": "https://jankara.ne.jp/shop/103/",
+        "price_url": "https://jankara.ne.jp/shop/103/#price",
+        "original_station": "髦ｪ諤･譚ｱ騾・
+      },
+      {
+        "name": "繧ｸ繝｣繝ｳ繧ｫ繝ｩ髦ｪ諤･譚ｱ騾壽悽蠎・,
+        "area": "譴・伐",
+        "address": "螟ｧ髦ｪ蟶ょ圏蛹ｺ蝣ょｱｱ逕ｺ5-2\nOsakaMetro隹ｷ逕ｺ邱・譚ｱ譴・伐鬧・4逡ｪ蜃ｺ蜿｣繧医ｊ蠕呈ｭｩ7蛻・,
+        "url": "https://jankara.ne.jp/shop/116/",
+        "price_url": "https://jankara.ne.jp/shop/116/#price",
+        "original_station": "髦ｪ諤･譚ｱ騾壽悽"
+      },
+      {
+        "name": "繧ｸ繝｣繝ｳ繧ｫ繝ｩ髦ｪ諤･譚ｱ荳ｭ騾壼ｺ・,
+        "area": "譴・伐",
+        "address": "螟ｧ髦ｪ蟶ょ圏蛹ｺ蝣ょｱｱ逕ｺ8-9 蟆丞ｯｺ蝣ょｱｱ繝薙ΝII\nOsakaMetro蠕｡蝣らｭ狗ｷ・譴・伐鬧・6逡ｪ蜃ｺ蜿｣繧医ｊ蠕呈ｭｩ9蛻・,
+        "url": "https://jankara.ne.jp/shop/076/",
+        "price_url": "https://jankara.ne.jp/shop/076/#price",
+        "original_station": "髦ｪ諤･譚ｱ荳ｭ騾・
+      },
+      {
+        "name": "繧ｸ繝｣繝ｳ繧ｫ繝ｩ譚ｱ騾夂區鬥ｬ霆翫ン繝ｫ蠎・,
+        "area": "譴・伐",
+        "address": "螟ｧ髦ｪ蟶ょ圏蛹ｺ蝣ょｱｱ逕ｺ4-12 逋ｽ鬥ｬ霆翫ン繝ｫPart I 4F\n髦ｪ逾樊悽邱・螟ｧ髦ｪ譴・伐鬧・譚ｱ蜃ｺ蜿｣繧医ｊ蠕呈ｭｩ7蛻・,
+        "url": "https://jankara.ne.jp/shop/237/",
+        "price_url": "https://jankara.ne.jp/shop/237/#price",
+        "original_station": "譚ｱ騾夂區鬥ｬ霆翫ン繝ｫ"
+      }
+    ],
+    "讓溯痩": [
+      {
+        "name": "繧ｸ繝｣繝ｳ繧ｫ繝ｩ縺上★縺ｯ蠎・,
+        "area": "螟ｧ髦ｪ蟶ゆｻ･螟・,
+        "address": "譫壽婿蟶ら伴讌闡・-2-20 2F\n莠ｬ髦ｪ譛ｬ邱・讓溯痩鬧・ｈ繧雁ｾ呈ｭｩ4蛻・,
+        "url": "https://jankara.ne.jp/shop/111/",
+        "price_url": "https://jankara.ne.jp/shop/111/#price",
+        "original_station": "縺上★縺ｯ"
+      }
+    ],
+    "豎溷揩": [
+      {
+        "name": "繧ｸ繝｣繝ｳ繧ｫ繝ｩ豎溷揩蠎・,
+        "area": "螟ｧ髦ｪ蟶ゆｻ･螟・,
+        "address": "蜷ｹ逕ｰ蟶りｱ頑ｴ･逕ｺ15-9 繝斐・繧､繝ｳ繧ｰ繧ｹ豎溷揩繝薙Ν\nOsakaMetro蠕｡蝣らｭ狗ｷ・豎溷揩鬧・8逡ｪ蜃ｺ蜿｣繧医ｊ蠕呈ｭｩ5蛻・,
+        "url": "https://jankara.ne.jp/shop/025/",
+        "price_url": "https://jankara.ne.jp/shop/025/#price",
+        "original_station": "豎溷揩"
+      },
+      {
+        "name": "繧ｸ繝｣繝ｳ繧ｫ繝ｩ豎溷揩2蜿ｷ蠎・,
+        "area": "螟ｧ髦ｪ蟶ゆｻ･螟・,
+        "address": "蜷ｹ逕ｰ蟶りｱ頑ｴ･逕ｺ10-15 繝｢繧｢繧､繝励Λ繧ｶ4F\nOsakaMetro蠕｡蝣らｭ狗ｷ・豎溷揩鬧・8逡ｪ蜃ｺ蜿｣繧医ｊ蠕呈ｭｩ5蛻・,
+        "url": "https://jankara.ne.jp/shop/162/",
+        "price_url": "https://jankara.ne.jp/shop/162/#price",
+        "original_station": "豎溷揩"
+      }
+    ],
+    "豎逕ｰ": [
+      {
+        "name": "繧ｸ繝｣繝ｳ繧ｫ繝ｩ豎逕ｰ鬧・燕蠎・,
+        "area": "螟ｧ髦ｪ蟶ゆｻ･螟・,
+        "address": "豎逕ｰ蟶ょｮ､逕ｺ1-3 豎逕ｰ繧ｻ繝ｳ繧ｿ繝ｼ繝薙Ν2F\n髦ｪ諤･螳晏｡壽悽邱・豎逕ｰ鬧・繝槭Ν繧ｷ繧ｧ2逡ｪ鬢ｨ蜃ｺ蜿｣繧医ｊ蠕呈ｭｩ4蛻・,
+        "url": "https://jankara.ne.jp/shop/079/",
+        "price_url": "https://jankara.ne.jp/shop/079/#price",
+        "original_station": "豎逕ｰ"
+      }
+    ],
+    "豺ｱ莠・: [
+      {
+        "name": "繧ｸ繝｣繝ｳ繧ｫ繝ｩ豺ｱ莠暮ｧ・燕蠎・,
+        "area": "螟ｧ髦ｪ蟶ゆｻ･螟・,
+        "address": "蝣ｺ蟶ゆｸｭ蛹ｺ豺ｱ莠墓ｲ｢逕ｺ3234逡ｪ蝨ｰ\n豕牙圏鬮倬滄延驕・豺ｱ莠暮ｧ・譚ｱ蜃ｺ蜿｣繧医ｊ蠕呈ｭｩ4蛻・,
+        "url": "https://jankara.ne.jp/shop/208/",
+        "price_url": "https://jankara.ne.jp/shop/208/#price",
+        "original_station": "豺ｱ莠・
+      }
+    ],
+    "邇蛾": [
+      {
+        "name": "繧ｸ繝｣繝ｳ繧ｫ繝ｩ邇蛾鬧・燕蠎・,
+        "area": "縺昴・莉門､ｧ髦ｪ蟶・,
+        "address": "螟ｧ髦ｪ蟶ょ､ｩ邇句ｯｺ蛹ｺ邇蛾蜈・伴2-23\nOsakaMetro髟ｷ蝣鮓ｴ隕狗ｷ大慍邱・邇蛾鬧・ｈ繧雁ｾ呈ｭｩ3蛻・,
+        "url": "https://jankara.ne.jp/shop/194/",
+        "price_url": "https://jankara.ne.jp/shop/194/#price",
+        "original_station": "邇蛾"
+      }
+    ],
+    "遏ｳ讖矩亂螟ｧ蜑・: [
+      {
+        "name": "繧ｸ繝｣繝ｳ繧ｫ繝ｩ遏ｳ讖矩ｧ・燕蠎・,
+        "area": "螟ｧ髦ｪ蟶ゆｻ･螟・,
+        "address": "豎逕ｰ蟶ら浹讖・荳∫岼8逡ｪ9蜿ｷ 繝・Λ繧ｹ繝薙Ν2F\n髦ｪ諤･遏ｳ讖矩亂螟ｧ蜑埼ｧ・隘ｿ謾ｹ譛ｭ蜃ｺ蜿｣繧医ｊ蠕呈ｭｩ4蛻・,
+        "url": "https://jankara.ne.jp/shop/167/",
+        "price_url": "https://jankara.ne.jp/shop/167/#price",
+        "original_station": "遏ｳ讖・
+      }
+    ],
+    "遖丞ｳｶ": [
+      {
+        "name": "繧ｸ繝｣繝ｳ繧ｫ繝ｩJR遖丞ｳｶ蠎・,
+        "area": "縺昴・莉門､ｧ髦ｪ蟶・,
+        "address": "螟ｧ髦ｪ蟶らｦ丞ｳｶ蛹ｺ遖丞ｳｶ7-12-1 蝣蜀・ン繝ｫ1縲・F\nJR螟ｧ髦ｪ迺ｰ迥ｶ邱・遖丞ｳｶ鬧・ｈ繧雁ｾ呈ｭｩ4蛻・,
+        "url": "https://jankara.ne.jp/shop/125/",
+        "price_url": "https://jankara.ne.jp/shop/125/#price",
+        "original_station": "JR遖丞ｳｶ"
+      }
+    ],
+    "闌ｨ譛ｨ": [
+      {
+        "name": "繧ｸ繝｣繝ｳ繧ｫ繝ｩJR闌ｨ譛ｨ蠎・,
+        "area": "螟ｧ髦ｪ蟶ゆｻ･螟・,
+        "address": "闌ｨ譛ｨ蟶るｧ・燕1-9\nJR莠ｬ驛ｽ邱・闌ｨ譛ｨ鬧・譚ｱ蜃ｺ蜿｣繧医ｊ蠕呈ｭｩ7蛻・,
+        "url": "https://jankara.ne.jp/shop/075/",
+        "price_url": "https://jankara.ne.jp/shop/075/#price",
+        "original_station": "JR闌ｨ譛ｨ"
+      },
+      {
+        "name": "繧ｸ繝｣繝ｳ繧ｫ繝ｩ縺ｿ繧薙↑縺ｮJR闌ｨ譛ｨ蠎・,
+        "area": "螟ｧ髦ｪ蟶ゆｻ･螟・,
+        "address": "闌ｨ譛ｨ蟶り･ｿ鬧・燕逕ｺ4 闌ｨ譛ｨ鬧・燕繝薙ΝB1縲・F\nJR莠ｬ驛ｽ邱・闌ｨ譛ｨ鬧・隘ｿ蜃ｺ蜿｣繧医ｊ蠕呈ｭｩ4蛻・,
+        "url": "https://jankara.ne.jp/shop/232/",
+        "price_url": "https://jankara.ne.jp/shop/232/#price",
+        "original_station": "JR闌ｨ譛ｨ"
+      }
+    ],
+    "闌ｨ譛ｨ蟶・: [
+      {
+        "name": "繧ｸ繝｣繝ｳ繧ｫ繝ｩ髦ｪ諤･闌ｨ譛ｨ蠎・,
+        "area": "螟ｧ髦ｪ蟶ゆｻ･螟・,
+        "address": "闌ｨ譛ｨ蟶よｰｸ莉｣逕ｺ6-2 繧ｹ繝昴・繝・・繝ｩ繧ｶ闌ｨ譛ｨ繝薙Ν1F\n髦ｪ諤･莠ｬ驛ｽ譛ｬ邱・闌ｨ譛ｨ蟶るｧ・隘ｿ蜃ｺ蜿｣繧医ｊ蠕呈ｭｩ4蛻・,
+        "url": "https://jankara.ne.jp/shop/008/",
+        "price_url": "https://jankara.ne.jp/shop/008/#price",
+        "original_station": "髦ｪ諤･闌ｨ譛ｨ"
+      }
+    ],
+    "阯､莠募ｯｺ": [
+      {
+        "name": "繧ｸ繝｣繝ｳ繧ｫ繝ｩ阯､莠募ｯｺ鬧・燕蠎・,
+        "area": "螟ｧ髦ｪ蟶ゆｻ･螟・,
+        "address": "阯､莠募ｯｺ蟶ょｲ｡2荳∫岼10-18 ・､・ｨ阯､莠募ｯｺ2F\n霑鷹延蜊怜､ｧ髦ｪ邱・阯､莠募ｯｺ鬧・蛹怜・蜿｣繧医ｊ蠕呈ｭｩ4蛻・,
+        "url": "https://jankara.ne.jp/shop/099/",
+        "price_url": "https://jankara.ne.jp/shop/099/#price",
+        "original_station": "阯､莠募ｯｺ"
+      }
+    ],
+    "隘ｿ荳ｭ蟲ｶ蜊玲婿": [
+      {
+        "name": "繧ｸ繝｣繝ｳ繧ｫ繝ｩ隘ｿ荳ｭ蟲ｶ蠎・,
+        "area": "縺昴・莉門､ｧ髦ｪ蟶・,
+        "address": "螟ｧ髦ｪ蟶よｷ蟾晏玄隘ｿ荳ｭ蟲ｶ3荳∫岼17逡ｪ8蜿ｷ 螟ｧ謌舌ン繝ｫ2縲・F\nOsakaMetro蠕｡蝣らｭ狗ｷ・隘ｿ荳ｭ蟲ｶ蜊玲婿鬧・ｈ繧雁ｾ呈ｭｩ3蛻・,
+        "url": "https://jankara.ne.jp/shop/209/",
+        "price_url": "https://jankara.ne.jp/shop/209/#price",
+        "original_station": "隘ｿ荳ｭ蟲ｶ"
+      }
+    ],
+    "隘ｿ荵晄擅": [
+      {
+        "name": "繧ｸ繝｣繝ｳ繧ｫ繝ｩ隘ｿ荵晄擅鬧・燕蠎・,
+        "area": "縺昴・莉門､ｧ髦ｪ蟶・,
+        "address": "螟ｧ髦ｪ蟶よｭ､闃ｱ蛹ｺ隘ｿ荵晄擅3-15-2 繧ｽ繝ｳ繧ｵ繝ｳ繝薙Ν3F・・F荳驛ｨ・噂nJR隘ｿ荵晄擅鬧・1逡ｪ蜃ｺ蜿｣繧医ｊ蠕呈ｭｩ4蛻・,
+        "url": "https://jankara.ne.jp/shop/084/",
+        "price_url": "https://jankara.ne.jp/shop/084/#price",
+        "original_station": "隘ｿ荵晄擅"
+      }
+    ],
+    "雎贋ｸｭ": [
+      {
+        "name": "繧ｸ繝｣繝ｳ繧ｫ繝ｩ雎贋ｸｭ鬧・燕蠎・,
+        "area": "螟ｧ髦ｪ蟶ゆｻ･螟・,
+        "address": "雎贋ｸｭ蟶ら脂莠・-2-1 雎贋ｸｭ鬧・燕繝薙Ν繝・ぅ繝ｳ繧ｰ6縲・F\n髦ｪ諤･螳晏｡壽悽邱・雎贋ｸｭ鬧・蛹玲隼譛ｭ蜃ｺ蜿｣繧医ｊ蠕呈ｭｩ3蛻・,
+        "url": "https://jankara.ne.jp/shop/014/",
+        "price_url": "https://jankara.ne.jp/shop/014/#price",
+        "original_station": "雎贋ｸｭ"
+      }
+    ],
+    "霑鷹延蜈ｫ蟆ｾ": [
+      {
+        "name": "繧ｸ繝｣繝ｳ繧ｫ繝ｩ霑鷹延蜈ｫ蟆ｾ蠎・,
+        "area": "螟ｧ髦ｪ蟶ゆｻ･螟・,
+        "address": "蜈ｫ蟆ｾ蟶ょ・逕ｺ2-9 繝輔Ξ繝・け繧ｹ繝薙Ν3縲・F\n霑鷹延螟ｧ髦ｪ邱・霑鷹延蜈ｫ蟆ｾ鬧・荳ｭ螟ｮ蛹怜・蜿｣繧医ｊ蠕呈ｭｩ5蛻・,
+        "url": "https://jankara.ne.jp/shop/235/",
+        "price_url": "https://jankara.ne.jp/shop/235/#price",
+        "original_station": "霑鷹延蜈ｫ蟆ｾ"
+      }
+    ],
+    "髟ｷ螻・: [
+      {
+        "name": "繧ｸ繝｣繝ｳ繧ｫ繝ｩ髟ｷ螻・ｧ・燕蠎・,
+        "area": "縺昴・莉門､ｧ髦ｪ蟶・,
+        "address": "螟ｧ髦ｪ蟶ゆｽ丞翠蛹ｺ髟ｷ螻・擲4-11-25 繧ｿ繧ｱ・・ワ繝ｫ繝薙Ν隨ｬ荳9縲・0F\nOsakaMetro蠕｡蝣らｭ狗ｷ・髟ｷ螻・ｧ・6逡ｪ蜃ｺ蜿｣繧医ｊ蠕呈ｭｩ2蛻・,
+        "url": "https://jankara.ne.jp/shop/138/",
+        "price_url": "https://jankara.ne.jp/shop/138/#price",
+        "original_station": "髟ｷ螻・
+      }
+    ],
+    "髢｢螟ｧ蜑・: [
+      {
+        "name": "繧ｸ繝｣繝ｳ繧ｫ繝ｩ繧ｪ繝ｼ繝ｫ繝翫う繝磯未螟ｧ蜑榊ｺ・,
+        "area": "螟ｧ髦ｪ蟶ゆｻ･螟・,
+        "address": "蜷ｹ逕ｰ蟶ょ鴻驥悟ｱｱ譚ｱ1荳∫岼7逡ｪ25蜿ｷ 繧ｰ繝ｩ繝ｳ繝芽ｦｳ蜈峨ン繝ｫ2髫・,
+        "url": "https://jankara.ne.jp/shop/258/",
+        "price_url": "https://jankara.ne.jp/shop/258/#price",
+        "original_station": "髢｢螟ｧ蜑・
+      }
+    ],
+    "鬥咎㈹蝨・: [
+      {
+        "name": "繧ｸ繝｣繝ｳ繧ｫ繝ｩ鬥咎㈹蝨帝ｧ・燕蠎・,
+        "area": "螟ｧ髦ｪ蟶ゆｻ･螟・,
+        "address": "蟇晏ｱ句ｷ晏ｸるｦ咎㈹譁ｰ逕ｺ31-19 鬥咎㈹蝨呈・ン繝ｫ3縲・F\n莠ｬ髦ｪ譛ｬ邱・鬥咎㈹蝨帝ｧ・隘ｿ蜃ｺ蜿｣繧医ｊ蠕呈ｭｩ2蛻・,
+        "url": "https://jankara.ne.jp/shop/088/",
+        "price_url": "https://jankara.ne.jp/shop/088/#price",
+        "original_station": "鬥咎㈹蝨・
+      }
+    ],
+    "鬮俶ｧｻ蟶・: [
+      {
+        "name": "繧ｸ繝｣繝ｳ繧ｫ繝ｩ鬮俶ｧｻ2蜿ｷ蠎・,
+        "area": "螟ｧ髦ｪ蟶ゆｻ･螟・,
+        "address": "鬮俶ｧｻ蟶ょ沁蛹礼伴2-5-13 逕滄ｧ偵ン繝ｫ\n髦ｪ諤･莠ｬ驛ｽ邱・鬮俶ｧｻ蟶るｧ・7逡ｪ蜃ｺ蜿｣繧医ｊ蠕呈ｭｩ5蛻・,
+        "url": "https://jankara.ne.jp/shop/068/",
+        "price_url": "https://jankara.ne.jp/shop/068/#price",
+        "original_station": "鬮俶ｧｻ"
+      },
+      {
+        "name": "繧ｸ繝｣繝ｳ繧ｫ繝ｩ鬮俶ｧｻ3蜿ｷ蠎・,
+        "area": "螟ｧ髦ｪ蟶ゆｻ･螟・,
+        "address": "鬮俶ｧｻ蟶るｫ俶ｧｻ逕ｺ18逡ｪ5蜿ｷ 驫髮・ン繝ｫ2縲・F\n髦ｪ諤･莠ｬ驛ｽ譛ｬ邱・鬮俶ｧｻ蟶るｧ・7逡ｪ蜃ｺ蜿｣繧医ｊ蠕呈ｭｩ6蛻・,
+        "url": "https://jankara.ne.jp/shop/196/",
+        "price_url": "https://jankara.ne.jp/shop/196/#price",
+        "original_station": "鬮俶ｧｻ"
+      },
+      {
+        "name": "繧ｸ繝｣繝ｳ繧ｫ繝ｩ鬮俶ｧｻ繧ｷ繝ｼ繧ｹ繝ｼ蠎・,
+        "area": "螟ｧ髦ｪ蟶ゆｻ･螟・,
+        "address": "鬮俶ｧｻ蟶ょ圏蝨堤伴14-18 2縲・F\n髦ｪ諤･莠ｬ驛ｽ邱・鬮俶ｧｻ蟶るｧ・6逡ｪ蜃ｺ蜿｣繧医ｊ蠕呈ｭｩ2蛻・,
+        "url": "https://jankara.ne.jp/shop/243/",
+        "price_url": "https://jankara.ne.jp/shop/243/#price",
+        "original_station": "鬮俶ｧｻ繧ｷ繝ｼ繧ｹ繝ｼ"
+      }
+    ],
+    "魑ｳ": [
+      {
+        "name": "繧ｸ繝｣繝ｳ繧ｫ繝ｩJR魑ｳ鬧・燕蠎・,
+        "area": "螟ｧ髦ｪ蟶ゆｻ･螟・,
+        "address": "蝣ｺ蟶り･ｿ蛹ｺ魑ｳ譚ｱ逕ｺ 1荳・逡ｪ蝨ｰ31 KS繝薙Ν3F\nJR魑ｳ鬧・譚ｱ蜃ｺ蜿｣繧医ｊ蠕呈ｭｩ3蛻・,
+        "url": "https://jankara.ne.jp/shop/190/",
+        "price_url": "https://jankara.ne.jp/shop/190/#price",
+        "original_station": "JR魑ｳ"
+      }
+    ],
+    "鮓ｴ讖・: [
+      {
+        "name": "繧ｸ繝｣繝ｳ繧ｫ繝ｩ鮓ｴ讖矩ｧ・燕蠎・,
+        "area": "縺昴・莉門､ｧ髦ｪ蟶・,
+        "address": "螟ｧ髦ｪ蟶よ擲謌仙玄譚ｱ蟆乗ｩ・-15-4 繧ｵ繝ｳ繧ｨ繧､荳ｭ譌･繝薙Ν3縲・F\nJR螟ｧ髦ｪ迺ｰ迥ｶ邱・鮓ｴ讖矩ｧ・荳ｭ螟ｮ蜃ｺ蜿｣繧医ｊ蠕呈ｭｩ2蛻・,
+        "url": "https://jankara.ne.jp/shop/010/",
+        "price_url": "https://jankara.ne.jp/shop/010/#price",
+        "original_station": "鮓ｴ讖・
+      }
+    ]
+  }
+}

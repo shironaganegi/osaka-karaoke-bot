@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Areas on 大阪カラオケ料金ナビ</title>
+    <link>https://shironaganegi.github.io/osaka-karaoke-bot/areas/</link>
+    <description>Recent content in Areas on 大阪カラオケ料金ナビ</description>
+    <generator>Hugo -- 0.155.3</generator>
+    <language>ja</language>
+    <lastBuildDate>Mon, 16 Feb 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://shironaganegi.github.io/osaka-karaoke-bot/areas/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>京橋エリアのカラオケ最安値・店舗比較まとめ【2026年最新】</title>
+      <link>https://shironaganegi.github.io/osaka-karaoke-bot/areas/kyobashi/</link>
+      <pubDate>Mon, 16 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>https://shironaganegi.github.io/osaka-karaoke-bot/areas/kyobashi/</guid>
+      <description>京橋エリア（主要駅周辺）のジャンカラ、ビッグエコー等の料金比較。30分料金、フリータイムが安い店を掲載。</description>
+    </item>
+    <item>
+      <title>天王寺エリアのカラオケ最安値・店舗比較まとめ【2026年最新】</title>
+      <link>https://shironaganegi.github.io/osaka-karaoke-bot/areas/tennoji/</link>
+      <pubDate>Mon, 16 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>https://shironaganegi.github.io/osaka-karaoke-bot/areas/tennoji/</guid>
+      <description>天王寺エリア（主要駅周辺）のジャンカラ、ビッグエコー等の料金比較。30分料金、フリータイムが安い店を掲載。</description>
+    </item>
+    <item>
+      <title>難波・心斎橋エリアのカラオケ最安値・店舗比較まとめ【2026年最新】</title>
+      <link>https://shironaganegi.github.io/osaka-karaoke-bot/areas/namba-shinsaibashi/</link>
+      <pubDate>Mon, 16 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>https://shironaganegi.github.io/osaka-karaoke-bot/areas/namba-shinsaibashi/</guid>
+      <description>難波・心斎橋エリア（主要駅周辺）のジャンカラ、ビッグエコー等の料金比較。30分料金、フリータイムが安い店を掲載。</description>
+    </item>
+    <item>
+      <title>梅田エリアのカラオケ最安値・店舗比較まとめ【2026年最新】</title>
+      <link>https://shironaganegi.github.io/osaka-karaoke-bot/areas/umeda/</link>
+      <pubDate>Mon, 16 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>https://shironaganegi.github.io/osaka-karaoke-bot/areas/umeda/</guid>
+      <description>梅田エリア（主要駅周辺）のジャンカラ、ビッグエコー等の料金比較。30分料金、フリータイムが安い店を掲載。</description>
+    </item>
+  </channel>
+</rss>

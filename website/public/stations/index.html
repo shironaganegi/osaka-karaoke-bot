@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="ja" dir="auto" data-theme="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>駅一覧 | 大阪カラオケ料金ナビ</title>
+<meta name="keywords" content="">
+<meta name="description" content="駅一覧 - 大阪カラオケ料金ナビ">
+<meta name="author" content="大阪カラオケナビ運営">
+<link rel="canonical"
+    href="https://shironaganegi.github.io/osaka-karaoke-bot/stations/">
+<link crossorigin="anonymous" href="/osaka-karaoke-bot/assets/css/stylesheet.b0c05dcdaccae668b6611e98efd7473bb50b814cd20702a25b72cd623d2a5093.css" integrity="sha256-sMBdzazK5mi2YR6Y79dHO7ULgUzSBwKiW3LNYj0qUJM="
+    rel="preload stylesheet" as="style">
+<link rel="icon" href="https://shironaganegi.github.io/osaka-karaoke-bot/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://shironaganegi.github.io/osaka-karaoke-bot/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://shironaganegi.github.io/osaka-karaoke-bot/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://shironaganegi.github.io/osaka-karaoke-bot/apple-touch-icon.png">
+<link rel="mask-icon" href="https://shironaganegi.github.io/osaka-karaoke-bot/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" type="application/rss+xml" href="https://shironaganegi.github.io/osaka-karaoke-bot/stations/index.xml" title="rss">
+<link rel="alternate" hreflang="ja" href="https://shironaganegi.github.io/osaka-karaoke-bot/stations/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+        @media (prefers-color-scheme: light) {
+            .list::-webkit-scrollbar-thumb {
+                border-color: var(--code-bg);
+            }
+        }
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8651981255093232"
+    crossorigin="anonymous"></script>
+<meta name="google-site-verification" content="UxSUmYw5fQoQltif7fwnK8bHZYOFdKnvvo4_-xrXsM8" />
+
+<link rel="stylesheet" href="https://shironaganegi.github.io/osaka-karaoke-bot/css/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VKZ4FDSZWB"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-VKZ4FDSZWB');
+</script>
+<meta property="og:url" content="https://shironaganegi.github.io/osaka-karaoke-bot/stations/">
+  <meta property="og:site_name" content="大阪カラオケ料金ナビ">
+  <meta property="og:title" content="駅一覧">
+  <meta property="og:description" content="大阪エリアのカラオケ店の料金比較・最安値まとめサイト">
+  <meta property="og:locale" content="ja">
+  <meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="駅一覧">
+<meta name="twitter:description" content="大阪エリアのカラオケ店の料金比較・最安値まとめサイト">
+<script type="application/ld+json">
+"{\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[]}"
+</script>
+</head>
+<body class="list" id="top">
+    <header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://shironaganegi.github.io/osaka-karaoke-bot/" accesskey="h" title="大阪カラオケ料金ナビ (Alt + H)">大阪カラオケ料金ナビ</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://shironaganegi.github.io/osaka-karaoke-bot/stations/" title="駅一覧">
+                    <span class="active">駅一覧</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://shironaganegi.github.io/osaka-karaoke-bot/search/" title="検索 🔍 (Alt &#43; /)" accesskey=/>
+                    <span>検索 🔍</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://shironaganegi.github.io/osaka-karaoke-bot/about/" title="このサイトについて">
+                    <span>このサイトについて</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+<main class="main">
+    <header class="page-header">
+        <h1>📍 駅一覧</h1>
+        <div class="post-description">
+            エリアを選択してください
+        </div>
+    </header>
+
+    <style>
+        .station-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+             
+            gap: 20px;
+            padding: 20px 0;
+        }
+
+        .station-card {
+            background-color: var(--entry);
+             
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+             
+            padding: 25px;
+            text-align: center;
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            text-decoration: none;
+            height: 100%;
+        }
+
+        .station-card:hover {
+            transform: translateY(-5px);
+             
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+            border-color: var(--primary);
+        }
+
+        .station-name {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+
+        .station-sub {
+            font-size: 0.9rem;
+            color: var(--secondary);
+        }
+    </style>
+
+    <div class="station-grid">
+        <a class="station-card" href="https://shironaganegi.github.io/osaka-karaoke-bot/stations/%E3%81%82%E3%81%B3%E3%81%93/">
+            <div class="station-name">あびこのカラオケ最安値・店舗一覧【2026年最新】</div>
+            
+            <div class="station-sub">1店舗</div>
+            
+        </a>
+        <a class="station-card" href="https://shironaganegi.github.io/osaka-karaoke-bot/stations/%E3%81%AA%E3%82%93%E3%81%B0/">
+            <div class="station-name">なんばのカラオケ最安値・店舗一覧【2026年最新】</div>
+            
+            <div class="station-sub">20店舗</div>
+            
+        </a>
+        <a class="station-card" href="https://shironaganegi.github.io/osaka-karaoke-bot/stations/%E8%8C%A8%E6%9C%A8/">
+            <div class="station-name">茨木のカラオケ最安値・店舗一覧【2026年最新】</div>
+            
+            <div class="station-sub">2店舗</div>
+            
+        </a>
+        <a class="station-card" href="https://shironaganegi.github.io/osaka-karaoke-bot/stations/%E8%8C%A8%E6%9C%A8%E5%B8%82/">
+            <div class="station-name">茨木市のカラオケ最安値・店舗一覧【2026年最新】</div>
+            
+            <div class="station-sub">1店舗</div>
+            
+        </a>
+        <a class="station-card" href="https://shironaganegi.github.io/osaka-karaoke-bot/stations/%E6%A8%AA%E5%A0%A4/">
+            <div class="station-name">横堤のカラオケ最安値・店舗一覧【2026年最新】</div>
+            
+            <div class="station-sub">1店舗</div>
+            
+        </a>
+        <a class="station-card" href="https://shironaganegi.github.io/osaka-karaoke-bot/stations/%E8%92%B2%E7%94%9F%E5%9B%9B%E4%B8%81%E7%9B%AE/">
+            <div class="station-name">蒲生四丁目のカラオケ最安値・店舗一覧【2026年最新】</div>
+            
+            <div class="station-sub">1店舗</div>
+            
+        </a>
+        <a class="station-card" href="https://shironaganegi.github.io/osaka-karaoke-bot/stations/%E9%96%A2%E5%A4%A7%E5%89%8D/">
+            <div class="station-name">関大前のカラオケ最安値・店舗一覧【2026年最新】</div>
+            
+            <div class="station-sub">1店舗</div>
+            
+        </a>
+        <a class="station-card" href="https://shironaganegi.github.io/osaka-karaoke-bot/stations/%E4%BA%AC%E6%A9%8B/">
+            <div class="station-name">京橋のカラオケ最安値・店舗一覧【2026年最新】</div>
+            
+            <div class="station-sub">7店舗</div>
+            
+        </a>
+        <a class="station-card" href="https://shironaganegi.github.io/osaka-karaoke-bot/stations/%E7%8E%89%E9%80%A0/">
+            <div class="station-name">玉造のカラオケ最安値・店舗一覧【2026年最新】</div>
+            
+            <div class="station-sub">1店舗</div>
+            
+        </a>
+        <a class="station-card" href="https://shironaganegi.github.io/osaka-karaoke-bot/stations/%E8%BF%91%E9%89%84%E5%85%AB%E5%B0%BE/">
+            <div class="station-name">近鉄八尾のカラオケ最安値・店舗一覧【2026年最新】</div>
+            
+            <div class="station-sub">2店舗</div>
+            
+        </a>
+        <a class="station-card" href="https://shironaganegi.github.io/osaka-karaoke-bot/stations/%E6%B1%9F%E5%9D%82/">
+            <div class="station-name">江坂のカラオケ最安値・店舗一覧【2026年最新】</div>
+            
+            <div class="station-sub">2店舗</div>
+            
+        </a>
+        <a class="station-card" href="https://shironaganegi.github.io/osaka-karaoke-bot/stations/%E9%A6%99%E9%87%8C%E5%9C%92/">
+            <div class="station-name">香里園のカラオケ最安値・店舗一覧【2026年最新】</div>
+            
+            <div class="station-sub">1店舗</div>
+            
+        </a>
+        <a class="station-card" href="https://shironaganegi.github.io/osaka-karaoke-bot/stations/%E9%AB%98%E6%A7%BB%E5%B8%82/">
+            <div class="station-name">高槻市のカラオケ最安値・店舗一覧【2026年最新】</div>
+            
+            <div class="station-sub">3店舗</div>
+            
+        </a>
+        <a class="station-card" href="https://shironaganegi.github.io/osaka-karaoke-bot/stations/%E5%A0%BA%E7%AD%8B%E6%9C%AC%E7%94%BA/">
+            <div class="station-name">堺筋本町のカラオケ最安値・店舗一覧【2026年最新】</div>
+            
+            <div class="station-sub">3店舗</div>
+            
+        </a>
+        <a class="station-card" href="https://shironaganegi.github.io/osaka-karaoke-bot/stations/%E5%A0%BA%E6%9D%B1/">
+            <div class="station-name">堺東のカラオケ最安値・店舗一覧【2026年最新】</div>
+            
+            <div class="station-sub">2店舗</div>
+            
+        </a>
+        <a class="station-card" href="https://shironaganegi.github.io/osaka-karaoke-bot/stations/%E4%B8%89%E5%9B%BD/">
+            <div class="station-name">三国のカラオケ最安値・店舗一覧【2026年最新】</div>
+            
+            <div class="station-sub">1店舗</div>
+            
+        </a>
+        <a class="station-card" href="https://shironaganegi.github.io/osaka-karaoke-bot/stations/%E5%AF%BA%E7%94%B0%E7%94%BA/">
+            <div class="station-name">寺田町のカラオケ最安値・店舗一覧【2026年最新】</div>
+            
+            <div class="station-sub">1店舗</div>
+            
+        </a>
+        <a class="station-card" href="https://shironaganegi.github.io/osaka-karaoke-bot/stations/%E5%AE%88%E5%8F%A3%E5%B8%82/">
+            <div class="station-name">守口市のカラオケ最安値・店舗一覧【2026年最新】</div>
+            
+            <div class="station-sub">3店舗</div>
+            
+        </a>
+        <a class="station-card" href="https://shironaganegi.github.io/osaka-karaoke-bot/stations/%E4%BD%8F%E9%81%93/">
+            <div class="station-name">住道のカラオケ最安値・店舗一覧【2026年最新】</div>
+            
+            <div class="station-sub">1店舗</div>
+            
+        </a>
+        <a class="station-card" href="https://shironaganegi.github.io/osaka-karaoke-bot/stations/%E4%BD%8F%E4%B9%8B%E6%B1%9F%E5%85%AC%E5%9C%92/">
+            <div class="station-name">住之江公園のカラオケ最安値・店舗一覧【2026年最新】</div>
+            
+            <div class="station-sub">2店舗</div>
+            
+        </a>
+        <a class="station-card" href="https://shironaganegi.github.io/osaka-karaoke-bot/stations/%E5%8D%81%E4%B8%89/">
+            <div class="station-name">十三のカラオケ最安値・店舗一覧【2026年最新】</div>
+            
+            <div class="station-sub">3店舗</div>
+            
+        </a>
+        <a class="station-card" href="https://shironaganegi.github.io/osaka-karaoke-bot/stations/%E5%BA%84%E5%86%85/">
+            <div class="station-name">庄内のカラオケ最安値・店舗一覧【2026年最新】</div>
+            
+            <div class="station-sub">1店舗</div>
+            
+        </a>
+        <a class="station-card" href="https://shironaganegi.github.io/osaka-karaoke-bot/stations/%E6%98%AD%E5%92%8C%E7%94%BA/">
+            <div class="station-name">昭和町のカラオケ最安値・店舗一覧【2026年最新】</div>
+            
+            <div class="station-sub">1店舗</div>
+            
+        </a>
+        <a class="station-card" href="https://shironaganegi.github.io/osaka-karaoke-bot/stations/%E6%A8%9F%E8%91%89/">
+            <div class="station-name">樟葉のカラオケ最安値・店舗一覧【2026年最新】</div>
+            
+            <div class="station-sub">1店舗</div>
+            
+        </a>
+        <a class="station-card" href="https://shironaganegi.github.io/osaka-karaoke-bot/stations/%E4%B8%8A%E6%96%B0%E5%BA%84/">
+            <div class="station-name">上新庄のカラオケ最安値・店舗一覧【2026年最新】</div>
+            
+            <div class="station-sub">2店舗</div>
+            
+        </a>
+        <a class="station-card" href="https://shironaganegi.github.io/osaka-karaoke-bot/stations/%E4%B8%8A%E6%9C%AC%E7%94%BA/">
+            <div class="station-name">上本町のカラオケ最安値・店舗一覧【2026年最新】</div>
+            
+            <div class="station-sub">1店舗</div>
+            
+        </a>
+        <a class="station-card" href="https://shironaganegi.github.io/osaka-karaoke-bot/stations/%E5%AF%9D%E5%B1%8B%E5%B7%9D%E5%B8%82/">
+            <div class="station-name">寝屋川市のカラオケ最安値・店舗一覧【2026年最新】</div>
+            
+            <div class="station-sub">2店舗</div>
+            
+        </a>
+        <a class="station-card" href="https://shironaganegi.github.io/osaka-karaoke-bot/stations/%E5%BF%83%E6%96%8E%E6%A9%8B/">
+            <div class="station-name">心斎橋のカラオケ最安値・店舗一覧【2026年最新】</div>
+            
+            <div class="station-sub">5店舗</div>
+            
+        </a>
+        <a class="station-card" href="https://shironaganegi.github.io/osaka-karaoke-bot/stations/%E6%96%B0%E9%87%91%E5%B2%A1/">
+            <div class="station-name">新金岡のカラオケ最安値・店舗一覧【2026年最新】</div>
+            
+            <div class="station-sub">1店舗</div>
+            
+        </a>
+        <a class="station-card" href="https://shironaganegi.github.io/osaka-karaoke-bot/stations/%E6%B7%B1%E4%BA%95/">
+            <div class="station-name">深井のカラオケ最安値・店舗一覧【2026年最新】</div>
+            
+            <div class="station-sub">1店舗</div>
+            
+        </a>
+        <a class="station-card" href="https://shironaganegi.github.io/osaka-karaoke-bot/stations/%E5%90%B9%E7%94%B0/">
+            <div class="station-name">吹田のカラオケ最安値・店舗一覧【2026年最新】</div>
+            
+            <div class="station-sub">2店舗</div>
+            
+        </a>
+        <a class="station-card" href="https://shironaganegi.github.io/osaka-karaoke-bot/stations/%E8%A5%BF%E4%B9%9D%E6%9D%A1/">
+            <div class="station-name">西九条のカラオケ最安値・店舗一覧【2026年最新】</div>
+            
+            <div class="station-sub">1店舗</div>
+            
+        </a>
+        <a class="station-card" href="https://shironaganegi.github.io/osaka-karaoke-bot/stations/%E8%A5%BF%E4%B8%AD%E5%B3%B6%E5%8D%97%E6%96%B9/">
+            <div class="station-name">西中島南方のカラオケ最安値・店舗一覧【2026年最新】</div>
+            
+            <div class="station-sub">1店舗</div>
+            
+        </a>
+        <a class="station-card" href="https://shironaganegi.github.io/osaka-karaoke-bot/stations/%E7%9F%B3%E6%A9%8B%E9%98%AA%E5%A4%A7%E5%89%8D/">
+            <div class="station-name">石橋阪大前のカラオケ最安値・店舗一覧【2026年最新】</div>
+            
+            <div class="station-sub">1店舗</div>
+            
+        </a>
+        <a class="station-card" href="https://shironaganegi.github.io/osaka-karaoke-bot/stations/%E5%A4%A7%E6%AD%A3/">
+            <div class="station-name">大正のカラオケ最安値・店舗一覧【2026年最新】</div>
+            
+            <div class="station-sub">1店舗</div>
+            
+        </a>
+        <a class="station-card" href="https://shironaganegi.github.io/osaka-karaoke-bot/stations/%E5%A4%A7%E5%92%8C%E7%94%B0/">
+            <div class="station-name">大和田のカラオケ最安値・店舗一覧【2026年最新】</div>
+            
+            <div class="station-sub">1店舗</div>
+            
+        </a>
+        <a class="station-card" href="https://shironaganegi.github.io/osaka-karaoke-bot/stations/%E6%B1%A0%E7%94%B0/">
+            <div class="station-name">池田のカラオケ最安値・店舗一覧【2026年最新】</div>
+            
+            <div class="station-sub">2店舗</div>
+            
+        </a>
+        <a class="station-card" href="https://shironaganegi.github.io/osaka-karaoke-bot/stations/%E9%95%B7%E5%B1%85/">
+            <div class="station-name">長居のカラオケ最安値・店舗一覧【2026年最新】</div>
+            
+            <div class="station-sub">1店舗</div>
+            
+        </a>
+        <a class="station-card" href="https://shironaganegi.github.io/osaka-karaoke-bot/stations/%E5%A1%9A%E6%9C%AC/">
+            <div class="station-name">塚本のカラオケ最安値・店舗一覧【2026年最新】</div>
+            
+            <div class="station-sub">1店舗</div>
+            
+        </a>
+        <a class="station-card" href="https://shironaganegi.github.io/osaka-karaoke-bot/stations/%E9%B6%B4%E6%A9%8B/">
+            <div class="station-name">鶴橋のカラオケ最安値・店舗一覧【2026年最新】</div>
+            
+            <div class="station-sub">2店舗</div>
+            
+        </a>
+        <a class="station-card" href="https://shironaganegi.github.io/osaka-karaoke-bot/stations/%E5%A4%A9%E7%8E%8B%E5%AF%BA/">
+            <div class="station-name">天王寺のカラオケ最安値・店舗一覧【2026年最新】</div>
+            
+            <div class="station-sub">7店舗</div>
+            
+        </a>
+        <a class="station-card" href="https://shironaganegi.github.io/osaka-karaoke-bot/stations/%E5%A4%A9%E7%A5%9E%E6%A9%8B%E7%AD%8B%E5%85%AD%E4%B8%81%E7%9B%AE/">
+            <div class="station-name">天神橋筋六丁目のカラオケ最安値・店舗一覧【2026年最新】</div>
+            
+            <div class="station-sub">1店舗</div>
+            
+        </a>
+        <a class="station-card" href="https://shironaganegi.github.io/osaka-karaoke-bot/stations/%E5%A4%A9%E6%BA%80/">
+            <div class="station-name">天満のカラオケ最安値・店舗一覧【2026年最新】</div>
+            
+            <div class="station-sub">2店舗</div>
+            
+        </a>
+        <a class="station-card" href="https://shironaganegi.github.io/osaka-karaoke-bot/stations/%E9%83%BD%E5%B3%B6/">
+            <div class="station-name">都島のカラオケ最安値・店舗一覧【2026年最新】</div>
+            
+            <div class="station-sub">1店舗</div>
+            
+        </a>
+        <a class="station-card" href="https://shironaganegi.github.io/osaka-karaoke-bot/stations/%E8%97%A4%E4%BA%95%E5%AF%BA/">
+            <div class="station-name">藤井寺のカラオケ最安値・店舗一覧【2026年最新】</div>
+            
+            <div class="station-sub">1店舗</div>
+            
+        </a>
+        <a class="station-card" href="https://shironaganegi.github.io/osaka-karaoke-bot/stations/%E6%A2%85%E7%94%B0/">
+            <div class="station-name">梅田のカラオケ最安値・店舗一覧【2026年最新】</div>
+            
+            <div class="station-sub">25店舗</div>
+            
+        </a>
+        <a class="station-card" href="https://shironaganegi.github.io/osaka-karaoke-bot/stations/%E5%85%AB%E6%88%B8%E3%83%8E%E9%87%8C/">
+            <div class="station-name">八戸ノ里のカラオケ最安値・店舗一覧【2026年最新】</div>
+            
+            <div class="station-sub">1店舗</div>
+            
+        </a>
+        <a class="station-card" href="https://shironaganegi.github.io/osaka-karaoke-bot/stations/%E5%B8%83%E6%96%BD/">
+            <div class="station-name">布施のカラオケ最安値・店舗一覧【2026年最新】</div>
+            
+            <div class="station-sub">6店舗</div>
+            
+        </a>
+        <a class="station-card" href="https://shironaganegi.github.io/osaka-karaoke-bot/stations/%E7%A6%8F%E5%B3%B6/">
+            <div class="station-name">福島のカラオケ最安値・店舗一覧【2026年最新】</div>
+            
+            <div class="station-sub">3店舗</div>
+            
+        </a>
+        <a class="station-card" href="https://shironaganegi.github.io/osaka-karaoke-bot/stations/%E8%B1%8A%E4%B8%AD/">
+            <div class="station-name">豊中のカラオケ最安値・店舗一覧【2026年最新】</div>
+            
+            <div class="station-sub">1店舗</div>
+            
+        </a>
+        <a class="station-card" href="https://shironaganegi.github.io/osaka-karaoke-bot/stations/%E9%B3%B3/">
+            <div class="station-name">鳳のカラオケ最安値・店舗一覧【2026年最新】</div>
+            
+            <div class="station-sub">1店舗</div>
+            
+        </a>
+        <a class="station-card" href="https://shironaganegi.github.io/osaka-karaoke-bot/stations/%E5%8C%97%E6%96%B0%E5%9C%B0/">
+            <div class="station-name">北新地のカラオケ最安値・店舗一覧【2026年最新】</div>
+            
+            <div class="station-sub">3店舗</div>
+            
+        </a>
+        <a class="station-card" href="https://shironaganegi.github.io/osaka-karaoke-bot/stations/%E5%8C%97%E5%B7%BD/">
+            <div class="station-name">北巽のカラオケ最安値・店舗一覧【2026年最新】</div>
+            
+            <div class="station-sub">1店舗</div>
+            
+        </a>
+        <a class="station-card" href="https://shironaganegi.github.io/osaka-karaoke-bot/stations/%E6%9E%9A%E6%96%B9%E5%B8%82/">
+            <div class="station-name">枚方市のカラオケ最安値・店舗一覧【2026年最新】</div>
+            
+            <div class="station-sub">3店舗</div>
+            
+        </a>
+        <a class="station-card" href="https://shironaganegi.github.io/osaka-karaoke-bot/stations/%E9%87%8E%E7%94%B0%E9%98%AA%E7%A5%9E/">
+            <div class="station-name">野田阪神のカラオケ最安値・店舗一覧【2026年最新】</div>
+            
+            <div class="station-sub">1店舗</div>
+            
+        </a>
+        <a class="station-card" href="https://shironaganegi.github.io/osaka-karaoke-bot/stations/%E6%B7%80%E5%B1%8B%E6%A9%8B/">
+            <div class="station-name">淀屋橋のカラオケ最安値・店舗一覧【2026年最新】</div>
+            
+            <div class="station-sub">1店舗</div>
+            
+        </a>
+    </div>
+
+</main>
+
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="https://shironaganegi.github.io/osaka-karaoke-bot/">大阪カラオケ料金ナビ</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

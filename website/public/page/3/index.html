@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="ja" dir="auto" data-theme="auto">
+
+<head>
+	<meta name="generator" content="Hugo 0.155.3"><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>大阪カラオケ料金ナビ</title>
+
+<meta name="description" content="大阪エリアのカラオケ店の料金比較・最安値まとめサイト">
+<meta name="author" content="大阪カラオケナビ運営">
+<link rel="canonical"
+    href="https://shironaganegi.github.io/osaka-karaoke-bot/">
+<link crossorigin="anonymous" href="/osaka-karaoke-bot/assets/css/stylesheet.b0c05dcdaccae668b6611e98efd7473bb50b814cd20702a25b72cd623d2a5093.css" integrity="sha256-sMBdzazK5mi2YR6Y79dHO7ULgUzSBwKiW3LNYj0qUJM="
+    rel="preload stylesheet" as="style">
+<link rel="icon" href="https://shironaganegi.github.io/osaka-karaoke-bot/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://shironaganegi.github.io/osaka-karaoke-bot/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://shironaganegi.github.io/osaka-karaoke-bot/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://shironaganegi.github.io/osaka-karaoke-bot/apple-touch-icon.png">
+<link rel="mask-icon" href="https://shironaganegi.github.io/osaka-karaoke-bot/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" type="application/rss+xml" href="https://shironaganegi.github.io/osaka-karaoke-bot/index.xml" title="rss">
+<link rel="alternate" hreflang="ja" href="https://shironaganegi.github.io/osaka-karaoke-bot/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+        @media (prefers-color-scheme: light) {
+            .list::-webkit-scrollbar-thumb {
+                border-color: var(--code-bg);
+            }
+        }
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8651981255093232"
+    crossorigin="anonymous"></script>
+<meta name="google-site-verification" content="UxSUmYw5fQoQltif7fwnK8bHZYOFdKnvvo4_-xrXsM8" />
+
+<link rel="stylesheet" href="https://shironaganegi.github.io/osaka-karaoke-bot/css/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VKZ4FDSZWB"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-VKZ4FDSZWB');
+</script>
+<meta property="og:url" content="https://shironaganegi.github.io/osaka-karaoke-bot/">
+  <meta property="og:site_name" content="大阪カラオケ料金ナビ">
+  <meta property="og:title" content="大阪カラオケ料金ナビ">
+  <meta property="og:description" content="大阪エリアのカラオケ店の料金比較・最安値まとめサイト">
+  <meta property="og:locale" content="ja">
+  <meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="大阪カラオケ料金ナビ">
+<meta name="twitter:description" content="大阪エリアのカラオケ店の料金比較・最安値まとめサイト">
+<script type="application/ld+json">
+"{\"@context\":\"https://schema.org\",\"@type\":\"Organization\",\"description\":\"大阪エリアのカラオケ店の料金比較・最安値まとめサイト\",\"logo\":\"https://shironaganegi.github.io/osaka-karaoke-bot/favicon.ico\",\"name\":\"大阪カラオケ料金ナビ\",\"sameAs\":[\"https://github.com/shironaganegi/osaka-karaoke-bot\"],\"url\":\"https://shironaganegi.github.io/osaka-karaoke-bot/\"}"
+</script>
+</head>
+<body class="list" id="top">
+    <header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://shironaganegi.github.io/osaka-karaoke-bot/" accesskey="h" title="大阪カラオケ料金ナビ (Alt + H)">大阪カラオケ料金ナビ</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://shironaganegi.github.io/osaka-karaoke-bot/stations/" title="駅一覧">
+                    <span>駅一覧</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://shironaganegi.github.io/osaka-karaoke-bot/search/" title="検索 🔍 (Alt &#43; /)" accesskey=/>
+                    <span>検索 🔍</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://shironaganegi.github.io/osaka-karaoke-bot/about/" title="このサイトについて">
+                    <span>このサイトについて</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main"> 
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">十三のカラオケ最安値・店舗一覧【2026年最新】
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>十三駅周辺のカラオケ店（3店舗） 十三駅周辺にあるカラオケ店の料金・店舗情報をまとめました。各店舗の公式料金表へのリンクから、最新の料金プランを確認できます。
+💰 最安値ハイライト 🏆 平日昼30分最安: 170円 / ジャンカラ十三駅東口店（会員） 🏆 平日昼フリータイム最安: 1000円 / カラオケ ビッグエコー十三東口店（会員） ジャンカラ十三駅東口店30分 (平日昼)一般:220円
+会員:170円フリータイム (平日昼)一般:1250円
+会員:1100円📍 地図🔗 予約・詳細ジャンカラ十三本町店30分 (平日昼)一般:220円
+会員:170円フリータイム (平日昼)一般:1250円
+会員:1100円📍 地図🔗 予約・詳細ビッグエコーカラオケ 十三東口店30分 (平日昼)一般:400円
+会員:200円フリータイム (平日昼)一般:1600円
+会員:1000円📍 地図🔗 予約・詳細※ 料金は時期・曜日・時間帯により異なります。最新情報は各店舗の公式サイトをご確認ください。
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2026-02-16 00:00:00 +0000 UTC'>2026年2月16日</span>&nbsp;·&nbsp;<span>大阪カラオケナビ運営</span></footer>
+  <a class="entry-link" aria-label="post link to 十三のカラオケ最安値・店舗一覧【2026年最新】" href="https://shironaganegi.github.io/osaka-karaoke-bot/stations/%E5%8D%81%E4%B8%89/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">庄内のカラオケ最安値・店舗一覧【2026年最新】
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>庄内駅周辺のカラオケ店（1店舗） 庄内駅周辺にあるカラオケ店の料金・店舗情報をまとめました。各店舗の公式料金表へのリンクから、最新の料金プランを確認できます。
+💰 最安値ハイライト 🏆 平日昼30分最安: 250円 / ジャンカラ庄内駅東口店（会員） 🏆 平日昼フリータイム最安: 1520円 / ジャンカラ庄内駅東口店（会員） ジャンカラ庄内駅東口店30分 (平日昼)一般:290円
+会員:250円フリータイム (平日昼)一般:1680円
+会員:1520円📍 地図🔗 予約・詳細※ 料金は時期・曜日・時間帯により異なります。最新情報は各店舗の公式サイトをご確認ください。
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2026-02-16 00:00:00 +0000 UTC'>2026年2月16日</span>&nbsp;·&nbsp;<span>大阪カラオケナビ運営</span></footer>
+  <a class="entry-link" aria-label="post link to 庄内のカラオケ最安値・店舗一覧【2026年最新】" href="https://shironaganegi.github.io/osaka-karaoke-bot/stations/%E5%BA%84%E5%86%85/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">昭和町のカラオケ最安値・店舗一覧【2026年最新】
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>昭和町駅周辺のカラオケ店（1店舗） 昭和町駅周辺にあるカラオケ店の料金・店舗情報をまとめました。各店舗の公式料金表へのリンクから、最新の料金プランを確認できます。
+💰 最安値ハイライト 🏆 平日昼30分最安: 220円 / ジャンカラ昭和町駅前店（会員） 🏆 平日昼フリータイム最安: 1400円 / ジャンカラ昭和町駅前店（会員） ジャンカラ昭和町駅前店30分 (平日昼)一般:240円
+会員:220円フリータイム (平日昼)一般:1540円
+会員:1400円📍 地図🔗 予約・詳細※ 料金は時期・曜日・時間帯により異なります。最新情報は各店舗の公式サイトをご確認ください。
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2026-02-16 00:00:00 +0000 UTC'>2026年2月16日</span>&nbsp;·&nbsp;<span>大阪カラオケナビ運営</span></footer>
+  <a class="entry-link" aria-label="post link to 昭和町のカラオケ最安値・店舗一覧【2026年最新】" href="https://shironaganegi.github.io/osaka-karaoke-bot/stations/%E6%98%AD%E5%92%8C%E7%94%BA/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">樟葉のカラオケ最安値・店舗一覧【2026年最新】
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>樟葉駅周辺のカラオケ店（1店舗） 樟葉駅周辺にあるカラオケ店の料金・店舗情報をまとめました。各店舗の公式料金表へのリンクから、最新の料金プランを確認できます。
+💰 最安値ハイライト 🏆 平日昼30分最安: 170円 / ジャンカラくずは店（会員） 🏆 平日昼フリータイム最安: 860円 / ジャンカラくずは店（会員） ジャンカラくずは店30分 (平日昼)一般:210円
+会員:170円フリータイム (平日昼)一般:1060円
+会員:860円📍 地図🔗 予約・詳細※ 料金は時期・曜日・時間帯により異なります。最新情報は各店舗の公式サイトをご確認ください。
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2026-02-16 00:00:00 +0000 UTC'>2026年2月16日</span>&nbsp;·&nbsp;<span>大阪カラオケナビ運営</span></footer>
+  <a class="entry-link" aria-label="post link to 樟葉のカラオケ最安値・店舗一覧【2026年最新】" href="https://shironaganegi.github.io/osaka-karaoke-bot/stations/%E6%A8%9F%E8%91%89/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">上新庄のカラオケ最安値・店舗一覧【2026年最新】
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>上新庄駅周辺のカラオケ店（2店舗） 上新庄駅周辺にあるカラオケ店の料金・店舗情報をまとめました。各店舗の公式料金表へのリンクから、最新の料金プランを確認できます。
+💰 最安値ハイライト 🏆 平日昼30分最安: 190円 / ジャンカラ上新庄駅前店（会員） 🏆 平日昼フリータイム最安: 1330円 / ジャンカラ上新庄駅前店（会員） ジャンカラ上新庄駅前店30分 (平日昼)一般:210円
+会員:190円フリータイム (平日昼)一般:1490円
+会員:1330円📍 地図🔗 予約・詳細ジャンカラ上新庄ほんまに駅前店30分 (平日昼)一般:230円
+会員:200円フリータイム (平日昼)一般:1510円
+会員:1350円📍 地図🔗 予約・詳細※ 料金は時期・曜日・時間帯により異なります。最新情報は各店舗の公式サイトをご確認ください。
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2026-02-16 00:00:00 +0000 UTC'>2026年2月16日</span>&nbsp;·&nbsp;<span>大阪カラオケナビ運営</span></footer>
+  <a class="entry-link" aria-label="post link to 上新庄のカラオケ最安値・店舗一覧【2026年最新】" href="https://shironaganegi.github.io/osaka-karaoke-bot/stations/%E4%B8%8A%E6%96%B0%E5%BA%84/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">上本町のカラオケ最安値・店舗一覧【2026年最新】
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>上本町駅周辺のカラオケ店（1店舗） 上本町駅周辺にあるカラオケ店の料金・店舗情報をまとめました。各店舗の公式料金表へのリンクから、最新の料金プランを確認できます。
+💰 最安値ハイライト 🏆 平日昼30分最安: 190円 / ジャンカラ上本町駅前店（会員） 🏆 平日昼フリータイム最安: 980円 / ジャンカラ上本町駅前店（会員） ジャンカラ上本町駅前店30分 (平日昼)一般:230円
+会員:190円フリータイム (平日昼)一般:1190円
+会員:980円📍 地図🔗 予約・詳細※ 料金は時期・曜日・時間帯により異なります。最新情報は各店舗の公式サイトをご確認ください。
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2026-02-16 00:00:00 +0000 UTC'>2026年2月16日</span>&nbsp;·&nbsp;<span>大阪カラオケナビ運営</span></footer>
+  <a class="entry-link" aria-label="post link to 上本町のカラオケ最安値・店舗一覧【2026年最新】" href="https://shironaganegi.github.io/osaka-karaoke-bot/stations/%E4%B8%8A%E6%9C%AC%E7%94%BA/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">寝屋川市のカラオケ最安値・店舗一覧【2026年最新】
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>寝屋川市駅周辺のカラオケ店（2店舗） 寝屋川市駅周辺にあるカラオケ店の料金・店舗情報をまとめました。各店舗の公式料金表へのリンクから、最新の料金プランを確認できます。
+💰 最安値ハイライト 🏆 平日昼30分最安: 155円 / ジャンカラ寝屋川駅前店（会員） 🏆 平日昼フリータイム最安: 1040円 / ジャンカラ寝屋川駅前店（会員） ジャンカラ寝屋川駅前店30分 (平日昼)一般:230円
+会員:155円フリータイム (平日昼)一般:1410円
+会員:1040円📍 地図🔗 予約・詳細まねきねこ香里園店30分 (平日昼)会員:300円フリータイム (平日昼)会員:1200円📍 地図🔗 予約・詳細※ 料金は時期・曜日・時間帯により異なります。最新情報は各店舗の公式サイトをご確認ください。
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2026-02-16 00:00:00 +0000 UTC'>2026年2月16日</span>&nbsp;·&nbsp;<span>大阪カラオケナビ運営</span></footer>
+  <a class="entry-link" aria-label="post link to 寝屋川市のカラオケ最安値・店舗一覧【2026年最新】" href="https://shironaganegi.github.io/osaka-karaoke-bot/stations/%E5%AF%9D%E5%B1%8B%E5%B7%9D%E5%B8%82/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">心斎橋のカラオケ最安値・店舗一覧【2026年最新】
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>心斎橋駅周辺のカラオケ店（5店舗） 心斎橋駅周辺にあるカラオケ店の料金・店舗情報をまとめました。各店舗の公式料金表へのリンクから、最新の料金プランを確認できます。
+💰 最安値ハイライト 🏆 平日昼30分最安: 145円 / ジャンカラ心斎橋店（会員） 🏆 平日昼フリータイム最安: 1060円 / ジャンカラ心斎橋店（会員） ジャンカラアメリカ村店30分 (平日昼)一般:250円
+会員:200円フリータイム (平日昼)一般:1610円
+会員:1300円📍 地図🔗 予約・詳細ジャンカラ心斎橋店30分 (平日昼)一般:345円
+会員:145円フリータイム (平日昼)一般:2060円
+会員:1060円📍 地図🔗 予約・詳細ジャンカラ心斎橋3号店30分 (平日昼)一般:345円
+会員:145円フリータイム (平日昼)一般:2060円
+会員:1060円📍 地図🔗 予約・詳細まねきねこ心斎橋2号店30分 (平日昼)会員:300円フリータイム (平日昼)会員:1200円📍 地図🔗 予約・詳細まねきねこ心斎橋店30分 (平日昼)会員:300円フリータイム (平日昼)会員:1200円📍 地図🔗 予約・詳細※ 料金は時期・曜日・時間帯により異なります。最新情報は各店舗の公式サイトをご確認ください。
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2026-02-16 00:00:00 +0000 UTC'>2026年2月16日</span>&nbsp;·&nbsp;<span>大阪カラオケナビ運営</span></footer>
+  <a class="entry-link" aria-label="post link to 心斎橋のカラオケ最安値・店舗一覧【2026年最新】" href="https://shironaganegi.github.io/osaka-karaoke-bot/stations/%E5%BF%83%E6%96%8E%E6%A9%8B/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">新金岡のカラオケ最安値・店舗一覧【2026年最新】
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>新金岡駅周辺のカラオケ店（1店舗） 新金岡駅周辺にあるカラオケ店の料金・店舗情報をまとめました。各店舗の公式料金表へのリンクから、最新の料金プランを確認できます。
+💰 最安値ハイライト 🏆 平日昼30分最安: 210円 / ジャンカラ新金岡駅前店（会員） 🏆 平日昼フリータイム最安: 1270円 / ジャンカラ新金岡駅前店（会員） ジャンカラ新金岡駅前店30分 (平日昼)一般:230円
+会員:210円フリータイム (平日昼)一般:1390円
+会員:1270円📍 地図🔗 予約・詳細※ 料金は時期・曜日・時間帯により異なります。最新情報は各店舗の公式サイトをご確認ください。
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2026-02-16 00:00:00 +0000 UTC'>2026年2月16日</span>&nbsp;·&nbsp;<span>大阪カラオケナビ運営</span></footer>
+  <a class="entry-link" aria-label="post link to 新金岡のカラオケ最安値・店舗一覧【2026年最新】" href="https://shironaganegi.github.io/osaka-karaoke-bot/stations/%E6%96%B0%E9%87%91%E5%B2%A1/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">深井のカラオケ最安値・店舗一覧【2026年最新】
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>深井駅周辺のカラオケ店（1店舗） 深井駅周辺にあるカラオケ店の料金・店舗情報をまとめました。各店舗の公式料金表へのリンクから、最新の料金プランを確認できます。
+💰 最安値ハイライト 🏆 平日昼30分最安: 260円 / ジャンカラ深井駅前店（会員） 🏆 平日昼フリータイム最安: 1540円 / ジャンカラ深井駅前店（会員） ジャンカラ深井駅前店30分 (平日昼)一般:320円
+会員:260円フリータイム (平日昼)一般:1770円
+会員:1540円📍 地図🔗 予約・詳細※ 料金は時期・曜日・時間帯により異なります。最新情報は各店舗の公式サイトをご確認ください。
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2026-02-16 00:00:00 +0000 UTC'>2026年2月16日</span>&nbsp;·&nbsp;<span>大阪カラオケナビ運営</span></footer>
+  <a class="entry-link" aria-label="post link to 深井のカラオケ最安値・店舗一覧【2026年最新】" href="https://shironaganegi.github.io/osaka-karaoke-bot/stations/%E6%B7%B1%E4%BA%95/"></a>
+</article>
+<footer class="page-footer">
+  <nav class="pagination">
+    <a class="prev" href="https://shironaganegi.github.io/osaka-karaoke-bot/page/2/">
+      «&nbsp;前へ&nbsp;
+    </a>
+    <a class="next" href="https://shironaganegi.github.io/osaka-karaoke-bot/page/4/">次へ&nbsp;&nbsp;»
+    </a>
+  </nav>
+</footer>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="https://shironaganegi.github.io/osaka-karaoke-bot/">大阪カラオケ料金ナビ</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

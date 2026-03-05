@@ -27,12 +27,12 @@ jobs:
           playwright install chromium --with-deps
 
       - name: Run pricing scraper
-        run: python agent_watcher/scrapers/jankara_pricing.py
+        run: python src/agents/watcher/scrapers/jankara_pricing.py
         env:
           PYTHONIOENCODING: utf-8
 
       - name: Regenerate station pages
-        run: python agent_publisher/page_generator.py
+        run: python src/agents/publisher/page_generator.py
         env:
           PYTHONIOENCODING: utf-8
 
@@ -40,5 +40,5 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "🤖 Weekly price update"
-          file_pattern: "data/*.json website/content/stations/*.md"
+          file_pattern: "data/karaoke/*.json data/*.json website/content/stations/*.md website/content/areas/*.md"
           commit_author: "karaoke-bot <bot@example.com>"

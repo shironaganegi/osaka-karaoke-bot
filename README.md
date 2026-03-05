@@ -65,19 +65,18 @@ graph TD
 ```text
 .
 ├── .github/workflows/   # GitHub Actions (自動実行定義)
-├── agent_watcher/       # トレンド収集エージェント
-├── agent_analyst/       # 分析・執筆エージェント
-│   ├── content_generator.py
-│   └── llm.py           # Gemini API連携
-├── agent_publisher/     # 配信エージェント
-│   ├── distributor.py   # 配信オーケストレータ
-│   └── platforms/       # 各プラットフォーム連携 (Qiita, Twitter, etc.)
+├── src/                 # ソースコード本体
+│   ├── agents/          # 各役割ごとのエージェント
+│   │   ├── watcher/     # トレンド収集エージェント
+│   │   ├── analyst/     # 分析・執筆エージェント
+│   │   ├── publisher/   # 配信エージェント
+│   │   └── scraper/     # 各種スクレイパー (カラオケ含む)
+│   ├── karaoke/         # カラオケ調査専用モジュール・スクリプト
+│   └── shared/          # 共通ユーティリティ (Config, Logger)
 ├── articles/            # 日本語記事アーカイブ (Zenn互換)
-├── data/                # データストア
-│   ├── articles_en/     # 英語記事アーカイブ
-│   ├── prompts/         # AIプロンプト定義
-│   └── ads.json         # 広告設定
-├── shared/              # 共通基盤 (Config, Logger)
+├── data/                # データストア (記事, プロンプト, カラオケ設定等)
+├── logs/                # ログ・デバッグ関連
+├── scripts/             # メンテナンス・ツール用スクリプト
 └── website/             # Hugo 自社サイト
 ```
 

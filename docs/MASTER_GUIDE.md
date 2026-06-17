@@ -1,7 +1,7 @@
 ﻿# 📖 MASTER GUIDE: karaoke_bot
 
 ## 0. 基本思想 (Philosophy)
-本プロジェクトは \d:\progectA\brain\GLOBAL_OS.md\ に定義されたグローバル・ルールを継承します。
+本プロジェクトは \d:\ProjectA\brain\GLOBAL_OS.md\ に定義されたグローバル・ルールを継承します。
 AIエージェントは開発を開始する前に必ず GLOBAL_OS.md を参照してください。
 
 ## 1. プロジェクト概要
